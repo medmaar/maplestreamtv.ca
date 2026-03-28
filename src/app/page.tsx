@@ -96,7 +96,7 @@ export default function Home() {
         <nav className="bg-gray-900 border-b border-red-600 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div className="text-2xl font-bold text-red-500">
-              🍁 IPTV Canada 2026
+              IPTV Canada 2026
             </div>
             <div className="hidden md:flex gap-6 text-sm text-gray-300">
               <a href="#pricing" className="hover:text-red-400">Pricing</a>
@@ -104,11 +104,11 @@ export default function Home() {
               <a href="#faq" className="hover:text-red-400">FAQ</a>
               <a href="#trial" className="hover:text-red-400">Free Trial</a>
             </div>
-            
+            <a
               href="#trial"
               className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-bold"
             >
-              Free Trial 🎁
+              Free Trial
             </a>
           </div>
         </nav>
@@ -117,7 +117,7 @@ export default function Home() {
         <section className="bg-gradient-to-br from-gray-900 via-gray-950 to-black py-20 px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <div className="inline-block bg-red-600 text-white text-xs px-3 py-1 rounded-full mb-4 font-bold uppercase tracking-wider">
-              🇨🇦 #1 IPTV Service in Canada 2026
+              #1 IPTV Service in Canada 2026
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
               Best <span className="text-red-500">IPTV Canada</span> Service for{" "}
@@ -129,13 +129,13 @@ export default function Home() {
               Canadian IPTV subscription.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              
+              <a
                 href="#trial"
                 className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl text-lg font-bold"
               >
-                🎁 Get 24h Free Trial
+                Get 24h Free Trial
               </a>
-              
+              <a
                 href="#pricing"
                 className="border border-red-600 text-red-400 hover:bg-red-600 hover:text-white px-8 py-4 rounded-xl text-lg font-bold"
               >
@@ -143,11 +143,11 @@ export default function Home() {
               </a>
             </div>
             <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-              <span>✅ 25,000+ Live Channels</span>
-              <span>✅ 120,000+ Movies & Series</span>
-              <span>✅ 4K Ultra HD Quality</span>
-              <span>✅ 99.9% Uptime</span>
-              <span>✅ 24/7 Canadian Support</span>
+              <span>25,000+ Live Channels</span>
+              <span>120,000+ Movies &amp; Series</span>
+              <span>4K Ultra HD Quality</span>
+              <span>99.9% Uptime</span>
+              <span>24/7 Canadian Support</span>
             </div>
           </div>
         </section>
@@ -155,7 +155,7 @@ export default function Home() {
         {/* CHANNELS BANNER */}
         <section className="bg-red-600 py-4 px-4">
           <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-6 text-white font-bold text-sm">
-            {["🏒 NHL", "🏈 NFL", "🏀 NBA", "⚾ MLB", "🥊 UFC", "🏎️ F1", "⚽ Premier League", "📺 TSN", "📺 Sportsnet", "📺 CTV", "📺 CBC", "📺 Netflix"].map((ch) => (
+            {["NHL", "NFL", "NBA", "MLB", "UFC", "F1", "Premier League", "TSN", "Sportsnet", "CTV", "CBC", "Netflix"].map((ch) => (
               <span key={ch}>{ch}</span>
             ))}
           </div>
@@ -172,15 +172,14 @@ export default function Home() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { icon: "📺", title: "25,000+ Live Channels", desc: "Access every Canadian channel — TSN, Sportsnet, CBC, CTV, Global — plus thousands of international channels in HD and 4K." },
-                { icon: "🎬", title: "120,000+ Movies & Series", desc: "Massive on-demand library with the latest Hollywood releases, Canadian content, and popular series updated daily." },
-                { icon: "🏒", title: "Live Sports in 4K", desc: "Never miss a Leafs, Habs, or Canucks game. Full NHL, NFL, NBA, UFC, F1 and Premier League coverage included." },
-                { icon: "⚡", title: "Zero Buffering", desc: "Our Canadian servers deliver lightning-fast streams with 99.9% uptime guaranteed. No freezing, no lag." },
-                { icon: "📱", title: "All Devices Supported", desc: "Works on Fire Stick, Smart TV, Android, iPhone, iPad, MAG Box, PC, Mac and more. Up to 5 devices simultaneously." },
-                { icon: "🇨🇦", title: "24/7 Canadian Support", desc: "Our Canadian support team is available around the clock via WhatsApp, email and live chat in English and French." },
+                { title: "25,000+ Live Channels", desc: "Access every Canadian channel — TSN, Sportsnet, CBC, CTV, Global — plus thousands of international channels in HD and 4K." },
+                { title: "120,000+ Movies & Series", desc: "Massive on-demand library with the latest Hollywood releases, Canadian content, and popular series updated daily." },
+                { title: "Live Sports in 4K", desc: "Never miss a Leafs, Habs, or Canucks game. Full NHL, NFL, NBA, UFC, F1 and Premier League coverage included." },
+                { title: "Zero Buffering", desc: "Our Canadian servers deliver lightning-fast streams with 99.9% uptime guaranteed. No freezing, no lag." },
+                { title: "All Devices Supported", desc: "Works on Fire Stick, Smart TV, Android, iPhone, iPad, MAG Box, PC, Mac and more. Up to 5 devices simultaneously." },
+                { title: "24/7 Canadian Support", desc: "Our Canadian support team is available around the clock via WhatsApp, email and live chat in English and French." },
               ].map((f) => (
                 <div key={f.title} className="bg-gray-900 rounded-2xl p-6 border border-gray-800 hover:border-red-600 transition-colors">
-                  <div className="text-4xl mb-4">{f.icon}</div>
                   <h3 className="text-xl font-bold mb-2">{f.title}</h3>
                   <p className="text-gray-400 text-sm">{f.desc}</p>
                 </div>
@@ -236,7 +235,7 @@ export default function Home() {
         <section id="trial" className="py-20 px-4 bg-gradient-to-r from-red-900 to-gray-900 text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              🎁 Try IPTV Canada FREE for 24 Hours
+              Try IPTV Canada FREE for 24 Hours
             </h2>
             <p className="text-gray-300 mb-8">
               No credit card required. Get instant access to all 25,000+ channels and test our service completely risk-free.
@@ -251,11 +250,11 @@ export default function Home() {
                 type="submit"
                 className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold whitespace-nowrap"
               >
-                Get Free Trial →
+                Get Free Trial
               </button>
             </form>
             <p className="text-gray-500 text-xs mt-4">
-              ✅ Instant activation · ✅ No credit card · ✅ Cancel anytime
+              Instant activation · No credit card · Cancel anytime
             </p>
           </div>
         </section>
@@ -286,7 +285,7 @@ export default function Home() {
         {/* FOOTER */}
         <footer className="bg-gray-900 border-t border-gray-800 py-12 px-4">
           <div className="max-w-7xl mx-auto text-center">
-            <div className="text-2xl font-bold text-red-500 mb-4">🍁 IPTV Canada 2026</div>
+            <div className="text-2xl font-bold text-red-500 mb-4">IPTV Canada 2026</div>
             <p className="text-gray-500 text-sm mb-6">
               Canada&apos;s #1 IPTV subscription service. Serving Toronto, Montreal, Vancouver, Calgary, Ottawa, Edmonton and all of Canada.
             </p>
