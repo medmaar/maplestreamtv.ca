@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "IPTV vs cable TV in Canada — we compare price, channels, picture quality, contracts, and flexibility to help you decide which is better in 2026.",
   keywords:
     "IPTV vs cable Canada, IPTV vs cable TV Canada, is IPTV better than cable Canada, IPTV or cable Canada 2026",
-  alternates: { canonical: "https://www.iptvsubscriptionincanada.ca/blog/iptv-vs-cable-canada" },
+  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/blog/iptv-vs-cable-canada" },
 };
 
 const comparison = [

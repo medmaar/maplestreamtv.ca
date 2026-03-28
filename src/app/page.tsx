@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords:
     "IPTV Canada 2026, best IPTV Canada, IPTV subscription Canada, IPTV service Canada, Canadian IPTV, IPTV Canada free trial",
   alternates: {
-    canonical: "https://www.iptvsubscriptionincanada.ca",
+    canonical: "https://www.iptvsubscriptioncanada.ca",
   },
 };
 
@@ -252,7 +252,7 @@ export default function Home() {
               <a href="#" className="hover:text-red-400">DMCA</a>
             </div>
             <p className="text-gray-700 text-xs">
-              © 2026 IPTV Subscription Canada. All rights reserved. · iptvsubscriptionincanada.ca
+              © 2026 IPTV Subscription Canada. All rights reserved. · iptvsubscriptioncanada.ca
             </p>
           </div>
         </footer>

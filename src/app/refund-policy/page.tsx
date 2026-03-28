@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Refund Policy | IPTV Subscription Canada",
   description: "Refund policy for IPTV Subscription Canada. Learn about our no-refund policy and how our free trial protects you before you subscribe.",
-  alternates: { canonical: "https://www.iptvsubscriptionincanada.ca/refund-policy" },
+  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/refund-policy" },
 };
 
 export default function RefundPolicyPage() {

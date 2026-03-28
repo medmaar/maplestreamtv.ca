@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "IPTV Canada Blog 2026 | Guides, Reviews & Tips",
   description:
     "The IPTV Canada blog — expert guides on the best IPTV services in Canada, setup tutorials, comparisons, and tips for 2026.",
-  alternates: { canonical: "https://www.iptvsubscriptionincanada.ca/blog" },
+  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/blog" },
 };
 
 const posts = [

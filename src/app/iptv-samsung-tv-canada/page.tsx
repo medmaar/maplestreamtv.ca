@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "Stream IPTV on your Samsung Smart TV in Canada. 25,000+ channels, 4K quality, NHL, TSN and more. Easy setup with Tizen OS. Try free today.",
   keywords:
     "IPTV Samsung TV Canada, IPTV Samsung Smart TV Canada, Samsung TV IPTV Canada, best IPTV Samsung Canada",
-  alternates: { canonical: "https://www.iptvsubscriptionincanada.ca/iptv-samsung-tv-canada" },
+  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/iptv-samsung-tv-canada" },
 };
 
 const steps = [

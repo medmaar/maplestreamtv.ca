@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const base = "https://www.iptvsubscriptionincanada.ca";
+const base = "https://www.iptvsubscriptioncanada.ca";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

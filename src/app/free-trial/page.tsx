@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "Get a free 24-hour IPTV Canada trial. Access 25,000+ live channels, NHL, TSN, CTV and 120,000+ movies with no credit card required. Instant activation.",
   keywords:
     "IPTV Canada free trial, free IPTV Canada, IPTV trial Canada, try IPTV Canada",
-  alternates: { canonical: "https://www.iptvsubscriptionincanada.ca/free-trial" },
+  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/free-trial" },
 };
 
 const included = [

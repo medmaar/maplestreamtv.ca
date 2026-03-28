@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "The best IPTV service for Amazon Fire Stick in Canada. Easy setup, 25,000+ channels in 4K, NHL, TSN, and more. Get started today.",
   keywords:
     "IPTV Firestick Canada, IPTV Fire Stick Canada, best IPTV for Firestick Canada, Amazon Fire Stick IPTV Canada",
-  alternates: { canonical: "https://www.iptvsubscriptionincanada.ca/iptv-firestick-canada" },
+  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/iptv-firestick-canada" },
 };
 
 const steps = [

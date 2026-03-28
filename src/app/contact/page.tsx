@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Us | IPTV Subscription Canada — 24/7 Canadian Support",
   description: "Contact IPTV Subscription Canada via WhatsApp, Telegram, or email. Our Canadian support team is available 24/7 in English and French.",
-  alternates: { canonical: "https://www.iptvsubscriptionincanada.ca/contact" },
+  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/contact" },
 };
 
 const channels = [

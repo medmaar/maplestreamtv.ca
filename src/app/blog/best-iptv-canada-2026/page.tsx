@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "Looking for the best IPTV service in Canada for 2026? We reviewed and compared the top Canadian IPTV providers on channels, price, reliability and support.",
   keywords:
     "best IPTV Canada 2026, top IPTV Canada, IPTV Canada review, best IPTV service Canada",
-  alternates: { canonical: "https://www.iptvsubscriptionincanada.ca/blog/best-iptv-canada-2026" },
+  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/blog/best-iptv-canada-2026" },
 };
 
 const faqSchema = {

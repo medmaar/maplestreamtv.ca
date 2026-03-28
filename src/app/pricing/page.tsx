@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "View all IPTV Canada subscription plans for 2026. Pricing for 1 to 5 devices. Starting at $9/month CAD. No contracts, instant activation.",
   keywords:
     "IPTV Canada pricing, IPTV Canada plans, IPTV subscription price Canada, cheap IPTV Canada",
-  alternates: { canonical: "https://www.iptvsubscriptionincanada.ca/pricing" },
+  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/pricing" },
 };
 
 const faqItems = [
