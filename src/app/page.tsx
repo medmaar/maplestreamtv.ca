@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PricingSection from "./PricingSection";
+import Navbar from "./Navbar";
 
 export const metadata: Metadata = {
   title: "Best IPTV Canada 2026 | #1 IPTV Subscription in Canada",
@@ -94,25 +95,7 @@ export default function Home() {
 
       <main className="bg-gray-950 text-white min-h-screen">
         {/* NAVBAR */}
-        <nav className="bg-gray-900 border-b border-red-600 sticky top-0 z-50">
-          <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div className="text-2xl font-bold text-red-500">
-              IPTV Canada 2026
-            </div>
-            <div className="hidden md:flex gap-6 text-sm text-gray-300">
-              <a href="#pricing" className="hover:text-red-400">Pricing</a>
-              <a href="#features" className="hover:text-red-400">Features</a>
-              <a href="#faq" className="hover:text-red-400">FAQ</a>
-              <a href="#trial" className="hover:text-red-400">Free Trial</a>
-            </div>
-            <a
-              href="#trial"
-              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-bold"
-            >
-              Free Trial
-            </a>
-          </div>
-        </nav>
+        <Navbar />
 
         {/* HERO */}
         <section className="bg-gradient-to-br from-gray-900 via-gray-950 to-black py-20 px-4 text-center">
