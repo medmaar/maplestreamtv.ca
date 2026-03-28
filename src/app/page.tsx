@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PricingSection from "./PricingSection";
 
 export const metadata: Metadata = {
   title: "Best IPTV Canada 2026 | #1 IPTV Subscription in Canada",
@@ -69,9 +70,9 @@ export default function Home() {
     offers: {
       "@type": "AggregateOffer",
       lowPrice: "9",
-      highPrice: "135",
-      priceCurrency: "CAD",
-      offerCount: "15",
+      highPrice: "450",
+      priceCurrency: "USD",
+      offerCount: "40",
     },
     aggregateRating: {
       "@type": "AggregateRating",
@@ -190,47 +191,7 @@ export default function Home() {
         </section>
 
         {/* PRICING */}
-        <section id="pricing" className="py-20 px-4 bg-gray-900">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              IPTV Canada <span className="text-red-500">Subscription Plans</span>
-            </h2>
-            <p className="text-center text-gray-400 mb-12">
-              No contracts. Instant activation. Cancel anytime.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { name: "1 Month", price: "$9", devices: "1 Device", badge: "", popular: false },
-                { name: "6 Months", price: "$39", devices: "1 Device", badge: "MOST POPULAR", popular: true },
-                { name: "12 Months", price: "$49", devices: "1 Device", badge: "BEST VALUE", popular: false },
-              ].map((plan) => (
-                <div key={plan.name} className={`rounded-2xl p-8 border-2 ${plan.popular ? "border-red-500 bg-red-950" : "border-gray-700 bg-gray-950"} relative`}>
-                  {plan.badge && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-600 text-white text-xs px-4 py-1 rounded-full font-bold">
-                      {plan.badge}
-                    </div>
-                  )}
-                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                  <div className="text-5xl font-extrabold text-red-500 mb-1">{plan.price}</div>
-                  <div className="text-gray-400 text-sm mb-6">CAD · {plan.devices}</div>
-                  <ul className="space-y-3 text-sm text-gray-300 mb-8">
-                    {["25,000+ Live Channels", "120,000+ Movies & Series", "4K Ultra HD Quality", "NHL · TSN · Sportsnet · CTV", "PPV Events Included", "EPG & Catch-Up TV", "All Devices Supported", "24/7 Canadian Support"].map((f) => (
-                      <li key={f} className="flex items-center gap-2">
-                        <span className="text-green-400">✓</span> {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <a href="#trial" className={`block text-center py-3 rounded-xl font-bold ${plan.popular ? "bg-red-600 hover:bg-red-700 text-white" : "border border-red-600 text-red-400 hover:bg-red-600 hover:text-white"}`}>
-                    Get Started
-                  </a>
-                </div>
-              ))}
-            </div>
-            <p className="text-center text-gray-500 mt-8 text-sm">
-              Need more devices? We offer plans for 2, 3, 4 and 5 simultaneous connections. Contact us for pricing.
-            </p>
-          </div>
-        </section>
+        <PricingSection />
 
         {/* FREE TRIAL */}
         <section id="trial" className="py-20 px-4 bg-gradient-to-r from-red-900 to-gray-900 text-center">
