@@ -201,21 +201,32 @@ export default function Home() {
             <p className="text-gray-300 mb-8">
               No credit card required. Get instant access to all 25,000+ channels and test our service completely risk-free.
             </p>
-            <form className="flex flex-col sm:flex-row gap-4 justify-center">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="px-6 py-4 rounded-xl bg-gray-800 border border-gray-600 text-white flex-1 focus:outline-none focus:border-red-500"
-              />
-              <button
-                type="submit"
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold whitespace-nowrap"
+            <div className="flex flex-col items-center gap-4 max-w-xs mx-auto">
+              <a
+                href="https://wa.me/17828026280?text=Hi%20IPTV%20Canada%2C%20I'm%20interested%20in%20your%20service."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-center py-4 rounded-2xl font-bold text-gray-900 bg-[#25D366] hover:brightness-110 transition"
               >
-                Get Free Trial
-              </button>
-            </form>
-            <p className="text-gray-500 text-xs mt-4">
-              Instant activation · No credit card · Cancel anytime
+                WhatsApp Free Trial
+              </a>
+              <a
+                href="mailto:help@iptvsubscriptioncanada.ca"
+                className="w-full text-center py-4 rounded-2xl font-bold text-gray-900 bg-[#F5C518] hover:brightness-110 transition"
+              >
+                Email Free Trial
+              </a>
+              <a
+                href="https://t.me/IPTVCanadaSupport"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-center py-4 rounded-2xl font-bold text-gray-900 bg-[#88C9F0] hover:brightness-110 transition"
+              >
+                Telegram Free Trial
+              </a>
+            </div>
+            <p className="text-gray-400 text-sm mt-6">
+              Fast activation · Human support · No obligation
             </p>
           </div>
         </section>
