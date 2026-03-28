@@ -8,6 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: base,                                              lastModified: now, changeFrequency: "weekly",  priority: 1.0 },
     { url: `${base}/pricing`,                                 lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
     { url: `${base}/free-trial`,                              lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/channels-list`,                           lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/how-it-works`,                            lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/iptv-firestick-canada`,                   lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/iptv-samsung-tv-canada`,                  lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/blog`,                                    lastModified: now, changeFrequency: "weekly",  priority: 0.8 },
