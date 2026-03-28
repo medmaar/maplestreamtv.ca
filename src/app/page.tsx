@@ -70,7 +70,7 @@ export default function Home() {
       "@type": "AggregateOffer",
       lowPrice: "9",
       highPrice: "135",
-      priceCurrency: "CAD",
+      priceCurrency: "USD",
       offerCount: "15",
     },
     aggregateRating: {
@@ -104,11 +104,11 @@ export default function Home() {
               <a href="#faq" className="hover:text-red-400">FAQ</a>
               <a href="#trial" className="hover:text-red-400">Free Trial</a>
             </div>
-            
+            <a
               href="#trial"
               className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-bold"
             >
-              Free Trial 🎁
+              Free Trial
             </a>
           </div>
         </nav>
@@ -129,13 +129,13 @@ export default function Home() {
               Canadian IPTV subscription.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              
+              <a
                 href="#trial"
                 className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl text-lg font-bold"
               >
-                🎁 Get 24h Free Trial
+                Get 24h Free Trial
               </a>
-              
+              <a
                 href="#pricing"
                 className="border border-red-600 text-red-400 hover:bg-red-600 hover:text-white px-8 py-4 rounded-xl text-lg font-bold"
               >
@@ -212,7 +212,7 @@ export default function Home() {
                   )}
                   <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                   <div className="text-5xl font-extrabold text-red-500 mb-1">{plan.price}</div>
-                  <div className="text-gray-400 text-sm mb-6">CAD · {plan.devices}</div>
+                  <div className="text-gray-400 text-sm mb-6">USD · {plan.devices}</div>
                   <ul className="space-y-3 text-sm text-gray-300 mb-8">
                     {["25,000+ Live Channels", "120,000+ Movies & Series", "4K Ultra HD Quality", "NHL · TSN · Sportsnet · CTV", "PPV Events Included", "EPG & Catch-Up TV", "All Devices Supported", "24/7 Canadian Support"].map((f) => (
                       <li key={f} className="flex items-center gap-2">
