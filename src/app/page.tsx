@@ -245,11 +245,11 @@ export default function Home() {
               Canada&apos;s #1 IPTV subscription service. Serving Toronto, Montreal, Vancouver, Calgary, Ottawa, Edmonton and all of Canada.
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500 mb-6">
-              <a href="#" className="hover:text-red-400">Privacy Policy</a>
-              <a href="#" className="hover:text-red-400">Terms of Service</a>
-              <a href="#" className="hover:text-red-400">Refund Policy</a>
-              <a href="#" className="hover:text-red-400">Contact Us</a>
-              <a href="#" className="hover:text-red-400">DMCA</a>
+              <a href="/privacy-policy" className="hover:text-red-400">Privacy Policy</a>
+              <a href="/terms-of-service" className="hover:text-red-400">Terms of Service</a>
+              <a href="/refund-policy" className="hover:text-red-400">Refund Policy</a>
+              <a href="/contact" className="hover:text-red-400">Contact Us</a>
+              <a href="/dmca" className="hover:text-red-400">DMCA</a>
             </div>
             <p className="text-gray-700 text-xs">
               © 2026 IPTV Subscription Canada. All rights reserved. · iptvsubscriptioncanada.ca
