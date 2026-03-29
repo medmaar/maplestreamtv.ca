@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import PricingSection from "../PricingSection";
 
 export const metadata: Metadata = {
-  title: "IPTV Canada Pricing 2026 | Plans Starting at $9 CAD",
+  title: "IPTV Canada Pricing 2026 | Plans Starting at $9",
   description:
-    "View all IPTV Canada subscription plans for 2026. Pricing for 1 to 5 devices. Starting at $9/month CAD. No contracts, instant activation.",
+    "View all IPTV Canada subscription plans for 2026. Pricing for 1 to 5 devices. Starting at $9/month. No contracts, instant activation.",
   keywords:
     "IPTV Canada pricing, IPTV Canada plans, IPTV subscription price Canada, cheap IPTV Canada",
   alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/pricing" },
 };
 
 const faqItems = [
-  { q: "How much does IPTV Canada cost?", a: "Plans start at $9 CAD per month for 1 device. Multi-device plans are also available — 2 devices from $18/month, up to 5 devices at $45/month. Longer subscriptions offer significant savings." },
+  { q: "How much does IPTV Canada cost?", a: "Plans start at $9/month for 1 device. Multi-device plans are also available — 2 devices from $18/month, up to 5 devices at $45/month. Longer subscriptions offer significant savings." },
   { q: "Is there a contract or commitment?", a: "No contracts ever. All plans are prepaid with no auto-renewal. You choose your duration and there are no cancellation fees." },
   { q: "Can I share my IPTV subscription with family?", a: "Yes. Our 2, 3, 4, and 5 device plans allow simultaneous streams, perfect for families. Each device streams independently." },
   { q: "What payment methods do you accept?", a: "We accept all major credit and debit cards, PayPal, Interac e-Transfer, and cryptocurrency. Contact us for full payment options." },
