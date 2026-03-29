@@ -94,7 +94,7 @@ export default function PricingSection() {
                   ))}
                 </ul>
                 <a
-                  href="#trial"
+                  href={`/order?devices=${selectedDevices}&duration=${encodeURIComponent(duration)}&price=${price}`}
                   className={`block text-center py-3 rounded-xl font-bold transition-colors ${
                     popular
                       ? "bg-red-600 hover:bg-red-700 text-white"
