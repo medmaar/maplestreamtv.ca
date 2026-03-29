@@ -1,47 +1,41 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import PlanOrderForm from "../components/PlanOrderForm";
 
-const plans: Record<string, { duration: string; devices: number; price: number; monthlyPrice: string; badge?: string }> = {
+interface PlanData {
+  duration: string;
+  devices: number;
+  price: number;
+  originalPrice: number;
+  badge?: string;
+}
+
+const plans: Record<string, PlanData> = {
   // 1 Month
-  "1-month":           { duration: "1 Month",  devices: 1, price: 9,   monthlyPrice: "$9/mo" },
-  "1-month-2-devices": { duration: "1 Month",  devices: 2, price: 18,  monthlyPrice: "$18/mo" },
-  "1-month-3-devices": { duration: "1 Month",  devices: 3, price: 27,  monthlyPrice: "$27/mo" },
-  "1-month-4-devices": { duration: "1 Month",  devices: 4, price: 36,  monthlyPrice: "$36/mo" },
-  "1-month-5-devices": { duration: "1 Month",  devices: 5, price: 45,  monthlyPrice: "$45/mo" },
+  "1-month":           { duration: "1 Month",  devices: 1, price: 9,   originalPrice: 18  },
+  "1-month-2-devices": { duration: "1 Month",  devices: 2, price: 18,  originalPrice: 36  },
+  "1-month-3-devices": { duration: "1 Month",  devices: 3, price: 27,  originalPrice: 54  },
+  "1-month-4-devices": { duration: "1 Month",  devices: 4, price: 36,  originalPrice: 72  },
+  "1-month-5-devices": { duration: "1 Month",  devices: 5, price: 45,  originalPrice: 90  },
   // 3 Months
-  "3-months":           { duration: "3 Months", devices: 1, price: 24,  monthlyPrice: "$8/mo", badge: "Save 11%" },
-  "3-months-2-devices": { duration: "3 Months", devices: 2, price: 45,  monthlyPrice: "$15/mo", badge: "Save 17%" },
-  "3-months-3-devices": { duration: "3 Months", devices: 3, price: 65,  monthlyPrice: "$21.67/mo", badge: "Save 20%" },
-  "3-months-4-devices": { duration: "3 Months", devices: 4, price: 85,  monthlyPrice: "$28.33/mo", badge: "Save 21%" },
-  "3-months-5-devices": { duration: "3 Months", devices: 5, price: 105, monthlyPrice: "$35/mo", badge: "Save 22%" },
+  "3-months":           { duration: "3 Months", devices: 1, price: 24,  originalPrice: 36,  badge: "Save 33%" },
+  "3-months-2-devices": { duration: "3 Months", devices: 2, price: 45,  originalPrice: 72,  badge: "Save 38%" },
+  "3-months-3-devices": { duration: "3 Months", devices: 3, price: 65,  originalPrice: 108, badge: "Save 40%" },
+  "3-months-4-devices": { duration: "3 Months", devices: 4, price: 85,  originalPrice: 144, badge: "Save 41%" },
+  "3-months-5-devices": { duration: "3 Months", devices: 5, price: 105, originalPrice: 180, badge: "Save 42%" },
   // 6 Months
-  "6-months":           { duration: "6 Months", devices: 1, price: 39,  monthlyPrice: "$6.50/mo", badge: "Most Popular" },
-  "6-months-2-devices": { duration: "6 Months", devices: 2, price: 69,  monthlyPrice: "$11.50/mo", badge: "Most Popular" },
-  "6-months-3-devices": { duration: "6 Months", devices: 3, price: 105, monthlyPrice: "$17.50/mo", badge: "Most Popular" },
-  "6-months-4-devices": { duration: "6 Months", devices: 4, price: 140, monthlyPrice: "$23.33/mo", badge: "Most Popular" },
-  "6-months-5-devices": { duration: "6 Months", devices: 5, price: 175, monthlyPrice: "$29.17/mo", badge: "Most Popular" },
+  "6-months":           { duration: "6 Months", devices: 1, price: 39,  originalPrice: 54,  badge: "Most Popular" },
+  "6-months-2-devices": { duration: "6 Months", devices: 2, price: 69,  originalPrice: 108, badge: "Most Popular" },
+  "6-months-3-devices": { duration: "6 Months", devices: 3, price: 105, originalPrice: 162, badge: "Most Popular" },
+  "6-months-4-devices": { duration: "6 Months", devices: 4, price: 140, originalPrice: 216, badge: "Most Popular" },
+  "6-months-5-devices": { duration: "6 Months", devices: 5, price: 175, originalPrice: 270, badge: "Most Popular" },
   // 1 Year
-  "1-year":           { duration: "1 Year", devices: 1, price: 49,  monthlyPrice: "$4.08/mo", badge: "Best Value" },
-  "1-year-2-devices": { duration: "1 Year", devices: 2, price: 89,  monthlyPrice: "$7.42/mo", badge: "Best Value" },
-  "1-year-3-devices": { duration: "1 Year", devices: 3, price: 135, monthlyPrice: "$11.25/mo", badge: "Best Value" },
-  "1-year-4-devices": { duration: "1 Year", devices: 4, price: 180, monthlyPrice: "$15/mo", badge: "Best Value" },
-  "1-year-5-devices": { duration: "1 Year", devices: 5, price: 225, monthlyPrice: "$18.75/mo", badge: "Best Value" },
+  "1-year":           { duration: "1 Year", devices: 1, price: 49,  originalPrice: 108, badge: "Best Value" },
+  "1-year-2-devices": { duration: "1 Year", devices: 2, price: 89,  originalPrice: 216, badge: "Best Value" },
+  "1-year-3-devices": { duration: "1 Year", devices: 3, price: 135, originalPrice: 324, badge: "Best Value" },
+  "1-year-4-devices": { duration: "1 Year", devices: 4, price: 180, originalPrice: 432, badge: "Best Value" },
+  "1-year-5-devices": { duration: "1 Year", devices: 5, price: 225, originalPrice: 540, badge: "Best Value" },
 };
-
-const features = [
-  "25,000+ Live TV Channels",
-  "120,000+ Movies & Series (VOD)",
-  "4K Ultra HD & HD Quality",
-  "NHL, NFL, NBA, MLB, UFC",
-  "TSN, Sportsnet, CBC, CTV, Global",
-  "PPV Events Included",
-  "Electronic Program Guide (EPG)",
-  "Catch-Up TV (7 days)",
-  "All Devices: Fire Stick, Smart TV, iOS, Android",
-  "Anti-Freeze Technology",
-  "99.9% Uptime Guarantee",
-  "24/7 Canadian Support",
-];
 
 export async function generateStaticParams() {
   return Object.keys(plans).map((plan) => ({ plan }));
@@ -55,10 +49,10 @@ export async function generateMetadata({
   const { plan } = await params;
   const data = plans[plan];
   if (!data) return {};
-  const devLabel = data.devices === 1 ? "1 Device" : `${data.devices} Devices`;
+  const devLabel = data.devices === 1 ? "1 Connection" : `${data.devices} Connections`;
   return {
     title: `IPTV Canada ${data.duration} – ${devLabel} | $${data.price} CAD`,
-    description: `Get the IPTV Canada ${data.duration} plan for ${devLabel} at $${data.price} CAD. 25,000+ channels, 4K quality, instant activation. Best IPTV subscription in Canada 2026.`,
+    description: `IPTV Canada ${data.duration} subscription for ${devLabel} — only $${data.price} CAD. 25,000+ channels, 4K, instant activation. Best IPTV service in Canada 2026.`,
     alternates: { canonical: `https://www.iptvsubscriptioncanada.ca/${plan}` },
   };
 }
@@ -72,138 +66,169 @@ export default async function PlanPage({
   const data = plans[plan];
   if (!data) notFound();
 
-  const devLabel = data.devices === 1 ? "1 Device" : `${data.devices} Devices`;
-  const whatsappMsg = encodeURIComponent(
-    `Hi IPTV Canada, I'd like to order the ${data.duration} plan for ${devLabel} at $${data.price} CAD.`
-  );
-  const telegramMsg = encodeURIComponent(
-    `Hi IPTV Canada, I want to order the ${data.duration} plan for ${devLabel} at $${data.price} CAD.`
-  );
-  const emailSubject = encodeURIComponent(`IPTV Canada Order – ${data.duration} / ${devLabel}`);
-  const emailBody = encodeURIComponent(
-    `Hi,\n\nI'd like to purchase:\n\n- Plan: ${data.duration}\n- Devices: ${devLabel}\n- Price: $${data.price} CAD\n\nPlease send payment instructions.\n\nThank you!`
-  );
+  const devLabel = data.devices === 1 ? "1 Connection" : `${data.devices} Connections`;
+  const savingsPct = Math.round((1 - data.price / data.originalPrice) * 100);
+  const planLabel = `${data.duration} – ${devLabel}`;
 
   return (
-    <main className="bg-gray-950 text-white min-h-screen">
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-gray-900 via-gray-950 to-black py-16 px-4 text-center">
-        <div className="max-w-3xl mx-auto">
-          {data.badge && (
-            <div className="inline-block bg-red-600 text-white text-xs px-3 py-1 rounded-full mb-4 font-bold uppercase tracking-wider">
-              {data.badge}
-            </div>
-          )}
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-            IPTV Canada{" "}
-            <span className="text-red-500">{data.duration}</span>
-            {" "}–{" "}
-            <span className="text-red-500">{devLabel}</span>
+    <main
+      className="min-h-screen py-8 px-4"
+      style={{ background: "linear-gradient(180deg,#f3f4f6 0%,#e5e7eb 100%)" }}
+    >
+      {/* Back nav */}
+      <div className="max-w-[860px] mx-auto mb-4">
+        <a href="/pricing" className="text-sm text-gray-500 hover:text-red-600 transition-colors">
+          ← All Plans
+        </a>
+      </div>
+
+      <section className="max-w-[860px] mx-auto">
+        <div
+          className="rounded-[22px] border border-black/[.08] shadow-[0_18px_45px_rgba(2,6,23,.12)] p-6 md:p-8"
+          style={{
+            background:
+              "radial-gradient(900px 380px at 12% 0%,rgba(255,255,255,.28),transparent 58%)," +
+              "radial-gradient(800px 320px at 88% 18%,rgba(255,255,255,.16),transparent 58%)," +
+              "linear-gradient(180deg,#d5d9df 0%,#c7cdd5 100%)",
+          }}
+        >
+          {/* Badge */}
+          <div className="inline-block mb-3 px-3 py-[6px] rounded-full text-[11px] font-bold tracking-[.08em] uppercase border"
+            style={{ background: "rgba(225,29,46,.08)", borderColor: "rgba(225,29,46,.18)", color: "#b91c1c" }}>
+            IPTV Canada • {data.duration}
+          </div>
+
+          {/* Title */}
+          <h1 className="text-[clamp(28px,3vw,42px)] font-extrabold leading-[1.08] tracking-tight text-gray-900 mb-0">
+            {data.duration}
           </h1>
-          <p className="text-xl text-gray-300 mb-6">
-            Canada&apos;s #1 IPTV subscription. 25,000+ channels, 4K quality, instant activation.
+          <p className="text-base font-semibold text-gray-500 mt-1">{devLabel}</p>
+
+          {/* Red accent line */}
+          <span
+            className="block mt-3 mb-4 h-[4px] w-[94px] rounded-full"
+            style={{ background: "linear-gradient(90deg,#e11d2e,#ef4444)" }}
+            aria-hidden="true"
+          />
+
+          {/* Price block */}
+          <div className="mb-4">
+            <div className="flex flex-wrap items-center gap-2 mb-2 text-[11px] font-bold tracking-[.08em] uppercase text-gray-600">
+              <span>
+                Original Price{" "}
+                <s className="opacity-80" style={{ textDecorationThickness: "2px" }}>
+                  ${data.originalPrice}
+                </s>
+              </span>
+              <span
+                className="px-[10px] py-[5px] rounded-full text-[11px] font-extrabold border"
+                style={{ background: "rgba(225,29,46,.10)", borderColor: "rgba(225,29,46,.18)", color: "#b91c1c" }}
+              >
+                {savingsPct}% OFF
+              </span>
+              {data.badge && (
+                <span
+                  className="px-[10px] py-[5px] rounded-full text-[11px] font-extrabold border"
+                  style={{ background: "rgba(225,29,46,.10)", borderColor: "rgba(225,29,46,.18)", color: "#b91c1c" }}
+                >
+                  {data.badge}
+                </span>
+              )}
+            </div>
+            <p
+              className="text-[clamp(24px,2.6vw,34px)] font-extrabold leading-[1.1] tracking-tight"
+              style={{ color: "#b91c1c" }}
+            >
+              Final Price: ${data.price} <span className="text-base font-semibold text-gray-500">CAD</span>
+            </p>
+          </div>
+
+          {/* Description */}
+          <p className="text-sm leading-7 text-gray-800 mb-3 max-w-[70ch]">
+            IPTV Canada subscription for <strong>{data.duration}</strong> — <strong>{devLabel}</strong>. Get stable streaming,
+            25,000+ live TV channels, 120,000+ movies &amp; series in 4K, and fast activation after you submit your order.
           </p>
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-            <span className="flex items-center gap-2"><span className="text-green-400">✓</span> No contracts</span>
-            <span className="flex items-center gap-2"><span className="text-green-400">✓</span> Instant activation</span>
-            <span className="flex items-center gap-2"><span className="text-green-400">✓</span> 24/7 Canadian support</span>
+
+          <p className="text-sm leading-[1.65] text-gray-700 mb-4">
+            Please complete the form below to place your order. Make sure your details are correct so we can contact you without delay.
+          </p>
+
+          {/* Steps */}
+          <ol className="list-decimal pl-5 text-sm leading-8 text-gray-700 mb-4">
+            <li>Enter your <strong className="text-gray-900">first name</strong>.</li>
+            <li>Add your <strong className="text-gray-900">email address</strong> — we&apos;ll send your login details there.</li>
+            <li>Select your <strong className="text-gray-900">country</strong> and optionally add your WhatsApp number.</li>
+            <li>Submit the form — we will contact you <strong className="text-gray-900">within minutes</strong>.</li>
+          </ol>
+
+          {/* Divider */}
+          <hr className="my-5 border-black/[.10]" />
+
+          {/* Form box */}
+          <div
+            className="rounded-2xl p-4 md:p-5 border border-black/[.08]"
+            style={{ background: "rgba(255,255,255,.42)", backdropFilter: "blur(4px)" }}
+          >
+            <PlanOrderForm
+              planLabel={planLabel}
+              price={data.price}
+              whatsappNumber="17828026280"
+              emailAddress="help@iptvsubscriptioncanada.ca"
+            />
           </div>
-        </div>
-      </section>
 
-      {/* Plan card + CTA */}
-      <section className="py-16 px-4">
-        <div className="max-w-xl mx-auto">
-          {/* Price card */}
-          <div className="bg-gray-900 border-2 border-red-600 rounded-2xl p-8 mb-8 text-center">
-            <div className="text-gray-400 text-sm uppercase tracking-wider mb-2">{data.duration} · {devLabel}</div>
-            <div className="text-6xl font-extrabold text-red-500 mb-1">${data.price}</div>
-            <div className="text-gray-400 text-sm mb-1">CAD · {data.monthlyPrice}</div>
-            <div className="text-gray-500 text-xs">One-time payment · No auto-renewal</div>
-          </div>
-
-          {/* Order buttons */}
-          <div className="space-y-4 mb-10">
-            <p className="text-center text-gray-400 text-sm font-semibold uppercase tracking-wider">Order now via</p>
-
+          {/* Support text */}
+          <p className="mt-4 text-[13px] text-gray-500 leading-relaxed">
+            Need help?{" "}
+            <a href="/contact" className="text-gray-700 underline hover:text-red-600 transition-colors">
+              Contact Support
+            </a>{" "}
+            or reach us on{" "}
             <a
-              href={`https://wa.me/17828026280?text=${whatsappMsg}`}
+              href="https://wa.me/17828026280"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-gray-900 bg-[#25D366] hover:brightness-110 transition text-lg"
+              className="text-gray-700 underline hover:text-red-600 transition-colors"
             >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
               WhatsApp
             </a>
-
-            <a
-              href={`https://t.me/IPTVCanadaSupport?text=${telegramMsg}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-gray-900 bg-[#88C9F0] hover:brightness-110 transition text-lg"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-              </svg>
-              Telegram
-            </a>
-
-            <a
-              href={`mailto:help@iptvsubscriptioncanada.ca?subject=${emailSubject}&body=${emailBody}`}
-              className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-gray-900 bg-[#F5C518] hover:brightness-110 transition text-lg"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Email
-            </a>
-          </div>
-
-          {/* Trust badges */}
-          <div className="grid grid-cols-3 gap-4 text-center text-xs text-gray-400 mb-8">
-            <div className="bg-gray-900 rounded-xl p-3 border border-gray-800">
-              <div className="text-xl mb-1">⚡</div>
-              <div>Instant Activation</div>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-3 border border-gray-800">
-              <div className="text-xl mb-1">🔒</div>
-              <div>Secure Payment</div>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-3 border border-gray-800">
-              <div className="text-xl mb-1">🇨🇦</div>
-              <div>Canadian Support</div>
-            </div>
-          </div>
+            .
+          </p>
         </div>
-      </section>
 
-      {/* What's included */}
-      <section className="py-16 px-4 bg-gray-900">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8">
+        {/* What's included */}
+        <div className="mt-8 rounded-[22px] bg-white/60 border border-black/[.07] p-6 md:p-8 shadow-sm">
+          <h2 className="text-xl font-bold text-gray-900 mb-5">
             Everything Included in Your Plan
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {features.map((f) => (
-              <div key={f} className="flex items-center gap-3 bg-gray-950 rounded-xl px-4 py-3 border border-gray-800">
-                <span className="text-green-400">✓</span>
-                <span className="text-gray-200 text-sm">{f}</span>
+            {[
+              "25,000+ Live TV Channels",
+              "120,000+ Movies & Series (VOD)",
+              "4K Ultra HD & HD Quality",
+              "NHL, NFL, NBA, MLB, UFC",
+              "TSN, Sportsnet, CBC, CTV, Global",
+              "PPV Events Included",
+              "Electronic Program Guide (EPG)",
+              "Catch-Up TV (7 days)",
+              "All Devices: Fire Stick, Smart TV, iOS, Android",
+              "Anti-Freeze Technology",
+              "99.9% Uptime Guarantee",
+              "24/7 Canadian Support",
+            ].map((f) => (
+              <div key={f} className="flex items-center gap-3 px-4 py-3 rounded-xl border border-black/[.06] bg-white/70">
+                <span className="text-green-600 font-bold text-base">✓</span>
+                <span className="text-gray-700 text-sm">{f}</span>
               </div>
             ))}
           </div>
         </div>
-      </section>
 
-      {/* Other plans */}
-      <section className="py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-4">Looking for a different plan?</h2>
-          <p className="text-gray-400 mb-8">Browse all available durations and device options.</p>
+        {/* Back to pricing */}
+        <div className="mt-8 text-center pb-8">
           <a
             href="/pricing"
-            className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold transition-colors"
+            className="inline-block bg-[#e11d2e] hover:brightness-95 text-white font-bold px-8 py-4 rounded-xl transition shadow-md shadow-red-200"
           >
             View All Plans
           </a>
