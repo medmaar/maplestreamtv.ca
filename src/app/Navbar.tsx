@@ -1,32 +1,48 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const links = [
-  { label: "Pricing",      href: "/pricing" },
-  { label: "Channels",     href: "/channels-list" },
-  { label: "Free Trial",   href: "/free-trial" },
-  { label: "Blog",         href: "/blog" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Channels", href: "/channels-list" },
+  { label: "Free Trial", href: "/free-trial" },
+  { label: "Blog", href: "/blog" },
   { label: "How It Works", href: "/how-it-works" },
-  { label: "Referral",     href: "/referral" },
-  { label: "Contact",      href: "/contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
 
   return (
-    <nav className="bg-gray-900 border-b border-red-600 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <nav
+      className="sticky top-0 z-50 transition-all duration-300"
+      style={{
+        background: scrolled ? "rgba(16,19,30,0.92)" : "#10131E",
+        backdropFilter: scrolled ? "blur(16px)" : "none",
+        borderBottom: "1px solid rgba(255,255,255,0.06)",
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-4 md:px-8 h-[68px] flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-red-500 shrink-0">
-          IPTV Canada 2026
+        <Link href="/" className="flex items-center gap-1.5 shrink-0">
+          <span className="text-xl font-extrabold tracking-tight" style={{ color: "#fd0322" }}>
+            IPTV
+          </span>
+          <span className="text-xl font-extrabold tracking-tight text-white">Canada 2026</span>
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-6 text-sm text-gray-300">
+        <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-400">
           {links.map((l) => (
-            <Link key={l.href} href={l.href} className="hover:text-red-400 transition-colors">
+            <Link key={l.href} href={l.href} className="hover:text-white transition-colors">
               {l.label}
             </Link>
           ))}
@@ -35,7 +51,8 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <Link
           href="/free-trial"
-          className="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors"
+          className="hidden md:inline-flex items-center gap-2 text-sm font-bold text-white px-5 py-2.5 rounded-xl transition-all hover:brightness-110"
+          style={{ background: "#fd0322" }}
         >
           Free Trial
         </Link>
@@ -44,24 +61,39 @@ export default function Navbar() {
         <button
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
-          className="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8"
+          className="md:hidden flex flex-col justify-center gap-[5px] w-8 h-8"
         >
-          <span className={`block h-0.5 bg-white transition-transform duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block h-0.5 bg-white transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
-          <span className={`block h-0.5 bg-white transition-transform duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
+          <span
+            className={`block h-0.5 bg-white rounded transition-all duration-300 ${
+              open ? "rotate-45 translate-y-[7px]" : ""
+            }`}
+          />
+          <span
+            className={`block h-0.5 bg-white rounded transition-opacity duration-300 ${
+              open ? "opacity-0" : ""
+            }`}
+          />
+          <span
+            className={`block h-0.5 bg-white rounded transition-all duration-300 ${
+              open ? "-rotate-45 -translate-y-[7px]" : ""
+            }`}
+          />
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-gray-900 border-t border-gray-800 px-4 pb-4">
+        <div
+          className="md:hidden border-t px-4 pb-5"
+          style={{ background: "#10131E", borderColor: "rgba(255,255,255,0.06)" }}
+        >
           <div className="flex flex-col gap-1 pt-3">
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-gray-300 hover:text-red-400 hover:bg-gray-800 px-3 py-3 rounded-lg text-sm font-medium transition-colors"
+                className="text-gray-400 hover:text-white px-3 py-3 rounded-xl text-sm font-medium transition-colors"
               >
                 {l.label}
               </Link>
@@ -69,7 +101,8 @@ export default function Navbar() {
             <Link
               href="/free-trial"
               onClick={() => setOpen(false)}
-              className="mt-2 bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg text-sm font-bold text-center transition-colors"
+              className="mt-2 text-white px-4 py-3 rounded-xl text-sm font-bold text-center"
+              style={{ background: "#fd0322" }}
             >
               Free Trial
             </Link>
