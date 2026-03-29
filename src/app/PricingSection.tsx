@@ -84,7 +84,7 @@ export default function PricingSection() {
                   ${price}
                 </div>
                 <div className="text-gray-400 text-sm mb-6">
-                  CAD · {selectedDevices} {selectedDevices === 1 ? "Device" : "Devices"}
+                  {selectedDevices} {selectedDevices === 1 ? "Device" : "Devices"}
                 </div>
                 <ul className="space-y-3 text-sm text-gray-300 mb-8 flex-1">
                   {features.map((f) => (
