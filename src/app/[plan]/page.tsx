@@ -139,7 +139,7 @@ export default async function PlanPage({
               className="text-[clamp(24px,2.6vw,34px)] font-extrabold leading-[1.1] tracking-tight"
               style={{ color: "#b91c1c" }}
             >
-              Final Price: ${data.price} <span className="text-base font-semibold text-gray-500">CAD</span>
+              Final Price: ${data.price}
             </p>
           </div>
 

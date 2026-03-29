@@ -130,7 +130,6 @@ export default function PricingSection() {
                 {/* Price */}
                 <div className="mb-1">
                   <span className="text-5xl font-extrabold text-white">${price}</span>
-                  <span className="text-gray-500 text-sm ml-1">CAD</span>
                 </div>
 
                 {/* Per month note */}

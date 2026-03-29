@@ -48,7 +48,7 @@ function OrderContent() {
           </div>
           <div className="border-t border-gray-700 mt-4 pt-4 flex justify-between items-center">
             <span className="text-gray-400 font-bold">Total</span>
-            <span className="text-3xl font-extrabold text-red-500">${price} <span className="text-base font-normal text-gray-400">CAD</span></span>
+            <span className="text-3xl font-extrabold text-red-500">${price}</span>
           </div>
         </div>
 
