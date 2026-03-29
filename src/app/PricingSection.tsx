@@ -2,20 +2,32 @@
 import { useState } from "react";
 
 const plans = [
-  { devices: 1, prices: { "1 Month": 9,  "6 Months": 39,  "12 Months": 49  } },
-  { devices: 2, prices: { "1 Month": 18, "6 Months": 69,  "12 Months": 89  } },
-  { devices: 3, prices: { "1 Month": 27, "6 Months": 105, "12 Months": 135 } },
-  { devices: 4, prices: { "1 Month": 36, "6 Months": 140, "12 Months": 180 } },
-  { devices: 5, prices: { "1 Month": 45, "6 Months": 175, "12 Months": 225 } },
+  { devices: 1, prices: { "1 Month": 9,  "3 Months": 24,  "6 Months": 39,  "1 Year": 49  } },
+  { devices: 2, prices: { "1 Month": 18, "3 Months": 45,  "6 Months": 69,  "1 Year": 89  } },
+  { devices: 3, prices: { "1 Month": 27, "3 Months": 65,  "6 Months": 105, "1 Year": 135 } },
+  { devices: 4, prices: { "1 Month": 36, "3 Months": 85,  "6 Months": 140, "1 Year": 180 } },
+  { devices: 5, prices: { "1 Month": 45, "3 Months": 105, "6 Months": 175, "1 Year": 225 } },
 ];
 
-const durations = ["1 Month", "6 Months", "12 Months"] as const;
+const durations = ["1 Month", "3 Months", "6 Months", "1 Year"] as const;
 type Duration = typeof durations[number];
 
 const badges: Partial<Record<Duration, string>> = {
   "6 Months": "MOST POPULAR",
-  "12 Months": "BEST VALUE",
+  "1 Year": "BEST VALUE",
 };
+
+const slugMap: Record<Duration, string> = {
+  "1 Month":  "1-month",
+  "3 Months": "3-months",
+  "6 Months": "6-months",
+  "1 Year":   "1-year",
+};
+
+function getPlanSlug(duration: Duration, devices: number): string {
+  const base = slugMap[duration];
+  return devices === 1 ? `/${base}` : `/${base}-${devices}-devices`;
+}
 
 const features = [
   "25,000+ Live Channels",
@@ -60,7 +72,7 @@ export default function PricingSection() {
         </div>
 
         {/* Plan cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {durations.map((duration) => {
             const price = current.prices[duration];
             const badge = badges[duration];
@@ -94,7 +106,7 @@ export default function PricingSection() {
                   ))}
                 </ul>
                 <a
-                  href={`/order?devices=${selectedDevices}&duration=${encodeURIComponent(duration)}&price=${price}`}
+                  href={getPlanSlug(duration, selectedDevices)}
                   className={`block text-center py-3 rounded-xl font-bold transition-colors ${
                     popular
                       ? "bg-red-600 hover:bg-red-700 text-white"
