@@ -71,69 +71,77 @@ export default function OrderForm({ plan, price, devices }: Props) {
     );
   }
 
+  const inputStyle = {
+    width: "100%",
+    background: "rgba(255,255,255,0.05)",
+    border: "1px solid rgba(255,255,255,0.1)",
+    borderRadius: "12px",
+    padding: "12px 16px",
+    color: "#fff",
+    fontSize: "14px",
+    outline: "none",
+  };
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label className="block text-sm text-gray-400 mb-1">First Name</label>
+        <label className="block text-sm text-gray-400 mb-1.5">First Name</label>
         <input
           type="text"
           name="name"
-          required
           placeholder="Your first name"
           value={form.name}
           onChange={handleChange}
-          className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors"
+          style={inputStyle}
         />
       </div>
       <div>
-        <label className="block text-sm text-gray-400 mb-1">Email Address</label>
+        <label className="block text-sm text-gray-400 mb-1.5">Email Address</label>
         <input
           type="email"
           name="email"
-          required
           placeholder="you@example.com"
           value={form.email}
           onChange={handleChange}
-          className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors"
+          style={inputStyle}
         />
       </div>
       <div>
-        <label className="block text-sm text-gray-400 mb-1">Country</label>
+        <label className="block text-sm text-gray-400 mb-1.5">Country</label>
         <select
           name="country"
-          required
           value={form.country}
           onChange={handleChange}
-          className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-red-500 transition-colors"
+          style={inputStyle}
         >
-          <option value="" disabled>Select your country</option>
+          <option value="">Select your country</option>
           {countries.map((c) => (
             <option key={c} value={c}>{c}</option>
           ))}
         </select>
       </div>
       <div>
-        <label className="block text-sm text-gray-400 mb-1">WhatsApp Number</label>
+        <label className="block text-sm text-gray-400 mb-1.5">WhatsApp Number</label>
         <input
           type="tel"
           name="whatsapp"
-          required
           placeholder="+1 234 567 8900"
           value={form.whatsapp}
           onChange={handleChange}
-          className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors"
+          style={inputStyle}
         />
       </div>
       <input type="hidden" name="plan" value={`${plan} — ${devices} device${devices > 1 ? "s" : ""} — $${price}`} />
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-red-600 hover:bg-red-700 disabled:opacity-60 text-white py-4 rounded-xl font-bold text-lg transition-colors mt-2"
+        className="w-full text-white py-4 rounded-2xl font-bold text-base transition-all hover:brightness-110 disabled:opacity-60 mt-2"
+        style={{ background: "#fd0322" }}
       >
-        {loading ? "Submitting…" : "Submit Order"}
+        {loading ? "Submitting…" : "Submit Order →"}
       </button>
-      <p className="text-center text-gray-500 text-xs">
-        🔒 Secure. We&apos;ll contact you via WhatsApp or email to activate your subscription.
+      <p className="text-center text-gray-600 text-xs">
+        Secure · We&apos;ll contact you via WhatsApp or email to activate.
       </p>
     </form>
   );
