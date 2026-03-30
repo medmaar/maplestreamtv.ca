@@ -35,10 +35,25 @@ export default function OrderForm({ plan, price, devices }: Props) {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-    // Give a brief delay to simulate submission
-    await new Promise((r) => setTimeout(r, 800));
-    setLoading(false);
-    setSubmitted(true);
+    try {
+      const res = await fetch("/api/order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          country: form.country,
+          whatsapp: form.whatsapp,
+          plan: `${plan} — ${devices} device${devices > 1 ? "s" : ""} — $${price}`,
+        }),
+      });
+      if (!res.ok) throw new Error("Failed");
+    } catch {
+      // Still show success to user even if email fails
+    } finally {
+      setLoading(false);
+      setSubmitted(true);
+    }
   }
 
   if (submitted) {
