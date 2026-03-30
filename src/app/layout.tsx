@@ -1,13 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-jakarta",
-  display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
-});
 
 export const metadata: Metadata = {
   title: "Best IPTV Canada 2026 | #1 IPTV Subscription in Canada",
@@ -21,10 +13,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${jakarta.variable} h-full`}>
+    <html lang="en" className="h-full">
       <body
         className="min-h-full flex flex-col"
-        style={{ fontFamily: "var(--font-jakarta), system-ui, sans-serif" }}
+        style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
       >
         {children}
       </body>
