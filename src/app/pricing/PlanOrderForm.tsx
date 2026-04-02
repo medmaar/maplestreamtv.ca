@@ -105,7 +105,7 @@ export default function PlanOrderForm({ plan }: Props) {
           className="rounded-2xl px-4 py-3 text-sm font-medium"
           style={{ background: "rgba(74,222,128,0.1)", border: "1px solid rgba(74,222,128,0.3)", color: "#4ade80" }}
         >
-          ✅ Order received! We&apos;ll contact you within 24 hours.
+          ✅ Order received! We&apos;ll contact you within 5 minutes.
         </div>
       )}
 
@@ -235,7 +235,7 @@ export default function PlanOrderForm({ plan }: Props) {
       </button>
 
       <p className="text-center text-gray-600 text-xs">
-        Secure · Login credentials sent to your email within 24 hours
+        Secure · Login credentials sent to your email within 5 minutes
       </p>
     </form>
   );
