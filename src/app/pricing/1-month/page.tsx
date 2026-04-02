@@ -4,54 +4,46 @@ import PlanOrderForm from "../PlanOrderForm";
 import PlanFAQ, { type FaqItem } from "../PlanFAQ";
 
 export const metadata: Metadata = {
-  title: "IPTV Canada 1 Month Plan 2026 | Starting at $9 | No Contract",
+  title: "1 Month IPTV Plan — $15 CAD | MapleStreamTV Canada",
   description:
-    "Get IPTV Canada for just $9/month. 25,000+ live channels, 4K quality, NHL, TSN, CTV and more. No contract. Instant activation in Canada.",
+    "Get 1 month of IPTV in Canada for $15 CAD. 25,000+ live channels, 4K quality, NHL, TSN, CTV and more. No contract. Login credentials sent within 24 hours.",
   keywords:
-    "IPTV Canada 1 month, IPTV monthly plan Canada, IPTV $9 Canada, month to month IPTV Canada",
+    "IPTV Canada 1 month, IPTV monthly plan Canada, IPTV $15 Canada, month to month IPTV Canada",
   alternates: { canonical: "https://www.maplestreamtv.ca/pricing/1-month" },
 };
-
-const deviceOptions = [
-  { devices: 1, price: 9 },
-  { devices: 2, price: 18 },
-  { devices: 3, price: 27 },
-  { devices: 4, price: 36 },
-  { devices: 5, price: 45 },
-];
 
 const faqItems: FaqItem[] = [
   {
     q: "What is included in the 1-month IPTV plan?",
-    a: "The 1-month plan gives you full access to 25,000+ live channels including all Canadian networks (TSN, Sportsnet, CBC, CTV, Global), 120,000+ movies and series on demand, 4K Ultra HD streaming, EPG (electronic program guide), and catch-up TV for 7 days — all for just $9.",
+    a: "The 1-month plan gives you full access to 25,000+ live channels including all Canadian networks (TSN, Sportsnet, CBC, CTV, Global, RDS, TVA), 120,000+ movies and series on demand, 4K Ultra HD streaming, electronic program guide (EPG), and 7-day catch-up TV — all for $15 CAD.",
   },
   {
-    q: "How do I activate my 1-month IPTV subscription in Canada?",
-    a: "After placing your order, our team will contact you within 15 minutes via WhatsApp or email with your login credentials. You then enter them into your preferred IPTV app (TiviMate, IPTV Smarters, etc.) and start streaming instantly.",
+    q: "How do I receive my login credentials after ordering?",
+    a: "After placing your order, our team will review it and send your login credentials (server URL, username, and password) directly to your email address within 24 hours. Check your spam folder if you don't see it.",
   },
   {
-    q: "Is this IPTV service compatible with my device?",
-    a: "Yes — our service works on Amazon Firestick, all Samsung and LG Smart TVs, Android boxes, Android phones and tablets, iPhone, iPad, MAG boxes, Windows PCs and Macs. You can use up to 5 simultaneous devices.",
+    q: "Which devices are compatible with this IPTV service?",
+    a: "Our service works on Amazon Firestick, all Samsung and LG Smart TVs, Android boxes, Android phones and tablets, iPhone, iPad, Apple TV, MAG boxes, Windows PCs and Macs. You can use it on virtually any device that supports an IPTV player app.",
   },
   {
-    q: "How fast does my internet need to be for IPTV?",
-    a: "We recommend at least 10 Mbps for HD streaming and 25 Mbps for 4K Ultra HD. Most Canadian home internet plans are more than sufficient. Our anti-freeze technology also minimises buffering on slower connections.",
+    q: "How fast does my internet connection need to be?",
+    a: "We recommend at least 10 Mbps for HD streaming and 25 Mbps for 4K Ultra HD. Any standard Canadian home internet plan handles this easily. Our anti-freeze technology also minimises buffering on slower connections.",
   },
   {
-    q: "Can I watch live Canadian channels and NHL games?",
-    a: "Absolutely. Every plan includes TSN, Sportsnet, CBC Sports, CTV, Global, City TV, and all regional Canadian channels. Every NHL game — Leafs, Habs, Canucks, Oilers, Flames, Senators — is covered in HD and 4K.",
+    q: "Can I watch live Canadian and Quebec channels?",
+    a: "Yes — every plan includes TSN, Sportsnet, CBC, CTV, Global, City TV, RDS, TVA, Canal Vie, and all regional Canadian channels in HD and 4K. Every NHL, NFL, NBA and CFL game is covered.",
+  },
+  {
+    q: "Can I use this service on more than one device at a time?",
+    a: "The base plan supports 1 simultaneous connection. If you need more devices streaming at the same time, contact us and we'll set up a multi-connection plan for you.",
   },
   {
     q: "What happens when my 1-month subscription expires?",
-    a: "You'll receive a reminder before expiry. Simply place a new order to renew — or upgrade to our 6-month or 12-month plans for significant savings. There are no automatic charges and no contracts.",
+    a: "You'll receive a reminder before expiry. Simply place a new order to renew — or upgrade to the 6-month or 12-month plan for better savings. There are no automatic charges and no contracts.",
   },
   {
-    q: "Do you offer customer support in Canada?",
-    a: "Yes! Our Canadian support team is available 24/7 via WhatsApp and email in English and French. Most issues are resolved within minutes.",
-  },
-  {
-    q: "Can I upgrade from the 1-month plan to a longer plan?",
-    a: "Yes, you can upgrade to the 6-month or 12-month plan at any time. Just contact our support team and we'll apply a prorated credit toward your new plan.",
+    q: "How do I get support if something stops working?",
+    a: "Our Canadian support team is available 24/7 via WhatsApp (+1 782-802-6280) and email in English and French. Most issues are resolved within minutes.",
   },
 ];
 
@@ -65,17 +57,6 @@ const faqSchema = {
   })),
 };
 
-const features = [
-  "25,000+ Live Channels",
-  "120,000+ Movies & Series",
-  "4K Ultra HD",
-  "NHL · TSN · CTV · CBC",
-  "All Devices Supported",
-  "Fast Activation",
-  "No Contract",
-  "24/7 Support",
-];
-
 export default function Pricing1MonthPage() {
   return (
     <>
@@ -86,131 +67,52 @@ export default function Pricing1MonthPage() {
       <main style={{ background: "#10131E", color: "#fff", minHeight: "100vh" }}>
         <Navbar />
 
-        {/* Hero */}
         <section
-          className="py-20 px-4 text-center"
+          className="py-20 px-4"
           style={{
             background:
               "radial-gradient(ellipse 80% 55% at 50% 0%, rgba(253,3,34,0.13) 0%, transparent 65%), #10131E",
           }}
         >
           <div className="max-w-2xl mx-auto">
-            <span
-              className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6"
-              style={{
-                background: "rgba(253,3,34,0.12)",
-                border: "1px solid rgba(253,3,34,0.28)",
-                color: "#fd0322",
-              }}
-            >
-              IPTV Canada · 1 Month Plan
-            </span>
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-white">
-              1 Month Plan
-            </h1>
-            <div className="flex items-center justify-center gap-4 mb-3">
-              <span className="text-gray-500 line-through text-2xl">$18</span>
-              <span className="text-5xl md:text-6xl font-extrabold" style={{ color: "#fd0322" }}>
-                $9
-              </span>
-            </div>
-            <span
-              className="inline-block text-xs px-3 py-1 rounded-full font-bold mb-6"
-              style={{
-                background: "rgba(74,222,128,0.12)",
-                border: "1px solid rgba(74,222,128,0.25)",
-                color: "#4ade80",
-              }}
-            >
-              50% OFF — Limited Time
-            </span>
-            <p className="text-gray-400 text-sm max-w-md mx-auto leading-relaxed">
-              Full access to 25,000+ live channels and 120,000+ movies & series. Stable
-              4K streaming with instant activation — no contract, cancel anytime.
-            </p>
-          </div>
-        </section>
-
-        {/* Device options */}
-        <section
-          className="py-8 px-4"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.05)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}
-        >
-          <div className="max-w-2xl mx-auto">
-            <p className="text-xs text-gray-500 text-center uppercase tracking-widest mb-4">
-              Simultaneous devices
-            </p>
-            <div className="grid grid-cols-5 gap-2 text-center">
-              {deviceOptions.map((opt) => (
-                <div
-                  key={opt.devices}
-                  className="rounded-2xl py-3 px-1 border"
-                  style={{
-                    background: "rgba(253,3,34,0.06)",
-                    borderColor: "rgba(253,3,34,0.2)",
-                  }}
-                >
-                  <div className="font-extrabold text-white text-lg">{opt.devices}</div>
-                  <div className="text-gray-500 text-xs">{opt.devices === 1 ? "device" : "devices"}</div>
-                  <div className="font-bold mt-1 text-sm" style={{ color: "#fd0322" }}>
-                    ${opt.price}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Features */}
-        <section className="py-8 px-4">
-          <div className="max-w-2xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-2">
-            {features.map((f) => (
-              <div
-                key={f}
-                className="flex items-center gap-2 px-3 py-2.5 rounded-xl border text-xs font-medium text-gray-300"
+            {/* 1. Page title */}
+            <div className="mb-8">
+              <span
+                className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5"
                 style={{
-                  background: "rgba(255,255,255,0.03)",
-                  borderColor: "rgba(255,255,255,0.07)",
+                  background: "rgba(253,3,34,0.12)",
+                  border: "1px solid rgba(253,3,34,0.28)",
+                  color: "#fd0322",
                 }}
               >
-                <span style={{ color: "#4ade80" }} className="shrink-0">✓</span>
-                {f}
-              </div>
-            ))}
-          </div>
-        </section>
+                IPTV Canada · 1 Month Plan
+              </span>
+              <h1 className="text-4xl md:text-5xl font-extrabold text-white">
+                1 Month Plan —{" "}
+                <span style={{ color: "#fd0322" }}>$15 CAD</span>
+              </h1>
+            </div>
 
-        {/* Form + FAQ */}
-        <section className="py-12 px-4">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            {/* 2. Instruction text */}
+            <div className="mb-10">
+              <p className="text-gray-300 text-base">Fill out the form below to place your order.</p>
+              <p className="text-gray-400 text-sm mt-1">
+                We&apos;ll send your login credentials to your email within 24 hours.
+              </p>
+            </div>
 
-            {/* Order Form */}
+            {/* 3. Order Form */}
             <div
-              className="rounded-3xl p-6 md:p-8 border"
+              className="rounded-3xl p-6 md:p-8 border mb-16"
               style={{
                 background: "rgba(255,255,255,0.03)",
                 borderColor: "rgba(255,255,255,0.07)",
               }}
             >
-              <p
-                className="text-xs font-bold uppercase tracking-widest mb-2 text-center"
-                style={{ color: "#fd0322" }}
-              >
-                Place Your Order
-              </p>
-              <h2 className="text-2xl font-extrabold text-white text-center mb-6">
-                Get Started Today
-              </h2>
-              <PlanOrderForm plan="1 Month Plan — $9" />
-              <p className="text-center text-gray-600 text-xs mt-4">
-                Not sure yet?{" "}
-                <a href="/free-trial" className="hover:underline" style={{ color: "#fd0322" }}>
-                  Try free for 24 hours →
-                </a>
-              </p>
+              <PlanOrderForm plan="1 Month Plan — $15 CAD" />
             </div>
 
-            {/* FAQ */}
+            {/* 4. FAQ */}
             <div>
               <p
                 className="text-xs font-bold uppercase tracking-widest mb-2"
@@ -219,7 +121,7 @@ export default function Pricing1MonthPage() {
                 FAQ
               </p>
               <h2 className="text-2xl font-extrabold text-white mb-6">
-                Common Questions
+                Frequently Asked Questions
               </h2>
               <PlanFAQ items={faqItems} />
             </div>
@@ -228,7 +130,7 @@ export default function Pricing1MonthPage() {
 
         {/* Footer */}
         <footer
-          className="py-12 px-4 border-t mt-8"
+          className="py-12 px-4 border-t mt-12"
           style={{ background: "#0c0f1a", borderColor: "rgba(255,255,255,0.06)" }}
         >
           <div className="max-w-7xl mx-auto">

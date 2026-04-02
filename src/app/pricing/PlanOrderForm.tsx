@@ -1,15 +1,30 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
+
+const countries = [
+  "Canada", "United States", "United Kingdom", "Australia", "France", "Germany",
+  "Spain", "Italy", "Netherlands", "Belgium", "Switzerland", "Portugal", "Sweden",
+  "Norway", "Denmark", "Finland", "Poland", "Czech Republic", "Austria", "Ireland",
+  "New Zealand", "South Africa", "Nigeria", "Ghana", "Kenya", "Morocco", "Algeria",
+  "Tunisia", "Egypt", "Saudi Arabia", "United Arab Emirates", "Qatar", "Kuwait",
+  "Bahrain", "Oman", "Jordan", "Lebanon", "Iraq", "Iran", "Pakistan", "India",
+  "Bangladesh", "Sri Lanka", "Philippines", "Malaysia", "Singapore", "Indonesia",
+  "Thailand", "Vietnam", "China", "Hong Kong", "Taiwan", "Japan", "South Korea",
+  "Brazil", "Mexico", "Argentina", "Colombia", "Chile", "Peru", "Venezuela",
+  "Dominican Republic", "Jamaica", "Trinidad and Tobago", "Other",
+];
 
 const deviceTypes = [
   "Smart TV (Samsung / LG)",
   "Amazon Firestick",
   "Android Box",
   "Android Phone / Tablet",
-  "iPhone / iPad (iOS)",
+  "iPhone / iPad",
   "MAG Box",
-  "Windows PC / Mac",
+  "Apple TV",
   "Other",
 ];
 
@@ -21,38 +36,51 @@ export default function PlanOrderForm({ plan }: Props) {
   const [form, setForm] = useState({
     full_name: "",
     email: "",
-    phone: "",
-    plan,
-    device_type: "",
+    country: "Canada",
+    device: "",
     message: "",
   });
+  const [phone, setPhone] = useState<string | undefined>("");
+  const [emailWarning, setEmailWarning] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  useEffect(() => {
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
+  }, []);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (name === "email") {
+      setEmailWarning(value.length > 3 && !value.includes("@"));
+    }
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("loading");
     try {
-      await emailjs.send(
+      const result = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         {
-          full_name: form.full_name || "Not provided",
-          email: form.email || "Not provided",
-          phone: form.phone || "Not provided",
-          plan: form.plan,
-          device_type: form.device_type || "Not specified",
+          from_name: form.full_name || "Not provided",
+          from_email: form.email || "Not provided",
+          phone: phone || "Not provided",
+          country: form.country,
+          device: form.device || "Not specified",
+          plan,
           message: form.message || "—",
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        }
       );
+      console.log("EmailJS success:", result);
       setStatus("success");
-    } catch {
+      setForm({ full_name: "", email: "", country: "Canada", device: "", message: "" });
+      setPhone("");
+    } catch (err) {
+      console.error("EmailJS error:", err);
       setStatus("error");
     }
   }
@@ -60,7 +88,7 @@ export default function PlanOrderForm({ plan }: Props) {
   const inputStyle: React.CSSProperties = {
     width: "100%",
     background: "rgba(255,255,255,0.05)",
-    border: "1px solid rgba(255,255,255,0.1)",
+    border: "1px solid rgba(255,255,255,0.12)",
     borderRadius: "12px",
     padding: "12px 16px",
     color: "#fff",
@@ -68,35 +96,41 @@ export default function PlanOrderForm({ plan }: Props) {
     outline: "none",
   };
 
-  if (status === "success") {
-    return (
-      <div className="text-center py-10">
-        <div
-          className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5 text-2xl"
-          style={{ background: "rgba(74,222,128,0.12)", border: "1px solid rgba(74,222,128,0.3)" }}
-        >
-          ✓
-        </div>
-        <h3 className="text-2xl font-extrabold text-white mb-2">Order Received!</h3>
-        <p className="text-gray-400 text-sm max-w-xs mx-auto leading-relaxed">
-          Thanks{form.full_name ? `, ${form.full_name}` : ""}! We&apos;ll contact you shortly to
-          activate your <span className="text-white font-semibold">{plan}</span> subscription.
-        </p>
-        <p className="text-gray-600 text-xs mt-4">
-          Usually activated within 15 minutes · Check WhatsApp &amp; your inbox
-        </p>
-      </div>
-    );
-  }
-
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+
+      {/* Success banner */}
+      {status === "success" && (
+        <div
+          className="rounded-2xl px-4 py-3 text-sm font-medium"
+          style={{ background: "rgba(74,222,128,0.1)", border: "1px solid rgba(74,222,128,0.3)", color: "#4ade80" }}
+        >
+          ✅ Order received! We&apos;ll contact you within 24 hours.
+        </div>
+      )}
+
+      {/* Error banner */}
+      {status === "error" && (
+        <div
+          className="rounded-2xl px-4 py-3 text-sm font-medium"
+          style={{ background: "rgba(253,3,34,0.1)", border: "1px solid rgba(253,3,34,0.3)", color: "#ff6b6b" }}
+        >
+          ❌ Something went wrong. Please try again or{" "}
+          <a href="https://wa.me/17828026280" target="_blank" rel="noopener noreferrer" className="underline">
+            contact us on WhatsApp
+          </a>.
+        </div>
+      )}
+
       {/* Full Name */}
       <div>
-        <label className="block text-sm text-gray-400 mb-1.5">Full Name</label>
+        <label className="block text-sm text-gray-400 mb-1.5">
+          Full Name <span style={{ color: "#fd0322" }}>*</span>
+        </label>
         <input
           type="text"
           name="full_name"
+          required
           placeholder="Your full name"
           value={form.full_name}
           onChange={handleChange}
@@ -106,51 +140,63 @@ export default function PlanOrderForm({ plan }: Props) {
 
       {/* Email */}
       <div>
-        <label className="block text-sm text-gray-400 mb-1.5">Email Address</label>
+        <label className="block text-sm text-gray-400 mb-1.5">
+          Email Address <span style={{ color: "#fd0322" }}>*</span>
+        </label>
         <input
-          type="email"
+          type="text"
           name="email"
+          required
           placeholder="you@example.com"
           value={form.email}
           onChange={handleChange}
           style={inputStyle}
         />
+        {emailWarning && (
+          <p className="text-xs mt-1" style={{ color: "#fbbf24" }}>
+            This doesn&apos;t look like a valid email — make sure it contains @
+          </p>
+        )}
       </div>
 
-      {/* Phone */}
+      {/* Phone with flag dropdown */}
       <div>
         <label className="block text-sm text-gray-400 mb-1.5">
           Phone / WhatsApp
           <span className="ml-2 text-gray-600 text-xs">(optional)</span>
         </label>
-        <input
-          type="tel"
-          name="phone"
-          placeholder="+1 234 567 8900"
-          value={form.phone}
-          onChange={handleChange}
-          style={inputStyle}
-        />
+        <div className="phone-input-wrapper">
+          <PhoneInput
+            international
+            defaultCountry="CA"
+            value={phone}
+            onChange={setPhone}
+            placeholder="+1 234 567 8900"
+          />
+        </div>
       </div>
 
-      {/* Selected Plan (read-only) */}
+      {/* Country */}
       <div>
-        <label className="block text-sm text-gray-400 mb-1.5">Selected Plan</label>
-        <input
-          type="text"
-          name="plan"
-          value={form.plan}
-          readOnly
-          style={{ ...inputStyle, opacity: 0.6, cursor: "default" }}
-        />
+        <label className="block text-sm text-gray-400 mb-1.5">Country</label>
+        <select
+          name="country"
+          value={form.country}
+          onChange={handleChange}
+          style={{ ...inputStyle, cursor: "pointer" }}
+        >
+          {countries.map((c) => (
+            <option key={c} value={c}>{c}</option>
+          ))}
+        </select>
       </div>
 
       {/* Device Type */}
       <div>
         <label className="block text-sm text-gray-400 mb-1.5">Device Type</label>
         <select
-          name="device_type"
-          value={form.device_type}
+          name="device"
+          value={form.device}
           onChange={handleChange}
           style={{ ...inputStyle, cursor: "pointer" }}
         >
@@ -161,15 +207,15 @@ export default function PlanOrderForm({ plan }: Props) {
         </select>
       </div>
 
-      {/* Message */}
+      {/* Notes */}
       <div>
         <label className="block text-sm text-gray-400 mb-1.5">
-          Message / Notes
+          Notes / Message
           <span className="ml-2 text-gray-600 text-xs">(optional)</span>
         </label>
         <textarea
           name="message"
-          placeholder="Any questions or special requests..."
+          placeholder="Any special requests?"
           value={form.message}
           onChange={handleChange}
           rows={3}
@@ -177,23 +223,19 @@ export default function PlanOrderForm({ plan }: Props) {
         />
       </div>
 
-      {status === "error" && (
-        <p className="text-xs text-red-400 text-center">
-          Something went wrong. Please try again or contact us on WhatsApp.
-        </p>
-      )}
+      {/* Hidden plan field — passed via emailjs.send data object, not a real input */}
 
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full text-white py-4 rounded-2xl font-bold text-base transition-all hover:brightness-110 disabled:opacity-60 mt-1"
+        className="w-full text-white py-4 rounded-2xl font-bold text-base transition-all hover:brightness-110 disabled:opacity-60"
         style={{ background: "#fd0322" }}
       >
         {status === "loading" ? "Sending…" : "Order Now →"}
       </button>
 
       <p className="text-center text-gray-600 text-xs">
-        Secure · We&apos;ll activate your subscription within 15 minutes
+        Secure · Login credentials sent to your email within 24 hours
       </p>
     </form>
   );
