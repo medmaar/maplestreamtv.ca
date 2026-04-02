@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+const NextConfig: NextConfig = {
   async redirects() {
       return [
             {
@@ -9,17 +9,22 @@ const nextConfig: NextConfig = {
                                     permanent: true,
                                           },
                                                 {
-                                                        source: "/pricing/6-months",
-                                                                destination: "/6-months",
+                                                        source: "/pricing/3-months",
+                                                                destination: "/3-months",
                                                                         permanent: true,
                                                                               },
                                                                                     {
-                                                                                            source: "/pricing/12-months",
-                                                                                                    destination: "/12-months",
+                                                                                            source: "/pricing/6-months",
+                                                                                                    destination: "/6-months",
                                                                                                             permanent: true,
                                                                                                                   },
-                                                                                                                      ];
-                                                                                                                        },
-                                                                                                                        };
+                                                                                                                        {
+                                                                                                                                source: "/pricing/12-months",
+                                                                                                                                        destination: "/12-months",
+                                                                                                                                                permanent: true,
+                                                                                                                                                      },
+                                                                                                                                                          ];
+                                                                                                                                                            },
+                                                                                                                                                            };
 
-                                                                                                                        export default nextConfig;
+                                                                                                                                                            export default NextConfig;
