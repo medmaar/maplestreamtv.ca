@@ -46,7 +46,7 @@ export default function FreeTrialPage() {
               WhatsApp Free Trial
             </a>
             <a
-              href="mailto:help@iptvsubscriptioncanada.ca"
+              href="mailto:help@maplestreamtv.ca"
               className="w-full text-center py-4 rounded-2xl font-bold text-gray-900 bg-[#F5C518] hover:brightness-110 transition text-lg"
             >
               Email Free Trial

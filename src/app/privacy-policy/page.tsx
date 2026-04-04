@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
               <li>Withdraw consent for the use of your personal information</li>
               <li>Request deletion of your personal information</li>
             </ul>
-            <p className="mt-3">To exercise these rights, contact us at <a href="mailto:help@iptvsubscriptioncanada.ca" className="text-red-400 hover:underline">help@iptvsubscriptioncanada.ca</a>.</p>
+            <p className="mt-3">To exercise these rights, contact us at <a href="mailto:help@maplestreamtv.ca" className="text-red-400 hover:underline">help@maplestreamtv.ca</a>.</p>
           </section>
 
           <section>
@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-2xl font-bold text-white mb-3">9. Contact Us</h2>
             <p>If you have questions about this Privacy Policy, please contact us:</p>
             <div className="mt-4 bg-gray-900 rounded-xl p-6 border border-gray-800">
-              <p>Email: <a href="mailto:help@iptvsubscriptioncanada.ca" className="text-red-400 hover:underline">help@iptvsubscriptioncanada.ca</a></p>
+              <p>Email: <a href="mailto:help@maplestreamtv.ca" className="text-red-400 hover:underline">help@maplestreamtv.ca</a></p>
               <p className="mt-2">WhatsApp: <a href="https://wa.me/17828026280" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:underline">+1 (782) 802-6280</a></p>
             </div>
           </section>

@@ -194,7 +194,7 @@ export default function Home() {
                 WhatsApp Free Trial
               </a>
               <a
-                href="mailto:help@iptvsubscriptioncanada.ca"
+                href="mailto:help@maplestreamtv.ca"
                 className="w-full text-center py-4 rounded-2xl font-bold text-gray-900 bg-[#F5C518] hover:brightness-110 transition"
               >
                 Email Free Trial
@@ -239,21 +239,40 @@ export default function Home() {
 
         {/* FOOTER */}
         <footer className="bg-gray-900 border-t border-gray-800 py-12 px-4">
-          <div className="max-w-7xl mx-auto text-center">
-            <div className="text-2xl font-bold text-red-500 mb-4">IPTV Canada 2026</div>
-            <p className="text-gray-500 text-sm mb-6">
-              Canada&apos;s #1 IPTV subscription service. Serving Toronto, Montreal, Vancouver, Calgary, Ottawa, Edmonton and all of Canada.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500 mb-6">
-              <a href="/privacy-policy" className="hover:text-red-400">Privacy Policy</a>
-              <a href="/terms-of-service" className="hover:text-red-400">Terms of Service</a>
-              <a href="/refund-policy" className="hover:text-red-400">Refund Policy</a>
-              <a href="/contact" className="hover:text-red-400">Contact Us</a>
-              <a href="/dmca" className="hover:text-red-400">DMCA</a>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-8">
+              {/* Left: brand & links */}
+              <div>
+                <div className="text-2xl font-bold text-red-500 mb-4">MapleStreamTV</div>
+                <p className="text-gray-500 text-sm mb-6">
+                  Canada&apos;s #1 IPTV subscription service. Serving Toronto, Montreal, Vancouver, Calgary, Ottawa, Edmonton and all of Canada.
+                </p>
+                <div className="flex flex-wrap gap-6 text-sm text-gray-500">
+                  <a href="/privacy-policy" className="hover:text-red-400">Privacy Policy</a>
+                  <a href="/terms-of-service" className="hover:text-red-400">Terms of Service</a>
+                  <a href="/refund-policy" className="hover:text-red-400">Refund Policy</a>
+                  <a href="/contact" className="hover:text-red-400">Contact Us</a>
+                  <a href="/dmca" className="hover:text-red-400">DMCA</a>
+                </div>
+              </div>
+
+              {/* Right: disclaimer */}
+              <div className="lg:border-l lg:border-gray-800 lg:pl-10">
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Disclaimer</p>
+                <p className="text-gray-500 text-xs leading-relaxed mb-4">
+                  MapleStreamTV does not host or stream any copyrighted content. All content is provided by third-party providers. Users are responsible for ensuring they have the rights to view content in their jurisdiction.
+                </p>
+                <a href="/disclaimer" className="inline-block text-xs text-red-400 hover:text-red-300 underline underline-offset-2 transition-colors">
+                  Read Disclaimer →
+                </a>
+              </div>
             </div>
-            <p className="text-gray-700 text-xs">
-              © 2026 IPTV Subscription Canada. All rights reserved. · iptvsubscriptioncanada.ca
-            </p>
+
+            <div className="border-t border-gray-800 pt-6 text-center">
+              <p className="text-gray-700 text-xs">
+                © 2026 MapleStreamTV. All rights reserved.
+              </p>
+            </div>
           </div>
         </footer>
       </main>

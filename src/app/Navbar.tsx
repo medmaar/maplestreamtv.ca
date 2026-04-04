@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Logo from "../components/Logo";
 
 const links = [
   { label: "Pricing",      href: "/pricing" },
@@ -19,9 +20,7 @@ export default function Navbar() {
     <nav className="bg-gray-900 border-b border-red-600 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-red-500 shrink-0">
-          IPTV Canada 2026
-        </Link>
+        <Logo />
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-6 text-sm text-gray-300">
