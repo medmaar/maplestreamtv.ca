@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PricingSection from "../PricingSection";
 import FaqAccordion from "../components/FaqAccordion";
-import Navbar from "../Navbar";
 
 export const metadata: Metadata = {
   title: "IPTV Canada Pricing 2026 | Plans Starting at $9",
@@ -15,8 +14,6 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   return (
     <main style={{ background: "#10131E", color: "#fff", minHeight: "100vh" }}>
-      <Navbar />
-
       {/* Header */}
       <section
         className="py-20 px-4 text-center"
