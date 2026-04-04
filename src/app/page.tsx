@@ -80,32 +80,33 @@ const localBusinessSchema = {
 };
 
 const plans = [
-  { name: "1 Month", price: "$19 CAD", href: "/pricing/1-month", badge: null },
-  { name: "3 Months", price: "$29 CAD", href: "/pricing/3-months", badge: null },
-  { name: "6 Months", price: "$49 CAD", href: "/pricing/6-months", badge: "Popular" },
-  { name: "12 Months", price: "$79 CAD", href: "/pricing/12-months", badge: "Best Value" },
+  { name: "1 Month",   price: "$9",  href: "/pricing/1-month",   badge: null },
+  { name: "3 Months",  price: "$29", href: "/pricing/3-months",  badge: null },
+  { name: "6 Months",  price: "$39", href: "/pricing/6-months",  badge: "Popular" },
+  { name: "12 Months", price: "$49", href: "/pricing/12-months", badge: "Best Value" },
 ];
 
-const devices = [
-  { name: "Firestick", href: "/iptv-firestick-canada" },
-  { name: "Android TV", href: "/iptv-android-tv-canada" },
-  { name: "Samsung / LG", href: "/iptv-smart-tv-canada" },
-  { name: "Apple TV", href: "/iptv-apple-tv-canada" },
-  { name: "MAG Box", href: "/iptv-mag-box-canada" },
-  { name: "iPhone / iPad", href: "/iptv-apple-tv-canada" },
-  { name: "Android Phone", href: "/iptv-android-tv-canada" },
-  { name: "PC / Mac", href: "/pricing" },
+const planFeatures = [
+  "25,000+ Live Channels",
+  "120,000+ Movies & Series",
+  "4K Ultra HD Quality",
+  "NHL · TSN · Sportsnet · CTV",
+  "PPV Events Included",
+  "EPG & Catch-Up TV",
+  "All Devices Supported",
+  "24/7 Canadian Support",
 ];
 
-const sports = [
-  { name: "NHL", icon: "🏒" },
-  { name: "NFL", icon: "🏈" },
-  { name: "NBA", icon: "🏀" },
-  { name: "MLB", icon: "⚾" },
-  { name: "UFC PPV", icon: "🥊" },
-  { name: "Premier League", icon: "⚽" },
-  { name: "CFL", icon: "🏉" },
-  { name: "F1", icon: "🏎️" },
+const deviceNames = [
+  "Amazon Fire Stick", "Samsung Smart TV", "LG Smart TV", "iPhone & iPad",
+  "Android Phone", "Android TV Box", "MAG Box", "Apple TV",
+  "Roku", "Windows PC", "Mac", "Kodi", "VLC Player", "Formuler", "Xbox", "PlayStation",
+];
+
+const sportsChannels = [
+  "TSN", "Sportsnet", "CBC Sports", "TVA Sports", "RDS", "NHL Network",
+  "NFL Network", "NBA TV", "ESPN", "ESPN 2", "beIN Sports", "Sky Sports",
+  "DAZN", "UFC Fight Pass", "Golf Channel", "Olympic Channel",
 ];
 
 const cities = [
@@ -263,16 +264,15 @@ export default function HomePage() {
             <h2 style={{ textAlign: "center", fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 900, marginBottom: 12 }}>
               IPTV Canada Subscription Plans
             </h2>
+            <div style={{ textAlign: "center", marginBottom: 16 }}>
+              <span style={{ display: "inline-block", background: "#E53935", color: "#fff", fontSize: 13, fontWeight: 700, padding: "5px 18px", borderRadius: 999 }}>
+                50% OFF Today!
+              </span>
+            </div>
             <p style={{ textAlign: "center", color: "#6b7280", marginBottom: 48, fontSize: 15 }}>
               All plans include 25,000+ channels, 4K streaming, and 24/7 Canadian support. Pay via Interac e-Transfer.
             </p>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-                gap: 20,
-              }}
-            >
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20 }}>
               {plans.map((plan) => (
                 <div
                   key={plan.name}
@@ -282,7 +282,8 @@ export default function HomePage() {
                     borderRadius: 20,
                     padding: "32px 24px",
                     position: "relative",
-                    textAlign: "center",
+                    display: "flex",
+                    flexDirection: "column",
                   }}
                 >
                   {plan.badge && (
@@ -306,9 +307,13 @@ export default function HomePage() {
                   )}
                   <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{plan.name}</div>
                   <div style={{ fontSize: 36, fontWeight: 900, color: "#E53935", marginBottom: 20 }}>{plan.price}</div>
-                  <div style={{ fontSize: 13, color: "#9ca3af", marginBottom: 8 }}>✓ 25,000+ channels</div>
-                  <div style={{ fontSize: 13, color: "#9ca3af", marginBottom: 8 }}>✓ 4K streaming</div>
-                  <div style={{ fontSize: 13, color: "#9ca3af", marginBottom: 24 }}>✓ All devices</div>
+                  <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", flex: 1 }}>
+                    {planFeatures.map((f) => (
+                      <li key={f} style={{ fontSize: 13, color: "#9ca3af", marginBottom: 6, display: "flex", alignItems: "center", gap: 6, textAlign: "left" }}>
+                        <span style={{ color: "#E53935", fontWeight: 700, flexShrink: 0 }}>✓</span> {f}
+                      </li>
+                    ))}
+                  </ul>
                   <Link
                     href={plan.href}
                     style={{
@@ -321,6 +326,7 @@ export default function HomePage() {
                       borderRadius: 12,
                       textDecoration: "none",
                       border: plan.badge === "Best Value" ? "none" : "1px solid rgba(229,57,53,0.3)",
+                      textAlign: "center",
                     }}
                   >
                     Get Started →
@@ -337,41 +343,34 @@ export default function HomePage() {
         </section>
 
         {/* ── 4. DEVICES ── */}
-        <section style={{ padding: "80px 16px", background: "#0d0d0d" }}>
+        <section style={{ padding: "80px 16px", background: "#0d0d0d", overflow: "hidden" }}>
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <h2 style={{ textAlign: "center", fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, marginBottom: 12 }}>
               Works on All Your Devices
             </h2>
             <p style={{ textAlign: "center", color: "#6b7280", marginBottom: 48, fontSize: 15 }}>
-              MapleStreamTV IPTV Canada works on every major platform and device.
+              One subscription — every screen in your home.
             </p>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
-                gap: 16,
-              }}
-            >
-              {devices.map((d) => (
-                <Link
-                  key={d.name}
-                  href={d.href}
+          </div>
+          <div style={{ overflow: "hidden" }}>
+            <div className="marquee-track" style={{ gap: 16 }}>
+              {[...deviceNames, ...deviceNames].map((name, i) => (
+                <div
+                  key={i}
                   style={{
+                    flexShrink: 0,
                     background: "rgba(255,255,255,0.04)",
                     border: "1px solid rgba(255,255,255,0.08)",
                     borderRadius: 14,
-                    padding: "20px 16px",
-                    textAlign: "center",
-                    textDecoration: "none",
+                    padding: "14px 24px",
                     color: "#d1d5db",
                     fontSize: 13,
                     fontWeight: 600,
-                    transition: "border-color 0.2s",
-                    display: "block",
+                    whiteSpace: "nowrap",
                   }}
                 >
-                  {d.name}
-                </Link>
+                  {name}
+                </div>
               ))}
             </div>
           </div>
@@ -414,7 +413,7 @@ export default function HomePage() {
         </section>
 
         {/* ── 6. SPORTS ── */}
-        <section style={{ padding: "80px 16px", background: "#0d0d0d" }}>
+        <section style={{ padding: "80px 16px", background: "#0d0d0d", overflow: "hidden" }}>
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <h2 style={{ textAlign: "center", fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, marginBottom: 12 }}>
               Never Miss a Game
@@ -425,26 +424,25 @@ export default function HomePage() {
             <p style={{ textAlign: "center", color: "#4ade80", fontSize: 13, marginBottom: 44 }}>
               ✓ No blackouts &nbsp;&nbsp; ✓ All PPV events free &nbsp;&nbsp; ✓ 4K live sports
             </p>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
-                gap: 16,
-              }}
-            >
-              {sports.map((s) => (
+          </div>
+          <div style={{ overflow: "hidden" }}>
+            <div className="marquee-track" style={{ gap: 16 }}>
+              {[...sportsChannels, ...sportsChannels].map((ch, i) => (
                 <div
-                  key={s.name}
+                  key={i}
                   style={{
+                    flexShrink: 0,
                     background: "rgba(229,57,53,0.06)",
                     border: "1px solid rgba(229,57,53,0.15)",
-                    borderRadius: 16,
-                    padding: "28px 20px",
-                    textAlign: "center",
+                    borderRadius: 14,
+                    padding: "14px 24px",
+                    color: "#fff",
+                    fontSize: 13,
+                    fontWeight: 700,
+                    whiteSpace: "nowrap",
                   }}
                 >
-                  <div style={{ fontSize: 32, marginBottom: 8 }}>{s.icon}</div>
-                  <div style={{ fontWeight: 700, fontSize: 15 }}>{s.name}</div>
+                  {ch}
                 </div>
               ))}
             </div>

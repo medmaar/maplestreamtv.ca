@@ -8,6 +8,8 @@ const links = [
   { label: "Channels", href: "/channels-list" },
   { label: "Free Trial", href: "/free-trial" },
   { label: "Blog", href: "/blog" },
+  { label: "Referral", href: "/referral" },
+  { label: "DMCA", href: "/dmca" },
   { label: "Reseller", href: "/reseller" },
   { label: "Contact", href: "/contact" },
 ];
