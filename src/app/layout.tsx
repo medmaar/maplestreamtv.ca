@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./Navbar";
 import Footer from "../components/Footer";
+import FloatingContact from "../components/FloatingContact";
 
 export const metadata: Metadata = {
   title: "Best IPTV Canada 2026 | #1 IPTV Subscription in Canada",
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />
+        <FloatingContact />
       </body>
     </html>
   );

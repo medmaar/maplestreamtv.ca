@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "../../Navbar";
 import PlanOrderForm from "../PlanOrderForm";
 import PlanFAQ, { type FaqItem } from "../PlanFAQ";
 
@@ -65,8 +64,6 @@ export default function Pricing6MonthsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <main style={{ background: "#10131E", color: "#fff", minHeight: "100vh" }}>
-        <Navbar />
-
         <section
           className="py-20 px-4"
           style={{
@@ -128,55 +125,6 @@ export default function Pricing6MonthsPage() {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer
-          className="py-12 px-4 border-t mt-12"
-          style={{ background: "#0c0f1a", borderColor: "rgba(255,255,255,0.06)" }}
-        >
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-10">
-              <div>
-                <div className="flex items-center gap-1.5 mb-3">
-                  <span className="text-xl font-extrabold" style={{ color: "#fd0322" }}>IPTV</span>
-                  <span className="text-xl font-extrabold text-white">Canada 2026</span>
-                </div>
-                <p className="text-gray-500 text-sm max-w-xs leading-relaxed">
-                  Canada&apos;s #1 IPTV subscription service. Serving Toronto, Montreal,
-                  Vancouver, Calgary, Ottawa and all of Canada.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-x-10 gap-y-4">
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-gray-600 mb-3">Service</p>
-                  <div className="flex flex-col gap-2">
-                    <a href="/pricing" className="text-gray-400 hover:text-white text-sm transition-colors">Pricing</a>
-                    <a href="/channels-list" className="text-gray-400 hover:text-white text-sm transition-colors">Channels</a>
-                    <a href="/free-trial" className="text-gray-400 hover:text-white text-sm transition-colors">Free Trial</a>
-                    <a href="/how-it-works" className="text-gray-400 hover:text-white text-sm transition-colors">How It Works</a>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-gray-600 mb-3">Legal</p>
-                  <div className="flex flex-col gap-2">
-                    <a href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-                    <a href="/terms-of-service" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-                    <a href="/refund-policy" className="text-gray-400 hover:text-white text-sm transition-colors">Refund Policy</a>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-gray-600 mb-3">Contact</p>
-                  <div className="flex flex-col gap-2">
-                    <a href="/contact" className="text-gray-400 hover:text-white text-sm transition-colors">Contact Us</a>
-                    <a href="https://wa.me/17828026280" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-sm transition-colors">WhatsApp</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="pt-6 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-              <p className="text-gray-600 text-xs text-center">© 2026 IPTV Subscription Canada. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
       </main>
     </>
   );
