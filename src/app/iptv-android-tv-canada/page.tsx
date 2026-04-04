@@ -1,140 +1,502 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "IPTV Android TV Canada 2026 | Best IPTV for Android Box & Google TV",
+  title: "Best IPTV for Android TV in Canada 2026 | MapleStreamTV",
   description:
-    "Stream IPTV on Android TV, Android Box, or Google TV in Canada. 25,000+ channels, 4K quality, NHL, TSN, CTV and more. Easy APK install. Try free today.",
-  keywords:
-    "IPTV Android TV Canada, IPTV Android box Canada, Google TV IPTV Canada, IPTV Nvidia Shield Canada, best IPTV Android Canada",
-  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/iptv-android-tv-canada" },
+    "Install IPTV on your Android TV box in Canada. MapleStreamTV offers 25,000+ channels in 4K. TSN, NHL, Sportsnet, CTV & more. Free 24h trial.",
+  alternates: { canonical: "https://www.maplestreamtv.ca/iptv-android-tv-canada" },
+  openGraph: {
+    title: "Best IPTV for Android TV in Canada 2026 | MapleStreamTV",
+    description:
+      "Install IPTV on your Android TV box in Canada. MapleStreamTV offers 25,000+ channels in 4K. TSN, NHL, Sportsnet, CTV & more. Free 24h trial.",
+    url: "https://www.maplestreamtv.ca/iptv-android-tv-canada",
+    type: "website",
+    siteName: "MapleStreamTV",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to Set Up IPTV on Android TV in Canada",
+  step: [
+    {
+      "@type": "HowToStep",
+      name: "Download IPTV Player",
+      text: "Open the Google Play Store on your Android TV and download IPTV Smarters Pro or TiviMate.",
+    },
+    {
+      "@type": "HowToStep",
+      name: "Launch the App",
+      text: "Open the installed IPTV player and choose 'Login with Xtream Codes' or 'M3U URL' option.",
+    },
+    {
+      "@type": "HowToStep",
+      name: "Enter Credentials",
+      text: "Input the server URL, username, and password provided by MapleStreamTV after purchase.",
+    },
+    {
+      "@type": "HowToStep",
+      name: "Enjoy Canadian TV",
+      text: "Browse your 25,000+ channel list and enjoy NHL, TSN, Sportsnet, CBC, and thousands more channels in 4K.",
+    },
+  ],
 };
 
 const steps = [
-  { step: "1", title: "Subscribe & Get Credentials", desc: "Choose a plan and reach us via WhatsApp, Telegram, or email. Your login credentials arrive within minutes." },
-  { step: "2", title: "Enable Unknown Sources", desc: "Go to Settings > Security on your Android TV or box and enable 'Unknown Sources' to allow APK installs." },
-  { step: "3", title: "Install the IPTV App", desc: "Open a browser or file manager and download the APK we send you, or install via the Play Store if available." },
-  { step: "4", title: "Enter Your Credentials", desc: "Launch the app, enter the server URL, username, and password we provided, and tap Connect." },
-  { step: "5", title: "Start Streaming in 4K", desc: "Your channels and VOD library load instantly. Android TV handles 4K HDR streams flawlessly." },
+  {
+    num: "1",
+    title: "Download IPTV Player",
+    desc: "Open the Google Play Store on your Android TV and download IPTV Smarters Pro or TiviMate. Both apps are free to install and work seamlessly with MapleStreamTV.",
+  },
+  {
+    num: "2",
+    title: "Launch the App",
+    desc: "Open the installed IPTV player and choose 'Login with Xtream Codes' or the 'M3U URL' option from the main menu.",
+  },
+  {
+    num: "3",
+    title: "Enter Credentials",
+    desc: "Input the server URL, username, and password provided by MapleStreamTV in your welcome email after purchase. Your channels will begin loading immediately.",
+  },
+  {
+    num: "4",
+    title: "Enjoy Canadian TV",
+    desc: "Browse your 25,000+ channel list and enjoy NHL, TSN, Sportsnet, CBC, and thousands more channels in stunning 4K HDR.",
+  },
 ];
 
-export default function IPTVAndroidTVPage() {
+export default function IPTVAndroidTVCanadaPage() {
   return (
-    <main className="bg-gray-950 text-white min-h-screen">
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-gray-900 via-gray-950 to-black py-20 px-4 text-center">
-        <div className="max-w-3xl mx-auto">
-          <div className="inline-block bg-red-600 text-white text-xs px-3 py-1 rounded-full mb-4 font-bold uppercase tracking-wider">
-            Android TV · Google TV · Android Box
-          </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
-            IPTV for <span className="text-red-500">Android TV Canada</span>
-          </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            The most flexible IPTV setup in Canada. Works on any Android TV, Google TV,
-            Android box, or Nvidia Shield. Full 4K HDR. Instant APK install.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/free-trial" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors">
-              Get Free Trial
-            </a>
-            <a href="/pricing" className="border border-red-600 text-red-400 hover:bg-red-600 hover:text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors">
-              View Pricing
-            </a>
-          </div>
-        </div>
-      </section>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main style={{ background: "#0a0a0a", color: "#fff", minHeight: "100vh" }}>
 
-      {/* Compatible devices */}
-      <section className="py-12 px-4 bg-gray-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-xl font-bold mb-6 text-gray-300">Compatible Android Devices</h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            {["Nvidia Shield TV", "Chromecast with Google TV", "Xiaomi Mi Box", "MECOOL Android Box", "Sony Android TV", "TCL Google TV", "Hisense Android TV", "Any Android Box"].map((d) => (
-              <span key={d} className="bg-gray-800 border border-gray-700 px-4 py-2 rounded-full text-sm text-gray-300">
-                {d}
-              </span>
-            ))}
+        {/* Hero */}
+        <section
+          style={{
+            background: "linear-gradient(135deg, #0a0a0a 0%, #1a0505 100%)",
+            padding: "80px 16px 60px",
+          }}
+        >
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <span
+              style={{
+                background: "#E53935",
+                color: "#fff",
+                fontSize: 12,
+                fontWeight: 700,
+                padding: "4px 14px",
+                borderRadius: 999,
+                letterSpacing: 1,
+                display: "inline-block",
+                marginBottom: 20,
+              }}
+            >
+              IPTV CANADA · MAPLESTREAMTV
+            </span>
+            <h1
+              style={{
+                fontSize: "clamp(2rem, 5vw, 3rem)",
+                fontWeight: 800,
+                lineHeight: 1.15,
+                marginBottom: 20,
+              }}
+            >
+              Best IPTV for{" "}
+              <span style={{ color: "#E53935" }}>Android TV in Canada 2026</span>
+            </h1>
+            <p
+              style={{
+                fontSize: "1.15rem",
+                color: "#ccc",
+                maxWidth: 680,
+                lineHeight: 1.75,
+                marginBottom: 36,
+              }}
+            >
+              MapleStreamTV is the best IPTV Canada service for Android TV, Google TV, and
+              Android boxes. Whether you own a Nvidia Shield, Chromecast with Google TV, or any
+              Android box, you get 25,000+ live channels and 120,000+ movies in true 4K HDR —
+              set up in minutes straight from the Play Store.
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
+              <a
+                href="/pricing"
+                style={{
+                  background: "#E53935",
+                  color: "#fff",
+                  padding: "16px 40px",
+                  borderRadius: 12,
+                  fontWeight: 700,
+                  display: "inline-block",
+                  textDecoration: "none",
+                  fontSize: "1rem",
+                }}
+              >
+                Get Your IPTV Canada Plan →
+              </a>
+              <a
+                href="/free-trial"
+                style={{
+                  border: "2px solid #E53935",
+                  color: "#E53935",
+                  padding: "16px 40px",
+                  borderRadius: 12,
+                  fontWeight: 700,
+                  display: "inline-block",
+                  textDecoration: "none",
+                  fontSize: "1rem",
+                }}
+              >
+                Try 24h Free
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Setup guide */}
-      <section className="py-20 px-4">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-4">
-            How to Set Up IPTV on <span className="text-red-500">Android TV</span>
-          </h2>
-          <p className="text-center text-gray-400 mb-12">5 simple steps — takes about 5 minutes.</p>
-          <div className="space-y-6">
-            {steps.map((s) => (
-              <div key={s.step} className="flex gap-5 bg-gray-900 rounded-2xl p-6 border border-gray-800">
-                <div className="flex-shrink-0 w-10 h-10 bg-red-600 rounded-full flex items-center justify-center font-extrabold text-white">
-                  {s.step}
+        {/* Compatible Devices */}
+        <section style={{ padding: "40px 16px", background: "#0f0f0f" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+            <p style={{ color: "#888", fontSize: "0.85rem", marginBottom: 16, fontWeight: 600, letterSpacing: 1 }}>
+              COMPATIBLE WITH ALL ANDROID TV DEVICES
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 10 }}>
+              {[
+                "Nvidia Shield TV",
+                "Chromecast w/ Google TV",
+                "Xiaomi Mi Box",
+                "MECOOL Android Box",
+                "Sony Android TV",
+                "TCL Google TV",
+                "Hisense Android TV",
+                "Any Android Box",
+              ].map((d) => (
+                <span
+                  key={d}
+                  style={{
+                    background: "#1a1a1a",
+                    border: "1px solid #2a2a2a",
+                    color: "#ccc",
+                    padding: "6px 16px",
+                    borderRadius: 999,
+                    fontSize: "0.85rem",
+                  }}
+                >
+                  {d}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why MapleStreamTV */}
+        <section style={{ padding: "60px 16px" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <h2
+              style={{ color: "#fff", fontSize: "1.8rem", fontWeight: 700, marginBottom: 24 }}
+            >
+              Why MapleStreamTV Is the Best IPTV for Android TV
+            </h2>
+            <p style={{ color: "#aaa", lineHeight: 1.75, marginBottom: 28 }}>
+              Android TV offers unmatched flexibility for IPTV Canada. Unlike closed platforms,
+              Android TV lets you choose your preferred player, customize your EPG, and
+              sideload apps freely. MapleStreamTV is built to harness that flexibility fully.
+            </p>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                gap: 16,
+              }}
+            >
+              {[
+                {
+                  title: "Maximum App Compatibility",
+                  desc: "Works with TiviMate, IPTV Smarters Pro, GSE Smart IPTV, and more. Full Xtream Codes API and M3U playlist support included.",
+                },
+                {
+                  title: "True 4K HDR Streaming",
+                  desc: "Android boxes like the Nvidia Shield support 4K HDR10 and Dolby Vision. Our servers deliver the bitrate needed for flawless 4K playback.",
+                },
+                {
+                  title: "Anti-Freeze Server Network",
+                  desc: "Canadian-routed servers mean ultra-low latency for live sports. Zero buffering during NHL games, even at peak viewing hours.",
+                },
+                {
+                  title: "Full 7-Day EPG Guide",
+                  desc: "Our electronic program guide covers every channel in your lineup with 7 days of schedule data, search, and reminder features.",
+                },
+              ].map((f) => (
+                <div
+                  key={f.title}
+                  style={{
+                    background: "#111",
+                    border: "1px solid #2a0a0a",
+                    borderRadius: 14,
+                    padding: "22px 20px",
+                  }}
+                >
+                  <strong
+                    style={{ color: "#fff", display: "block", marginBottom: 8 }}
+                  >
+                    {f.title}
+                  </strong>
+                  <span style={{ color: "#999", fontSize: "0.9rem", lineHeight: 1.65 }}>
+                    {f.desc}
+                  </span>
                 </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-1">{s.title}</h3>
-                  <p className="text-gray-400 text-sm">{s.desc}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Setup Steps */}
+        <section style={{ padding: "60px 16px", background: "#0f0f0f" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <h2
+              style={{ color: "#fff", fontSize: "1.8rem", fontWeight: 700, marginBottom: 8 }}
+            >
+              How to Set Up IPTV on Android TV in Canada
+            </h2>
+            <p style={{ color: "#aaa", marginBottom: 36 }}>
+              Four easy steps — streaming in under 5 minutes.
+            </p>
+            <ol
+              style={{
+                listStyle: "none",
+                padding: 0,
+                margin: 0,
+                display: "flex",
+                flexDirection: "column",
+                gap: 18,
+              }}
+            >
+              {steps.map((s) => (
+                <li
+                  key={s.num}
+                  style={{
+                    background: "#111",
+                    border: "1px solid #1f1f1f",
+                    borderRadius: 14,
+                    padding: "22px 24px",
+                    display: "flex",
+                    gap: 20,
+                    alignItems: "flex-start",
+                  }}
+                >
+                  <span
+                    style={{
+                      background: "#E53935",
+                      color: "#fff",
+                      fontWeight: 800,
+                      fontSize: "1rem",
+                      borderRadius: "50%",
+                      width: 40,
+                      height: 40,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    {s.num}
+                  </span>
+                  <div>
+                    <strong
+                      style={{
+                        color: "#fff",
+                        fontSize: "1rem",
+                        display: "block",
+                        marginBottom: 6,
+                      }}
+                    >
+                      {s.title}
+                    </strong>
+                    <span
+                      style={{ color: "#999", fontSize: "0.92rem", lineHeight: 1.65 }}
+                    >
+                      {s.desc}
+                    </span>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* Canadian Channels */}
+        <section style={{ padding: "60px 16px" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <h2
+              style={{ color: "#fff", fontSize: "1.8rem", fontWeight: 700, marginBottom: 24 }}
+            >
+              Canadian Channels on Your Android TV
+            </h2>
+            <p style={{ color: "#aaa", lineHeight: 1.75, marginBottom: 16 }}>
+              MapleStreamTV gives your Android TV full access to Canada's biggest channels.
+              Watch every NHL game live on TSN and Sportsnet with our sports-optimized low-delay
+              streams. Stay informed with CBC News Network and CTV News. Enjoy primetime
+              entertainment on Global, City TV, and specialty channels across every genre.
+            </p>
+            <p style={{ color: "#aaa", lineHeight: 1.75, marginBottom: 24 }}>
+              Your subscription also unlocks 25,000+ international channels — US networks like
+              ESPN, Fox, ABC, and NBC; UK channels including Sky Sports and BBC; plus
+              French-Canadian channels like RDS and TVA Sports, all in one Android TV app.
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+              {[
+                "TSN 1–5",
+                "Sportsnet",
+                "CBC",
+                "CTV",
+                "Global",
+                "City TV",
+                "RDS",
+                "TVA Sports",
+                "ESPN",
+                "NBC Sports",
+                "Sky Sports",
+                "beIN Sports",
+              ].map((ch) => (
+                <span
+                  key={ch}
+                  style={{
+                    background: "#1a0505",
+                    border: "1px solid #3a1010",
+                    color: "#fff",
+                    padding: "6px 16px",
+                    borderRadius: 999,
+                    fontSize: "0.85rem",
+                    fontWeight: 600,
+                  }}
+                >
+                  {ch}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing */}
+        <section style={{ padding: "60px 16px", background: "#0f0f0f" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <h2
+              style={{ color: "#fff", fontSize: "1.8rem", fontWeight: 700, marginBottom: 24 }}
+            >
+              Android TV IPTV Plans — Canadian Pricing
+            </h2>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+                gap: 16,
+                marginBottom: 28,
+              }}
+            >
+              {[
+                { period: "1 Month", price: "$19 CAD" },
+                { period: "3 Months", price: "$29 CAD" },
+                { period: "6 Months", price: "$49 CAD" },
+                { period: "12 Months", price: "$79 CAD" },
+              ].map((plan) => (
+                <div
+                  key={plan.period}
+                  style={{
+                    background: "#111",
+                    border: "1px solid #2a0a0a",
+                    borderRadius: 14,
+                    padding: "24px 20px",
+                    textAlign: "center",
+                  }}
+                >
+                  <div style={{ color: "#aaa", fontSize: "0.9rem", marginBottom: 8 }}>
+                    {plan.period}
+                  </div>
+                  <div style={{ color: "#E53935", fontSize: "1.6rem", fontWeight: 800 }}>
+                    {plan.price}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div style={{ textAlign: "center" }}>
+              <a
+                href="/pricing"
+                style={{
+                  background: "#E53935",
+                  color: "#fff",
+                  padding: "14px 36px",
+                  borderRadius: 12,
+                  fontWeight: 700,
+                  display: "inline-block",
+                  textDecoration: "none",
+                }}
+              >
+                See Full Pricing Details →
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Features */}
-      <section className="py-20 px-4 bg-gray-900">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10">
-            Why Android TV is <span className="text-red-500">Ideal for IPTV</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              { title: "Maximum Compatibility", desc: "Android TV supports more IPTV apps than any other platform. Install any player — IPTV Smarters, TiviMate, GSE, or our dedicated app." },
-              { title: "True 4K HDR", desc: "Android boxes like Nvidia Shield support 4K HDR10, Dolby Vision, and Dolby Atmos for a true cinema experience." },
-              { title: "External Storage", desc: "Download and cache VOD content locally using USB storage on most Android boxes for offline viewing." },
-              { title: "Google Assistant", desc: "Voice search for channels, shows, and movies using Google Assistant on Google TV and newer Android TV devices." },
-            ].map((f) => (
-              <div key={f.title} className="bg-gray-950 rounded-2xl p-6 border border-gray-800">
-                <h3 className="font-bold text-lg mb-2">{f.title}</h3>
-                <p className="text-gray-400 text-sm">{f.desc}</p>
-              </div>
-            ))}
+        {/* CTA */}
+        <section
+          style={{ background: "#1a0505", padding: "60px 16px", textAlign: "center" }}
+        >
+          <div style={{ maxWidth: 700, margin: "0 auto" }}>
+            <h2 style={{ fontSize: "2rem", fontWeight: 800, marginBottom: 12 }}>
+              Start Streaming IPTV on Android TV Today
+            </h2>
+            <p
+              style={{ color: "#ccc", marginBottom: 32, fontSize: "1.05rem", lineHeight: 1.7 }}
+            >
+              Try MapleStreamTV free for 24 hours — no credit card required. Need help? Contact
+              us at{" "}
+              <a
+                href="mailto:help@maplestreamtv.ca"
+                style={{ color: "#E53935", textDecoration: "none" }}
+              >
+                help@maplestreamtv.ca
+              </a>
+              .
+            </p>
+            <div
+              style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: 16 }}
+            >
+              <a
+                href="/pricing"
+                style={{
+                  background: "#E53935",
+                  color: "#fff",
+                  padding: "16px 40px",
+                  borderRadius: 12,
+                  fontWeight: 700,
+                  display: "inline-block",
+                  textDecoration: "none",
+                }}
+              >
+                Get Your IPTV Canada Plan →
+              </a>
+              <a
+                href="/free-trial"
+                style={{
+                  border: "2px solid #E53935",
+                  color: "#E53935",
+                  padding: "16px 40px",
+                  borderRadius: 12,
+                  fontWeight: 700,
+                  display: "inline-block",
+                  textDecoration: "none",
+                }}
+              >
+                Try 24h Free
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-20 px-4">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10">
-            Android TV IPTV <span className="text-red-500">FAQ</span>
-          </h2>
-          <div className="space-y-6">
-            {[
-              { q: "Which Android box is best for IPTV in Canada?", a: "The Nvidia Shield TV Pro is the top pick for power users. For budget options, the Xiaomi Mi Box S and MECOOL KM7 deliver excellent IPTV performance." },
-              { q: "Can I use any IPTV app on Android TV?", a: "Yes. Android TV supports virtually all IPTV players. We recommend TiviMate for the best EPG experience, but any Xtream Codes compatible app will work." },
-              { q: "Do I need to root my Android box?", a: "No rooting required. Standard APK sideloading is all you need, which is built into Android TV by design." },
-              { q: "Will buffering be an issue on Android boxes?", a: "Not with our anti-freeze servers. We recommend a minimum 25 Mbps connection for 4K. Most Android boxes also support wired Ethernet for rock-solid streaming." },
-            ].map((item) => (
-              <div key={item.q} className="bg-gray-900 rounded-xl p-6 border border-gray-800">
-                <h3 className="font-bold text-lg mb-3 text-red-400">{item.q}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{item.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 px-4 bg-gradient-to-r from-red-900 to-gray-900 text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Ready for IPTV on Your Android TV?</h2>
-          <p className="text-gray-300 mb-8">Try it free for 24 hours — no credit card required.</p>
-          <a href="/free-trial" className="inline-block bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-xl font-bold text-lg transition-colors">
-            Get Free Trial
-          </a>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   );
 }
