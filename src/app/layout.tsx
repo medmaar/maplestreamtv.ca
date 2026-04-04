@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     "Best IPTV service in Canada for 2026. Get 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet included. Try free for 24 hours at maplestreamtv.ca!",
   keywords:
     "IPTV Canada 2026, best IPTV Canada, IPTV subscription Canada, IPTV service Canada, Canadian IPTV",
+    verification: {
+      google: "NPe9mnD6fyjcZMDzlkDeeJ9xsSMileOAckN4P0zXxVw",
+    },
 };
 
 export default function RootLayout({
