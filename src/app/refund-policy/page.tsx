@@ -78,7 +78,7 @@ export default function RefundPolicyPage() {
               </p>
               <p>
                 <span className="text-gray-400 text-sm">Email: </span>
-                <a href="mailto:help@iptvsubscriptioncanada.ca" className="text-red-400 hover:underline">help@iptvsubscriptioncanada.ca</a>
+                <a href="mailto:help@maplestreamtv.ca" className="text-red-400 hover:underline">help@maplestreamtv.ca</a>
               </p>
             </div>
           </section>

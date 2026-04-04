@@ -27,9 +27,9 @@ const channels = [
     name: "Email",
     desc: "For detailed inquiries, billing questions, or DMCA notices.",
     action: "Send an Email",
-    href: "mailto:help@iptvsubscriptioncanada.ca",
+    href: "mailto:help@maplestreamtv.ca",
     bg: "bg-[#F5C518]",
-    detail: "help@iptvsubscriptioncanada.ca",
+    detail: "help@maplestreamtv.ca",
   },
 ];
 

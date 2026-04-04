@@ -91,7 +91,7 @@ export default function TermsOfServicePage() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-3">12. Contact</h2>
             <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
-              <p>Email: <a href="mailto:help@iptvsubscriptioncanada.ca" className="text-red-400 hover:underline">help@iptvsubscriptioncanada.ca</a></p>
+              <p>Email: <a href="mailto:help@maplestreamtv.ca" className="text-red-400 hover:underline">help@maplestreamtv.ca</a></p>
               <p className="mt-2">WhatsApp: <a href="https://wa.me/17828026280" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:underline">+1 (782) 802-6280</a></p>
             </div>
           </section>

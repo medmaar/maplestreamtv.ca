@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Logo from "../components/Logo";
 
 const links = [
   { label: "Pricing", href: "/pricing" },
@@ -32,12 +33,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 h-[68px] flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-1.5 shrink-0">
-          <span className="text-xl font-extrabold tracking-tight" style={{ color: "#fd0322" }}>
-            IPTV
-          </span>
-          <span className="text-xl font-extrabold tracking-tight text-white">Canada 2026</span>
-        </Link>
+        <Logo />
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-400">
