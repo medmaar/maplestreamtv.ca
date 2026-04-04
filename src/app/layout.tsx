@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "./Navbar";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Best IPTV Canada 2026 | #1 IPTV Subscription in Canada",
@@ -18,7 +20,9 @@ export default function RootLayout({
         className="min-h-full flex flex-col"
         style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
       >
-        {children}
+        <Navbar />
+        <div className="flex-1">{children}</div>
+        <Footer />
       </body>
     </html>
   );
