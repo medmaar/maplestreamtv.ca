@@ -38,7 +38,7 @@ export default function FreeTrialPage() {
 
           <div className="flex flex-col items-center gap-4 max-w-xs mx-auto mb-8">
             <a
-              href="https://wa.me/17828026280?text=Hi%20IPTV%20Canada%2C%20I'm%20interested%20in%20your%20service."
+              href="https://wa.me/17828026280?text=Hi%20MapleStreamTV%2C%20I%27m%20interested%20in%20your%20service."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full text-center py-4 rounded-2xl font-bold text-gray-900 bg-[#25D366] hover:brightness-110 transition text-lg"

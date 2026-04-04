@@ -9,6 +9,7 @@ const links = [
   { label: "Free Trial", href: "/free-trial" },
   { label: "Blog", href: "/blog" },
   { label: "How It Works", href: "/how-it-works" },
+  { label: "Referral", href: "/referral" },
   { label: "Contact", href: "/contact" },
 ];
 

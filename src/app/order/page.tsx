@@ -9,14 +9,14 @@ function OrderContent() {
   const price = params.get("price") || "9";
 
   const whatsappMsg = encodeURIComponent(
-    `Hi IPTV Canada, I'd like to order the ${duration} plan for ${devices} device${Number(devices) > 1 ? "s" : ""} at $${price} CAD.`
+    `Hi MapleStreamTV, I'd like to order the ${duration} plan for ${devices} device${Number(devices) > 1 ? "s" : ""} at $${price} CAD.`
   );
   const emailSubject = encodeURIComponent(`IPTV Canada Order - ${duration} / ${devices} Device${Number(devices) > 1 ? "s" : ""}`);
   const emailBody = encodeURIComponent(
     `Hi,\n\nI'd like to purchase the following plan:\n\n- Duration: ${duration}\n- Devices: ${devices}\n- Price: $${price} CAD\n\nPlease send me payment instructions.\n\nThank you!`
   );
   const telegramMsg = encodeURIComponent(
-    `Hi IPTV Canada, I want to order the ${duration} plan for ${devices} device${Number(devices) > 1 ? "s" : ""} at $${price} CAD.`
+    `Hi MapleStreamTV, I want to order the ${duration} plan for ${devices} device${Number(devices) > 1 ? "s" : ""} at $${price} CAD.`
   );
 
   return (
@@ -81,7 +81,7 @@ function OrderContent() {
           </a>
 
           <a
-            href={`mailto:help@iptvsubscriptioncanada.ca?subject=${emailSubject}&body=${emailBody}`}
+            href={`mailto:help@maplestreamtv.ca?subject=${emailSubject}&body=${emailBody}`}
             className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-gray-900 bg-[#F5C518] hover:brightness-110 transition text-lg"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
