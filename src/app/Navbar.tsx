@@ -8,8 +8,7 @@ const links = [
   { label: "Channels", href: "/channels-list" },
   { label: "Free Trial", href: "/free-trial" },
   { label: "Blog", href: "/blog" },
-  { label: "How It Works", href: "/how-it-works" },
-  { label: "Referral", href: "/referral" },
+  { label: "Reseller", href: "/reseller" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -27,13 +26,12 @@ export default function Navbar() {
     <nav
       className="sticky top-0 z-50 transition-all duration-300"
       style={{
-        background: scrolled ? "rgba(16,19,30,0.92)" : "#10131E",
+        background: scrolled ? "rgba(10,10,10,0.95)" : "#0a0a0a",
         backdropFilter: scrolled ? "blur(16px)" : "none",
         borderBottom: "1px solid rgba(255,255,255,0.06)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 h-[68px] flex items-center justify-between">
-        {/* Logo */}
         <Logo />
 
         {/* Desktop links */}
@@ -49,7 +47,7 @@ export default function Navbar() {
         <Link
           href="/free-trial"
           className="hidden md:inline-flex items-center gap-2 text-sm font-bold text-white px-5 py-2.5 rounded-xl transition-all hover:brightness-110"
-          style={{ background: "#fd0322" }}
+          style={{ background: "#E53935" }}
         >
           Free Trial
         </Link>
@@ -60,21 +58,9 @@ export default function Navbar() {
           aria-label="Toggle menu"
           className="md:hidden flex flex-col justify-center gap-[5px] w-8 h-8"
         >
-          <span
-            className={`block h-0.5 bg-white rounded transition-all duration-300 ${
-              open ? "rotate-45 translate-y-[7px]" : ""
-            }`}
-          />
-          <span
-            className={`block h-0.5 bg-white rounded transition-opacity duration-300 ${
-              open ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`block h-0.5 bg-white rounded transition-all duration-300 ${
-              open ? "-rotate-45 -translate-y-[7px]" : ""
-            }`}
-          />
+          <span className={`block h-0.5 bg-white rounded transition-all duration-300 ${open ? "rotate-45 translate-y-[7px]" : ""}`} />
+          <span className={`block h-0.5 bg-white rounded transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
+          <span className={`block h-0.5 bg-white rounded transition-all duration-300 ${open ? "-rotate-45 -translate-y-[7px]" : ""}`} />
         </button>
       </div>
 
@@ -82,7 +68,7 @@ export default function Navbar() {
       {open && (
         <div
           className="md:hidden border-t px-4 pb-5"
-          style={{ background: "#10131E", borderColor: "rgba(255,255,255,0.06)" }}
+          style={{ background: "#0a0a0a", borderColor: "rgba(255,255,255,0.06)" }}
         >
           <div className="flex flex-col gap-1 pt-3">
             {links.map((l) => (
@@ -99,7 +85,7 @@ export default function Navbar() {
               href="/free-trial"
               onClick={() => setOpen(false)}
               className="mt-2 text-white px-4 py-3 rounded-xl text-sm font-bold text-center"
-              style={{ background: "#fd0322" }}
+              style={{ background: "#E53935" }}
             >
               Free Trial
             </Link>

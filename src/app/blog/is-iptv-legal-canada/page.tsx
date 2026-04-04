@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Is IPTV Legal in Canada? (2026 Honest Answer) | MapleStreamTV",
@@ -34,6 +35,7 @@ const articleSchema = {
     name: "MapleStreamTV",
     url: "https://www.maplestreamtv.ca",
   },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.maplestreamtv.ca/blog/is-iptv-legal-canada" },
 };
 
 export default function IsIPTVLegalCanada() {
@@ -240,23 +242,29 @@ export default function IsIPTVLegalCanada() {
             }}
           >
             <p style={{ color: "#9ca3af", fontSize: 14, marginBottom: 8 }}>Related reading:</p>
-            <a
+            <Link
               href="/blog/best-iptv-canada-2026"
               style={{ color: "#E53935", textDecoration: "none", fontSize: 15 }}
             >
               → Best IPTV Providers in Canada 2026 – Tested &amp; Ranked
-            </a>
-            <a
+            </Link>
+            <Link
+              href="/blog/best-iptv-player-canada"
+              style={{ color: "#E53935", textDecoration: "none", fontSize: 15 }}
+            >
+              → Best IPTV Player Apps for Canada in 2026
+            </Link>
+            <Link
               href="/iptv-firestick-canada"
               style={{ color: "#E53935", textDecoration: "none", fontSize: 15 }}
             >
               → How to Set Up IPTV on Firestick in Canada
-            </a>
+            </Link>
           </div>
 
           {/* CTA */}
           <div style={{ marginTop: 48, textAlign: "center" }}>
-            <a
+            <Link
               href="/pricing"
               style={{
                 display: "inline-block",
@@ -270,7 +278,7 @@ export default function IsIPTVLegalCanada() {
               }}
             >
               Explore MapleStreamTV IPTV Canada Plans →
-            </a>
+            </Link>
           </div>
         </article>
       </main>

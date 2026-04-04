@@ -5,9 +5,9 @@ import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
 
 export const metadata: Metadata = {
-  title: "Best IPTV Canada 2026 | #1 IPTV Subscription in Canada",
+  title: "Best IPTV Canada 2026 | #1 IPTV Subscription in Canada | MapleStreamTV",
   description:
-    "Best IPTV service in Canada for 2026. Get 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet included. Try free for 24 hours!",
+    "Best IPTV service in Canada for 2026. Get 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet included. Try free for 24 hours at maplestreamtv.ca!",
   keywords:
     "IPTV Canada 2026, best IPTV Canada, IPTV subscription Canada, IPTV service Canada, Canadian IPTV",
 };

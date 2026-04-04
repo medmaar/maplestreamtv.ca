@@ -3,12 +3,27 @@ import PricingSection from "../PricingSection";
 import FaqAccordion from "../components/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "IPTV Canada Pricing 2026 | Plans Starting at $9",
+  title: "IPTV Canada Pricing 2026 | Plans from $19 CAD/month – MapleStreamTV",
   description:
-    "View all IPTV Canada subscription plans for 2026. Pricing for 1 to 5 devices. Starting at $9/month. No contracts, instant activation.",
+    "Compare IPTV Canada subscription plans. 1, 3, 6 & 12-month options. 25,000+ channels, 4K streaming, Interac e-Transfer accepted. Free 24h trial available.",
   keywords:
     "IPTV Canada pricing, IPTV Canada plans, IPTV subscription price Canada, cheap IPTV Canada",
-  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/pricing" },
+  alternates: { canonical: "https://www.maplestreamtv.ca/pricing" },
+  openGraph: {
+    title: "IPTV Canada Pricing 2026 | Plans from $19 CAD/month – MapleStreamTV",
+    description:
+      "Compare IPTV Canada subscription plans. 1, 3, 6 & 12-month options. 25,000+ channels, 4K streaming, Interac e-Transfer accepted. Free 24h trial available.",
+    url: "https://www.maplestreamtv.ca/pricing",
+    siteName: "MapleStreamTV",
+    locale: "en_CA",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IPTV Canada Pricing 2026 | Plans from $19 CAD/month – MapleStreamTV",
+    description:
+      "Compare IPTV Canada subscription plans. 1, 3, 6 & 12-month options. 25,000+ channels, 4K streaming, Interac e-Transfer accepted. Free 24h trial available.",
+  },
 };
 
 export default function PricingPage() {
@@ -31,7 +46,7 @@ export default function PricingPage() {
           </p>
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">
             IPTV Canada{" "}
-            <span style={{ color: "#fd0322" }}>Pricing Plans</span>
+            <span style={{ color: "#fd0322" }}>Subscription Plans 2026</span>
           </h1>
           <p className="text-gray-400 mb-8 max-w-xl mx-auto leading-relaxed">
             Transparent pricing with no hidden fees. All plans include 25,000+ channels,
