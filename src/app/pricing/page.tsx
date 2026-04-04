@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import PricingSection from "../PricingSection";
+import FaqAccordion from "../components/FaqAccordion";
+import Navbar from "../Navbar";
 
 export const metadata: Metadata = {
   title: "IPTV Canada Pricing 2026 | Plans Starting at $9",
@@ -10,33 +12,42 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/pricing" },
 };
 
-const faqItems = [
-  { q: "How much does IPTV Canada cost?", a: "Plans start at $9/month for 1 device. Multi-device plans are also available — 2 devices from $18/month, up to 5 devices at $45/month. Longer subscriptions offer significant savings." },
-  { q: "Is there a contract or commitment?", a: "No contracts ever. All plans are prepaid with no auto-renewal. You choose your duration and there are no cancellation fees." },
-  { q: "Can I share my IPTV subscription with family?", a: "Yes. Our 2, 3, 4, and 5 device plans allow simultaneous streams, perfect for families. Each device streams independently." },
-  { q: "What payment methods do you accept?", a: "We accept all major credit and debit cards, PayPal, Interac e-Transfer, and cryptocurrency. Contact us for full payment options." },
-  { q: "Do you offer a refund?", a: "We offer a 24-hour free trial before purchase so you can verify compatibility. Due to the digital nature of the service, refunds are not available after activation. Please test first." },
-  { q: "What's the difference between the plans?", a: "All plans include the exact same channels, VOD library, and features. The only differences are duration (longer = cheaper per month) and the number of simultaneous device connections." },
-];
-
 export default function PricingPage() {
   return (
-    <main className="bg-gray-950 text-white min-h-screen">
+    <main style={{ background: "#10131E", color: "#fff", minHeight: "100vh" }}>
+      <Navbar />
+
       {/* Header */}
-      <section className="bg-gradient-to-br from-gray-900 via-gray-950 to-black py-16 px-4 text-center">
+      <section
+        className="py-20 px-4 text-center"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 55% at 50% 0%, rgba(253,3,34,0.12) 0%, transparent 65%), #10131E",
+        }}
+      >
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-            IPTV Canada <span className="text-red-500">Pricing Plans</span>
+          <p
+            className="text-xs font-bold uppercase tracking-widest mb-4"
+            style={{ color: "#fd0322" }}
+          >
+            Transparent Pricing
+          </p>
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">
+            IPTV Canada{" "}
+            <span style={{ color: "#fd0322" }}>Pricing Plans</span>
           </h1>
-          <p className="text-xl text-gray-300 mb-6">
+          <p className="text-gray-400 mb-8 max-w-xl mx-auto leading-relaxed">
             Transparent pricing with no hidden fees. All plans include 25,000+ channels,
             120,000+ movies &amp; series, and 24/7 Canadian support.
           </p>
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-            <span className="flex items-center gap-2"><span className="text-green-400">✓</span> No contracts</span>
-            <span className="flex items-center gap-2"><span className="text-green-400">✓</span> Instant activation</span>
-            <span className="flex items-center gap-2"><span className="text-green-400">✓</span> Cancel anytime</span>
-            <span className="flex items-center gap-2"><span className="text-green-400">✓</span> 24h free trial available</span>
+          <div className="flex flex-wrap justify-center gap-5 text-sm text-gray-400">
+            {["No contracts", "Instant activation", "Cancel anytime", "24h free trial available"].map(
+              (item) => (
+                <span key={item} className="flex items-center gap-2">
+                  <span style={{ color: "#4ade80" }}>✓</span> {item}
+                </span>
+              )
+            )}
           </div>
         </div>
       </section>
@@ -45,12 +56,16 @@ export default function PricingPage() {
       <PricingSection />
 
       {/* What's included */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4" style={{ background: "#10131E" }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10">
-            Every Plan Includes <span className="text-red-500">Everything</span>
+          <p className="text-center text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#fd0322" }}>
+            Included in Every Plan
+          </p>
+          <h2 className="text-3xl font-extrabold text-center text-white mb-12">
+            Every Plan Includes{" "}
+            <span style={{ color: "#fd0322" }}>Everything</span>
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
               "25,000+ Live TV Channels",
               "120,000+ Movies & Series (VOD)",
@@ -65,9 +80,16 @@ export default function PricingPage() {
               "99.9% Uptime Guarantee",
               "24/7 Canadian Support",
             ].map((feature) => (
-              <div key={feature} className="flex items-center gap-3 bg-gray-900 rounded-xl px-5 py-4 border border-gray-800">
-                <span className="text-green-400 text-lg">✓</span>
-                <span className="text-gray-200 text-sm">{feature}</span>
+              <div
+                key={feature}
+                className="flex items-center gap-3 rounded-2xl px-5 py-4 border"
+                style={{
+                  background: "rgba(255,255,255,0.03)",
+                  borderColor: "rgba(255,255,255,0.07)",
+                }}
+              >
+                <span className="text-green-400 text-sm shrink-0">✓</span>
+                <span className="text-gray-300 text-sm">{feature}</span>
               </div>
             ))}
           </div>
@@ -75,15 +97,26 @@ export default function PricingPage() {
       </section>
 
       {/* Free trial CTA */}
-      <section className="py-16 px-4 bg-gradient-to-r from-red-900 to-gray-900 text-center">
+      <section
+        className="py-16 px-4 text-center"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(253,3,34,0.15) 0%, transparent 70%), #10131E",
+          borderTop: "1px solid rgba(253,3,34,0.15)",
+          borderBottom: "1px solid rgba(253,3,34,0.15)",
+        }}
+      >
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Not Sure Yet? Try Free for 24 Hours</h2>
-          <p className="text-gray-300 mb-8">
+          <h2 className="text-3xl font-extrabold text-white mb-4">
+            Not Sure Yet? Try Free for 24 Hours
+          </h2>
+          <p className="text-gray-400 mb-8 text-sm">
             No credit card required. Test every channel, every feature, on any device.
           </p>
           <a
             href="/free-trial"
-            className="inline-block bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-xl font-bold text-lg transition-colors"
+            className="inline-block text-white px-10 py-4 rounded-2xl font-bold text-base transition-all hover:brightness-110"
+            style={{ background: "#fd0322", boxShadow: "0 8px 28px rgba(253,3,34,0.3)" }}
           >
             Get Free Trial
           </a>
@@ -93,17 +126,13 @@ export default function PricingPage() {
       {/* FAQ */}
       <section className="py-20 px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10">
-            Pricing <span className="text-red-500">FAQ</span>
+          <p className="text-center text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#fd0322" }}>
+            FAQ
+          </p>
+          <h2 className="text-3xl font-extrabold text-center text-white mb-10">
+            Pricing <span style={{ color: "#fd0322" }}>FAQ</span>
           </h2>
-          <div className="space-y-6">
-            {faqItems.map((item) => (
-              <div key={item.q} className="bg-gray-900 rounded-xl p-6 border border-gray-800">
-                <h3 className="font-bold text-lg mb-3 text-red-400">{item.q}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{item.a}</p>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion />
         </div>
       </section>
     </main>
