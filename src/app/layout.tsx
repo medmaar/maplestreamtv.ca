@@ -26,10 +26,10 @@ export default function RootLayout({
                           style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
                         >
                         <Navbar />
-                        <div className="flex-1">{children}</div>div>
+                        <div className="flex-1">{children}</div>
                         <Footer />
                         <FloatingContact />
-                </body>body>
-          </html>html>
+                </body>
+          </html>
         );
-}</html>
+}
