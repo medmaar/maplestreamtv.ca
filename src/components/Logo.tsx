@@ -6,13 +6,13 @@ export default function Logo({ className }: { className?: string }) {
       <svg
         width="32"
         height="32"
-        viewBox="0 0 32 32"
+        viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
         <path
-          d="M16 2L13 8L7 7L10 12L2 18L9 18L8 24L16 21L24 24L23 18L30 18L22 12L25 7L19 8Z"
+          d="M50,5 L53,24 L70,14 L65,32 L86,27 L75,46 L96,51 L75,56 L82,74 L63,66 L67,85 L50,75 L33,85 L37,66 L18,74 L25,56 L4,51 L25,46 L14,27 L35,32 L30,14 L47,24 Z"
           fill="#E53935"
         />
       </svg>
