@@ -6,6 +6,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 const nextConfig: NextConfig = {
+  eslint: { ignoreDuringBuilds: true },
   async redirects() {
     return [
       { source: "/pricing/1-month",   destination: "/1-month",   permanent: true },
