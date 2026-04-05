@@ -8,15 +8,21 @@ export default function Footer() {
       style={{ background: "#050508", borderColor: "rgba(255,255,255,0.06)" }}
     >
       <div className="max-w-7xl mx-auto">
-        {/* Top row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
-          {/* Brand */}
-          <div className="lg:col-span-2">
+
+        {/* Brand bar — full width, logo left / contact right */}
+        <div
+          className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 pb-12 mb-12 border-b"
+          style={{ borderColor: "rgba(255,255,255,0.06)" }}
+        >
+          <div>
             <Logo className="mb-4" />
-            <p className="text-gray-500 text-sm leading-relaxed mb-4 max-w-xs">
-              Canada&apos;s #1 IPTV subscription service. 25,000+ live channels, 120,000+ movies &amp;
-              series in 4K. Serving all of Canada.
+            <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
+              Canada&apos;s #1 IPTV subscription service. 25,000+ live channels,
+              120,000+ movies &amp; series in 4K. Serving all of Canada.
             </p>
+          </div>
+
+          <div className="sm:text-right shrink-0">
             <a
               href="mailto:help@maplestreamtv.ca"
               className="text-sm text-gray-400 hover:text-white transition-colors"
@@ -30,6 +36,10 @@ export default function Footer() {
               <p>Canada</p>
             </div>
           </div>
+        </div>
+
+        {/* Links — 2×2 on mobile, 4 cols on desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
 
           {/* Pages */}
           <div>
@@ -57,7 +67,11 @@ export default function Footer() {
               <Link href="/iptv-apple-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Apple TV</Link>
               <Link href="/iptv-mag-box-canada" className="text-gray-400 hover:text-white text-sm transition-colors">MAG Box</Link>
             </div>
-            <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4 mt-6">By City</p>
+          </div>
+
+          {/* By City */}
+          <div>
+            <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">By City</p>
             <div className="flex flex-col gap-2.5">
               <Link href="/iptv-toronto" className="text-gray-400 hover:text-white text-sm transition-colors">Toronto</Link>
               <Link href="/iptv-vancouver" className="text-gray-400 hover:text-white text-sm transition-colors">Vancouver</Link>
@@ -68,7 +82,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Legal + Disclaimer */}
+          {/* Legal */}
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">Legal</p>
             <div className="flex flex-col gap-2.5 mb-6">
@@ -77,16 +91,15 @@ export default function Footer() {
               <Link href="/refund-policy" className="text-gray-400 hover:text-white text-sm transition-colors">Refund Policy</Link>
               <Link href="/disclaimer" className="text-gray-400 hover:text-white text-sm transition-colors">Disclaimer</Link>
             </div>
-            <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">Disclaimer</p>
             <p className="text-gray-600 text-xs leading-relaxed mb-2">
-              MapleStreamTV does not host or stream any copyrighted content. All content is provided by
-              third-party providers. Users are responsible for ensuring they have the rights to view
-              content in their jurisdiction.
+              MapleStreamTV does not host or stream any copyrighted content. All content is
+              provided by third-party providers.
             </p>
             <Link href="/disclaimer" className="text-xs text-red-500 hover:text-red-400 transition-colors">
               Read Disclaimer →
             </Link>
           </div>
+
         </div>
 
         {/* Bottom bar */}
@@ -97,6 +110,7 @@ export default function Footer() {
           <p className="text-gray-600 text-xs">© 2026 MapleStreamTV. All rights reserved.</p>
           <p className="text-gray-700 text-xs">help@maplestreamtv.ca</p>
         </div>
+
       </div>
     </footer>
   );
