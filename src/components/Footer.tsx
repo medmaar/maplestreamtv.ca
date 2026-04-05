@@ -9,7 +9,7 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Top row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Logo className="mb-4" />
@@ -23,6 +23,12 @@ export default function Footer() {
             >
               help@maplestreamtv.ca
             </a>
+            <div className="mt-3 text-gray-500 text-sm leading-relaxed">
+              <p className="text-gray-400 font-medium text-xs uppercase tracking-wider mb-1">Address</p>
+              <p>9361 Rue Lajeunesse</p>
+              <p>Montréal, QC H2M 1S5</p>
+              <p>Canada</p>
+            </div>
           </div>
 
           {/* Pages */}
