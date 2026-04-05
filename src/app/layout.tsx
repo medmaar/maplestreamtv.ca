@@ -5,30 +5,31 @@ import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
 
 export const metadata: Metadata = {
-  title: "Best IPTV Canada 2026 | #1 IPTV Subscription in Canada | MapleStreamTV",
-  description:
-    "Best IPTV service in Canada for 2026. Get 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet included. Try free for 24 hours at maplestreamtv.ca!",
-  keywords:
-    "IPTV Canada 2026, best IPTV Canada, IPTV subscription Canada, IPTV service Canada, Canadian IPTV",
+    metadataBase: new URL("https://maplestreamtv.ca"),
+    title: "Best IPTV Canada 2026 | #1 IPTV Subscription in Canada | MapleStreamTV",
+    description:
+          "Best IPTV service in Canada for 2026. Get 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet included. Try free for 24 hours at maplestreamtv.ca!",
+    keywords:
+          "IPTV Canada 2026, best IPTV Canada, IPTV subscription Canada, IPTV service Canada, Canadian IPTV",
     verification: {
-      google: "NPe9mnD6fyjcZMDzlkDeeJ9xsSMileOAckN4P0zXxVw",
+          google: "NPe9mnD6fyjcZMDzlkDeeJ9xsSMileOAckN4P0zXxVw",
     },
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <html lang="en" className="h-full">
-      <body
-        className="min-h-full flex flex-col"
-        style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
-      >
-        <Navbar />
-        <div className="flex-1">{children}</div>
-        <Footer />
-        <FloatingContact />
-      </body>
-    </html>
-  );
-}
+    return (
+          <html lang="en" className="h-full">
+                <body
+                          className="min-h-full flex flex-col"
+                          style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
+                        >
+                        <Navbar />
+                        <div className="flex-1">{children}</div>div>
+                        <Footer />
+                        <FloatingContact />
+                </body>body>
+          </html>html>
+        );
+}</html>
