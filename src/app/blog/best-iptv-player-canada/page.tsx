@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   description:
     "Find the best IPTV player app for Canada in 2026. Compare TiviMate, IPTV Smarters Pro, GSE Smart IPTV, and Perfect Player. Works with MapleStreamTV on all devices.",
   keywords: "best IPTV player Canada, TiviMate Canada, IPTV Smarters Canada, IPTV app Canada 2026",
-  alternates: { canonical: "https://www.maplestreamtv.ca/blog/best-iptv-player-canada" },
+  alternates: { canonical: "https://maplestreamtv.ca/blog/best-iptv-player-canada" },
   openGraph: {
     title: "Best IPTV Player for Canada 2026 – TiviMate, IPTV Smarters & More",
     description: "Find the best IPTV player app for Canada in 2026. Compare TiviMate, IPTV Smarters Pro, GSE Smart IPTV, and Perfect Player.",
-    url: "https://www.maplestreamtv.ca/blog/best-iptv-player-canada",
+    url: "https://maplestreamtv.ca/blog/best-iptv-player-canada",
     type: "article",
     siteName: "MapleStreamTV",
   },
@@ -28,9 +28,9 @@ const articleSchema = {
   publisher: {
     "@type": "Organization",
     name: "MapleStreamTV",
-    url: "https://www.maplestreamtv.ca",
+    url: "https://maplestreamtv.ca",
   },
-  mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.maplestreamtv.ca/blog/best-iptv-player-canada" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://maplestreamtv.ca/blog/best-iptv-player-canada" },
 };
 
 const players = [

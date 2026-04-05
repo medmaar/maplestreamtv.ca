@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   description:
     "Become an IPTV reseller in Canada with MapleStreamTV. Wholesale pricing, white-label options, and a fast reseller panel. Start your own IPTV business today.",
   keywords: "IPTV reseller Canada, IPTV reseller program Canada 2026, start IPTV business Canada",
-  alternates: { canonical: "https://www.maplestreamtv.ca/reseller" },
+  alternates: { canonical: "https://maplestreamtv.ca/reseller" },
   openGraph: {
     title: "IPTV Reseller Canada 2026 | Start Your IPTV Business – MapleStreamTV",
     description: "Become an IPTV reseller in Canada with MapleStreamTV. Wholesale pricing, white-label options, and a fast reseller panel. Start your own IPTV business today.",
-    url: "https://www.maplestreamtv.ca/reseller",
+    url: "https://maplestreamtv.ca/reseller",
     type: "website",
     siteName: "MapleStreamTV",
   },

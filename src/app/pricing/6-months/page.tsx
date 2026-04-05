@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Get 6 months of IPTV in Canada for $60 CAD. 25,000+ live channels, 4K quality, NHL, TSN, CTV and more. Save vs monthly. Login credentials sent within 24 hours.",
   keywords:
     "IPTV Canada 6 months, IPTV 6 month plan Canada, best IPTV plan Canada, IPTV semi-annual Canada",
-  alternates: { canonical: "https://www.maplestreamtv.ca/pricing/6-months" },
+  alternates: { canonical: "https://maplestreamtv.ca/pricing/6-months" },
 };
 
 const faqItems: FaqItem[] = [

@@ -7,12 +7,12 @@ export const metadata: Metadata = {
     "Looking for the best IPTV service in Canada for 2026? We reviewed and compared the top Canadian IPTV providers on channels, price, reliability and support.",
   keywords:
     "best IPTV Canada 2026, top IPTV Canada, IPTV Canada review, best IPTV service Canada",
-  alternates: { canonical: "https://www.maplestreamtv.ca/blog/best-iptv-canada-2026" },
+  alternates: { canonical: "https://maplestreamtv.ca/blog/best-iptv-canada-2026" },
   openGraph: {
     title: "Best IPTV Canada 2026: Top Services Reviewed & Compared | MapleStreamTV",
     description:
       "We reviewed and compared the top Canadian IPTV providers on channels, price, reliability and support.",
-    url: "https://www.maplestreamtv.ca/blog/best-iptv-canada-2026",
+    url: "https://maplestreamtv.ca/blog/best-iptv-canada-2026",
     type: "article",
     siteName: "MapleStreamTV",
   },
@@ -31,9 +31,9 @@ const articleSchema = {
   publisher: {
     "@type": "Organization",
     name: "MapleStreamTV",
-    url: "https://www.maplestreamtv.ca",
+    url: "https://maplestreamtv.ca",
   },
-  mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.maplestreamtv.ca/blog/best-iptv-canada-2026" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://maplestreamtv.ca/blog/best-iptv-canada-2026" },
 };
 
 const faqSchema = {

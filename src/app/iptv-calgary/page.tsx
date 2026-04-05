@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: "Best IPTV Service in Calgary 2026 | MapleStreamTV – From $19 CAD",
   description:
     "Best IPTV service in Calgary Alberta. Watch Calgary Flames on Sportsnet West, TSN, 25,000+ channels in 4K. MapleStreamTV. Free 24h trial.",
-  alternates: { canonical: "https://www.maplestreamtv.ca/iptv-calgary" },
+  alternates: { canonical: "https://maplestreamtv.ca/iptv-calgary" },
   openGraph: {
     title: "Best IPTV Service in Calgary 2026 | MapleStreamTV – From $19 CAD",
     description:
       "Best IPTV service in Calgary Alberta. Watch Calgary Flames on Sportsnet West, TSN, 25,000+ channels in 4K. MapleStreamTV. Free 24h trial.",
-    url: "https://www.maplestreamtv.ca/iptv-calgary",
+    url: "https://maplestreamtv.ca/iptv-calgary",
     type: "website",
     siteName: "MapleStreamTV",
   },

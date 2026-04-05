@@ -8,12 +8,12 @@ export const metadata: Metadata = {
     "Compare IPTV Canada subscription plans. 1, 3, 6 & 12-month options. 25,000+ channels, 4K streaming, Interac e-Transfer accepted. Free 24h trial available.",
   keywords:
     "IPTV Canada pricing, IPTV Canada plans, IPTV subscription price Canada, cheap IPTV Canada",
-  alternates: { canonical: "https://www.maplestreamtv.ca/pricing" },
+  alternates: { canonical: "https://maplestreamtv.ca/pricing" },
   openGraph: {
     title: "IPTV Canada Pricing 2026 | Plans from $19 CAD/month – MapleStreamTV",
     description:
       "Compare IPTV Canada subscription plans. 1, 3, 6 & 12-month options. 25,000+ channels, 4K streaming, Interac e-Transfer accepted. Free 24h trial available.",
-    url: "https://www.maplestreamtv.ca/pricing",
+    url: "https://maplestreamtv.ca/pricing",
     siteName: "MapleStreamTV",
     locale: "en_CA",
     type: "website",

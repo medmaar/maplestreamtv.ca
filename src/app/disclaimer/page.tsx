@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Disclaimer | MapleStreamTV",
   description:
     "Legal disclaimer for MapleStreamTV. We do not host or stream any copyrighted content. All content is provided by third-party providers.",
-  alternates: { canonical: "https://www.maplestreamtv.ca/disclaimer" },
+  alternates: { canonical: "https://maplestreamtv.ca/disclaimer" },
 };
 
 export default function DisclaimerPage() {

@@ -7,12 +7,12 @@ export const metadata: Metadata = {
     "IPTV vs cable TV in Canada — we compare price, channels, picture quality, contracts, and flexibility to help you decide which is better in 2026.",
   keywords:
     "IPTV vs cable Canada, IPTV vs cable TV Canada, is IPTV better than cable Canada, IPTV or cable Canada 2026",
-  alternates: { canonical: "https://www.maplestreamtv.ca/blog/iptv-vs-cable-canada" },
+  alternates: { canonical: "https://maplestreamtv.ca/blog/iptv-vs-cable-canada" },
   openGraph: {
     title: "IPTV vs Cable Canada 2026: Which Is Better? Full Comparison | MapleStreamTV",
     description:
       "IPTV vs cable TV in Canada — we compare price, channels, picture quality, contracts, and flexibility to help you decide which is better in 2026.",
-    url: "https://www.maplestreamtv.ca/blog/iptv-vs-cable-canada",
+    url: "https://maplestreamtv.ca/blog/iptv-vs-cable-canada",
     type: "article",
     siteName: "MapleStreamTV",
   },
@@ -31,9 +31,9 @@ const articleSchema = {
   publisher: {
     "@type": "Organization",
     name: "MapleStreamTV",
-    url: "https://www.maplestreamtv.ca",
+    url: "https://maplestreamtv.ca",
   },
-  mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.maplestreamtv.ca/blog/iptv-vs-cable-canada" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://maplestreamtv.ca/blog/iptv-vs-cable-canada" },
 };
 
 const comparison = [

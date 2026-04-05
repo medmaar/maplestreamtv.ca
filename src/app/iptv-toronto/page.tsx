@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: "Best IPTV Service in Toronto 2026 | MapleStreamTV – From $19 CAD",
   description:
     "MapleStreamTV is the best IPTV service in Toronto. 25,000+ live channels, NHL Maple Leafs, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $19 CAD/month.",
-  alternates: { canonical: "https://www.maplestreamtv.ca/iptv-toronto" },
+  alternates: { canonical: "https://maplestreamtv.ca/iptv-toronto" },
   openGraph: {
     title: "Best IPTV Service in Toronto 2026 | MapleStreamTV – From $19 CAD",
     description:
       "MapleStreamTV is the best IPTV service in Toronto. 25,000+ live channels, NHL Maple Leafs, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $19 CAD/month.",
-    url: "https://www.maplestreamtv.ca/iptv-toronto",
+    url: "https://maplestreamtv.ca/iptv-toronto",
     type: "website",
     siteName: "MapleStreamTV",
   },

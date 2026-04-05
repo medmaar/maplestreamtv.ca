@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description:
     "Is IPTV legal in Canada in 2026? We explain CRTC rules, legal vs illegal IPTV, and what you need to know as a Canadian consumer.",
   keywords: "is iptv legal in canada, iptv legal canada 2026, crtc iptv canada",
-  alternates: { canonical: "https://www.maplestreamtv.ca/blog/is-iptv-legal-canada" },
+  alternates: { canonical: "https://maplestreamtv.ca/blog/is-iptv-legal-canada" },
   openGraph: {
     title: "Is IPTV Legal in Canada? (2026 Honest Answer) | MapleStreamTV",
     description:
       "Is IPTV legal in Canada in 2026? We explain CRTC rules, legal vs illegal IPTV, and what you need to know as a Canadian consumer.",
-    url: "https://www.maplestreamtv.ca/blog/is-iptv-legal-canada",
+    url: "https://maplestreamtv.ca/blog/is-iptv-legal-canada",
     siteName: "MapleStreamTV",
     type: "article",
   },
@@ -33,9 +33,9 @@ const articleSchema = {
   publisher: {
     "@type": "Organization",
     name: "MapleStreamTV",
-    url: "https://www.maplestreamtv.ca",
+    url: "https://maplestreamtv.ca",
   },
-  mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.maplestreamtv.ca/blog/is-iptv-legal-canada" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://maplestreamtv.ca/blog/is-iptv-legal-canada" },
 };
 
 export default function IsIPTVLegalCanada() {

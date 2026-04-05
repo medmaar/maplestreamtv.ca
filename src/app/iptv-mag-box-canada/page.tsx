@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   description:
     "Set up MapleStreamTV IPTV on your MAG Box in Canada. Full portal URL setup guide. 25,000+ live channels, NHL, TSN in 4K. Plans from $19 CAD/month.",
   keywords: "IPTV MAG Box Canada, MAG 322 IPTV Canada, MAG Box setup Canada 2026",
-  alternates: { canonical: "https://www.maplestreamtv.ca/iptv-mag-box-canada" },
+  alternates: { canonical: "https://maplestreamtv.ca/iptv-mag-box-canada" },
   openGraph: {
     title: "IPTV MAG Box Canada – Setup & Best Plans 2026 | MapleStreamTV",
     description: "Set up MapleStreamTV IPTV on your MAG Box in Canada. Full portal URL setup guide. 25,000+ live channels, NHL, TSN in 4K. Plans from $19 CAD/month.",
-    url: "https://www.maplestreamtv.ca/iptv-mag-box-canada",
+    url: "https://maplestreamtv.ca/iptv-mag-box-canada",
     type: "website",
     siteName: "MapleStreamTV",
   },

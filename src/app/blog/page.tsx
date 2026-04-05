@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   description:
     "Read MapleStreamTV's IPTV Canada blog. Expert guides on setup, legality, pricing comparisons, player reviews, and the best IPTV services in Canada for 2026.",
   keywords: "IPTV Canada blog, IPTV Canada guide 2026, best IPTV Canada review",
-  alternates: { canonical: "https://www.maplestreamtv.ca/blog" },
+  alternates: { canonical: "https://maplestreamtv.ca/blog" },
   openGraph: {
     title: "IPTV Canada Blog 2026 | Guides, Reviews & News – MapleStreamTV",
     description: "Read MapleStreamTV's IPTV Canada blog. Expert guides on setup, legality, pricing comparisons, and player reviews.",
-    url: "https://www.maplestreamtv.ca/blog",
+    url: "https://maplestreamtv.ca/blog",
     type: "website",
     siteName: "MapleStreamTV",
   },

@@ -7,12 +7,12 @@ export const metadata: Metadata = {
     "Canada's best IPTV service in 2026. 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet & more. Free 24h trial. Starting at $19 CAD/month.",
   keywords:
     "IPTV Canada 2026, best IPTV Canada, IPTV subscription Canada, Canadian IPTV, IPTV free trial Canada, IPTV Canada cheap, best IPTV subscription Canada",
-  alternates: { canonical: "https://www.maplestreamtv.ca" },
+  alternates: { canonical: "https://maplestreamtv.ca" },
   openGraph: {
     title: "Best IPTV Canada 2026 | #1 IPTV Subscription – 24h Free Trial",
     description:
       "Canada's best IPTV service in 2026. 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet & more. Free 24h trial. Starting at $19 CAD/month.",
-    url: "https://www.maplestreamtv.ca",
+    url: "https://maplestreamtv.ca",
     type: "website",
     siteName: "MapleStreamTV",
   },
@@ -68,7 +68,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "MapleStreamTV",
-  url: "https://www.maplestreamtv.ca",
+  url: "https://maplestreamtv.ca",
   email: "help@maplestreamtv.ca",
   description:
     "Canada's #1 IPTV subscription service. 25,000+ live channels, 120,000+ movies & series in 4K.",

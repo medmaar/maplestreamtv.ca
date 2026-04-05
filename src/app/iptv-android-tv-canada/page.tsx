@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: "Best IPTV for Android TV in Canada 2026 | MapleStreamTV",
   description:
     "Install IPTV on your Android TV box in Canada. MapleStreamTV offers 25,000+ channels in 4K. TSN, NHL, Sportsnet, CTV & more. Free 24h trial.",
-  alternates: { canonical: "https://www.maplestreamtv.ca/iptv-android-tv-canada" },
+  alternates: { canonical: "https://maplestreamtv.ca/iptv-android-tv-canada" },
   openGraph: {
     title: "Best IPTV for Android TV in Canada 2026 | MapleStreamTV",
     description:
       "Install IPTV on your Android TV box in Canada. MapleStreamTV offers 25,000+ channels in 4K. TSN, NHL, Sportsnet, CTV & more. Free 24h trial.",
-    url: "https://www.maplestreamtv.ca/iptv-android-tv-canada",
+    url: "https://maplestreamtv.ca/iptv-android-tv-canada",
     type: "website",
     siteName: "MapleStreamTV",
   },

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Get 1 month of IPTV in Canada for $15 CAD. 25,000+ live channels, 4K quality, NHL, TSN, CTV and more. No contract. Login credentials sent within 24 hours.",
   keywords:
     "IPTV Canada 1 month, IPTV monthly plan Canada, IPTV $15 Canada, month to month IPTV Canada",
-  alternates: { canonical: "https://www.maplestreamtv.ca/pricing/1-month" },
+  alternates: { canonical: "https://maplestreamtv.ca/pricing/1-month" },
 };
 
 const faqItems: FaqItem[] = [

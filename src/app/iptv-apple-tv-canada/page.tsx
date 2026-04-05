@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   description:
     "Use MapleStreamTV IPTV on Apple TV, iPhone, and iPad in Canada. 25,000+ live channels, NHL, TSN, CBC in 4K. Easy Infuse or IPTV Smarters setup. From $19 CAD/month.",
   keywords: "IPTV Apple TV Canada, IPTV iPhone Canada, IPTV iPad Canada 2026",
-  alternates: { canonical: "https://www.maplestreamtv.ca/iptv-apple-tv-canada" },
+  alternates: { canonical: "https://maplestreamtv.ca/iptv-apple-tv-canada" },
   openGraph: {
     title: "IPTV on Apple TV & iPhone in Canada 2026 | MapleStreamTV",
     description: "Use MapleStreamTV IPTV on Apple TV, iPhone, and iPad in Canada. 25,000+ live channels, NHL, TSN, CBC in 4K. Easy Infuse or IPTV Smarters setup. From $19 CAD/month.",
-    url: "https://www.maplestreamtv.ca/iptv-apple-tv-canada",
+    url: "https://maplestreamtv.ca/iptv-apple-tv-canada",
     type: "website",
     siteName: "MapleStreamTV",
   },

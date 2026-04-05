@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: "Best IPTV Service in Montreal / Montréal 2026 | MapleStreamTV",
   description:
     "Meilleur service IPTV à Montréal. MapleStreamTV offers English and French channels — RDS, TVA, V, Sportsnet, TSN, CBC. 25,000+ channels. Free trial.",
-  alternates: { canonical: "https://www.maplestreamtv.ca/iptv-montreal" },
+  alternates: { canonical: "https://maplestreamtv.ca/iptv-montreal" },
   openGraph: {
     title: "Best IPTV Service in Montreal / Montréal 2026 | MapleStreamTV",
     description:
       "Meilleur service IPTV à Montréal. MapleStreamTV offers English and French channels — RDS, TVA, V, Sportsnet, TSN, CBC. 25,000+ channels. Free trial.",
-    url: "https://www.maplestreamtv.ca/iptv-montreal",
+    url: "https://maplestreamtv.ca/iptv-montreal",
     type: "website",
     siteName: "MapleStreamTV",
   },

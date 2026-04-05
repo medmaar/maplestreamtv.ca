@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description:
     "MapleStreamTV is the best IPTV service in Edmonton. 25,000+ live channels, NHL Oilers, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $19 CAD/month.",
   keywords: "IPTV Edmonton, best IPTV Edmonton 2026, IPTV service Edmonton Alberta, Edmonton IPTV subscription",
-  alternates: { canonical: "https://www.maplestreamtv.ca/iptv-edmonton" },
+  alternates: { canonical: "https://maplestreamtv.ca/iptv-edmonton" },
   openGraph: {
     title: "Best IPTV Service in Edmonton 2026 | MapleStreamTV – From $19 CAD",
     description:
       "MapleStreamTV is the best IPTV service in Edmonton. 25,000+ live channels, NHL Oilers, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $19 CAD/month.",
-    url: "https://www.maplestreamtv.ca/iptv-edmonton",
+    url: "https://maplestreamtv.ca/iptv-edmonton",
     type: "website",
     siteName: "MapleStreamTV",
   },

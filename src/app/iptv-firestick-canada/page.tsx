@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: "IPTV on Amazon Firestick in Canada 2026 | MapleStreamTV Setup Guide",
   description:
     "Set up IPTV on your Amazon Firestick in Canada in under 5 minutes. MapleStreamTV offers 25,000+ channels, NHL, TSN & 4K quality. Free 24h trial.",
-  alternates: { canonical: "https://www.maplestreamtv.ca/iptv-firestick-canada" },
+  alternates: { canonical: "https://maplestreamtv.ca/iptv-firestick-canada" },
   openGraph: {
     title: "IPTV on Amazon Firestick in Canada 2026 | MapleStreamTV Setup Guide",
     description:
       "Set up IPTV on your Amazon Firestick in Canada in under 5 minutes. MapleStreamTV offers 25,000+ channels, NHL, TSN & 4K quality. Free 24h trial.",
-    url: "https://www.maplestreamtv.ca/iptv-firestick-canada",
+    url: "https://maplestreamtv.ca/iptv-firestick-canada",
     type: "website",
     siteName: "MapleStreamTV",
   },

@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   description:
     "Install MapleStreamTV IPTV on your Samsung or LG Smart TV in Canada. 25,000+ live channels, NHL, TSN, CTV in 4K. Easy setup in minutes. From $19 CAD/month.",
   keywords: "IPTV Samsung TV Canada, IPTV LG Smart TV Canada, Smart TV IPTV Canada 2026",
-  alternates: { canonical: "https://www.maplestreamtv.ca/iptv-smart-tv-canada" },
+  alternates: { canonical: "https://maplestreamtv.ca/iptv-smart-tv-canada" },
   openGraph: {
     title: "IPTV for Samsung & LG Smart TV in Canada 2026 | MapleStreamTV",
     description: "Install MapleStreamTV IPTV on your Samsung or LG Smart TV in Canada. 25,000+ live channels, NHL, TSN, CTV in 4K. Easy setup in minutes. From $19 CAD/month.",
-    url: "https://www.maplestreamtv.ca/iptv-smart-tv-canada",
+    url: "https://maplestreamtv.ca/iptv-smart-tv-canada",
     type: "website",
     siteName: "MapleStreamTV",
   },

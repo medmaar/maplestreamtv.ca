@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: "Best IPTV Service in Vancouver 2026 | MapleStreamTV – From $19 CAD",
   description:
     "Best IPTV service in Vancouver BC. Stream Canucks games, TSN, Sportsnet Pacific & 25,000+ channels in 4K. MapleStreamTV. Free trial available.",
-  alternates: { canonical: "https://www.maplestreamtv.ca/iptv-vancouver" },
+  alternates: { canonical: "https://maplestreamtv.ca/iptv-vancouver" },
   openGraph: {
     title: "Best IPTV Service in Vancouver 2026 | MapleStreamTV – From $19 CAD",
     description:
       "Best IPTV service in Vancouver BC. Stream Canucks games, TSN, Sportsnet Pacific & 25,000+ channels in 4K. MapleStreamTV. Free trial available.",
-    url: "https://www.maplestreamtv.ca/iptv-vancouver",
+    url: "https://maplestreamtv.ca/iptv-vancouver",
     type: "website",
     siteName: "MapleStreamTV",
   },

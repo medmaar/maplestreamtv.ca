@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: "Best IPTV Service in Ottawa 2026 | MapleStreamTV – From $19 CAD",
   description:
     "Best IPTV service in Ottawa Ontario. Stream Ottawa Senators, TSN, Sportsnet, CBC, CTV in 4K. MapleStreamTV. Free 24h trial available.",
-  alternates: { canonical: "https://www.maplestreamtv.ca/iptv-ottawa" },
+  alternates: { canonical: "https://maplestreamtv.ca/iptv-ottawa" },
   openGraph: {
     title: "Best IPTV Service in Ottawa 2026 | MapleStreamTV – From $19 CAD",
     description:
       "Best IPTV service in Ottawa Ontario. Stream Ottawa Senators, TSN, Sportsnet, CBC, CTV in 4K. MapleStreamTV. Free 24h trial available.",
-    url: "https://www.maplestreamtv.ca/iptv-ottawa",
+    url: "https://maplestreamtv.ca/iptv-ottawa",
     type: "website",
     siteName: "MapleStreamTV",
   },

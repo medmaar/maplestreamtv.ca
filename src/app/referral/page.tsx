@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Refer a friend to MapleStreamTV and earn +1 free year of service. No limits — every successful referral adds 12 months to your account.",
   keywords:
     "MapleStreamTV referral, refer a friend IPTV, IPTV Canada free year, IPTV affiliate Canada",
-  alternates: { canonical: "https://www.maplestreamtv.ca/referral" },
+  alternates: { canonical: "https://maplestreamtv.ca/referral" },
 };
 
 const steps = [
