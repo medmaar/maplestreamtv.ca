@@ -3,7 +3,6 @@ import "./globals.css";
 import Navbar from "./Navbar";
 import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
-import Script from "next/script";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://maplestreamtv.ca"),
@@ -16,14 +15,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en" className="h-full">
-            <body className="min-h-full flex flex-col" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>
-                <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZMRVJYWQR3" strategy="afterInteractive" />
-                <Script id="google-analytics" strategy="afterInteractive">{`
+            <head>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMRVJYWQR3" />
+                <script dangerouslySetInnerHTML={{ __html: `
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
                     gtag('config', 'G-ZMRVJYWQR3');
-                `}</Script>
+                `}} />
+            </head>
+            <body className="min-h-full flex flex-col" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>
                 <Navbar />
                 <div className="flex-1">{children}</div>
                 <Footer />
