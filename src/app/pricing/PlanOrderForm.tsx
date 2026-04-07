@@ -1,8 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-import PhoneInput from "react-phone-number-input";
-import "react-phone-number-input/style.css";
 
 const countries = [
   "Canada", "United States", "United Kingdom", "Australia", "France", "Germany",
@@ -166,13 +164,14 @@ export default function PlanOrderForm({ plan }: Props) {
           <span className="ml-2 text-gray-600 text-xs">(optional)</span>
         </label>
         <div className="phone-input-wrapper">
-          <PhoneInput
-            international
-            defaultCountry="CA"
-            value={phone}
-            onChange={setPhone}
-            placeholder="+1 234 567 8900"
-          />
+          <input
+                type="tel"
+                name="phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="+1 234 567 8900"
+                className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-700 text-white focus:outline-none focus:border-red-500"
+              />
         </div>
       </div>
 
