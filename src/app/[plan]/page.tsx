@@ -2,7 +2,8 @@ export const runtime = 'edge';
 
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import PlanOrderForm from "../pricing/PlanOrderForm";
+import dynamic from "next/dynamic";
+const PlanOrderForm = dynamic(() => import("../pricing/PlanOrderForm"), { ssr: false });
 import PlanFAQ, { type FaqItem } from "../pricing/PlanFAQ";
 
 interface PlanPageData {
