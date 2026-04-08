@@ -4,9 +4,9 @@ import emailjs from "@emailjs/browser";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
-const SERVICE_ID  = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID  ?? "service_0e3cugb";
-const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "template_cuf7svm";
-const PUBLIC_KEY  = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY  ?? "XgOQHE8VNnCyBYP1z";
+const SERVICE_ID  = "service_0e3cugb";
+const TEMPLATE_ID = "template_cuf7svm";
+const PUBLIC_KEY  = "XgOQHE8VNnCyBYP1z";
 
 const deviceTypes = [
   "Firestick",
@@ -48,8 +48,9 @@ export default function FreeTrialForm() {
     e.preventDefault();
     if (!phone) return;
     setStatus("loading");
+    console.log('EmailJS config:', { serviceId: SERVICE_ID, templateId: TEMPLATE_ID, publicKey: PUBLIC_KEY });
     try {
-      await emailjs.send(
+      const result = await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
         {
@@ -62,10 +63,12 @@ export default function FreeTrialForm() {
         },
         PUBLIC_KEY
       );
+      console.log("EmailJS success:", result);
       setStatus("success");
       setForm({ full_name: "", email: "", device: "", message: "" });
       setPhone("");
-    } catch {
+    } catch (error) {
+      console.error("EmailJS error:", JSON.stringify(error));
       setStatus("error");
     }
   }

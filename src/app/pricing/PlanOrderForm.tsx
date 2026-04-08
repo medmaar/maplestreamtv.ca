@@ -43,8 +43,7 @@ export default function PlanOrderForm({ plan }: Props) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   useEffect(() => {
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? '';
-    if (publicKey) emailjs.init(publicKey);
+    emailjs.init('XgOQHE8VNnCyBYP1z');
   }, []);
 
   function handleChange(
@@ -60,9 +59,11 @@ export default function PlanOrderForm({ plan }: Props) {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("loading");
+    const serviceId = 'service_0e3cugb';
+    const templateId = 'template_cuf7svm';
+    const publicKey = 'XgOQHE8VNnCyBYP1z';
+    console.log('EmailJS config:', { serviceId, templateId, publicKey });
     try {
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? '';
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? '';
       const result = await emailjs.send(
         serviceId,
         templateId,
@@ -80,8 +81,8 @@ export default function PlanOrderForm({ plan }: Props) {
       setStatus("success");
       setForm({ full_name: "", email: "", country: "Canada", device: "", message: "" });
       setPhone("");
-    } catch (err) {
-      console.error("EmailJS error:", err);
+    } catch (error) {
+      console.error("EmailJS error:", JSON.stringify(error));
       setStatus("error");
     }
   }
