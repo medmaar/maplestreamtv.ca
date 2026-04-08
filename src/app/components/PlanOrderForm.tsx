@@ -27,7 +27,7 @@ export default function PlanOrderForm({ planLabel, price, whatsappNumber, emailA
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     const msg = encodeURIComponent(
-      `Hi MapleStreamTV!\n\nI'd like to order the ${planLabel} plan at $${price} CAD.\n\nName: ${name}\nEmail: ${email}\nCountry: ${country}\nWhatsApp: ${phone || "—"}\n\nPlease send me payment instructions. Thank you!`
+      `Hi MapleStreamTV!\n\nI'd like to order the ${planLabel} plan at $${price}.\n\nName: ${name}\nEmail: ${email}\nCountry: ${country}\nWhatsApp: ${phone || "—"}\n\nPlease send me payment instructions. Thank you!`
     );
     window.open(`https://wa.me/${whatsappNumber}?text=${msg}`, "_blank");
     setSubmitted(true);

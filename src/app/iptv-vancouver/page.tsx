@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Best IPTV Service in Vancouver 2026 | MapleStreamTV – From $19 CAD",
+  title: "Best IPTV Service in Vancouver 2026 | MapleStreamTV – From $19",
   description:
     "Best IPTV service in Vancouver BC. Stream Canucks games, TSN, Sportsnet Pacific & 25,000+ channels in 4K. MapleStreamTV. Free trial available.",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-vancouver" },
   openGraph: {
-    title: "Best IPTV Service in Vancouver 2026 | MapleStreamTV – From $19 CAD",
+    title: "Best IPTV Service in Vancouver 2026 | MapleStreamTV – From $19",
     description:
       "Best IPTV service in Vancouver BC. Stream Canucks games, TSN, Sportsnet Pacific & 25,000+ channels in 4K. MapleStreamTV. Free trial available.",
     url: "https://maplestreamtv.ca/iptv-vancouver",
@@ -203,8 +203,8 @@ export default function IPTVVancouverPage() {
           </h2>
           <p style={{ color: "#d1d5db", lineHeight: 1.8, marginBottom: 16 }}>
             Shaw and Telus cable TV packages in Vancouver start around $80–$130
-            per month. With MapleStreamTV, you pay just $19 CAD for your first
-            month — or lock in a full year for $79 CAD total, which works out to
+            per month. With MapleStreamTV, you pay just $19 for your first
+            month — or lock in a full year for $79 total, which works out to
             under $7/month.
           </p>
           <p style={{ color: "#d1d5db", lineHeight: 1.8 }}>
@@ -240,10 +240,10 @@ export default function IPTVVancouverPage() {
                 lineHeight: 2,
               }}
             >
-              <li>1 Month — $19 CAD</li>
-              <li>3 Months — $29 CAD</li>
-              <li>6 Months — $49 CAD</li>
-              <li>12 Months — $79 CAD</li>
+              <li>1 Month — $19</li>
+              <li>3 Months — $29</li>
+              <li>6 Months — $49</li>
+              <li>12 Months — $79</li>
             </ul>
           </div>
         </div>
@@ -262,7 +262,7 @@ export default function IPTVVancouverPage() {
           Start Streaming in Vancouver Today
         </h2>
         <p style={{ color: "#9ca3af", marginBottom: 32 }}>
-          Plans from $19 CAD/month. Free 24h trial available. No contracts,
+          Plans from $19/month. Free 24h trial available. No contracts,
           cancel anytime.
         </p>
         <a

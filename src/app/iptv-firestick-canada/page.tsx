@@ -380,10 +380,10 @@ export default function IPTVFirestickCanadaPage() {
               }}
             >
               {[
-                { period: "1 Month", price: "$19 CAD" },
-                { period: "3 Months", price: "$29 CAD" },
-                { period: "6 Months", price: "$49 CAD" },
-                { period: "12 Months", price: "$79 CAD" },
+                { period: "1 Month", price: "$19" },
+                { period: "3 Months", price: "$29" },
+                { period: "6 Months", price: "$49" },
+                { period: "12 Months", price: "$79" },
               ].map((plan) => (
                 <div
                   key={plan.period}

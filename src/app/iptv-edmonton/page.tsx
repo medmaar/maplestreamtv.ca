@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best IPTV Service in Edmonton 2026 | MapleStreamTV – From $19 CAD",
+  title: "Best IPTV Service in Edmonton 2026 | MapleStreamTV – From $19",
   description:
-    "MapleStreamTV is the best IPTV service in Edmonton. 25,000+ live channels, NHL Oilers, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $19 CAD/month.",
+    "MapleStreamTV is the best IPTV service in Edmonton. 25,000+ live channels, NHL Oilers, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $19/month.",
   keywords: "IPTV Edmonton, best IPTV Edmonton 2026, IPTV service Edmonton Alberta, Edmonton IPTV subscription",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-edmonton" },
   openGraph: {
-    title: "Best IPTV Service in Edmonton 2026 | MapleStreamTV – From $19 CAD",
+    title: "Best IPTV Service in Edmonton 2026 | MapleStreamTV – From $19",
     description:
-      "MapleStreamTV is the best IPTV service in Edmonton. 25,000+ live channels, NHL Oilers, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $19 CAD/month.",
+      "MapleStreamTV is the best IPTV service in Edmonton. 25,000+ live channels, NHL Oilers, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $19/month.",
     url: "https://maplestreamtv.ca/iptv-edmonton",
     type: "website",
     siteName: "MapleStreamTV",
@@ -146,7 +146,7 @@ export default function IPTVEdmontonPage() {
               },
               {
                 title: "Save $1,000+/year vs Cable",
-                desc: "Edmonton cable bills average $100–$150/month. MapleStreamTV IPTV Canada starts at just $19 CAD/month.",
+                desc: "Edmonton cable bills average $100–$150/month. MapleStreamTV IPTV Canada starts at just $19/month.",
               },
             ].map((f) => (
               <div
@@ -266,10 +266,10 @@ export default function IPTVEdmontonPage() {
             }}
           >
             {[
-              { name: "1 Month", price: "$19 CAD", href: "/pricing/1-month" },
-              { name: "3 Months", price: "$29 CAD", href: "/pricing/3-months" },
-              { name: "6 Months", price: "$49 CAD", href: "/pricing/6-months" },
-              { name: "12 Months", price: "$79 CAD", href: "/pricing/12-months", best: true },
+              { name: "1 Month", price: "$19", href: "/pricing/1-month" },
+              { name: "3 Months", price: "$29", href: "/pricing/3-months" },
+              { name: "6 Months", price: "$49", href: "/pricing/6-months" },
+              { name: "12 Months", price: "$79", href: "/pricing/12-months", best: true },
             ].map((plan) => (
               <Link
                 key={plan.name}

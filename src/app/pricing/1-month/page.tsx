@@ -3,9 +3,9 @@ import PlanOrderForm from "../PlanOrderForm";
 import PlanFAQ, { type FaqItem } from "../PlanFAQ";
 
 export const metadata: Metadata = {
-  title: "1 Month IPTV Plan — $15 CAD | MapleStreamTV Canada",
+  title: "1 Month IPTV Plan — $15 | MapleStreamTV Canada",
   description:
-    "Get 1 month of IPTV in Canada for $15 CAD. 25,000+ live channels, 4K quality, NHL, TSN, CTV and more. No contract. Login credentials sent within 24 hours.",
+    "Get 1 month of IPTV in Canada for $15. 25,000+ live channels, 4K quality, NHL, TSN, CTV and more. No contract. Login credentials sent within 24 hours.",
   keywords:
     "IPTV Canada 1 month, IPTV monthly plan Canada, IPTV $15 Canada, month to month IPTV Canada",
   alternates: { canonical: "https://maplestreamtv.ca/pricing/1-month" },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const faqItems: FaqItem[] = [
   {
     q: "What is included in the 1-month IPTV plan?",
-    a: "The 1-month plan gives you full access to 25,000+ live channels including all Canadian networks (TSN, Sportsnet, CBC, CTV, Global, RDS, TVA), 120,000+ movies and series on demand, 4K Ultra HD streaming, electronic program guide (EPG), and 7-day catch-up TV — all for $15 CAD.",
+    a: "The 1-month plan gives you full access to 25,000+ live channels including all Canadian networks (TSN, Sportsnet, CBC, CTV, Global, RDS, TVA), 120,000+ movies and series on demand, 4K Ultra HD streaming, electronic program guide (EPG), and 7-day catch-up TV — all for $15.",
   },
   {
     q: "How do I receive my login credentials after ordering?",
@@ -86,7 +86,7 @@ export default function Pricing1MonthPage() {
               </span>
               <h1 className="text-4xl md:text-5xl font-extrabold text-white">
                 1 Month Plan —{" "}
-                <span style={{ color: "#fd0322" }}>$15 CAD</span>
+                <span style={{ color: "#fd0322" }}>$15</span>
               </h1>
             </div>
 
@@ -106,7 +106,7 @@ export default function Pricing1MonthPage() {
                 borderColor: "rgba(255,255,255,0.07)",
               }}
             >
-              <PlanOrderForm plan="1 Month Plan — $15 CAD" />
+              <PlanOrderForm plan="1 Month Plan — $15" />
             </div>
 
             {/* 4. FAQ */}

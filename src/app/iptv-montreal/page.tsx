@@ -277,7 +277,7 @@ export default function IPTVMontrealPage() {
             Vidéotron TV packages in Montreal typically cost $80–$140 per month,
             and that&apos;s before optional add-on packs for sports or international
             content. MapleStreamTV gives you more channels — including all the
-            French and English content you want — starting at just $19 CAD/month.
+            French and English content you want — starting at just $19/month.
           </p>
           <p style={{ color: "#d1d5db", lineHeight: 1.8 }}>
             Montreal subscribers who switch to MapleStreamTV IPTV Canada save
@@ -311,10 +311,10 @@ export default function IPTVMontrealPage() {
                 lineHeight: 2,
               }}
             >
-              <li>1 Month — $19 CAD</li>
-              <li>3 Months — $29 CAD</li>
-              <li>6 Months — $49 CAD</li>
-              <li>12 Months — $79 CAD</li>
+              <li>1 Month — $19</li>
+              <li>3 Months — $29</li>
+              <li>6 Months — $49</li>
+              <li>12 Months — $79</li>
             </ul>
           </div>
         </div>
@@ -333,7 +333,7 @@ export default function IPTVMontrealPage() {
           Start Streaming in Montreal Today
         </h2>
         <p style={{ color: "#9ca3af", marginBottom: 32 }}>
-          Plans from $19 CAD/month. Free 24h trial available. Bilingual support
+          Plans from $19/month. Free 24h trial available. Bilingual support
           en français et en anglais.
         </p>
         <a

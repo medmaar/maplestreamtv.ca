@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Best IPTV Service in Ottawa 2026 | MapleStreamTV – From $19 CAD",
+  title: "Best IPTV Service in Ottawa 2026 | MapleStreamTV – From $19",
   description:
     "Best IPTV service in Ottawa Ontario. Stream Ottawa Senators, TSN, Sportsnet, CBC, CTV in 4K. MapleStreamTV. Free 24h trial available.",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-ottawa" },
   openGraph: {
-    title: "Best IPTV Service in Ottawa 2026 | MapleStreamTV – From $19 CAD",
+    title: "Best IPTV Service in Ottawa 2026 | MapleStreamTV – From $19",
     description:
       "Best IPTV service in Ottawa Ontario. Stream Ottawa Senators, TSN, Sportsnet, CBC, CTV in 4K. MapleStreamTV. Free 24h trial available.",
     url: "https://maplestreamtv.ca/iptv-ottawa",
@@ -175,7 +175,7 @@ export default function IPTVOttawaPage() {
             Bell and Rogers dominate the Ottawa cable market with packages that
             typically run $90–$150 per month before add-ons. MapleStreamTV
             gives Ottawa residents the same channels — and thousands more —
-            starting at just $19 CAD/month with no annual contract required.
+            starting at just $19/month with no annual contract required.
           </p>
           <p style={{ color: "#d1d5db", lineHeight: 1.8 }}>
             Ottawa subscribers who make the switch to MapleStreamTV IPTV
@@ -203,10 +203,10 @@ export default function IPTVOttawaPage() {
                 lineHeight: 2,
               }}
             >
-              <li>1 Month — $19 CAD</li>
-              <li>3 Months — $29 CAD</li>
-              <li>6 Months — $49 CAD</li>
-              <li>12 Months — $79 CAD</li>
+              <li>1 Month — $19</li>
+              <li>3 Months — $29</li>
+              <li>6 Months — $49</li>
+              <li>12 Months — $79</li>
             </ul>
           </div>
         </div>
@@ -225,7 +225,7 @@ export default function IPTVOttawaPage() {
           Start Streaming in Ottawa Today
         </h2>
         <p style={{ color: "#9ca3af", marginBottom: 32 }}>
-          Plans from $19 CAD/month. Free 24h trial available. Serving Ottawa
+          Plans from $19/month. Free 24h trial available. Serving Ottawa
           and Gatineau in English and French.
         </p>
         <a

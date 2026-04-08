@@ -4,12 +4,12 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "IPTV on Apple TV & iPhone in Canada 2026 | MapleStreamTV",
   description:
-    "Use MapleStreamTV IPTV on Apple TV, iPhone, and iPad in Canada. 25,000+ live channels, NHL, TSN, CBC in 4K. Easy Infuse or IPTV Smarters setup. From $19 CAD/month.",
+    "Use MapleStreamTV IPTV on Apple TV, iPhone, and iPad in Canada. 25,000+ live channels, NHL, TSN, CBC in 4K. Easy Infuse or IPTV Smarters setup. From $19/month.",
   keywords: "IPTV Apple TV Canada, IPTV iPhone Canada, IPTV iPad Canada 2026",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-apple-tv-canada" },
   openGraph: {
     title: "IPTV on Apple TV & iPhone in Canada 2026 | MapleStreamTV",
-    description: "Use MapleStreamTV IPTV on Apple TV, iPhone, and iPad in Canada. 25,000+ live channels, NHL, TSN, CBC in 4K. Easy Infuse or IPTV Smarters setup. From $19 CAD/month.",
+    description: "Use MapleStreamTV IPTV on Apple TV, iPhone, and iPad in Canada. 25,000+ live channels, NHL, TSN, CBC in 4K. Easy Infuse or IPTV Smarters setup. From $19/month.",
     url: "https://maplestreamtv.ca/iptv-apple-tv-canada",
     type: "website",
     siteName: "MapleStreamTV",
@@ -81,7 +81,7 @@ export default function IPTVAppleTVCanadaPage() {
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {[
-                { n: "01", title: "Choose a MapleStreamTV Plan", desc: "Select a plan from $19 CAD/month on our pricing page. Pay via Interac e-Transfer or other accepted methods." },
+                { n: "01", title: "Choose a MapleStreamTV Plan", desc: "Select a plan from $19/month on our pricing page. Pay via Interac e-Transfer or other accepted methods." },
                 { n: "02", title: "Receive Your Login Details", desc: "Within 5 minutes, we'll email your server URL, username, and password." },
                 { n: "03", title: "Download an IPTV App", desc: "On your Apple TV or iPhone, download 'IPTV Smarters Pro' or 'GSE Smart IPTV' from the App Store." },
                 { n: "04", title: "Enter Your Credentials", desc: "Open the app and enter your Xtream Codes or M3U URL. Your channel list loads automatically." },
@@ -103,7 +103,7 @@ export default function IPTVAppleTVCanadaPage() {
           <div style={{ maxWidth: 600, margin: "0 auto" }}>
             <h2 style={{ fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 800, marginBottom: 16 }}>Start Streaming on Your Apple Device</h2>
             <p style={{ color: "#9ca3af", marginBottom: 32, fontSize: 15 }}>
-              Best IPTV Canada service for Apple TV, iPhone, and iPad. Plans from $19 CAD/month.
+              Best IPTV Canada service for Apple TV, iPhone, and iPad. Plans from $19/month.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/pricing" style={{ background: "#E53935", color: "#fff", fontWeight: 700, fontSize: 15, padding: "14px 30px", borderRadius: 12, textDecoration: "none" }}>View IPTV Canada Plans →</Link>

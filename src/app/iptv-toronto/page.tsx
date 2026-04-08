@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Best IPTV Service in Toronto 2026 | MapleStreamTV – From $19 CAD",
+  title: "Best IPTV Service in Toronto 2026 | MapleStreamTV – From $19",
   description:
-    "MapleStreamTV is the best IPTV service in Toronto. 25,000+ live channels, NHL Maple Leafs, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $19 CAD/month.",
+    "MapleStreamTV is the best IPTV service in Toronto. 25,000+ live channels, NHL Maple Leafs, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $19/month.",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-toronto" },
   openGraph: {
-    title: "Best IPTV Service in Toronto 2026 | MapleStreamTV – From $19 CAD",
+    title: "Best IPTV Service in Toronto 2026 | MapleStreamTV – From $19",
     description:
-      "MapleStreamTV is the best IPTV service in Toronto. 25,000+ live channels, NHL Maple Leafs, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $19 CAD/month.",
+      "MapleStreamTV is the best IPTV service in Toronto. 25,000+ live channels, NHL Maple Leafs, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $19/month.",
     url: "https://maplestreamtv.ca/iptv-toronto",
     type: "website",
     siteName: "MapleStreamTV",
@@ -210,9 +210,9 @@ export default function IPTVTorontoPage() {
           <p style={{ color: "#d1d5db", lineHeight: 1.8, marginBottom: 16 }}>
             Bell and Rogers cable packages in Toronto typically run $90–$150 per
             month — before taxes, equipment fees, and add-ons. MapleStreamTV
-            starts at just $19 CAD/month, with longer plans dropping the cost
+            starts at just $19/month, with longer plans dropping the cost
             even further: 3 months for $29, 6 months for $49, or a full year for
-            $79 CAD.
+            $79.
           </p>
           <p style={{ color: "#d1d5db", lineHeight: 1.8 }}>
             Toronto residents save an average of $900/year by switching to IPTV
@@ -247,10 +247,10 @@ export default function IPTVTorontoPage() {
                 lineHeight: 2,
               }}
             >
-              <li>1 Month — $19 CAD</li>
-              <li>3 Months — $29 CAD</li>
-              <li>6 Months — $49 CAD</li>
-              <li>12 Months — $79 CAD</li>
+              <li>1 Month — $19</li>
+              <li>3 Months — $29</li>
+              <li>6 Months — $49</li>
+              <li>12 Months — $79</li>
             </ul>
           </div>
         </div>
@@ -271,7 +271,7 @@ export default function IPTVTorontoPage() {
           Start Streaming in Toronto Today
         </h2>
         <p style={{ color: "#9ca3af", marginBottom: 32 }}>
-          Plans from $19 CAD/month. Free 24h trial available. No contracts, no
+          Plans from $19/month. Free 24h trial available. No contracts, no
           hidden fees — just great TV for Toronto.
         </p>
         <a

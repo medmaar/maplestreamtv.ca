@@ -151,11 +151,11 @@ export default function FreeTrialForm() {
           value={form.device}
           onChange={handleChange}
           required
-          style={{ ...inputStyle, cursor: "pointer" }}
+          style={{ ...inputStyle, cursor: "pointer", backgroundColor: "#111827" }}
         >
-          <option value="">Select your device</option>
+          <option value="" style={{ backgroundColor: "#111827", color: "#fff" }}>Select your device</option>
           {deviceTypes.map((d) => (
-            <option key={d} value={d}>{d}</option>
+            <option key={d} value={d} style={{ backgroundColor: "#111827", color: "#fff" }}>{d}</option>
           ))}
         </select>
       </div>

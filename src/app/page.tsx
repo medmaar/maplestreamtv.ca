@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PricingSection from "./PricingSection";
 
 export const metadata: Metadata = {
   title: "Best IPTV Canada 2026 | #1 IPTV Subscription – 24h Free Trial",
   description:
-    "Canada's best IPTV service in 2026. 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet & more. Free 24h trial. Starting at $19 CAD/month.",
+    "Canada's best IPTV service in 2026. 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet & more. Free 24h trial. Starting at $19/month.",
   keywords:
     "IPTV Canada 2026, best IPTV Canada, IPTV subscription Canada, Canadian IPTV, IPTV free trial Canada, IPTV Canada cheap, best IPTV subscription Canada",
   alternates: { canonical: "https://maplestreamtv.ca" },
   openGraph: {
     title: "Best IPTV Canada 2026 | #1 IPTV Subscription – 24h Free Trial",
     description:
-      "Canada's best IPTV service in 2026. 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet & more. Free 24h trial. Starting at $19 CAD/month.",
+      "Canada's best IPTV service in 2026. 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet & more. Free 24h trial. Starting at $19/month.",
     url: "https://maplestreamtv.ca",
     type: "website",
     siteName: "MapleStreamTV",
@@ -30,7 +31,7 @@ const faqs = [
   },
   {
     q: "How much does IPTV cost compared to cable in Canada?",
-    a: "MapleStreamTV plans start at $19 CAD/month — compared to $80–$150/month for cable. A 12-month plan costs just $79 CAD total, saving you over $900/year versus Bell or Rogers.",
+    a: "MapleStreamTV plans start at $19/month — compared to $80–$150/month for cable. A 12-month plan costs just $79 total, saving you over $900/year versus Bell or Rogers.",
   },
   {
     q: "Can I get a free IPTV trial in Canada?",
@@ -79,24 +80,6 @@ const localBusinessSchema = {
   areaServed: "CA",
 };
 
-const plans = [
-  { name: "1 Month",   price: "$9",  href: "/pricing/1-month",   badge: null },
-  { name: "3 Months",  price: "$29", href: "/pricing/3-months",  badge: null },
-  { name: "6 Months",  price: "$39", href: "/pricing/6-months",  badge: "Popular" },
-  { name: "12 Months", price: "$49", href: "/pricing/12-months", badge: "Best Value" },
-];
-
-const planFeatures = [
-  "25,000+ Live Channels",
-  "120,000+ Movies & Series",
-  "4K Ultra HD Quality",
-  "NHL · TSN · Sportsnet · CTV",
-  "PPV Events Included",
-  "EPG & Catch-Up TV",
-  "All Devices Supported",
-  "24/7 Canadian Support",
-];
-
 const deviceNames = [
   "Amazon Fire Stick", "Samsung Smart TV", "LG Smart TV", "iPhone & iPad",
   "Android Phone", "Android TV Box", "MAG Box", "Apple TV",
@@ -119,7 +102,7 @@ const cities = [
 ];
 
 const comparison = [
-  { feature: "Price/month", us: "$19 CAD", cable: "$80–$150", other: "$15–$25" },
+  { feature: "Price/month", us: "$19", cable: "$80–$150", other: "$15–$25" },
   { feature: "Live Channels", us: "25,000+", cable: "150–500", other: "5,000–15,000" },
   { feature: "4K Streaming", us: "✓", cable: "Limited", other: "Varies" },
   { feature: "Contracts", us: "None", cable: "1–2 years", other: "Varies" },
@@ -255,92 +238,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── 3. PRICING PREVIEW ── */}
-        <section style={{ padding: "80px 16px", background: "#0a0a0a" }}>
-          <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-            <p style={{ textAlign: "center", color: "#E53935", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 12 }}>
-              Transparent Pricing
-            </p>
-            <h2 style={{ textAlign: "center", fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 900, marginBottom: 12 }}>
-              IPTV Canada Subscription Plans
-            </h2>
-            <div style={{ textAlign: "center", marginBottom: 16 }}>
-              <span style={{ display: "inline-block", background: "#E53935", color: "#fff", fontSize: 13, fontWeight: 700, padding: "5px 18px", borderRadius: 999 }}>
-                50% OFF Today!
-              </span>
-            </div>
-            <p style={{ textAlign: "center", color: "#6b7280", marginBottom: 48, fontSize: 15 }}>
-              All plans include 25,000+ channels, 4K streaming, and 24/7 Canadian support. Pay via Interac e-Transfer.
-            </p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20 }}>
-              {plans.map((plan) => (
-                <div
-                  key={plan.name}
-                  style={{
-                    background: plan.badge === "Best Value" ? "rgba(229,57,53,0.08)" : "rgba(255,255,255,0.03)",
-                    border: plan.badge === "Best Value" ? "1.5px solid rgba(229,57,53,0.5)" : "1px solid rgba(255,255,255,0.08)",
-                    borderRadius: 20,
-                    padding: "32px 24px",
-                    position: "relative",
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  {plan.badge && (
-                    <span
-                      style={{
-                        position: "absolute",
-                        top: -12,
-                        left: "50%",
-                        transform: "translateX(-50%)",
-                        background: "#E53935",
-                        color: "#fff",
-                        fontSize: 11,
-                        fontWeight: 700,
-                        padding: "4px 14px",
-                        borderRadius: 999,
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      {plan.badge}
-                    </span>
-                  )}
-                  <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{plan.name}</div>
-                  <div style={{ fontSize: 36, fontWeight: 900, color: "#E53935", marginBottom: 20 }}>{plan.price}</div>
-                  <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", flex: 1 }}>
-                    {planFeatures.map((f) => (
-                      <li key={f} style={{ fontSize: 13, color: "#9ca3af", marginBottom: 6, display: "flex", alignItems: "center", gap: 6, textAlign: "left" }}>
-                        <span style={{ color: "#E53935", fontWeight: 700, flexShrink: 0 }}>✓</span> {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href={plan.href}
-                    style={{
-                      display: "block",
-                      background: plan.badge === "Best Value" ? "#E53935" : "rgba(229,57,53,0.15)",
-                      color: plan.badge === "Best Value" ? "#fff" : "#E53935",
-                      fontWeight: 700,
-                      fontSize: 14,
-                      padding: "12px 20px",
-                      borderRadius: 12,
-                      textDecoration: "none",
-                      border: plan.badge === "Best Value" ? "none" : "1px solid rgba(229,57,53,0.3)",
-                      textAlign: "center",
-                    }}
-                  >
-                    Get Started →
-                  </Link>
-                </div>
-              ))}
-            </div>
-            <div style={{ textAlign: "center", marginTop: 32 }}>
-              <Link href="/pricing" style={{ color: "#E53935", fontWeight: 600, fontSize: 14, textDecoration: "none" }}>
-                View full pricing details →
-              </Link>
-            </div>
-          </div>
-        </section>
+        {/* ── 3. INTERACTIVE PRICING ── */}
+        <PricingSection />
 
         {/* ── 4. DEVICES ── */}
         <section style={{ padding: "80px 16px", background: "#0d0d0d", overflow: "hidden" }}>

@@ -45,7 +45,7 @@ const faqSchema = {
       name: "What is the best IPTV service in Canada for 2026?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "MapleStreamTV is rated the best IPTV service in Canada for 2026 based on channel count (25,000+), Canadian content coverage, 4K quality, uptime (99.9%), and 24/7 Canadian support. Plans start at $9 CAD/month.",
+        text: "MapleStreamTV is rated the best IPTV service in Canada for 2026 based on channel count (25,000+), Canadian content coverage, 4K quality, uptime (99.9%), and 24/7 Canadian support. Plans start at $9/month.",
       },
     },
     {
@@ -53,7 +53,7 @@ const faqSchema = {
       name: "How much does the best IPTV in Canada cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The best IPTV services in Canada start at $9–$15 CAD per month for a single device. Annual plans reduce the cost significantly — MapleStreamTV offers 12 months for $49 CAD for one device.",
+        text: "The best IPTV services in Canada start at $9–$15 per month for a single device. Annual plans reduce the cost significantly — MapleStreamTV offers 12 months for $49 for one device.",
       },
     },
     {
@@ -165,7 +165,7 @@ export default function BestIPTVCanada2026() {
               <li><strong>Uptime and reliability</strong> — Look for services with a proven 99%+ uptime, especially for live sports.</li>
               <li><strong>4K and HD quality</strong> — The best services offer 4K on key channels and HD on everything else.</li>
               <li><strong>Canadian support</strong> — A support team available in your time zone, in English and French, is invaluable.</li>
-              <li><strong>Honest pricing</strong> — Transparent CAD pricing with no hidden fees or forced annual commitments.</li>
+              <li><strong>Honest pricing</strong> — Transparent pricing with no hidden fees or forced annual commitments.</li>
             </ul>
           </section>
 
@@ -257,9 +257,9 @@ export default function BestIPTVCanada2026() {
               See all <Link href="/pricing" style={{ color: "#E53935", textDecoration: "none", fontWeight: 600 }}>MapleStreamTV IPTV Canada plans</Link> — pricing is transparent and all in Canadian dollars:
             </p>
             <ul style={{ paddingLeft: 24, color: "#d1d5db", lineHeight: 2, marginBottom: 16 }}>
-              <li>1 Month: $9 CAD (1 device)</li>
-              <li>6 Months: $39 CAD (1 device) — best per-month value at $6.50/mo</li>
-              <li>12 Months: $49 CAD (1 device) — best annual value at $4.08/mo</li>
+              <li>1 Month: $9 (1 device)</li>
+              <li>6 Months: $39 (1 device) — best per-month value at $6.50/mo</li>
+              <li>12 Months: $49 (1 device) — best annual value at $4.08/mo</li>
               <li>Multi-device plans available for 2–5 simultaneous connections</li>
             </ul>
             <p style={{ color: "#d1d5db", lineHeight: 1.75, marginBottom: 16 }}>

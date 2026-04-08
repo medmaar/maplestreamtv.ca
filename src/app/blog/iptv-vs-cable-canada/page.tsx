@@ -37,8 +37,8 @@ const articleSchema = {
 };
 
 const comparison = [
-  { feature: "Monthly Cost (entry)",     iptv: "$9 CAD",             cable: "$80–$100 CAD",       winner: "iptv" },
-  { feature: "Monthly Cost (full pkg)",  iptv: "$9–$45 CAD",         cable: "$120–$200 CAD",      winner: "iptv" },
+  { feature: "Monthly Cost (entry)",     iptv: "$9",             cable: "$80–$100",       winner: "iptv" },
+  { feature: "Monthly Cost (full pkg)",  iptv: "$9–$45",         cable: "$120–$200",      winner: "iptv" },
   { feature: "Channel Count",           iptv: "25,000+",             cable: "200–500",            winner: "iptv" },
   { feature: "4K Channels",             iptv: "Yes — many",          cable: "Limited (extra cost)",winner: "iptv" },
   { feature: "Contract Required",       iptv: "No",                  cable: "Yes — 1–2 years",    winner: "iptv" },

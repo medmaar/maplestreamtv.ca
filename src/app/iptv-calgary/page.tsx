@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Best IPTV Service in Calgary 2026 | MapleStreamTV – From $19 CAD",
+  title: "Best IPTV Service in Calgary 2026 | MapleStreamTV – From $19",
   description:
     "Best IPTV service in Calgary Alberta. Watch Calgary Flames on Sportsnet West, TSN, 25,000+ channels in 4K. MapleStreamTV. Free 24h trial.",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-calgary" },
   openGraph: {
-    title: "Best IPTV Service in Calgary 2026 | MapleStreamTV – From $19 CAD",
+    title: "Best IPTV Service in Calgary 2026 | MapleStreamTV – From $19",
     description:
       "Best IPTV service in Calgary Alberta. Watch Calgary Flames on Sportsnet West, TSN, 25,000+ channels in 4K. MapleStreamTV. Free 24h trial.",
     url: "https://maplestreamtv.ca/iptv-calgary",
@@ -206,7 +206,7 @@ export default function IPTVCalgaryPage() {
             Shaw and Telus TV packages in Calgary routinely cost $90–$140 per
             month once you add sports packs, HD fees, and equipment rental.
             MapleStreamTV gives Calgary residents access to more content for a
-            fraction of the price — starting at just $19 CAD for a full month
+            fraction of the price — starting at just $19 for a full month
             of IPTV Canada service.
           </p>
           <p style={{ color: "#d1d5db", lineHeight: 1.8 }}>
@@ -234,10 +234,10 @@ export default function IPTVCalgaryPage() {
                 lineHeight: 2,
               }}
             >
-              <li>1 Month — $19 CAD</li>
-              <li>3 Months — $29 CAD</li>
-              <li>6 Months — $49 CAD</li>
-              <li>12 Months — $79 CAD</li>
+              <li>1 Month — $19</li>
+              <li>3 Months — $29</li>
+              <li>6 Months — $49</li>
+              <li>12 Months — $79</li>
             </ul>
           </div>
         </div>
@@ -256,7 +256,7 @@ export default function IPTVCalgaryPage() {
           Start Streaming in Calgary Today
         </h2>
         <p style={{ color: "#9ca3af", marginBottom: 32 }}>
-          Plans from $19 CAD/month. Free 24h trial available. Watch every
+          Plans from $19/month. Free 24h trial available. Watch every
           Calgary Flames game in 4K.
         </p>
         <a
