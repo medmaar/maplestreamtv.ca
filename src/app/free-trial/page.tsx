@@ -1,138 +1,88 @@
 import type { Metadata } from "next";
+import FreeTrialForm from "./FreeTrialForm";
+import PlanFAQ, { type FaqItem } from "../pricing/PlanFAQ";
+
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "IPTV Canada Free Trial | Try 24 Hours Free — No Credit Card",
+  title: "Free 24-Hour IPTV Trial — No Credit Card | MapleStreamTV Canada",
   description:
-    "Get a free 24-hour IPTV Canada trial. Access 25,000+ live channels, NHL, TSN, CTV and 120,000+ movies with no credit card required. Instant activation.",
+    "Start your free 24-hour IPTV Canada trial. No credit card required. Instant access to 25,000+ live channels, NHL, TSN, CTV and 120,000+ movies in 4K.",
   keywords:
     "IPTV Canada free trial, free IPTV Canada, IPTV trial Canada, try IPTV Canada",
-  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/free-trial" },
+  alternates: { canonical: "https://maplestreamtv.ca/free-trial" },
 };
 
-const included = [
-  { title: "25,000+ Live Channels", desc: "Every Canadian channel including TSN, Sportsnet, CTV, CBC, Global and hundreds of US and international channels." },
-  { title: "120,000+ Movies & Series", desc: "Full access to our entire VOD library — the same content paying subscribers enjoy." },
-  { title: "4K Ultra HD Quality", desc: "Stream in stunning 4K resolution with Dolby audio where available." },
-  { title: "All Canadian Sports", desc: "Live NHL, NFL, NBA, MLB, UFC, F1, and Premier League with TSN, Sportsnet, and CBC Sports." },
-  { title: "All Devices", desc: "Test on Fire Stick, Smart TV, iPhone, Android, or your computer — all at once." },
-  { title: "EPG & Catch-Up TV", desc: "Full electronic program guide and catch-up TV so you never miss a show." },
+const faqItems: FaqItem[] = [
+  {
+    q: "How long does the free trial last?",
+    a: "24 hours — with full access to all 25,000+ live channels and the entire VOD library, exactly the same as a paid subscription.",
+  },
+  {
+    q: "Do I need a credit card?",
+    a: "No credit card or payment of any kind is required. The trial is completely free with zero obligation to subscribe afterwards.",
+  },
+  {
+    q: "How do I receive my trial credentials?",
+    a: "Fill out the form above and we will send your login credentials (server URL, username, and password) to your email within 5 minutes.",
+  },
+  {
+    q: "What devices work with the trial?",
+    a: "All devices — Amazon Firestick, Samsung/LG Smart TVs, Android TV boxes, Android phones, iPhone, iPad, Apple TV, MAG boxes, Windows PC, Mac, and more.",
+  },
+  {
+    q: "Can I upgrade to a paid plan after the trial?",
+    a: "Yes — contact us any time via WhatsApp or email and we will activate your chosen plan instantly. Plans start at $15/month.",
+  },
 ];
 
 export default function FreeTrialPage() {
   return (
-    <main className="bg-gray-950 text-white min-h-screen">
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-gray-900 via-gray-950 to-black py-20 px-4 text-center">
-        <div className="max-w-3xl mx-auto">
-          <div className="inline-block bg-red-600 text-white text-xs px-3 py-1 rounded-full mb-4 font-bold uppercase tracking-wider">
-            No Credit Card Required
-          </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
-            IPTV Canada <span className="text-red-500">Free Trial</span> — 24 Hours Free
-          </h1>
-          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-            Try Canada&apos;s #1 IPTV service completely free for 24 hours. No credit card,
-            no commitment, no risk. Get instant access to all 25,000+ channels the moment
-            you sign up.
-          </p>
+    <main style={{ background: "#10131E", color: "#fff", minHeight: "100vh", fontFamily: "inherit" }}>
+      <div style={{ maxWidth: 780, margin: "0 auto", padding: "48px 20px 80px" }}>
 
-          <div className="flex flex-col items-center gap-4 max-w-xs mx-auto mb-8">
-            <a
-              href="https://wa.me/17828026280?text=Hi%20MapleStreamTV%2C%20I%27m%20interested%20in%20your%20service."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full text-center py-4 rounded-2xl font-bold text-gray-900 bg-[#25D366] hover:brightness-110 transition text-lg"
-            >
-              WhatsApp Free Trial
-            </a>
-            <a
-              href="mailto:help@maplestreamtv.ca"
-              className="w-full text-center py-4 rounded-2xl font-bold text-gray-900 bg-[#F5C518] hover:brightness-110 transition text-lg"
-            >
-              Email Free Trial
-            </a>
-            <a
-              href="https://t.me/IPTVCanadaSupport"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full text-center py-4 rounded-2xl font-bold text-gray-900 bg-[#88C9F0] hover:brightness-110 transition text-lg"
-            >
-              Telegram Free Trial
-            </a>
-          </div>
-          <p className="text-gray-400 text-sm">
-            Fast activation · Human support · No obligation
-          </p>
+        {/* Badge */}
+        <div style={{ marginBottom: 20 }}>
+          <span
+            style={{
+              background: "#fd0322",
+              color: "#fff",
+              fontSize: 12,
+              fontWeight: 700,
+              padding: "5px 14px",
+              borderRadius: 999,
+              letterSpacing: 1,
+            }}
+          >
+            100% FREE · NO COMMITMENT · INSTANT ACTIVATION
+          </span>
         </div>
-      </section>
 
-      {/* What's included */}
-      <section className="py-20 px-4">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            What&apos;s Included in Your <span className="text-red-500">Free Trial</span>
-          </h2>
-          <p className="text-center text-gray-400 mb-12">
-            Full access — the same experience as our paid subscribers.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {included.map((item) => (
-              <div key={item.title} className="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-                <h3 className="text-lg font-bold mb-2 text-white">{item.title}</h3>
-                <p className="text-gray-400 text-sm">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        {/* Heading */}
+        <h1
+          style={{
+            fontSize: "clamp(2rem,5vw,2.8rem)",
+            fontWeight: 900,
+            marginBottom: 8,
+            lineHeight: 1.15,
+          }}
+        >
+          Start Your Free 24-Hour Trial
+        </h1>
+        <div style={{ width: 48, height: 4, background: "#fd0322", borderRadius: 2, marginBottom: 20 }} />
 
-      {/* No credit card section */}
-      <section className="py-16 px-4 bg-gray-900">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Why No <span className="text-red-500">Credit Card</span>?
-          </h2>
-          <p className="text-gray-300 leading-relaxed mb-6">
-            We believe you should be able to test our service completely risk-free before
-            spending a single dollar. That&apos;s why our free trial requires no payment
-            information — no auto-renewals, no surprise charges, no strings attached.
-          </p>
-          <p className="text-gray-300 leading-relaxed mb-8">
-            Once your 24-hour trial ends, if you&apos;re happy with the service (and we&apos;re
-            confident you will be), simply contact us to subscribe. Plans start at just
-            $9 CAD/month.
-          </p>
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-            <span className="flex items-center gap-2"><span className="text-green-400">✓</span> No credit card</span>
-            <span className="flex items-center gap-2"><span className="text-green-400">✓</span> No auto-renewal</span>
-            <span className="flex items-center gap-2"><span className="text-green-400">✓</span> Instant activation</span>
-            <span className="flex items-center gap-2"><span className="text-green-400">✓</span> Cancel anytime</span>
-          </div>
-        </div>
-      </section>
+        {/* Subtitle */}
+        <p style={{ color: "#aaa", fontSize: 15, marginBottom: 36 }}>
+          No credit card required. Get instant access to 25,000+ channels in 4K.
+        </p>
 
-      {/* FAQ */}
-      <section className="py-20 px-4">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10">
-            Free Trial <span className="text-red-500">FAQ</span>
-          </h2>
-          <div className="space-y-6">
-            {[
-              { q: "How do I get the free trial?", a: "Simply contact us via WhatsApp, Telegram, or email above. Our team will activate your trial within minutes — usually under 5 minutes during business hours." },
-              { q: "Does the free trial include all channels?", a: "Yes. Your 24-hour trial gives you full access to all 25,000+ live channels, 120,000+ VOD titles, and all sports packages — no restrictions." },
-              { q: "How many devices can I use during the trial?", a: "Your trial includes one simultaneous connection. If you want to test on multiple devices, let us know and we can arrange that." },
-              { q: "What happens after 24 hours?", a: "Your trial simply stops. There are no charges, no cancellation required. If you'd like to continue, contact us to choose a plan." },
-              { q: "Is a credit card required to start the trial?", a: "Absolutely not. No payment information is needed. The trial is 100% free with zero obligation to subscribe afterwards." },
-            ].map((item) => (
-              <div key={item.q} className="bg-gray-900 rounded-xl p-6 border border-gray-800">
-                <h3 className="font-bold text-lg mb-3 text-red-400">{item.q}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{item.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        {/* Order Form */}
+        <FreeTrialForm />
+
+        {/* FAQ */}
+        <PlanFAQ items={faqItems} />
+
+      </div>
     </main>
   );
 }

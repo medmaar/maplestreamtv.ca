@@ -110,18 +110,7 @@ export default function Pricing6MonthsPage() {
             </div>
 
             {/* 4. FAQ */}
-            <div>
-              <p
-                className="text-xs font-bold uppercase tracking-widest mb-2"
-                style={{ color: "#fd0322" }}
-              >
-                FAQ
-              </p>
-              <h2 className="text-2xl font-extrabold text-white mb-6">
-                Frequently Asked Questions
-              </h2>
-              <PlanFAQ items={faqItems} />
-            </div>
+            <PlanFAQ items={faqItems} />
           </div>
         </section>
 
