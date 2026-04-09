@@ -60,6 +60,7 @@ export default function FreeTrialForm() {
           device: form.device || "Not specified",
           plan: "Free Trial (24h)",
           message: form.message || "—",
+          site_name: "MapleStreamTV.ca",
         },
         PUBLIC_KEY
       );
