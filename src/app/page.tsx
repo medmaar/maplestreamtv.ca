@@ -5,19 +5,20 @@ import PricingSection from "./PricingSection";
 export const metadata: Metadata = {
   title: "Best IPTV Canada 2026 | #1 IPTV Subscription – 24h Free Trial",
   description:
-    "Canada's best IPTV service in 2026. 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet & more. Free 24h trial. Starting at $19/month.",
+    "Canada's best IPTV service in 2026. 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet & more. Free 24h trial. Starting at $9/month.",
   keywords:
     "IPTV Canada 2026, best IPTV Canada, IPTV subscription Canada, Canadian IPTV, IPTV free trial Canada, IPTV Canada cheap, best IPTV subscription Canada",
   alternates: { canonical: "https://maplestreamtv.ca" },
   openGraph: {
+      images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
     title: "Best IPTV Canada 2026 | #1 IPTV Subscription – 24h Free Trial",
     description:
-      "Canada's best IPTV service in 2026. 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet & more. Free 24h trial. Starting at $19/month.",
+      "Canada's best IPTV service in 2026. 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet & more. Free 24h trial. Starting at $9/month.",
     url: "https://maplestreamtv.ca",
     type: "website",
     siteName: "MapleStreamTV",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["/og-image.webp"] },
 };
 
 const faqs = [
@@ -31,7 +32,7 @@ const faqs = [
   },
   {
     q: "How much does IPTV cost compared to cable in Canada?",
-    a: "MapleStreamTV plans start at $19/month — compared to $80–$150/month for cable. A 12-month plan costs just $79 total, saving you over $900/year versus Bell or Rogers.",
+    a: "MapleStreamTV plans start at $9/month — compared to $80–$150/month for cable. A 12-month plan costs just $49 total, saving you over $800/year versus Bell or Rogers.",
   },
   {
     q: "Can I get a free IPTV trial in Canada?",
@@ -102,7 +103,7 @@ const cities = [
 ];
 
 const comparison = [
-  { feature: "Price/month", us: "$19", cable: "$80–$150", other: "$15–$25" },
+  { feature: "Price/month", us: "$9", cable: "$80–$150", other: "$15–$25" },
   { feature: "Live Channels", us: "25,000+", cable: "150–500", other: "5,000–15,000" },
   { feature: "4K Streaming", us: "✓", cable: "Limited", other: "Varies" },
   { feature: "Contracts", us: "None", cable: "1–2 years", other: "Varies" },

@@ -2,20 +2,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best IPTV Service in Edmonton 2026 | MapleStreamTV – From $19",
+  title: "Best IPTV Service in Edmonton 2026 | MapleStreamTV – From $9",
   description:
-    "MapleStreamTV is the best IPTV service in Edmonton. 25,000+ live channels, NHL Oilers, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $19/month.",
+    "MapleStreamTV is the best IPTV service in Edmonton. 25,000+ live channels, NHL Oilers, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $9/month.",
   keywords: "IPTV Edmonton, best IPTV Edmonton 2026, IPTV service Edmonton Alberta, Edmonton IPTV subscription",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-edmonton" },
   openGraph: {
-    title: "Best IPTV Service in Edmonton 2026 | MapleStreamTV – From $19",
+      images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
+    title: "Best IPTV Service in Edmonton 2026 | MapleStreamTV – From $9",
     description:
-      "MapleStreamTV is the best IPTV service in Edmonton. 25,000+ live channels, NHL Oilers, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $19/month.",
+      "MapleStreamTV is the best IPTV service in Edmonton. 25,000+ live channels, NHL Oilers, TSN, Sportsnet & CBC in 4K. Free 24h trial. From $9/month.",
     url: "https://maplestreamtv.ca/iptv-edmonton",
     type: "website",
     siteName: "MapleStreamTV",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["/og-image.webp"] },
 };
 
 export default function IPTVEdmontonPage() {
@@ -146,7 +147,7 @@ export default function IPTVEdmontonPage() {
               },
               {
                 title: "Save $1,000+/year vs Cable",
-                desc: "Edmonton cable bills average $100–$150/month. MapleStreamTV IPTV Canada starts at just $19/month.",
+                desc: "Edmonton cable bills average $100–$150/month. MapleStreamTV IPTV Canada starts at just $9/month.",
               },
             ].map((f) => (
               <div
@@ -266,10 +267,10 @@ export default function IPTVEdmontonPage() {
             }}
           >
             {[
-              { name: "1 Month", price: "$19", href: "/pricing/1-month" },
-              { name: "3 Months", price: "$29", href: "/pricing/3-months" },
-              { name: "6 Months", price: "$49", href: "/pricing/6-months" },
-              { name: "12 Months", price: "$79", href: "/pricing/12-months", best: true },
+              { name: "1 Month", price: "$9", href: "/1-month" },
+              { name: "3 Months", price: "$29", href: "/3-months" },
+              { name: "6 Months", price: "$39", href: "/6-months" },
+              { name: "12 Months", price: "$49", href: "/12-months", best: true },
             ].map((plan) => (
               <Link
                 key={plan.name}

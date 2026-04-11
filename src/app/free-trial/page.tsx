@@ -32,7 +32,7 @@ const faqItems: FaqItem[] = [
   },
   {
     q: "Can I upgrade to a paid plan after the trial?",
-    a: "Yes — contact us any time via WhatsApp or email and we will activate your chosen plan instantly. Plans start at $15/month.",
+    a: "Yes — contact us any time via WhatsApp or email and we will activate your chosen plan instantly. Plans start at $9/month.",
   },
 ];
 

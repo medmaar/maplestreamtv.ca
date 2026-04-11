@@ -6,6 +6,7 @@ export const metadata: Metadata = {
     "Meilleur service IPTV à Montréal. MapleStreamTV offers English and French channels — RDS, TVA, V, Sportsnet, TSN, CBC. 25,000+ channels. Free trial.",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-montreal" },
   openGraph: {
+      images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
     title: "Best IPTV Service in Montreal / Montréal 2026 | MapleStreamTV",
     description:
       "Meilleur service IPTV à Montréal. MapleStreamTV offers English and French channels — RDS, TVA, V, Sportsnet, TSN, CBC. 25,000+ channels. Free trial.",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "MapleStreamTV",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["/og-image.webp"] },
 };
 
 export default function IPTVMontrealPage() {
@@ -277,7 +278,7 @@ export default function IPTVMontrealPage() {
             Vidéotron TV packages in Montreal typically cost $80–$140 per month,
             and that&apos;s before optional add-on packs for sports or international
             content. MapleStreamTV gives you more channels — including all the
-            French and English content you want — starting at just $19/month.
+            French and English content you want — starting at just $9/month.
           </p>
           <p style={{ color: "#d1d5db", lineHeight: 1.8 }}>
             Montreal subscribers who switch to MapleStreamTV IPTV Canada save
@@ -311,10 +312,10 @@ export default function IPTVMontrealPage() {
                 lineHeight: 2,
               }}
             >
-              <li>1 Month — $19</li>
+              <li>1 Month — $9</li>
               <li>3 Months — $29</li>
               <li>6 Months — $49</li>
-              <li>12 Months — $79</li>
+              <li>12 Months — $49</li>
             </ul>
           </div>
         </div>
@@ -333,7 +334,7 @@ export default function IPTVMontrealPage() {
           Start Streaming in Montreal Today
         </h2>
         <p style={{ color: "#9ca3af", marginBottom: 32 }}>
-          Plans from $19/month. Free 24h trial available. Bilingual support
+          Plans from $9/month. Free 24h trial available. Bilingual support
           en français et en anglais.
         </p>
         <a

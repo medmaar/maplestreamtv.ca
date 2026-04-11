@@ -25,6 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/iptv-smart-tv-canada`,                    lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/iptv-apple-tv-canada`,                    lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/iptv-mag-box-canada`,                     lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/iptv-samsung-tv-canada`,                  lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/iptv-lg-tv-canada`,                       lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/iptv-roku-canada`,                        lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/iptv-android-canada`,                     lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/iptv-ios-canada`,                         lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/iptv-windows-canada`,                     lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     // City landing pages
     { url: `${base}/iptv-toronto`,                            lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/iptv-vancouver`,                          lastModified: now, changeFrequency: "monthly", priority: 0.7 },
@@ -35,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Blog
     { url: `${base}/blog`,                                    lastModified: now, changeFrequency: "weekly",  priority: 0.8 },
     { url: `${base}/blog/best-iptv-canada-2026`,              lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/blog/iptv-firestick-canada`,              lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/blog/is-iptv-legal-canada`,               lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/blog/iptv-vs-cable-canada`,               lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/blog/best-iptv-player-canada`,            lastModified: now, changeFrequency: "monthly", priority: 0.8 },

@@ -3,18 +3,18 @@ import PlanOrderForm from "../PlanOrderForm";
 import PlanFAQ, { type FaqItem } from "../PlanFAQ";
 
 export const metadata: Metadata = {
-  title: "1 Month IPTV Plan — $15 | MapleStreamTV Canada",
+  title: "1 Month IPTV Plan — $9 | MapleStreamTV Canada",
   description:
-    "Get 1 month of IPTV in Canada for $15. 25,000+ live channels, 4K quality, NHL, TSN, CTV and more. No contract. Login credentials sent within 24 hours.",
+    "Get 1 month of IPTV in Canada for $9. 25,000+ live channels, 4K quality, NHL, TSN, CTV and more. No contract. Login credentials sent within 24 hours.",
   keywords:
     "IPTV Canada 1 month, IPTV monthly plan Canada, IPTV $15 Canada, month to month IPTV Canada",
-  alternates: { canonical: "https://maplestreamtv.ca/pricing/1-month" },
+  alternates: { canonical: "https://maplestreamtv.ca/1-month" },
 };
 
 const faqItems: FaqItem[] = [
   {
     q: "What is included in the 1-month IPTV plan?",
-    a: "The 1-month plan gives you full access to 25,000+ live channels including all Canadian networks (TSN, Sportsnet, CBC, CTV, Global, RDS, TVA), 120,000+ movies and series on demand, 4K Ultra HD streaming, electronic program guide (EPG), and 7-day catch-up TV — all for $15.",
+    a: "The 1-month plan gives you full access to 25,000+ live channels including all Canadian networks (TSN, Sportsnet, CBC, CTV, Global, RDS, TVA), 120,000+ movies and series on demand, 4K Ultra HD streaming, electronic program guide (EPG), and 7-day catch-up TV — all for $9.",
   },
   {
     q: "How do I receive my login credentials after ordering?",

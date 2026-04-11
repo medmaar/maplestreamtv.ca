@@ -10,6 +10,13 @@ export const metadata: Metadata = {
     description: "Best IPTV service in Canada for 2026. Get 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet included. Try free for 24 hours at maplestreamtv.ca!",
     keywords: "IPTV Canada 2026, best IPTV Canada, IPTV subscription Canada, IPTV service Canada, Canadian IPTV",
     verification: { google: "NPe9mnD6fyjcZMDzlkDeeJ9xsSMileOAckN4P0zXxVw" },
+    openGraph: {
+        images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        images: ["/og-image.webp"],
+    },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

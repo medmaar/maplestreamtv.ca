@@ -4,17 +4,18 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "IPTV MAG Box Canada – Setup & Best Plans 2026 | MapleStreamTV",
   description:
-    "Set up MapleStreamTV IPTV on your MAG Box in Canada. Full portal URL setup guide. 25,000+ live channels, NHL, TSN in 4K. Plans from $19/month.",
+    "Set up MapleStreamTV IPTV on your MAG Box in Canada. Full portal URL setup guide. 25,000+ live channels, NHL, TSN in 4K. Plans from $9/month.",
   keywords: "IPTV MAG Box Canada, MAG 322 IPTV Canada, MAG Box setup Canada 2026",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-mag-box-canada" },
   openGraph: {
+      images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
     title: "IPTV MAG Box Canada – Setup & Best Plans 2026 | MapleStreamTV",
-    description: "Set up MapleStreamTV IPTV on your MAG Box in Canada. Full portal URL setup guide. 25,000+ live channels, NHL, TSN in 4K. Plans from $19/month.",
+    description: "Set up MapleStreamTV IPTV on your MAG Box in Canada. Full portal URL setup guide. 25,000+ live channels, NHL, TSN in 4K. Plans from $9/month.",
     url: "https://maplestreamtv.ca/iptv-mag-box-canada",
     type: "website",
     siteName: "MapleStreamTV",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["/og-image.webp"] },
 };
 
 const howToSchema = {
@@ -103,7 +104,7 @@ export default function IPTVMagBoxCanadaPage() {
           <div style={{ maxWidth: 600, margin: "0 auto" }}>
             <h2 style={{ fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 800, marginBottom: 16 }}>Ready to Set Up Your MAG Box?</h2>
             <p style={{ color: "#9ca3af", marginBottom: 32, fontSize: 15 }}>
-              Best IPTV Canada service for MAG boxes. Plans from $19/month with free 24-hour trial.
+              Best IPTV Canada service for MAG boxes. Plans from $9/month with free 24-hour trial.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/pricing" style={{ background: "#E53935", color: "#fff", fontWeight: 700, fontSize: 15, padding: "14px 30px", borderRadius: 12, textDecoration: "none" }}>View IPTV Canada Plans →</Link>

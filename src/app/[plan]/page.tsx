@@ -94,6 +94,7 @@ export async function generateMetadata({
     keywords: meta.keywords,
     alternates: { canonical: `https://maplestreamtv.ca/${plan}` },
     openGraph: {
+      images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
       title: meta.title,
       description: meta.description,
       url: `https://maplestreamtv.ca/${plan}`,

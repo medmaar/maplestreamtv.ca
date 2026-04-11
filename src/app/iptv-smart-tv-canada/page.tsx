@@ -4,17 +4,18 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "IPTV for Samsung & LG Smart TV in Canada 2026 | MapleStreamTV",
   description:
-    "Install MapleStreamTV IPTV on your Samsung or LG Smart TV in Canada. 25,000+ live channels, NHL, TSN, CTV in 4K. Easy setup in minutes. From $19/month.",
+    "Install MapleStreamTV IPTV on your Samsung or LG Smart TV in Canada. 25,000+ live channels, NHL, TSN, CTV in 4K. Easy setup in minutes. From $9/month.",
   keywords: "IPTV Samsung TV Canada, IPTV LG Smart TV Canada, Smart TV IPTV Canada 2026",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-smart-tv-canada" },
   openGraph: {
+      images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
     title: "IPTV for Samsung & LG Smart TV in Canada 2026 | MapleStreamTV",
-    description: "Install MapleStreamTV IPTV on your Samsung or LG Smart TV in Canada. 25,000+ live channels, NHL, TSN, CTV in 4K. Easy setup in minutes. From $19/month.",
+    description: "Install MapleStreamTV IPTV on your Samsung or LG Smart TV in Canada. 25,000+ live channels, NHL, TSN, CTV in 4K. Easy setup in minutes. From $9/month.",
     url: "https://maplestreamtv.ca/iptv-smart-tv-canada",
     type: "website",
     siteName: "MapleStreamTV",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["/og-image.webp"] },
 };
 
 const howToSchema = {
@@ -84,7 +85,7 @@ export default function IPTVSmartTVCanadaPage() {
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {[
-                { n: "01", title: "Subscribe to MapleStreamTV", desc: "Choose a plan on our pricing page — starting at $19/month. Pay securely via Interac e-Transfer." },
+                { n: "01", title: "Subscribe to MapleStreamTV", desc: "Choose a plan on our pricing page — starting at $9/month. Pay securely via Interac e-Transfer." },
                 { n: "02", title: "Receive Your Credentials", desc: "We'll email you a server URL, username, and password within 5 minutes of your order." },
                 { n: "03", title: "Install IPTV App on Smart TV", desc: "Open the Samsung Apps or LG Content Store and download 'Smart IPTV' or 'IPTV Smarters'." },
                 { n: "04", title: "Enter Your Login Details", desc: "Open the app, input your server URL and credentials, then load your channel list." },
@@ -109,7 +110,7 @@ export default function IPTVSmartTVCanadaPage() {
               Ready to Cut the Cable?
             </h2>
             <p style={{ color: "#9ca3af", marginBottom: 32, fontSize: 15 }}>
-              Get the best IPTV Canada service on your Smart TV. Plans start at $19/month with a free 24-hour trial.
+              Get the best IPTV Canada service on your Smart TV. Plans start at $9/month with a free 24-hour trial.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/pricing" style={{ background: "#E53935", color: "#fff", fontWeight: 700, fontSize: 15, padding: "14px 30px", borderRadius: 12, textDecoration: "none" }}>

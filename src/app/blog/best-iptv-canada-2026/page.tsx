@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     "best IPTV Canada 2026, top IPTV Canada, IPTV Canada review, best IPTV service Canada",
   alternates: { canonical: "https://maplestreamtv.ca/blog/best-iptv-canada-2026" },
   openGraph: {
+      images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
     title: "Best IPTV Canada 2026: Top Services Reviewed & Compared | MapleStreamTV",
     description:
       "We reviewed and compared the top Canadian IPTV providers on channels, price, reliability and support.",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     type: "article",
     siteName: "MapleStreamTV",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["/og-image.webp"] },
 };
 
 const articleSchema = {
@@ -53,7 +54,7 @@ const faqSchema = {
       name: "How much does the best IPTV in Canada cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The best IPTV services in Canada start at $9–$15 per month for a single device. Annual plans reduce the cost significantly — MapleStreamTV offers 12 months for $49 for one device.",
+        text: "The best IPTV services in Canada start at $9/month for a single device. Annual plans reduce the cost significantly — MapleStreamTV offers 12 months for $49 for one device.",
       },
     },
     {

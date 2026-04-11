@@ -8,13 +8,14 @@ export const metadata: Metadata = {
   keywords: "IPTV Canada blog, IPTV Canada guide 2026, best IPTV Canada review",
   alternates: { canonical: "https://maplestreamtv.ca/blog" },
   openGraph: {
+      images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
     title: "IPTV Canada Blog 2026 | Guides, Reviews & News – MapleStreamTV",
     description: "Read MapleStreamTV's IPTV Canada blog. Expert guides on setup, legality, pricing comparisons, and player reviews.",
     url: "https://maplestreamtv.ca/blog",
     type: "website",
     siteName: "MapleStreamTV",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["/og-image.webp"] },
 };
 
 const posts = [
