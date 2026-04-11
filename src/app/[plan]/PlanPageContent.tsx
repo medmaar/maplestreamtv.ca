@@ -4,6 +4,8 @@ import OrderForm from "../pricing/OrderForm";
 import PlanFAQ, { type FaqItem } from "../pricing/PlanFAQ";
 import Link from "next/link";
 
+import { devicePrices } from "./planPricing";
+
 export interface PlanStaticData {
   label: string;
   badge: string;
@@ -226,12 +228,7 @@ export default function PlanPageContent({ plan, data, prices, defaultDevices }: 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {otherPlans.map((p) => {
               const isCurrent = p.slug === plan;
-              const planPrice = {
-                "1-month": [9, 18, 27, 36, 45, 54, 63, 72, 81, 90],
-                "3-months": [29, 50, 75, 99, 120, 144, 168, 192, 216, 240],
-                "6-months": [39, 69, 105, 140, 175, 210, 245, 280, 315, 350],
-                "12-months": [49, 89, 135, 180, 225, 270, 315, 360, 405, 450],
-              }[p.slug]![devices - 1];
+              const planPrice = devicePrices[p.slug]![devices - 1];
 
               return (
                 <Link
