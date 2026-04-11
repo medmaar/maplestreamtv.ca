@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import OrderForm from "../pricing/OrderForm";
 import PlanFAQ, { type FaqItem } from "../pricing/PlanFAQ";
 import Link from "next/link";
@@ -41,7 +42,16 @@ const otherPlans = [
 ];
 
 export default function PlanPageContent({ plan, data, prices, defaultDevices }: Props) {
-  const [devices, setDevices] = useState(defaultDevices);
+  const searchParams = useSearchParams();
+  const urlDevices = Math.min(10, Math.max(1, parseInt(searchParams.get("devices") ?? String(defaultDevices), 10) || defaultDevices));
+  const [devices, setDevices] = useState(urlDevices);
+
+  // Sync if URL param changes (e.g. browser back/forward)
+  useEffect(() => {
+    const n = parseInt(searchParams.get("devices") ?? "1", 10);
+    if (n >= 1 && n <= 10) setDevices(n);
+  }, [searchParams]);
+
   const price = prices[devices - 1];
 
   const savings =

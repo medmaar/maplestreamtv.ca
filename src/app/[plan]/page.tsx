@@ -107,19 +107,14 @@ export async function generateMetadata({
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default async function PlanPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ plan: string }>;
-  searchParams: Promise<{ devices?: string }>;
 }) {
   const { plan } = await params;
-  const { devices: devicesStr } = await searchParams;
 
   const data = planStaticData[plan];
   const prices = devicePrices[plan];
   if (!data || !prices) notFound();
-
-  const defaultDevices = Math.min(10, Math.max(1, parseInt(devicesStr ?? "1", 10) || 1));
 
   const schema = {
     "@context": "https://schema.org",
@@ -150,7 +145,7 @@ export default async function PlanPage({
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <PlanPageContent plan={plan} data={data} prices={prices} defaultDevices={defaultDevices} />
+      <PlanPageContent plan={plan} data={data} prices={prices} defaultDevices={1} />
     </>
   );
 }
