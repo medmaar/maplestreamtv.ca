@@ -239,7 +239,7 @@ export default function PlanOrderForm({ plan }: Props) {
       </button>
 
       <p className="text-center text-gray-600 text-xs">
-        Secure · Login credentials sent to your email within 5 minutes
+        Secure · Login credentials sent via WhatsApp or email within 5 minutes
       </p>
     </form>
   );

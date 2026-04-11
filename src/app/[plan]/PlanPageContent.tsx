@@ -87,7 +87,7 @@ export default function PlanPageContent({ plan, data, prices, defaultDevices }: 
           <div className="mb-10">
             <p className="text-gray-300 text-base">Fill out the form below to place your order.</p>
             <p className="text-gray-400 text-sm mt-1">
-              We&apos;ll send your login credentials to your email within 5 minutes.
+              We&apos;ll send your login credentials via WhatsApp or email within 5 minutes.
             </p>
           </div>
 
