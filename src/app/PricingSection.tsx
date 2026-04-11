@@ -22,7 +22,7 @@ const badges: Partial<Record<Duration, string>> = {
   "1 Year":   "Best Value",
 };
 
-const orderLinks: Record<Duration, string> = {
+const orderSlugs: Record<Duration, string> = {
   "1 Month":  "/1-month",
   "3 Months": "/3-months",
   "6 Months": "/6-months",
@@ -136,7 +136,7 @@ export default function PricingSection() {
                   ))}
                 </ul>
                 <a
-                  href={orderLinks[dur]}
+                  href={`${orderSlugs[dur]}?devices=${activeDevices}`}
                   style={{
                     display: "block",
                     textAlign: "center",
