@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import PlanPageContent, { type PlanStaticData } from "./PlanPageContent";
 import type { FaqItem } from "../pricing/PlanFAQ";
@@ -145,7 +146,9 @@ export default async function PlanPage({
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <PlanPageContent plan={plan} data={data} prices={prices} defaultDevices={1} />
+      <Suspense fallback={null}>
+        <PlanPageContent plan={plan} data={data} prices={prices} defaultDevices={1} />
+      </Suspense>
     </>
   );
 }
