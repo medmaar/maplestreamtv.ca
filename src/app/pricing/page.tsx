@@ -3,17 +3,17 @@ import PricingSection from "../PricingSection";
 import FaqAccordion from "../components/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "IPTV Canada Pricing 2026 | Plans from $9/month – MapleStreamTV",
+  title: "Cord-Cutting Plans Canada — Cancel Cable from $9 | MapleStreamTV",
   description:
-    "Compare IPTV Canada subscription plans. 1, 3, 6 & 12-month options. 25,000+ channels, 4K streaming, Interac e-Transfer accepted. Free 24h trial available.",
+    "MapleStreamTV cord-cutting plans for Canadian families. 1, 3, 6 & 12-month options from $9. 25,000+ channels, kids channels, all Canadian locals. No contracts.",
   keywords:
-    "IPTV Canada pricing, IPTV Canada plans, IPTV subscription price Canada, cheap IPTV Canada",
+    "MapleStreamTV pricing, cord cutting plan Canada, cancel cable plan Canada, family IPTV price Canada 2026",
   alternates: { canonical: "https://maplestreamtv.ca/pricing" },
   openGraph: {
-      images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
-    title: "IPTV Canada Pricing 2026 | Plans from $9/month – MapleStreamTV",
+    images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Cut Your Cable Bill Today" }],
+    title: "Cord-Cutting Plans Canada — Cancel Cable from $9 | MapleStreamTV",
     description:
-      "Compare IPTV Canada subscription plans. 1, 3, 6 & 12-month options. 25,000+ channels, 4K streaming, Interac e-Transfer accepted. Free 24h trial available.",
+      "MapleStreamTV cord-cutting plans for Canadian families. From $9/month. Kids channels, all Canadian locals, no contracts, cancel anytime.",
     url: "https://maplestreamtv.ca/pricing",
     siteName: "MapleStreamTV",
     locale: "en_CA",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "IPTV Canada Pricing 2026 | Plans from $9/month – MapleStreamTV",
+    title: "Cord-Cutting Plans Canada — Cancel Cable from $9 | MapleStreamTV",
     description:
-      "Compare IPTV Canada subscription plans. 1, 3, 6 & 12-month options. 25,000+ channels, 4K streaming, Interac e-Transfer accepted. Free 24h trial available.",
+      "MapleStreamTV cord-cutting plans from $9. Kids channels, Canadian locals, no contracts.",
   },
 };
 
@@ -46,15 +46,15 @@ export default function PricingPage() {
             Transparent Pricing
           </p>
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">
-            IPTV Canada{" "}
-            <span style={{ color: "#fd0322" }}>Subscription Plans 2026</span>
+            MapleStreamTV{" "}
+            <span style={{ color: "#fd0322" }}>Cord-Cutting Plans 2026</span>
           </h1>
           <p className="text-gray-400 mb-8 max-w-xl mx-auto leading-relaxed">
-            Transparent pricing with no hidden fees. All plans include 25,000+ channels,
-            120,000+ movies &amp; series, and 24/7 Canadian support.
+            No hidden fees. No contracts. Cancel any time. Every plan includes 25,000+ channels,
+            kids channels, all Canadian locals, and 24/7 Canadian support.
           </p>
           <div className="flex flex-wrap justify-center gap-5 text-sm text-gray-400">
-            {["No contracts", "Instant activation", "Cancel anytime", "24h free trial available"].map(
+            {["No contracts", "Cancel anytime", "Kids channels included", "Free 24h trial"].map(
               (item) => (
                 <span key={item} className="flex items-center gap-2">
                   <span style={{ color: "#4ade80" }}>✓</span> {item}
@@ -82,14 +82,14 @@ export default function PricingPage() {
             {[
               "25,000+ Live TV Channels",
               "120,000+ Movies & Series (VOD)",
-              "4K Ultra HD & HD Quality",
-              "NHL, NFL, NBA, MLB, UFC",
+              "All Local Canadian Channels (CBC, CTV, Global, City TV)",
+              "Kids: Disney, Treehouse, YTV, Teletoon, Nickelodeon",
+              "Save $900+/Year vs Bell or Rogers",
+              "NHL, NFL, NBA, MLB, UFC — All Included",
               "TSN, Sportsnet, CBC, CTV, Global",
-              "PPV Events Included",
-              "Electronic Program Guide (EPG)",
-              "Catch-Up TV (7 days)",
-              "All Devices: Fire Stick, Smart TV, iOS, Android",
-              "Anti-Freeze Technology",
+              "PPV Events — No Extra Charge",
+              "EPG + Catch-Up TV (7 days)",
+              "All Devices: Smart TV, Phone, Tablet, PC",
               "99.9% Uptime Guarantee",
               "24/7 Canadian Support",
             ].map((feature) => (
@@ -121,10 +121,10 @@ export default function PricingPage() {
       >
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-extrabold text-white mb-4">
-            Not Sure Yet? Try Free for 24 Hours
+            Try It Free for 24 Hours — Risk-Free
           </h2>
           <p className="text-gray-400 mb-8 text-sm">
-            No credit card required. Test every channel, every feature, on any device.
+            No credit card. No commitment. Full access to all channels on any device. Cancel any time.
           </p>
           <a
             href="/free-trial"

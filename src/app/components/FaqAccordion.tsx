@@ -3,28 +3,28 @@ import { useState } from "react";
 
 const items = [
   {
-    q: "What is the best IPTV service in Canada for 2026?",
-    a: "IPTV Subscription Canada is the #1 rated IPTV service in Canada for 2026, offering 25,000+ live channels including all Canadian networks, NHL, TSN, Sportsnet, CTV, CBC and 120,000+ movies and series in 4K quality with 99.9% uptime.",
+    q: "How much can I save by cutting the cord?",
+    a: "Most Canadian families pay $80–$150/month for cable. MapleStreamTV starts at $9/month — that's a saving of over $900 a year. A 12-month plan costs just $49 total, less than one cable bill.",
   },
   {
-    q: "Is IPTV legal in Canada?",
-    a: "IPTV technology is completely legal in Canada and is used by major telecoms. Our service provides access to publicly available streams and operates within Canadian broadcasting standards.",
+    q: "Is setup easy if I'm not tech-savvy?",
+    a: "Very easy. Install one app on your Fire Stick, Smart TV, phone, or tablet, enter your login details, and you're live in under 5 minutes. No technician needed, no equipment to return. We send full setup instructions with every subscription.",
   },
   {
-    q: "Can I watch NHL and Canadian sports?",
-    a: "Yes! We include TSN, Sportsnet, CBC Sports, CTV, and all NHL games. Every Leafs, Habs, Canucks, Oilers, Flames and Senators game is covered in HD and 4K.",
+    q: "What kids and family channels are included?",
+    a: "Disney Channel, Treehouse, YTV, Teletoon, Nickelodeon, Cartoon Network, Disney Junior, and many more — included in every plan. Plus CBC Kids, TVO Kids, and all Canadian family channels. No add-ons required.",
   },
   {
-    q: "How much does IPTV cost compared to cable in Canada?",
-    a: "Our IPTV plans start at just $9/month compared to $80–150/month for cable. You save up to 80% while getting more channels and better quality.",
+    q: "Can multiple family members stream at the same time?",
+    a: "Yes — choose a 2–10 connection plan so everyone streams simultaneously. Kids on the tablet, you on the TV, partner on a laptop — all independent streams at the same time, on the same plan.",
   },
   {
-    q: "What devices are supported?",
-    a: "Our IPTV works on Amazon Fire Stick, all Smart TVs (Samsung, LG), Android boxes, iPhone, iPad, Android phones, MAG boxes, Windows and Mac computers.",
+    q: "Will I keep my local Canadian channels like CBC and CTV?",
+    a: "Yes. CBC, CTV, Global, City TV, CP24, Noovo, and regional feeds are all included in every plan. Same channels you have now — no cable contract required.",
   },
   {
-    q: "Do you offer a free trial?",
-    a: "Yes! We offer a 24-hour free trial so you can test all 25,000+ channels and 120,000+ VOD titles completely risk-free before subscribing. No credit card required.",
+    q: "Is there a free trial before I commit?",
+    a: "Yes — 24-hour free trial, no credit card required. Full access to all 25,000+ channels on any device. Contact us via WhatsApp or email and we'll activate it instantly.",
   },
 ];
 

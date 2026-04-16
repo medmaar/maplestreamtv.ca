@@ -3,17 +3,17 @@ import Link from "next/link";
 import PricingSection from "./PricingSection";
 
 export const metadata: Metadata = {
-  title: "Best IPTV Canada 2026 | #1 IPTV Subscription – 24h Free Trial",
+  title: "Cut Your Cable Bill — IPTV for Canadian Families from $9 | MapleStreamTV",
   description:
-    "Canada's best IPTV service in 2026. 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet & more. Free 24h trial. Starting at $9/month.",
+    "Save $900+/year vs Bell or Rogers. 25,000+ live channels, kids channels, and all Canadian networks — easy 5-minute setup on any TV. Free 24h trial, no credit card.",
   keywords:
-    "IPTV Canada 2026, best IPTV Canada, IPTV subscription Canada, Canadian IPTV, IPTV free trial Canada, IPTV Canada cheap, best IPTV subscription Canada",
+    "cord cutting Canada, cancel cable Canada, cheap TV Canada, family IPTV Canada, MapleStreamTV, save money on TV Canada, IPTV Canada 2026",
   alternates: { canonical: "https://maplestreamtv.ca" },
   openGraph: {
-      images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
-    title: "Best IPTV Canada 2026 | #1 IPTV Subscription – 24h Free Trial",
+    images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Cut Your Cable Bill, Keep Every Channel" }],
+    title: "Cut Your Cable Bill — IPTV for Canadian Families from $9 | MapleStreamTV",
     description:
-      "Canada's best IPTV service in 2026. 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet & more. Free 24h trial. Starting at $9/month.",
+      "Save $900+/year vs Bell or Rogers. 25,000+ channels, kids channels, all Canadian locals — 5-minute setup, no contracts. Free 24h trial.",
     url: "https://maplestreamtv.ca",
     type: "website",
     siteName: "MapleStreamTV",
@@ -23,36 +23,36 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: "What is IPTV and how does it work in Canada?",
-    a: "IPTV (Internet Protocol Television) delivers live TV channels and on-demand content over your internet connection instead of cable or satellite. In Canada, MapleStreamTV provides 25,000+ live channels and 120,000+ movies and series streamed directly to your device in 4K quality.",
+    q: "How much can I save by switching from cable to MapleStreamTV?",
+    a: "The average Canadian cable bill runs $80–$150/month with Bell, Rogers, or Telus. MapleStreamTV plans start at $9/month — most families save over $900 a year. A 12-month plan costs just $49 total, less than a single month of cable.",
   },
   {
-    q: "Is IPTV legal in Canada in 2026?",
-    a: "IPTV technology is legal in Canada. MapleStreamTV complies with Canadian broadcasting regulations and provides access to publicly available streams. Users are responsible for ensuring they have the right to view content in their jurisdiction.",
+    q: "Is setup difficult if I'm not very tech-savvy?",
+    a: "Not at all. If you can install an app on your phone or Smart TV, you can set up MapleStreamTV. Plug in a Fire Stick, open the app on your Smart TV, enter your login details, and you're watching live TV in under 5 minutes. We walk you through every step after you subscribe.",
   },
   {
-    q: "How much does IPTV cost compared to cable in Canada?",
-    a: "MapleStreamTV plans start at $9/month — compared to $80–$150/month for cable. A 12-month plan costs just $49 total, saving you over $800/year versus Bell or Rogers.",
+    q: "What kids and family channels are included?",
+    a: "MapleStreamTV includes Disney Channel, Treehouse, YTV, Teletoon, Nickelodeon, Cartoon Network, Disney Junior, and hundreds more. Plus CBC Kids, TVO Kids, and all major Canadian family networks — included in every plan, no add-ons needed.",
   },
   {
-    q: "Can I get a free IPTV trial in Canada?",
-    a: "Yes! MapleStreamTV offers a free 24-hour trial with no credit card required. Contact us via WhatsApp or email to activate your trial instantly.",
+    q: "Can my whole family stream at the same time?",
+    a: "Yes — multi-connection plans let 2–10 family members stream simultaneously on separate devices. Kids watch cartoons on the tablet, you catch the game on the living room TV, your partner streams a movie on another screen — all at the same time, one subscription.",
   },
   {
-    q: "What devices work with MapleStreamTV?",
-    a: "MapleStreamTV works on Amazon Firestick, Samsung & LG Smart TVs, Android TV boxes, Android phones, iPhones, iPads, Apple TV, MAG boxes, Windows PCs, and Macs. Any device with an IPTV player app is compatible.",
+    q: "Will I keep all my local Canadian channels like CBC and CTV?",
+    a: "Yes. Every MapleStreamTV plan includes CBC, CTV, Global, City TV, CP24, Noovo, and regional feeds. All the local news, weather, and Canadian content you rely on — without the cable contract.",
   },
   {
-    q: "Do I need a VPN for IPTV in Canada?",
-    a: "No VPN is required to use MapleStreamTV in Canada. Our servers are optimized for Canadian connections and deliver fast, stable streams without any additional software.",
+    q: "Is there a free trial before I commit?",
+    a: "Yes — free 24-hour trial with no credit card required. Full access to all 25,000+ channels on any device. Contact us via WhatsApp or email to start instantly.",
   },
   {
-    q: "What Canadian sports channels are included?",
-    a: "Every plan includes TSN (all feeds), Sportsnet (all regional feeds), CBC Sports, RDS, TVA Sports, and more. Full NHL, NFL, NBA, MLB, UFC, CFL, and Premier League coverage is included with no blackouts.",
+    q: "Is IPTV legal in Canada?",
+    a: "IPTV technology is completely legal in Canada — it's the same delivery method used by Bell Fibe, Rogers Ignite, and other major telecoms. MapleStreamTV provides access to publicly available streams and operates within Canadian broadcasting standards.",
   },
   {
-    q: "How do I set up IPTV on my Firestick?",
-    a: "Download IPTV Smarters Pro or TiviMate from the Amazon App Store, enter the server URL, username, and password we send you, and start streaming. Full setup takes under 5 minutes. See our Firestick setup guide for step-by-step instructions.",
+    q: "Do I need to sign a contract?",
+    a: "No contracts, ever. Subscribe month-to-month and cancel any time with no penalty. Most families start with a 1-month plan to try it out, then switch to the 12-month plan once they see how much they're saving.",
   },
 ];
 
@@ -73,7 +73,7 @@ const localBusinessSchema = {
   url: "https://maplestreamtv.ca",
   email: "help@maplestreamtv.ca",
   description:
-    "Canada's #1 IPTV subscription service. 25,000+ live channels, 120,000+ movies & series in 4K.",
+    "Canada's cord-cutting IPTV service. Save $900+/year vs cable. 25,000+ channels, kids channels, all Canadian locals from $9/month.",
   address: {
     "@type": "PostalAddress",
     addressCountry: "CA",
@@ -103,13 +103,14 @@ const cities = [
 ];
 
 const comparison = [
-  { feature: "Price/month", us: "$9", cable: "$80–$150", other: "$15–$25" },
+  { feature: "Monthly Cost", us: "$9", cable: "$80–$150", other: "$15–$25" },
+  { feature: "Annual Savings", us: "$900+/yr saved", cable: "—", other: "Some savings" },
   { feature: "Live Channels", us: "25,000+", cable: "150–500", other: "5,000–15,000" },
-  { feature: "4K Streaming", us: "✓", cable: "Limited", other: "Varies" },
-  { feature: "Contracts", us: "None", cable: "1–2 years", other: "Varies" },
-  { feature: "Free Trial", us: "24h free trial", cable: "×", other: "Rarely" },
-  { feature: "Canadian Support", us: "24/7", cable: "Business hours", other: "×" },
-  { feature: "Devices", us: "All devices", cable: "1–2 boxes", other: "Limited" },
+  { feature: "Kids Channels", us: "100+ included", cable: "Add-on cost", other: "Limited" },
+  { feature: "Contracts", us: "None — cancel anytime", cable: "1–2 years", other: "Varies" },
+  { feature: "Setup Time", us: "5 minutes", cable: "Technician visit", other: "Varies" },
+  { feature: "Free Trial", us: "Free 24h trial", cable: "×", other: "Rarely" },
+  { feature: "Devices", us: "Any TV, phone, tablet", cable: "1–2 cable boxes", other: "Limited" },
 ];
 
 export default function HomePage() {
@@ -149,7 +150,7 @@ export default function HomePage() {
                 marginBottom: 28,
               }}
             >
-              🍁 #1 IPTV Service in Canada 2026
+              🍁 Canada's #1 Cord-Cutting Service 2026
             </span>
             <h1
               style={{
@@ -159,8 +160,8 @@ export default function HomePage() {
                 marginBottom: 24,
               }}
             >
-              Canada&apos;s Best IPTV<br />
-              <span style={{ color: "#E53935" }}>Service 2026</span>
+              Cut the Cable,<br />
+              <span style={{ color: "#E53935" }}>Not the Entertainment</span>
             </h1>
             <p
               style={{
@@ -171,8 +172,8 @@ export default function HomePage() {
                 lineHeight: 1.7,
               }}
             >
-              Stream 25,000+ live TV channels and 120,000+ movies &amp; series in 4K. NHL, TSN,
-              CTV, Sportsnet &amp; more — all in one Canadian IPTV subscription.
+              Save $900+ a year vs Bell or Rogers. 25,000+ channels including all your local
+              Canadian favourites — easy setup in 5 minutes on any TV.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 28 }}>
               <Link
@@ -226,9 +227,9 @@ export default function HomePage() {
             }}
           >
             {[
+              { val: "$900+", label: "Saved vs Cable/Year" },
               { val: "25,000+", label: "Live Channels" },
-              { val: "120,000+", label: "Movies & Series" },
-              { val: "4K Ultra HD", label: "Streaming Quality" },
+              { val: "5 min", label: "Setup Time" },
               { val: "24/7", label: "Canadian Support" },
             ].map((s) => (
               <div key={s.val}>
@@ -246,10 +247,10 @@ export default function HomePage() {
         <section style={{ padding: "80px 16px", background: "#0d0d0d", overflow: "hidden" }}>
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <h2 style={{ textAlign: "center", fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, marginBottom: 12 }}>
-              Works on All Your Devices
+              Works on Every Screen in Your Home
             </h2>
             <p style={{ textAlign: "center", color: "#6b7280", marginBottom: 48, fontSize: 15 }}>
-              One subscription — every screen in your home.
+              No cable boxes to rent or return — watch on your existing TVs, phones, and tablets.
             </p>
           </div>
           <div style={{ overflow: "hidden" }}>
@@ -283,13 +284,13 @@ export default function HomePage() {
               Canadian Content
             </p>
             <h2 style={{ textAlign: "center", fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, marginBottom: 16 }}>
-              All Your Favourite Canadian Channels
+              Keep All Your Canadian Favourites
             </h2>
             <p style={{ textAlign: "center", color: "#6b7280", marginBottom: 40, fontSize: 15, maxWidth: 620, margin: "0 auto 40px" }}>
-              MapleStreamTV IPTV Canada includes every major Canadian network — no blackouts on NHL, CFL, or NBA games.
+              Every local channel, every regional network. No missing channels when you cut the cord with MapleStreamTV.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center", marginBottom: 32 }}>
-              {["CBC", "CTV", "Global", "City TV", "CP24", "TSN 1", "TSN 2", "TSN 3", "TSN 4", "TSN 5", "Sportsnet", "Sportsnet ONE", "Sportsnet West", "Sportsnet Pacific", "RDS", "TVA Sports", "TVA", "Canal Vie"].map((ch) => (
+              {["CBC", "CTV", "Global", "City TV", "CP24", "Disney Channel", "Treehouse", "YTV", "Teletoon", "Nickelodeon", "HGTV", "Food Network", "W Network", "TSN", "Sportsnet", "TVA", "Canal Vie", "Noovo"].map((ch) => (
                 <span
                   key={ch}
                   style={{
@@ -316,13 +317,13 @@ export default function HomePage() {
         <section style={{ padding: "80px 16px", background: "#0d0d0d", overflow: "hidden" }}>
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <h2 style={{ textAlign: "center", fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, marginBottom: 12 }}>
-              Never Miss a Game
+              Sports, Movies &amp; More — All Included
             </h2>
             <p style={{ textAlign: "center", color: "#6b7280", marginBottom: 16, fontSize: 15 }}>
-              All PPV events included at no extra charge with your IPTV Canada subscription.
+              Cutting the cord doesn't mean losing sports or entertainment. NHL, UFC, movies, and kids shows — all in one plan.
             </p>
             <p style={{ textAlign: "center", color: "#4ade80", fontSize: 13, marginBottom: 44 }}>
-              ✓ No blackouts &nbsp;&nbsp; ✓ All PPV events free &nbsp;&nbsp; ✓ 4K live sports
+              ✓ No blackouts &nbsp;&nbsp; ✓ PPV events included &nbsp;&nbsp; ✓ 120,000+ movies &amp; series
             </p>
           </div>
           <div style={{ overflow: "hidden" }}>
@@ -353,10 +354,10 @@ export default function HomePage() {
         <section style={{ padding: "80px 16px", background: "#0a0a0a" }}>
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <h2 style={{ textAlign: "center", fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, marginBottom: 12 }}>
-              MapleStreamTV vs Cable vs Other IPTV
+              MapleStreamTV vs Bell/Rogers vs Other IPTV
             </h2>
             <p style={{ textAlign: "center", color: "#6b7280", marginBottom: 48, fontSize: 15 }}>
-              See why Canadian IPTV subscribers are switching to MapleStreamTV.
+              You get more channels, no contract, and save over $900 a year. Here's why Canadian families are cutting the cord.
             </p>
             <div style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
@@ -459,10 +460,10 @@ export default function HomePage() {
         >
           <div style={{ maxWidth: 620, margin: "0 auto" }}>
             <h2 style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 900, marginBottom: 16 }}>
-              Start Streaming Today
+              Ready to Cut Your Cable Bill?
             </h2>
             <p style={{ color: "#9ca3af", marginBottom: 36, fontSize: 16, lineHeight: 1.7 }}>
-              Join thousands of Canadians who switched from cable to MapleStreamTV. Try free for 24 hours — no credit card required.
+              The average Canadian family saves over $900/year switching to MapleStreamTV. Try free for 24 hours — no credit card, no commitment.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <Link
