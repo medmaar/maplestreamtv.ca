@@ -43,7 +43,7 @@ export default function PlanOrderForm({ plan }: Props) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   useEffect(() => {
-    emailjs.init('XgOQHE8VNnCyBYP1z');
+    emailjs.init('hbzN9XtS5uTJfVZT7');
   }, []);
 
   function handleChange(
@@ -59,9 +59,9 @@ export default function PlanOrderForm({ plan }: Props) {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("loading");
-    const serviceId = 'service_0e3cugb';
-    const templateId = 'template_cuf7svm';
-    const publicKey = 'XgOQHE8VNnCyBYP1z';
+    const serviceId = 'service_2jcensj';
+    const templateId = 'template_s8c799i';
+    const publicKey = 'hbzN9XtS5uTJfVZT7';
     console.log('EmailJS config:', { serviceId, templateId, publicKey });
     try {
       const result = await emailjs.send(

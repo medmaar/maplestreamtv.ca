@@ -4,9 +4,9 @@ import emailjs from "@emailjs/browser";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
-const SERVICE_ID  = "service_0e3cugb";
-const TEMPLATE_ID = "template_cuf7svm";
-const PUBLIC_KEY  = "XgOQHE8VNnCyBYP1z";
+const SERVICE_ID  = "service_2jcensj";
+const TEMPLATE_ID = "template_s8c799i";
+const PUBLIC_KEY  = "hbzN9XtS5uTJfVZT7";
 
 const deviceTypes = [
   "Firestick",
