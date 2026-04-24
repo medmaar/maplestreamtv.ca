@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
 
-const '/whatsapp-contact' = "17828026280";
-
 
 export default function ReferralForm() {
   const [yourName, setYourName] = useState("");
