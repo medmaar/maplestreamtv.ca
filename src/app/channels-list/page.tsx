@@ -5,9 +5,7 @@ export const metadata: Metadata = {
   description:
     "Full IPTV Canada channel list for 2026. Browse 25,000+ live channels including TSN, Sportsnet, CBC, CTV, NHL, NFL, NBA, and thousands of international channels.",
   keywords: "list iptv, best iptv channel, iptv channel list canada, iptv channels canada 2026, best iptv channels canada",
-  //oldkeywords:
-    "IPTV Canada channel list, IPTV Canada channels, Canadian IPTV channels, TSN IPTV Canada, Sportsnet IPTV Canada",
-  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/channels-list" },
+  alternates: { canonical: "https://maplestreamtv.ca/channels-list" },
 };
 
 const categories = [  {
