@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://maplestreamtv.ca"),
     title: "IPTV Box Canada — Best IPTV Providers Near Me | MapleStreamTV",
     description: "Best IPTV box and provider in Canada. IPTV near me — free trial, no credit card. Top rated IPTV service Canada: 25,000+ channels, 4K, no contracts from $9/month.",
-    keywords: "iptv box, iptv near me, iptv free trial, iptv providers canada, iptv server, iptv supplier, best iptv for canada, iptv provider canada, cord cutting Canada, cancel cable Canada, cheap TV Canada, family IPTV Canada, MapleStreamTV",
+    keywords: "iptv box, iptv near me, iptv free trial, iptv providers canada, iptv server, iptv supplier, best iptv for canada, iptv provider canada, best iptv app, best iptv apps, fire stick iptv, list iptv, iptv for beginners, top rated iptv tool, best iptv channel, service iptv, best canadian iptv provider, la iptv, cord cutting Canada, cancel cable Canada, MapleStreamTV",
     verification: { google: "NPe9mnD6fyjcZMDzlkDeeJ9xsSMileOAckN4P0zXxVw" },
     openGraph: {
         images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],

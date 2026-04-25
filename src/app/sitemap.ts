@@ -18,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/iptv-near-me`,                            lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/iptv-providers-canada`,                   lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/iptv-server`,                             lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/iptv-for-beginners`,                        lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/best-iptv-apps`,                              lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/iptv-supplier`,                           lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     // Supporting pages
     { url: `${base}/channels-list`,                           lastModified: now, changeFrequency: "monthly", priority: 0.7 },
