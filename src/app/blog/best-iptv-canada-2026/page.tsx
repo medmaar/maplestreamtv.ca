@@ -15,8 +15,6 @@ export const metadata: Metadata = {
       "Compare family IPTV services in Canada. Kids channels, parental controls, all Canadian locals, streaming to every device. Save $900+ vs cable.",
     url: "https://maplestreamtv.ca/blog/best-iptv-canada-2026",
     type: "article",
-    publishedTime: "2026-01-15T00:00:00Z",
-    modifiedTime: "2026-04-25T00:00:00Z",
     siteName: "MapleStreamTV",
   },
   twitter: { card: "summary_large_image", images: ["/og-image.webp"] },
