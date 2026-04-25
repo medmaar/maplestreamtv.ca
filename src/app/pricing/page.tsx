@@ -3,15 +3,15 @@ import PricingSection from "../PricingSection";
 import FaqAccordion from "../components/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "Cord-Cutting Plans Canada — Cancel Cable from $9 | MapleStreamTV",
+  title: { absolute: "IPTV Plans Canada — Best IPTV Subscription from $9 | MapleStreamTV" },
   description:
     "MapleStreamTV cord-cutting plans for Canadian families. 1, 3, 6 & 12-month options from $9. 25,000+ channels, kids channels, all Canadian locals. No contracts.",
   keywords:
-    "MapleStreamTV pricing, cord cutting plan Canada, cancel cable plan Canada, family IPTV price Canada 2026",
+    "iptv subscription canada, iptv plans canada, best iptv subscription, iptv service canada, MapleStreamTV pricing",
   alternates: { canonical: "https://maplestreamtv.ca/pricing" },
   openGraph: {
     images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Cut Your Cable Bill Today" }],
-    title: "Cord-Cutting Plans Canada — Cancel Cable from $9 | MapleStreamTV",
+    title: { absolute: "IPTV Plans Canada — Best IPTV Subscription from $9 | MapleStreamTV" },
     description:
       "MapleStreamTV cord-cutting plans for Canadian families. From $9/month. Kids channels, all Canadian locals, no contracts, cancel anytime.",
     url: "https://maplestreamtv.ca/pricing",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cord-Cutting Plans Canada — Cancel Cable from $9 | MapleStreamTV",
+    title: { absolute: "IPTV Plans Canada — Best IPTV Subscription from $9 | MapleStreamTV" },
     description:
       "MapleStreamTV cord-cutting plans from $9. Kids channels, Canadian locals, no contracts.",
   },

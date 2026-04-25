@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: { absolute: "Best IPTV Apps Canada 2026 — Top Rated Players & Tools | MapleStreamTV" },
+  title: { absolute: "Best IPTV Apps Canada 2026 — Top Picks | MapleStreamTV" },
   description: "Best IPTV apps for Canada in 2026. TiviMate, IPTV Smarters Pro, GSE Smart IPTV — top rated tools for Fire Stick, Smart TV, iPhone and Android. Free trial from $9/month.",
   keywords: "best iptv app, best iptv apps, top rated iptv tool, best iptv apps canada, iptv app canada 2026, tivimate canada, iptv smarters canada, best iptv player canada, iptv tool canada, best iptv channel",
   alternates: { canonical: "https://maplestreamtv.ca/best-iptv-apps" },

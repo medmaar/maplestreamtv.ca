@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: { absolute: "IPTV Supplier Canada — Trusted Canadian IPTV Source 2026 | MapleStreamTV" },
+  title: { absolute: "IPTV Supplier Canada — Trusted 2026 | MapleStreamTV" },
   description: "MapleStreamTV is a trusted IPTV supplier in Canada. 25,000+ channels, 4K quality, free trial, 24/7 support. Canada's reliable IPTV supplier from $9/month.",
   keywords: "iptv supplier, iptv supplier canada, best iptv supplier canada, trusted iptv supplier canada, reliable iptv supplier canada 2026",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-supplier" },

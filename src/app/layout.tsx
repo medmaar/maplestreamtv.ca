@@ -33,7 +33,26 @@ const aggregateRatingSchema = {
     "reviewCount": "289",
     "bestRating": "5",
     "worstRating": "1"
-  }
+  },
+  "telephone": "+1-514-000-0000",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.5706,
+    "longitude": -73.7474
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Canada"
+  },
+  "priceRange": "$9-$100"
 };
 
 const websiteSchema = {
@@ -43,11 +62,28 @@ const websiteSchema = {
   "url": "https://maplestreamtv.ca"
 };
 
+
+const sitelinksSearchSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MapleStreamTV",
+  "url": "https://maplestreamtv.ca",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://maplestreamtv.ca/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en" className="h-full">
             <head>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }} />
+                  <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(sitelinksSearchSchema) }} />
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMRVJYWQR3" />
                 <script dangerouslySetInnerHTML={{ __html: `

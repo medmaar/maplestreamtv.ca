@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "IPTV Android Canada 2026 | Best IPTV App for Android Phone & Tablet",
+  title: "IPTV Android Canada 2026 — Best App | MapleStreamTV",
   description:
     "Stream IPTV on your Android phone or tablet in Canada. 25,000+ channels, HD & 4K quality, NHL, TSN, CTV and more. Easy APK install. Try free today.",
   keywords:

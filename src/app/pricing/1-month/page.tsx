@@ -56,12 +56,30 @@ const faqSchema = {
   })),
 };
 
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "MapleStreamTV 1 Month IPTV Plan",
+  description: "1 month of IPTV with 25,000+ live channels in Canada in 4K. No contract.",
+  brand: { "@type": "Brand", name: "MapleStreamTV" },
+  offers: {
+    "@type": "Offer",
+    price: "9.00",
+    priceCurrency: "CAD",
+    availability: "https://schema.org/InStock",
+    url: "https://maplestreamtv.ca/pricing/1-month",
+    priceValidUntil: "2027-01-01",
+    seller: { "@type": "Organization", name: "MapleStreamTV" },
+  },
+};
 export default function Pricing1MonthPage() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <main style={{ background: "#10131E", color: "#fff", minHeight: "100vh" }}>
         <section

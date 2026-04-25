@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "IPTV Reseller Canada 2026 | Start Your IPTV Business – MapleStreamTV",
+  title: "IPTV Reseller Canada 2026 | MapleStreamTV",
   description:
     "Become an IPTV reseller in Canada with MapleStreamTV. Wholesale pricing, white-label options, and a fast reseller panel. Start your own IPTV business today.",
   keywords: "IPTV reseller Canada, IPTV reseller program Canada 2026, start IPTV business Canada",
   alternates: { canonical: "https://maplestreamtv.ca/reseller" },
   openGraph: {
       images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
-    title: "IPTV Reseller Canada 2026 | Start Your IPTV Business – MapleStreamTV",
+    title: "IPTV Reseller Canada 2026 | MapleStreamTV",
     description: "Become an IPTV reseller in Canada with MapleStreamTV. Wholesale pricing, white-label options, and a fast reseller panel. Start your own IPTV business today.",
     url: "https://maplestreamtv.ca/reseller",
     type: "website",

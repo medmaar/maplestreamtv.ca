@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "IPTV on Amazon Firestick in Canada 2026 | MapleStreamTV Setup Guide",
+  title: "IPTV Firestick Canada 2026 — Setup Guide | MapleStreamTV",
   description:
     "Set up IPTV on your Amazon Firestick in Canada in under 5 minutes. MapleStreamTV offers 25,000+ channels, NHL, TSN & 4K quality. Free 24h trial.",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-firestick-canada" },
   openGraph: {
       images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
-    title: "IPTV on Amazon Firestick in Canada 2026 | MapleStreamTV Setup Guide",
+    title: "IPTV Firestick Canada 2026 — Setup Guide | MapleStreamTV",
     description:
       "Set up IPTV on your Amazon Firestick in Canada in under 5 minutes. MapleStreamTV offers 25,000+ channels, NHL, TSN & 4K quality. Free 24h trial.",
     url: "https://maplestreamtv.ca/iptv-firestick-canada",

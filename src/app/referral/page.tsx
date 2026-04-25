@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ReferralForm from "../../components/ReferralForm";
 
 export const metadata: Metadata = {
-  title: "Referral Program | MapleStreamTV — Refer a Friend, Get +1 Year Free",
+  title: "Referral Program — Get +1 Year Free | MapleStreamTV",
   description:
     "Refer a friend to MapleStreamTV and earn +1 free year of service. No limits — every successful referral adds 12 months to your account.",
   keywords:

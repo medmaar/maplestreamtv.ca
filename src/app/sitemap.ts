@@ -47,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/iptv-ottawa`,                             lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/iptv-edmonton`,                           lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     // Blog
+    { url: `${base}/blog/iptv-vs-satellite-canada`,            lastModified: now, changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/blog`,                                    lastModified: now, changeFrequency: "weekly",  priority: 0.8 },
     { url: `${base}/blog/best-iptv-canada-2026`,              lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/blog/iptv-firestick-canada`,              lastModified: now, changeFrequency: "monthly", priority: 0.8 },

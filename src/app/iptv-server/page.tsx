@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: { absolute: "IPTV Server Canada — Fastest Canadian IPTV Servers 2026 | MapleStreamTV" },
+  title: { absolute: "IPTV Server Canada — Fast & Stable 2026 | MapleStreamTV" },
   description: "MapleStreamTV runs Canada-based IPTV servers for fast, stable streaming. Low-latency IPTV server connections for all Canadian cities. Free 24h trial from $9/month.",
   keywords: "iptv server, iptv server canada, fast iptv server canada, canadian iptv server, iptv server list canada, stable iptv server canada",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-server" },

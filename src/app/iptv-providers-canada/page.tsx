@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: { absolute: "IPTV Providers Canada 2026 — Top Rated Services Compared | MapleStreamTV" },
+  title: { absolute: "IPTV Providers Canada 2026 — Top Rated | MapleStreamTV" },
   description: "Compare the best IPTV providers in Canada for 2026. MapleStreamTV is Canada's top-rated IPTV provider. 25,000+ channels, 4K, free trial. IPTV providers Canada from $9/month.",
   keywords: "iptv providers canada, iptv provider canada, best iptv providers canada, top iptv providers canada, iptv service provider canada, best canadian iptv provider, iptv providers in canada",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-providers-canada" },
