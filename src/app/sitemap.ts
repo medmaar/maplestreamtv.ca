@@ -13,6 +13,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/3-months`,                                lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/6-months`,                                lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/12-months`,                               lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    // NEW keyword-targeted landing pages
+    { url: `${base}/iptv-box`,                                lastModified: now, changeFrequency: "weekly",  priority: 0.95 },
+    { url: `${base}/iptv-near-me`,                            lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/iptv-providers-canada`,                   lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/iptv-server`,                             lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/iptv-supplier`,                           lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     // Supporting pages
     { url: `${base}/channels-list`,                           lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/how-it-works`,                            lastModified: now, changeFrequency: "monthly", priority: 0.7 },

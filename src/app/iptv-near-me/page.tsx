@@ -1,0 +1,56 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: { absolute: "IPTV Near Me Canada — Best Local IPTV Service 2026 | MapleStreamTV" },
+  description: "Looking for IPTV near you in Canada? MapleStreamTV serves all Canadian cities — Toronto, Vancouver, Calgary, Montreal and everywhere in between. Free 24h trial from $9/month.",
+  keywords: "iptv near me, iptv near me canada, local iptv canada, iptv service near me, best iptv near me canada, find iptv canada",
+  alternates: { canonical: "https://maplestreamtv.ca/iptv-near-me" },
+};
+const cities = [
+  { name: "Toronto", prov: "Ontario" }, { name: "Vancouver", prov: "BC" }, { name: "Montreal", prov: "Quebec" },
+  { name: "Calgary", prov: "Alberta" }, { name: "Ottawa", prov: "Ontario" }, { name: "Edmonton", prov: "Alberta" },
+  { name: "Winnipeg", prov: "Manitoba" }, { name: "Quebec City", prov: "Quebec" }, { name: "Hamilton", prov: "Ontario" },
+  { name: "Halifax", prov: "Nova Scotia" }, { name: "Victoria", prov: "BC" }, { name: "Regina", prov: "Saskatchewan" },
+  { name: "Saskatoon", prov: "Saskatchewan" }, { name: "Kelowna", prov: "BC" }, { name: "Abbotsford", prov: "BC" },
+  { name: "Kingston", prov: "Ontario" }, { name: "Barrie", prov: "Ontario" }, { name: "Sudbury", prov: "Ontario" },
+];
+export default function IPTVNearMePage() {
+  return (
+    <main style={{ background: "#f0f9f9", color: "#000", minHeight: "100vh" }}>
+      <section style={{ background: "linear-gradient(135deg, #1a4a5e 0%, #2d7a9a 100%)", padding: "80px 16px 60px" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <span style={{ background: "rgba(249,110,91,0.18)", border: "1px solid rgba(249,110,91,0.4)", color: "#F96E5B", fontSize: 12, fontWeight: 700, padding: "4px 14px", borderRadius: 999, textTransform: "uppercase" }}>IPTV Near Me · Canada · MapleStreamTV</span>
+          <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 900, marginTop: 20, marginBottom: 16, color: "#fff" }}>
+            IPTV Near Me — <span style={{ color: "#F96E5B" }}>Serving All of Canada</span>
+          </h1>
+          <p style={{ color: "rgba(255,255,255,0.88)", fontSize: "1.1rem", maxWidth: 680, lineHeight: 1.7, marginBottom: 28 }}>
+            You&apos;re searching for IPTV near you in Canada — and you&apos;ve found it. MapleStreamTV is a Canadian IPTV service that serves every city, town, and province from coast to coast. Our servers are distributed across Canada to deliver the best possible stream quality wherever you are.
+          </p>
+          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+            <a href="/free-trial" style={{ background: "#F96E5B", color: "#fff", padding: "14px 36px", borderRadius: 10, fontWeight: 700, textDecoration: "none" }}>Try IPTV Free Near You →</a>
+            <a href="/pricing" style={{ border: "2px solid rgba(255,255,255,0.4)", color: "#fff", padding: "14px 36px", borderRadius: 10, fontWeight: 700, textDecoration: "none" }}>View Plans</a>
+          </div>
+        </div>
+      </section>
+      <section style={{ maxWidth: 960, margin: "0 auto", padding: "60px 16px" }}>
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 20 }}>MapleStreamTV IPTV — Available Near You Across Canada</h2>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 48 }}>
+          {cities.map(c => (
+            <div key={c.name} style={{ background: "#fff", border: "1px solid rgba(45,122,154,0.15)", borderRadius: 10, padding: "10px 18px", fontSize: 14, fontWeight: 600 }}>
+              🍁 {c.name}, {c.prov}
+            </div>
+          ))}
+          <div style={{ background: "rgba(45,122,154,0.08)", border: "1px solid rgba(45,122,154,0.2)", borderRadius: 10, padding: "10px 18px", fontSize: 14, fontWeight: 600, color: "#2d7a9a" }}>
+            + All Canadian cities & rural areas
+          </div>
+        </div>
+        <h2 style={{ fontSize: "1.5rem", fontWeight: 800, marginBottom: 16 }}>Why IPTV Near Me Matters — Canadian Servers</h2>
+        <p style={{ color: "#333", lineHeight: 1.8, marginBottom: 16 }}>When you search for "IPTV near me," you want a service with servers physically located in Canada — not routed through overseas infrastructure with 200ms+ latency. MapleStreamTV uses Canadian server infrastructure so your streams are fast, low-latency, and stable even during peak hours like NHL playoffs or UFC fight nights.</p>
+        <div style={{ background: "#1a4a5e", borderRadius: 16, padding: 32, textAlign: "center", marginTop: 32 }}>
+          <h2 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#fff", marginBottom: 12 }}>IPTV Near You — Free 24-Hour Trial</h2>
+          <p style={{ color: "rgba(255,255,255,0.8)", marginBottom: 24, fontSize: 14 }}>No credit card. Instant activation. Works anywhere in Canada.</p>
+          <a href="/free-trial" style={{ background: "#F96E5B", color: "#fff", padding: "14px 40px", borderRadius: 10, fontWeight: 700, textDecoration: "none" }}>Start Free →</a>
+        </div>
+      </section>
+    </main>
+  );
+}

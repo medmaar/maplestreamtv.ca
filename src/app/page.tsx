@@ -3,15 +3,15 @@ import Link from "next/link";
 import PricingSection from "./PricingSection";
 
 export const metadata: Metadata = {
-  title: "Cut Your Cable Bill — IPTV for Canadian Families from $9 | MapleStreamTV",
+  title: "Best IPTV Box Canada 2026 — Top Providers Near You | MapleStreamTV",
   description:
-    "Save $900+/year vs Bell or Rogers. 25,000+ live channels, kids channels, and all Canadian networks — easy 5-minute setup on any TV. Free 24h trial, no credit card.",
+    "Best IPTV box and providers in Canada 2026. MapleStreamTV is #1 rated IPTV near you — free 24h trial, no credit card. 25,000+ channels, 4K, kids channels from $9/month.",
   keywords:
-    "cord cutting Canada, cancel cable Canada, cheap TV Canada, family IPTV Canada, MapleStreamTV, save money on TV Canada, IPTV Canada 2026",
+    "iptv box, iptv near me, iptv free trial, iptv providers canada, iptv server, iptv supplier, best iptv for canada, iptv provider canada, iptv service canada, la iptv, best iptv apps, MapleStreamTV",
   alternates: { canonical: "https://maplestreamtv.ca" },
   openGraph: {
     images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Cut Your Cable Bill, Keep Every Channel" }],
-    title: "Cut Your Cable Bill — IPTV for Canadian Families from $9 | MapleStreamTV",
+    title: "Best IPTV Box Canada 2026 — Top Providers Near You | MapleStreamTV",
     description:
       "Save $900+/year vs Bell or Rogers. 25,000+ channels, kids channels, all Canadian locals — 5-minute setup, no contracts. Free 24h trial.",
     url: "https://maplestreamtv.ca",

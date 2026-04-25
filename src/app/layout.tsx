@@ -6,9 +6,9 @@ import FloatingContact from "../components/FloatingContact";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://maplestreamtv.ca"),
-    title: "Cancel Cable & Save $900/Year — Family IPTV Canada | MapleStreamTV",
-    description: "Canada's cord-cutting alternative to Bell and Rogers. 25,000+ channels, kids channels, all Canadian locals. Easy setup, no contracts. Free 24h trial.",
-    keywords: "cord cutting Canada, cancel cable Canada, cheap TV Canada, family IPTV Canada, MapleStreamTV, save on TV Canada",
+    title: "IPTV Box Canada — Best IPTV Providers Near Me | MapleStreamTV",
+    description: "Best IPTV box and provider in Canada. IPTV near me — free trial, no credit card. Top rated IPTV service Canada: 25,000+ channels, 4K, no contracts from $9/month.",
+    keywords: "iptv box, iptv near me, iptv free trial, iptv providers canada, iptv server, iptv supplier, best iptv for canada, iptv provider canada, cord cutting Canada, cancel cable Canada, cheap TV Canada, family IPTV Canada, MapleStreamTV",
     verification: { google: "NPe9mnD6fyjcZMDzlkDeeJ9xsSMileOAckN4P0zXxVw" },
     openGraph: {
         images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
