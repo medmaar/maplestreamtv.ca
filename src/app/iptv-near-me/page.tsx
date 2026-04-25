@@ -13,13 +13,39 @@ const cities = [
   { name: "Saskatoon", prov: "Saskatchewan" }, { name: "Kelowna", prov: "BC" }, { name: "Abbotsford", prov: "BC" },
   { name: "Kingston", prov: "Ontario" }, { name: "Barrie", prov: "Ontario" }, { name: "Sudbury", prov: "Ontario" },
 ];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"MapleStreamTV","item":"https://maplestreamtv.ca"},
+    {"@type":"ListItem","position":2,"name":"IPTV Near Me","item":"https://maplestreamtv.ca/iptv-near-me"}
+  ]
+};
+
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Is there an IPTV service near me in Canada?","acceptedAnswer":{"@type":"Answer","text":"Yes — MapleStreamTV is a Canadian IPTV service that serves every city, town and province. Our servers are physically located in Canada, so wherever you are — Toronto, Vancouver, Calgary or rural Nova Scotia — you get low-latency IPTV service near you."}},
+    {"@type":"Question","name":"Does location matter for IPTV quality in Canada?","acceptedAnswer":{"@type":"Answer","text":"Yes — Canadian IPTV servers deliver lower latency and faster channel switching vs foreign servers. MapleStreamTV uses Canadian infrastructure so subscribers from coast to coast get the same fast, stable stream quality."}},
+    {"@type":"Question","name":"Is MapleStreamTV available outside of major cities?","acceptedAnswer":{"@type":"Answer","text":"Yes — MapleStreamTV works anywhere in Canada with a 10+ Mbps internet connection. Rural subscribers on Starlink, Bell Fibe, or Telus are equally well served by our distributed Canadian server network."}}
+  ]
+};
+
 export default function IPTVNearMePage() {
   return (
     <main style={{ background: "#f0f9f9", color: "#000", minHeight: "100vh" }}>
       <section style={{ background: "linear-gradient(135deg, #1a4a5e 0%, #2d7a9a 100%)", padding: "80px 16px 60px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <span style={{ background: "rgba(249,110,91,0.18)", border: "1px solid rgba(249,110,91,0.4)", color: "#F96E5B", fontSize: 12, fontWeight: 700, padding: "4px 14px", borderRadius: 999, textTransform: "uppercase" }}>IPTV Near Me · Canada · MapleStreamTV</span>
-          <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 900, marginTop: 20, marginBottom: 16, color: "#fff" }}>
+          <div style={{ textAlign: "center", marginBottom: 8 }}>
+          <span style={{ background: "rgba(63,154,174,0.12)", border: "1px solid rgba(63,154,174,0.25)", color: "#3F9AAE", fontSize: 12, fontWeight: 600, padding: "3px 12px", borderRadius: 999 }}>
+            🗓 Last updated: April 2026
+          </span>
+        </div>
+            <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 900, marginTop: 20, marginBottom: 16, color: "#fff" }}>
             IPTV Near Me — <span style={{ color: "#F96E5B" }}>Serving All of Canada</span>
           </h1>
           <p style={{ color: "rgba(255,255,255,0.88)", fontSize: "1.1rem", maxWidth: 680, lineHeight: 1.7, marginBottom: 28 }}>

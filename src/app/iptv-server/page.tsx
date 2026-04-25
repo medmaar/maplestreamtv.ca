@@ -5,13 +5,39 @@ export const metadata: Metadata = {
   keywords: "iptv server, iptv server canada, fast iptv server canada, canadian iptv server, iptv server list canada, stable iptv server canada",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-server" },
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"MapleStreamTV","item":"https://maplestreamtv.ca"},
+    {"@type":"ListItem","position":2,"name":"IPTV Server Canada","item":"https://maplestreamtv.ca/iptv-server"}
+  ]
+};
+
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Where are MapleStreamTV's IPTV servers located?","acceptedAnswer":{"@type":"Answer","text":"MapleStreamTV operates server infrastructure distributed across Canada, ensuring low-latency connections for subscribers in all provinces — from BC to Nova Scotia."}},
+    {"@type":"Question","name":"What uptime does MapleStreamTV's IPTV server have?","acceptedAnswer":{"@type":"Answer","text":"MapleStreamTV maintains 99.9% server uptime with redundant connections and automatic failover. Our infrastructure scales during peak events like NHL playoffs and UFC fight nights."}},
+    {"@type":"Question","name":"What happens if the IPTV server goes down?","acceptedAnswer":{"@type":"Answer","text":"MapleStreamTV uses redundant failover architecture — if one server path experiences issues, your stream automatically routes to the next available node within seconds. You may see a brief pause, not a full outage."}}
+  ]
+};
+
 export default function IPTVServerPage() {
   return (
     <main style={{ background: "#f0f9f9", color: "#000", minHeight: "100vh" }}>
       <section style={{ background: "linear-gradient(135deg, #1a4a5e 0%, #2d7a9a 100%)", padding: "80px 16px 60px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <span style={{ background: "rgba(249,110,91,0.18)", border: "1px solid rgba(249,110,91,0.4)", color: "#F96E5B", fontSize: 12, fontWeight: 700, padding: "4px 14px", borderRadius: 999, textTransform: "uppercase" }}>IPTV Server Canada · MapleStreamTV</span>
-          <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 900, marginTop: 20, marginBottom: 16, color: "#fff" }}>
+          <div style={{ textAlign: "center", marginBottom: 8 }}>
+          <span style={{ background: "rgba(63,154,174,0.12)", border: "1px solid rgba(63,154,174,0.25)", color: "#3F9AAE", fontSize: 12, fontWeight: 600, padding: "3px 12px", borderRadius: 999 }}>
+            🗓 Last updated: April 2026
+          </span>
+        </div>
+            <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 900, marginTop: 20, marginBottom: 16, color: "#fff" }}>
             IPTV Server Canada — <span style={{ color: "#F96E5B" }}>Fast, Stable, Low Latency</span>
           </h1>
           <p style={{ color: "rgba(255,255,255,0.88)", fontSize: "1.1rem", maxWidth: 680, lineHeight: 1.7, marginBottom: 28 }}>

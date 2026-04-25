@@ -15,6 +15,8 @@ export const metadata: Metadata = {
       "Compare family IPTV services in Canada. Kids channels, parental controls, all Canadian locals, streaming to every device. Save $900+ vs cable.",
     url: "https://maplestreamtv.ca/blog/best-iptv-canada-2026",
     type: "article",
+    publishedTime: "2026-01-15T00:00:00Z",
+    modifiedTime: "2026-04-25T00:00:00Z",
     siteName: "MapleStreamTV",
   },
   twitter: { card: "summary_large_image", images: ["/og-image.webp"] },
@@ -117,6 +119,17 @@ const services = [
   },
 ];
 
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"MapleStreamTV","item":"https://maplestreamtv.ca"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://maplestreamtv.ca/blog"},
+    {"@type":"ListItem","position":3,"name":"Best Iptv Canada 2026","item":"https://maplestreamtv.ca/blog/best-iptv-canada-2026"}
+  ]
+};
+
 export default function BestIPTVCanadaBlogPost() {
   return (
     <main className="min-h-screen bg-gray-950 text-white px-4 py-12">
@@ -126,7 +139,9 @@ export default function BestIPTVCanadaBlogPost() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script
       />
 
       <article className="max-w-3xl mx-auto">

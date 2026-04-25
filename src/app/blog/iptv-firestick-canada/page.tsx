@@ -74,6 +74,30 @@ const steps = [
   },
 ];
 
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "datePublished": "2026-02-20T00:00:00Z",
+  "dateModified": "2026-04-25T00:00:00Z",
+  "publisher": {
+    "@type": "Organization",
+    "name": "maplestreamtvca",
+    "url": "https://maplestreamtv.ca"
+  }
+};
+
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"MapleStreamTV","item":"https://maplestreamtv.ca"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://maplestreamtv.ca/blog"},
+    {"@type":"ListItem","position":3,"name":"Iptv Firestick Canada","item":"https://maplestreamtv.ca/blog/iptv-firestick-canada"}
+  ]
+};
+
 export default function IPTVFirestickBlogPost() {
   return (
     <main className="bg-gray-950 text-white min-h-screen">

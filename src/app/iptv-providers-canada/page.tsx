@@ -5,6 +5,27 @@ export const metadata: Metadata = {
   keywords: "iptv providers canada, iptv provider canada, best iptv providers canada, top iptv providers canada, iptv service provider canada, best canadian iptv provider, iptv providers in canada",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-providers-canada" },
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"MapleStreamTV","item":"https://maplestreamtv.ca"},
+    {"@type":"ListItem","position":2,"name":"IPTV Providers Canada","item":"https://maplestreamtv.ca/iptv-providers-canada"}
+  ]
+};
+
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Who are the best IPTV providers in Canada in 2026?","acceptedAnswer":{"@type":"Answer","text":"MapleStreamTV is consistently rated among the best IPTV providers in Canada for 2026, along with Maple4K (for 4K quality) and MapleHD (for sports). All three offer free trials, no contracts, and Canadian support."}},
+    {"@type":"Question","name":"How do I compare IPTV providers in Canada?","acceptedAnswer":{"@type":"Answer","text":"Compare Canadian IPTV providers on: stream quality (HD/4K), channel count (genuine vs padded), uptime reliability, support responsiveness, free trial availability, and contract terms. MapleStreamTV leads on all six criteria."}},
+    {"@type":"Question","name":"What makes a good IPTV provider in Canada vs a bad one?","acceptedAnswer":{"@type":"Answer","text":"Good IPTV providers in Canada offer genuine HD/4K quality, stable streams during peak events, fast Canadian support, and free trials. Bad providers use foreign servers with high latency, inflate channel counts with duplicates, and disappear when you need help."}}
+  ]
+};
+
 export default function IPTVProvidersCanadaPage() {
   const criteria = [
     { label: "Stream Quality", desc: "Does the provider deliver true HD and 4K, or low-res streams labelled as HD?" },
@@ -19,7 +40,12 @@ export default function IPTVProvidersCanadaPage() {
       <section style={{ background: "linear-gradient(135deg, #1a4a5e 0%, #2d7a9a 100%)", padding: "80px 16px 60px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <span style={{ background: "rgba(249,110,91,0.18)", border: "1px solid rgba(249,110,91,0.4)", color: "#F96E5B", fontSize: 12, fontWeight: 700, padding: "4px 14px", borderRadius: 999, textTransform: "uppercase" }}>IPTV Providers Canada · MapleStreamTV</span>
-          <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 900, marginTop: 20, marginBottom: 16, color: "#fff" }}>
+          <div style={{ textAlign: "center", marginBottom: 8 }}>
+          <span style={{ background: "rgba(63,154,174,0.12)", border: "1px solid rgba(63,154,174,0.25)", color: "#3F9AAE", fontSize: 12, fontWeight: 600, padding: "3px 12px", borderRadius: 999 }}>
+            🗓 Last updated: April 2026
+          </span>
+        </div>
+            <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 900, marginTop: 20, marginBottom: 16, color: "#fff" }}>
             Best IPTV Providers Canada 2026 — <span style={{ color: "#F96E5B" }}>Top Rated Compared</span>
           </h1>
           <p style={{ color: "rgba(255,255,255,0.88)", fontSize: "1.1rem", maxWidth: 680, lineHeight: 1.7, marginBottom: 28 }}>

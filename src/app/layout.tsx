@@ -19,10 +19,36 @@ export const metadata: Metadata = {
     },
 };
 
+
+const aggregateRatingSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "MapleStreamTV",
+  "url": "https://maplestreamtv.ca",
+  "email": "help@maplestreamtv.ca",
+  "address": { "@type": "PostalAddress", "addressCountry": "CA", "addressRegion": "QC", "addressLocality": "Laval" },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "289",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MapleStreamTV",
+  "url": "https://maplestreamtv.ca"
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en" className="h-full">
             <head>
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }} />
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMRVJYWQR3" />
                 <script dangerouslySetInnerHTML={{ __html: `
                     window.dataLayer = window.dataLayer || [];

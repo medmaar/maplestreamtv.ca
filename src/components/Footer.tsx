@@ -3,45 +3,28 @@ import Logo from "./Logo";
 
 export default function Footer() {
   return (
-    <footer
-      className="py-16 px-4 border-t"
-      style={{ background: "#050508", borderColor: "rgba(255,255,255,0.06)" }}
-    >
+    <footer className="py-16 px-4 border-t" style={{ background: "#050508", borderColor: "rgba(255,255,255,0.06)" }}>
       <div className="max-w-7xl mx-auto">
-
-        {/* Brand bar — full width, logo left / contact right */}
-        <div
-          className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 pb-12 mb-12 border-b"
-          style={{ borderColor: "rgba(255,255,255,0.06)" }}
-        >
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 pb-12 mb-12 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
           <div>
             <Logo className="mb-4" />
             <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
-              Canada&apos;s #1 IPTV subscription service. 25,000+ live channels,
-              120,000+ movies &amp; series in 4K. Serving all of Canada.
+              Canada&apos;s best family IPTV service. 25,000+ live channels,
+              kids channels, all Canadian locals. Cut cable, save $900/year.
             </p>
           </div>
-
           <div className="sm:text-right shrink-0">
-            <a
-              href="mailto:help@maplestreamtv.ca"
-              className="text-sm text-gray-400 hover:text-white transition-colors"
-            >
-              help@maplestreamtv.ca
-            </a>
+            <a href="mailto:help@maplestreamtv.ca" className="text-sm text-gray-400 hover:text-white transition-colors">help@maplestreamtv.ca</a>
             <div className="mt-3 text-gray-500 text-sm leading-relaxed">
               <p className="text-gray-400 font-medium text-xs uppercase tracking-wider mb-1">Address</p>
-              <p>9361 Rue Lajeunesse</p>
-              <p>Montréal, QC H2M 1S5</p>
+              <p>1599 Blvd. Saint-Martin O</p>
+              <p>Laval, QC H7S 1N1</p>
               <p>Canada</p>
             </div>
           </div>
         </div>
 
-        {/* Links — 2×2 on mobile, 4 cols on desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-
-          {/* Pages */}
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">Pages</p>
             <div className="flex flex-col gap-2.5">
@@ -51,13 +34,23 @@ export default function Footer() {
               <Link href="/free-trial" className="text-gray-400 hover:text-white text-sm transition-colors">Free Trial</Link>
               <Link href="/blog" className="text-gray-400 hover:text-white text-sm transition-colors">Blog</Link>
               <Link href="/reseller" className="text-gray-400 hover:text-white text-sm transition-colors">Reseller</Link>
-              <Link href="/referral" className="text-gray-400 hover:text-white text-sm transition-colors">Referral</Link>
               <Link href="/contact" className="text-gray-400 hover:text-white text-sm transition-colors">Contact</Link>
-              <Link href="/dmca" className="text-gray-400 hover:text-white text-sm transition-colors">DMCA</Link>
             </div>
           </div>
 
-          {/* By Device */}
+          <div>
+            <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">IPTV Services</p>
+            <div className="flex flex-col gap-2.5">
+              <Link href="/iptv-box" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV Box Canada</Link>
+              <Link href="/iptv-near-me" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV Near Me</Link>
+              <Link href="/iptv-providers-canada" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV Providers</Link>
+              <Link href="/iptv-for-beginners" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV for Beginners</Link>
+              <Link href="/best-iptv-apps" className="text-gray-400 hover:text-white text-sm transition-colors">Best IPTV Apps</Link>
+              <Link href="/iptv-server" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV Server</Link>
+              <Link href="/iptv-supplier" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV Supplier</Link>
+            </div>
+          </div>
+
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">By Device</p>
             <div className="flex flex-col gap-2.5">
@@ -66,10 +59,10 @@ export default function Footer() {
               <Link href="/iptv-smart-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Smart TV</Link>
               <Link href="/iptv-apple-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Apple TV</Link>
               <Link href="/iptv-mag-box-canada" className="text-gray-400 hover:text-white text-sm transition-colors">MAG Box</Link>
+              <Link href="/iptv-samsung-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Samsung TV</Link>
             </div>
           </div>
 
-          {/* By City */}
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">By City</p>
             <div className="flex flex-col gap-2.5">
@@ -82,35 +75,30 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Legal */}
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">Legal</p>
-            <div className="flex flex-col gap-2.5 mb-6">
+            <div className="flex flex-col gap-2.5 mb-4">
               <Link href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</Link>
               <Link href="/terms-of-service" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</Link>
               <Link href="/refund-policy" className="text-gray-400 hover:text-white text-sm transition-colors">Refund Policy</Link>
               <Link href="/disclaimer" className="text-gray-400 hover:text-white text-sm transition-colors">Disclaimer</Link>
             </div>
-            <p className="text-gray-600 text-xs leading-relaxed mb-2">
-              MapleStreamTV does not host or stream any copyrighted content. All content is
-              provided by third-party providers.
-            </p>
-            <Link href="/disclaimer" className="text-xs text-red-500 hover:text-red-400 transition-colors">
-              Read Disclaimer →
-            </Link>
+            <p className="text-gray-600 text-xs leading-relaxed">MapleStreamTV does not host or stream any copyrighted content.</p>
           </div>
-
         </div>
 
-        {/* Bottom bar */}
-        <div
-          className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 border-t"
-          style={{ borderColor: "rgba(255,255,255,0.06)" }}
-        >
+        <div className="py-5 mb-4 border-t border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+          <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">Also from our network</p>
+          <div className="flex flex-wrap gap-4">
+            <a href="https://maple4k.ca" className="text-gray-400 hover:text-white text-sm transition-colors">Maple4K — 4K IPTV Canada</a>
+            <a href="https://maplehd.ca" className="text-gray-400 hover:text-white text-sm transition-colors">MapleHD — Sports IPTV Canada</a>
+          </div>
+        </div>
+
+        <div className="pt-4 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-gray-600 text-xs">© 2026 MapleStreamTV. All rights reserved.</p>
           <p className="text-gray-700 text-xs">help@maplestreamtv.ca</p>
         </div>
-
       </div>
     </footer>
   );
