@@ -61,6 +61,39 @@ export default function IPTVSupplierPage() {
           <a href="/free-trial" style={{ background: "#F96E5B", color: "#fff", padding: "14px 40px", borderRadius: 10, fontWeight: 700, textDecoration: "none" }}>Try MapleStreamTV Free →</a>
         </div>
       </section>
+
+      <section style={{ maxWidth: 900, margin: "0 auto", padding: "60px 16px" }}>
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 16 }}>What Makes a Trustworthy IPTV Supplier in Canada?</h2>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 16 }}>
+          Canada has dozens of IPTV suppliers, but the quality varies enormously. A reliable IPTV supplier in Canada should have Canadian-based servers to minimize latency for subscribers from coast to coast. They should offer a genuine free trial — not a &quot;money-back guarantee after you pay&quot; — so you can verify stream quality before committing. They should have responsive support that answers within hours, not days, and ideally has Canadian staff who understand the local channel lineup and sports coverage expectations.
+        </p>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 32 }}>
+          Price transparency matters too. The best IPTV suppliers in Canada publish their pricing clearly, don&apos;t charge extra for sports events, and don&apos;t lock you into long-term contracts. MapleStreamTV was built on these principles — our pricing is on our website, our trial is genuinely free, and our month-to-month plans have no cancellation penalties.
+        </p>
+
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 16 }}>MapleStreamTV as Your Canadian IPTV Supplier: What We Deliver</h2>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 16 }}>
+          As a Canadian IPTV supplier, MapleStreamTV provides direct access to our server infrastructure — no intermediary resellers, no middlemen inflating the price. You deal with the source. Your subscription credentials connect directly to MapleStreamTV&apos;s Canadian servers, which serve the complete 25,000+ channel lineup with 99.9% uptime SLA. When something isn&apos;t working, our support team has direct access to the infrastructure to diagnose and fix issues immediately rather than escalating through layers of reseller support.
+        </p>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 32 }}>
+          The channel quality from a direct supplier is noticeably better than channels resold through third parties. When a new season starts, a new channel launches, or a broadcaster changes their feed URL, our team updates the system within hours. Resellers operating off cached stream lists can lag days or weeks behind. Direct IPTV subscribers on MapleStreamTV always have the latest, most accurate channel data.
+        </p>
+
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 16 }}>IPTV Supplier vs IPTV Reseller: Understanding the Difference</h2>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 16 }}>
+          An IPTV supplier like MapleStreamTV operates the server infrastructure directly and sources or aggregates channel streams. An IPTV reseller purchases credits from a supplier and sells them to end users, often under a different brand name. Both models can deliver good service, but buying from the supplier directly means lower prices (no reseller markup), faster support (no third party to go through), and more stable streams (no reseller panel intermediating your credentials).
+        </p>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 24 }}>
+          For Canadian customers, MapleStreamTV offers the benefits of both: direct supplier pricing and quality with the personal support touch of a local service. We know the Canadian market, the Canadian sports calendar, and the Canadian channel landscape better than offshore suppliers who treat Canada as an afterthought.
+        </p>
+
+        <div style={{ background: "#1a4a5e", borderRadius: 16, padding: 32, textAlign: "center" }}>
+          <h2 style={{ fontSize: "1.5rem", fontWeight: 800, color: "#fff", marginBottom: 12 }}>Try Canada&apos;s Most Trusted IPTV Supplier Free</h2>
+          <p style={{ color: "rgba(255,255,255,0.8)", marginBottom: 28, lineHeight: 1.7 }}>24-hour trial, no credit card, no commitment. Direct supplier quality from $9/month.</p>
+          <a href="/free-trial" style={{ background: "#F96E5B", color: "#fff", padding: "14px 40px", borderRadius: 10, fontWeight: 700, textDecoration: "none" }}>Start Free Trial →</a>
+        </div>
+      </section>
+
     </main>
   );
 }

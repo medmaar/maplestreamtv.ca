@@ -71,6 +71,39 @@ export default function BestIPTVAppsPage() {
           <a href="/free-trial" style={{ background: "#F96E5B", color: "#fff", padding: "14px 40px", borderRadius: 10, fontWeight: 700, textDecoration: "none" }}>Start Free Trial →</a>
         </div>
       </section>
+
+      <section style={{ maxWidth: 900, margin: "0 auto", padding: "0 16px 60px" }}>
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 16 }}>What to Look for in a Canadian IPTV App</h2>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 16 }}>
+          The IPTV app you choose determines how easy it is to browse channels, whether your EPG guide works, how reliably 4K content plays, and whether catch-up TV is accessible. For Canadian subscribers, a few criteria matter most: hardware H.265/HEVC decoding support (essential for smooth 4K on weaker devices), a clean EPG interface (the Canadian channel lineup is large — 25,000+ channels — and you need an organised guide), multi-connection management (so a household can use different devices simultaneously), and Xtream Codes compatibility for the fastest channel loading.
+        </p>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 32 }}>
+          Free IPTV apps generally deliver a worse experience than paid ones in this category — the paid apps invest in hardware decoding improvements, EPG performance, and customer support. At $5–$8 per year, the best IPTV apps for Canada cost less than a month&apos;s Netflix subscription and make a noticeable difference to your daily streaming experience.
+        </p>
+
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 16 }}>TiviMate vs IPTV Smarters Pro: The Definitive Canadian Comparison</h2>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 16 }}>
+          TiviMate is the better choice if you primarily stream on a TV with a remote control — its interface is designed for 10-foot viewing (navigating from the couch), the EPG is rendered in a clean, fast grid, and hardware 4K H.265 decoding is rock-solid on Fire Stick and Android TV. The premium version at $4.99/year adds multi-stream management and catch-up TV — essential features for Canadian subscribers who want to replay missed sports events.
+        </p>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 16 }}>
+          IPTV Smarters Pro is the better choice if you use IPTV on a phone or tablet, or if your household uses a mix of devices. It runs on iOS — TiviMate doesn&apos;t — and the cross-platform credential sync means switching from your Fire Stick to your iPhone is seamless. The interface is touch-optimised on mobile while still being navigable with a TV remote on Fire TV and Android TV.
+        </p>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 32 }}>
+          Our recommendation for most Canadian families: TiviMate Premium on the main TV, IPTV Smarters Pro free on phones and tablets. Total cost: under $10/year for both. MapleStreamTV&apos;s Xtream Codes credentials work in both simultaneously with a multi-device plan.
+        </p>
+
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 16 }}>Setting Up Any IPTV App with MapleStreamTV</h2>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 24 }}>
+          Every IPTV app listed above works with MapleStreamTV using either Xtream Codes API or M3U playlist format. After subscribing, you receive a welcome email with your server URL, username, and password. Open your chosen app, select &quot;Add Playlist&quot; or &quot;Add Provider&quot;, choose Xtream Codes, and enter your credentials. The full 25,000+ channel library populates automatically — typically in under 30 seconds on a modern Canadian internet connection. MapleStreamTV&apos;s support team can assist with app-specific configuration for any of the apps above via WhatsApp.
+        </p>
+
+        <div style={{ background: "#1a4a5e", borderRadius: 16, padding: 32, textAlign: "center" }}>
+          <h2 style={{ fontSize: "1.5rem", fontWeight: 800, color: "#fff", marginBottom: 12 }}>Try MapleStreamTV With Any IPTV App — Free</h2>
+          <p style={{ color: "rgba(255,255,255,0.8)", marginBottom: 28, lineHeight: 1.7 }}>24-hour free trial, no credit card. Works with TiviMate, IPTV Smarters, GSE, Flex, and more.</p>
+          <a href="/free-trial" style={{ background: "#F96E5B", color: "#fff", padding: "14px 40px", borderRadius: 10, fontWeight: 700, textDecoration: "none" }}>Start Free Trial →</a>
+        </div>
+      </section>
+
     </main>
   );
 }

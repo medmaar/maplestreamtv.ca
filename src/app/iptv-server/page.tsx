@@ -70,6 +70,36 @@ export default function IPTVServerPage() {
           <a href="/free-trial" style={{ background: "#F96E5B", color: "#fff", padding: "14px 40px", borderRadius: 10, fontWeight: 700, textDecoration: "none" }}>Start Free Trial →</a>
         </div>
       </section>
+
+      <section style={{ maxWidth: 900, margin: "0 auto", padding: "0 16px 60px" }}>
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 16 }}>Why Your IPTV Server Location Matters in Canada</h2>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 16 }}>
+          IPTV stream quality is fundamentally a latency problem. When a live sports event is being broadcast, your IPTV player sends a request to the IPTV server and waits for it to begin delivering the video stream. If the server is located overseas — in Europe or Asia as many discount IPTV providers use — every request takes 100–250 milliseconds of round-trip time before the stream can start. On live sports, this creates that half-second delay where something happens on screen before the sound catches up. It also means that when many Canadian subscribers are online simultaneously (during NHL playoffs, for example), overseas servers become congested and streams buffer.
+        </p>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 32 }}>
+          MapleStreamTV&apos;s IPTV servers are physically located in Canadian data centres. Round-trip latency from a Toronto subscriber to our nearest server is under 10 milliseconds — compared to 140+ milliseconds to a European server. The result is immediate channel switching, real-time sports streams without perceptible delay, and consistent quality even during peak-demand events.
+        </p>
+
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 16 }}>What &quot;99.9% Uptime&quot; Actually Means for Canadian IPTV</h2>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 16 }}>
+          A 99.9% uptime SLA means MapleStreamTV&apos;s servers are accessible and serving streams for all but approximately 8.7 hours per year. In practice, our infrastructure maintenance windows are scheduled for off-peak hours — typically between 3 AM and 5 AM Eastern — so the vast majority of subscribers never notice them. During live events like NHL playoff games and UFC fight nights, we implement change freezes: no maintenance, no deployments, no infrastructure changes while events are live.
+        </p>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 32 }}>
+          Our redundant architecture means that even when one server or network path experiences an issue, automatic failover routes your stream to the next available node within seconds. Most subscribers experience this as a brief 2–3 second pause rather than a full stream failure. We monitor all streams continuously with automated alerting that pages our infrastructure team within 60 seconds of any service degradation.
+        </p>
+
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 16 }}>Optimizing Your Connection to Our IPTV Servers</h2>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 24 }}>
+          For the best performance connecting to MapleStreamTV&apos;s Canadian servers, we recommend a wired Ethernet connection where possible — particularly for 4K streams. Wi-Fi introduces variable latency that can occasionally cause brief buffering even on otherwise fast connections. If Wi-Fi is your only option, use 5GHz over 2.4GHz, position your streaming device as close to the router as practical, and avoid streaming in parallel with large downloads. Setting your DNS to Cloudflare (1.1.1.1) or Google (8.8.8.8) rather than your ISP&apos;s default DNS can also improve initial channel load times.
+        </p>
+
+        <div style={{ background: "#1a4a5e", borderRadius: 16, padding: 32, textAlign: "center" }}>
+          <h2 style={{ fontSize: "1.5rem", fontWeight: 800, color: "#fff", marginBottom: 12 }}>Test Our Canadian IPTV Servers Free for 24 Hours</h2>
+          <p style={{ color: "rgba(255,255,255,0.8)", marginBottom: 28, lineHeight: 1.7 }}>No credit card. Test stability, speed, and 4K quality on your own connection before subscribing.</p>
+          <a href="/free-trial" style={{ background: "#F96E5B", color: "#fff", padding: "14px 40px", borderRadius: 10, fontWeight: 700, textDecoration: "none" }}>Start Free Trial →</a>
+        </div>
+      </section>
+
     </main>
   );
 }

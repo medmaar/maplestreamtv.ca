@@ -220,7 +220,17 @@ export default function IPTVFirestickBlogPost() {
             </a>
           </div>
         </div>
-      </article>
+      
+          {/* Related internal links */}
+          <div style={{ marginTop: 40, padding: "24px 28px", background: "rgba(63,154,174,0.06)", borderRadius: 12, border: "1px solid rgba(63,154,174,0.15)" }}>
+            <p style={{ fontWeight: 700, marginBottom: 12, fontSize: 15 }}>Related Guides</p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: 14 }}>
+              <a href="/iptv-box" style={{ color: "#F96E5B", textDecoration: "underline", fontWeight: 500 }}>IPTV box options</a>
+              <a href="/iptv-near-me" style={{ color: "#F96E5B", textDecoration: "underline", fontWeight: 500 }}>IPTV near me</a>
+              <a href="/iptv-for-beginners" style={{ color: "#F96E5B", textDecoration: "underline", fontWeight: 500 }}>IPTV for beginners</a>
+            </div>
+          </div>
+          </article>
     </main>
   );
 }

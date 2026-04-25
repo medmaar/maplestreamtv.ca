@@ -77,6 +77,36 @@ export default function IPTVNearMePage() {
           <a href="/free-trial" style={{ background: "#F96E5B", color: "#fff", padding: "14px 40px", borderRadius: 10, fontWeight: 700, textDecoration: "none" }}>Start Free →</a>
         </div>
       </section>
+
+      <section style={{ maxWidth: 900, margin: "0 auto", padding: "0 16px 60px" }}>
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 16 }}>IPTV Near Me: What Canadians Are Actually Searching For</h2>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 16 }}>
+          When Canadians search &quot;IPTV near me,&quot; they&apos;re typically looking for one of three things: an IPTV service with Canadian servers (so streams are fast and stable), a provider with Canadian support staff (so help is available in their timezone), or a local reseller they can pay in cash or e-transfer. MapleStreamTV satisfies all three. Our servers are in Canada, our support team is Canadian, and we accept Interac e-Transfer — no international credit card required.
+        </p>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 32 }}>
+          Unlike overseas IPTV services that acquire Canadian customers through resellers and then provide zero local support, MapleStreamTV is built specifically for Canadians. We understand the Canadian sports calendar (NHL, CFL, Curling, Grey Cup, Memorial Cup), the Canadian channel landscape (every regional CBC, CTV, Global affiliate), and the Canadian payment preferences. We also understand what Bell and Rogers charge — and we&apos;re priced to make cord-cutting a straightforward decision.
+        </p>
+
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 16 }}>IPTV Coverage by Canadian Province and Territory</h2>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 16 }}>
+          MapleStreamTV serves subscribers in every Canadian province and territory — from British Columbia&apos;s Lower Mainland to Newfoundland and Labrador, from urban centres like Toronto, Montreal, and Calgary to smaller communities and rural areas. The service works anywhere with a reliable internet connection. This includes subscribers using DSL, cable, fibre, fixed wireless, and satellite internet including Starlink, which has made high-quality IPTV accessible in remote Canadian locations that previously couldn&apos;t stream at HD quality.
+        </p>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 32 }}>
+          Regional Canadian channels — the local CBC affiliate in Halifax, the CTV Morning Live from Winnipeg, the French-language Noovo and TVA for Quebec subscribers — are all part of the MapleStreamTV lineup. We curate Canadian regional channels carefully because we know they matter to subscribers: watching your local news in your city matters, even if you have access to 25,000 international channels.
+        </p>
+
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 16 }}>Finding IPTV Near You vs Using a VPN</h2>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 24 }}>
+          Some IPTV subscribers use a VPN to route their connection through a specific country to access geo-restricted content. For Canadian subscribers using MapleStreamTV, a VPN is generally not necessary — our Canadian server infrastructure already provides optimal performance, and the channel lineup includes all Canadian, American, and international content without geo-restrictions. If you do choose to use a VPN for privacy reasons, MapleStreamTV&apos;s streams work with most VPN services; choose a VPN server in Toronto or Vancouver for the lowest latency.
+        </p>
+
+        <div style={{ background: "#1a4a5e", borderRadius: 16, padding: 32, textAlign: "center" }}>
+          <h2 style={{ fontSize: "1.5rem", fontWeight: 800, color: "#fff", marginBottom: 12 }}>IPTV Near You, Anywhere in Canada — Free Trial</h2>
+          <p style={{ color: "rgba(255,255,255,0.8)", marginBottom: 28, lineHeight: 1.7 }}>24-hour free trial. Canadian servers, Canadian support, Canadian payment options.</p>
+          <a href="/free-trial" style={{ background: "#F96E5B", color: "#fff", padding: "14px 40px", borderRadius: 10, fontWeight: 700, textDecoration: "none" }}>Start Free →</a>
+        </div>
+      </section>
+
     </main>
   );
 }

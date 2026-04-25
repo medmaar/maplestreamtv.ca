@@ -75,6 +75,36 @@ export default function IPTVProvidersCanadaPage() {
           <a href="/free-trial" style={{ background: "#F96E5B", color: "#fff", padding: "14px 40px", borderRadius: 10, fontWeight: 700, textDecoration: "none" }}>Start Free Trial →</a>
         </div>
       </section>
+
+      <section style={{ maxWidth: 900, margin: "0 auto", padding: "0 16px 60px" }}>
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 16 }}>The Canadian IPTV Provider Market in 2026</h2>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 16 }}>
+          The Canadian IPTV provider market has matured significantly in recent years. Where in 2020 most IPTV services serving Canadians were based overseas with no local support, 2026 has a growing number of Canadian-operated providers with domestic servers and Canadian customer service teams. Quality has also improved — top Canadian IPTV providers now routinely offer True 4K H.265 streams, 7-day catch-up TV, and stable EPG data, capabilities that were rare three years ago.
+        </p>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 32 }}>
+          At the same time, the market still contains many low-quality providers relying on foreign infrastructure, inflated channel counts (listing the same channel under multiple names), and support that disappears when problems arise. The key is knowing what to evaluate when comparing Canadian IPTV providers.
+        </p>
+
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 16 }}>Red Flags When Choosing a Canadian IPTV Provider</h2>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 16 }}>
+          Providers that don&apos;t offer a free trial are usually hiding stream quality issues they know won&apos;t survive scrutiny. Providers with &quot;100,000+ channels&quot; claims almost certainly include thousands of duplicate feeds counted separately — meaningful Canadian IPTV providers have 20,000–30,000 unique channels. Providers with no visible support channel (no phone number, no WhatsApp, just a ticket form with 48+ hour response times) are a risk — when your stream goes down during an NHL playoff game, you need help now.
+        </p>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 32 }}>
+          Price alone is not a reliable indicator of quality in the Canadian IPTV market. Both $5/month and $20/month providers can be excellent or terrible — what matters is server infrastructure quality, support responsiveness, and whether the channel list is accurate and up to date. The only reliable test is trying the service before paying — which is why MapleStreamTV&apos;s free 24-hour trial is the starting point we recommend for every new subscriber.
+        </p>
+
+        <h2 style={{ fontSize: "1.6rem", fontWeight: 800, marginBottom: 16 }}>Why MapleStreamTV Is the Right IPTV Provider for Most Canadian Families</h2>
+        <p style={{ color: "#333", lineHeight: 1.85, marginBottom: 24 }}>
+          MapleStreamTV is designed for the cord-cutting Canadian family: straightforward setup on any device the family owns, the complete Canadian channel lineup, kids channels, international language packs for multicultural households, and support that responds within minutes via WhatsApp. Our month-to-month pricing structure means you can cancel any time without penalties — there&apos;s no contract, no equipment to return, and no termination fee. For families currently paying $100+/month to Bell, Rogers, Telus, or Videotron, MapleStreamTV represents a $900–$1,300 annual saving for equivalent or better content.
+        </p>
+
+        <div style={{ background: "#1a4a5e", borderRadius: 16, padding: 32, textAlign: "center" }}>
+          <h2 style={{ fontSize: "1.5rem", fontWeight: 800, color: "#fff", marginBottom: 12 }}>Try Canada&apos;s Top-Rated IPTV Provider Free</h2>
+          <p style={{ color: "rgba(255,255,255,0.8)", marginBottom: 28, lineHeight: 1.7 }}>24-hour free trial, no credit card. Compare us against any other Canadian IPTV provider.</p>
+          <a href="/free-trial" style={{ background: "#F96E5B", color: "#fff", padding: "14px 40px", borderRadius: 10, fontWeight: 700, textDecoration: "none" }}>Start Free Trial →</a>
+        </div>
+      </section>
+
     </main>
   );
 }
