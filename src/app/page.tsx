@@ -150,7 +150,7 @@ export default function HomePage() {
                 marginBottom: 28,
               }}
             >
-              🍁 Canada's #1 Cord-Cutting Service 2026
+              🍁 Best IPTV Providers Canada · 2026
             </span>
             <h1
               style={{
@@ -160,8 +160,8 @@ export default function HomePage() {
                 marginBottom: 24,
               }}
             >
-              Cut the Cable,<br />
-              <span style={{ color: "#E53935" }}>Not the Entertainment</span>
+              #1 IPTV Box &amp; Provider<br />
+              <span style={{ color: "#E53935" }}>Canada — from $9/month</span>
             </h1>
             <p
               style={{
