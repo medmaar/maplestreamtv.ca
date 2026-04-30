@@ -87,14 +87,6 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="py-5 mb-4 border-t border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-          <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">Also from our network</p>
-          <div className="flex flex-wrap gap-4">
-            <a href="https://maple4k.ca" className="text-gray-400 hover:text-white text-sm transition-colors">Maple4K — 4K IPTV Canada</a>
-            <a href="https://maplehd.ca" className="text-gray-400 hover:text-white text-sm transition-colors">MapleHD — Sports IPTV Canada</a>
-          </div>
-        </div>
-
         <div className="pt-4 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-gray-600 text-xs">© 2026 MapleStreamTV. All rights reserved.</p>
           <p className="text-gray-700 text-xs">help@maplestreamtv.ca</p>
