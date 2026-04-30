@@ -27,8 +27,8 @@ const articleSchema = {
   description:
     "Complete guide to choosing the best IPTV service for Canadian families. Comparison of kids content, family plans, parental controls, and pricing.",
   datePublished: "2026-01-10",
-  dateModified: "2026-04-01",
-  author: { "@type": "Organization", name: "MapleStreamTV" },
+  dateModified: "2026-04-30",
+  "author": { "@type": "Person", "name": "Sophie Gagnon", "url": "https://maplestreamtv.ca/about" },
   publisher: {
     "@type": "Organization",
     name: "MapleStreamTV",

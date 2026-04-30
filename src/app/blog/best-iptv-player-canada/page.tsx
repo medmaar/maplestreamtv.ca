@@ -24,8 +24,8 @@ const articleSchema = {
   headline: "Best IPTV Player Apps for Canada in 2026",
   description: "Compare the best IPTV player apps for Canadian users in 2026 — TiviMate, IPTV Smarters Pro, GSE Smart IPTV, and Perfect Player.",
   datePublished: "2026-01-15",
-  dateModified: "2026-04-01",
-  author: { "@type": "Organization", name: "MapleStreamTV" },
+  dateModified: "2026-04-30",
+  "author": { "@type": "Person", "name": "Sophie Gagnon", "url": "https://maplestreamtv.ca/about" },
   publisher: {
     "@type": "Organization",
     name: "MapleStreamTV",
