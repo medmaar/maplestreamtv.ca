@@ -1,3 +1,37 @@
+const aggregateRatingSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "MapleStreamTV",
+  "url": "https://maplestreamtv.ca",
+  "email": "help@maplestreamtv.ca",
+  "address": { "@type": "PostalAddress", "addressCountry": "CA", "addressRegion": "QC", "addressLocality": "Laval" },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "289",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.5706,
+    "longitude": -73.7474
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Canada"
+  },
+  "priceRange": "$9-$100"
+};
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import PricingSection from "./PricingSection";

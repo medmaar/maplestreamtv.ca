@@ -1,3 +1,6 @@
+import { Plus_Jakarta_Sans } from 'next/font/google';
+
+const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], weight: ['400','500','600','700','800'], display: 'swap', variable: '--font-jakarta' });
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./Navbar";
@@ -6,6 +9,7 @@ import FloatingContact from "../components/FloatingContact";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://maplestreamtv.ca"),
+    alternates: { canonical: "https://maplestreamtv.ca", languages: { "en-CA": "https://maplestreamtv.ca", "x-default": "https://maplestreamtv.ca" } },
     title: "IPTV Box Canada — Best IPTV Providers Near Me | MapleStreamTV",
     description: "Best IPTV box and provider in Canada. IPTV near me — free trial, no credit card. Top rated IPTV service Canada: 25,000+ channels, 4K, no contracts from $9/month.",
     keywords: "iptv box, iptv near me, iptv free trial, iptv providers canada, iptv server, iptv supplier, best iptv for canada, iptv provider canada, best iptv app, best iptv apps, fire stick iptv, list iptv, iptv for beginners, top rated iptv tool, best iptv channel, service iptv, best canadian iptv provider, la iptv, cord cutting Canada, cancel cable Canada, MapleStreamTV",
@@ -20,39 +24,6 @@ export const metadata: Metadata = {
 };
 
 
-const aggregateRatingSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "MapleStreamTV",
-  "url": "https://maplestreamtv.ca",
-  "email": "help@maplestreamtv.ca",
-  "address": { "@type": "PostalAddress", "addressCountry": "CA", "addressRegion": "QC", "addressLocality": "Laval" },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "289",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    }
-  ],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 45.5706,
-    "longitude": -73.7474
-  },
-  "areaServed": {
-    "@type": "Country",
-    "name": "Canada"
-  },
-  "priceRange": "$9-$100"
-};
 
 const websiteSchema = {
   "@context": "https://schema.org",
@@ -81,7 +52,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     return (
         <html lang="en" className="h-full">
             <head>
-                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }} />
                   <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(sitelinksSearchSchema) }} />
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMRVJYWQR3" />
