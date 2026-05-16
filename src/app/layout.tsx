@@ -9,12 +9,17 @@ import FloatingContact from "../components/FloatingContact";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://maplestreamtv.ca"),
-    alternates: { canonical: "https://maplestreamtv.ca", languages: { "en-CA": "https://maplestreamtv.ca", "x-default": "https://maplestreamtv.ca" } },
-    title: "IPTV Box Canada — Best IPTV Providers Near Me | MapleStreamTV",
-    description: "Best IPTV box and provider in Canada. IPTV near me — free trial, no credit card. Top rated IPTV service Canada: 25,000+ channels, 4K, no contracts from $9/month.",
-    keywords: "iptv box, iptv near me, iptv free trial, iptv providers canada, iptv server, iptv supplier, best iptv for canada, iptv provider canada, best iptv app, best iptv apps, fire stick iptv, list iptv, iptv for beginners, top rated iptv tool, best iptv channel, service iptv, best canadian iptv provider, la iptv, cord cutting Canada, cancel cable Canada, MapleStreamTV",
+    title: {
+        template: "%s | MapleStreamTV",
+        default: "Best IPTV Canada 2026 — 25,000+ Channels, Free Trial | MapleStreamTV",
+    },
+    description: "Canada's best IPTV service. 25,000+ live channels, 120,000+ movies & series in 4K. NHL, TSN, CTV, Sportsnet & more. Free 24h trial, no credit card. From $9/month.",
+    keywords: "iptv canada, best iptv canada, iptv service canada, iptv subscription canada, iptv box, iptv near me, iptv free trial, iptv providers canada, iptv server, iptv supplier, best iptv for canada, iptv provider canada, best iptv app, best iptv apps, fire stick iptv, iptv for beginners, best canadian iptv provider, cord cutting Canada, cancel cable Canada, MapleStreamTV",
     verification: { google: "NPe9mnD6fyjcZMDzlkDeeJ9xsSMileOAckN4P0zXxVw" },
     openGraph: {
+        siteName: "MapleStreamTV",
+        locale: "en_CA",
+        type: "website",
         images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
     },
     twitter: {

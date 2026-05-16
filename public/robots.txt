@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /order
-Disallow: /whatsapp-contact
-Disallow: /admin
-Disallow: /api
-
-Sitemap: https://maplestreamtv.ca/sitemap.xml

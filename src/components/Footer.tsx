@@ -32,6 +32,7 @@ export default function Footer() {
               <Link href="/pricing" className="text-gray-400 hover:text-white text-sm transition-colors">Pricing</Link>
               <Link href="/channels-list" className="text-gray-400 hover:text-white text-sm transition-colors">Channels</Link>
               <Link href="/free-trial" className="text-gray-400 hover:text-white text-sm transition-colors">Free Trial</Link>
+              <Link href="/how-it-works" className="text-gray-400 hover:text-white text-sm transition-colors">How It Works</Link>
               <Link href="/blog" className="text-gray-400 hover:text-white text-sm transition-colors">Blog</Link>
               <Link href="/reseller" className="text-gray-400 hover:text-white text-sm transition-colors">Reseller</Link>
               <Link href="/contact" className="text-gray-400 hover:text-white text-sm transition-colors">Contact</Link>
@@ -60,6 +61,11 @@ export default function Footer() {
               <Link href="/iptv-apple-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Apple TV</Link>
               <Link href="/iptv-mag-box-canada" className="text-gray-400 hover:text-white text-sm transition-colors">MAG Box</Link>
               <Link href="/iptv-samsung-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Samsung TV</Link>
+              <Link href="/iptv-lg-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">LG TV</Link>
+              <Link href="/iptv-roku-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Roku</Link>
+              <Link href="/iptv-android-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Android</Link>
+              <Link href="/iptv-ios-canada" className="text-gray-400 hover:text-white text-sm transition-colors">iPhone / iPad</Link>
+              <Link href="/iptv-windows-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Windows PC</Link>
             </div>
           </div>
 

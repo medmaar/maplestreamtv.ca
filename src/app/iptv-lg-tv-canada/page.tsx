@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "Stream IPTV on your LG Smart TV in Canada. 25,000+ channels, 4K quality, NHL, TSN, CTV and more. Easy webOS setup. Try free today.",
   keywords:
     "IPTV LG TV Canada, IPTV LG Smart TV Canada, LG webOS IPTV Canada, best IPTV for LG TV Canada",
-  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/iptv-lg-tv-canada" },
+  alternates: { canonical: "https://maplestreamtv.ca/iptv-lg-tv-canada" },
 };
 
 const steps = [

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "Stream IPTV on Roku in Canada. 25,000+ channels, HD & 4K quality, NHL, TSN, CTV and more. Easy channel store setup. Try free today.",
   keywords:
     "IPTV Roku Canada, Roku IPTV Canada, best IPTV for Roku Canada, Roku streaming IPTV Canada",
-  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/iptv-roku-canada" },
+  alternates: { canonical: "https://maplestreamtv.ca/iptv-roku-canada" },
 };
 
 const steps = [

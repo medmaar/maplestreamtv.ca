@@ -3,10 +3,19 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "How to Install IPTV on Firestick Canada 2026 — Step by Step Guide",
   description:
-    "Complete guide to installing IPTV on Amazon Fire Stick in Canada. Works on Fire Stick 4K, Lite, and all Fire TV devices. Easy step-by-step setup.",
+    "Complete guide to installing IPTV on Amazon Fire Stick in Canada. Works on Fire Stick 4K, Lite, and all Fire TV devices. Easy step-by-step setup with MapleStreamTV.",
   keywords:
-    "IPTV Firestick Canada, install IPTV Fire Stick Canada, how to set up IPTV Firestick Canada, IPTV Fire TV Canada",
-  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/blog/iptv-firestick-canada" },
+    "IPTV Firestick Canada, install IPTV Fire Stick Canada, how to set up IPTV Firestick Canada, IPTV Fire TV Canada, MapleStreamTV Firestick",
+  alternates: { canonical: "https://maplestreamtv.ca/blog/iptv-firestick-canada" },
+  openGraph: {
+    images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "How to Install IPTV on Firestick Canada — MapleStreamTV" }],
+    title: "How to Install IPTV on Firestick Canada 2026 — Step by Step Guide",
+    description: "Complete step-by-step guide to setting up IPTV on your Amazon Fire Stick in Canada. Works on all Fire TV devices.",
+    url: "https://maplestreamtv.ca/blog/iptv-firestick-canada",
+    type: "article",
+    siteName: "MapleStreamTV",
+  },
+  twitter: { card: "summary_large_image", images: ["/og-image.webp"] },
 };
 
 const steps = [
@@ -14,7 +23,7 @@ const steps = [
     step: "1",
     title: "Get Your IPTV Subscription",
     detail: [
-      "Before installing anything, you need an active IPTV subscription. Contact IPTV Subscription Canada via WhatsApp, Telegram, or email to get started with a free 24-hour trial or a paid plan.",
+      "Before installing anything, you need an active IPTV subscription. Contact MapleStreamTV via WhatsApp, Telegram, or email to get started with a free 24-hour trial or a paid plan.",
       "Within a few minutes you'll receive: a server URL (M3U or Xtream Codes), a username, and a password. Keep these handy — you'll need them in Step 5.",
     ],
   },

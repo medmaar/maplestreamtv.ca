@@ -6,10 +6,9 @@ import Logo from "../components/Logo";
 const links = [
   { label: "Pricing", href: "/pricing" },
   { label: "Channels", href: "/channels-list" },
+  { label: "Devices", href: "/iptv-firestick-canada" },
   { label: "Free Trial", href: "/free-trial" },
   { label: "Blog", href: "/blog" },
-  { label: "Referral", href: "/referral" },
-  { label: "DMCA", href: "/dmca" },
   { label: "Reseller", href: "/reseller" },
   { label: "Contact", href: "/contact" },
 ];

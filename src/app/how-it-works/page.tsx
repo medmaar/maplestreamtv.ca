@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "How IPTV Works in Canada | Setup Guide — IPTV Subscription Canada",
+  title: "How IPTV Works in Canada | Setup Guide — MapleStreamTV",
   description:
     "Learn how IPTV works in Canada. Simple 3-step setup, compatible devices, internet requirements, and everything you need to start streaming today.",
   keywords:
     "how does IPTV work Canada, how to set up IPTV Canada, IPTV setup Canada, IPTV explained Canada",
-  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/how-it-works" },
+  alternates: { canonical: "https://maplestreamtv.ca/how-it-works" },
 };
 
 const steps = [

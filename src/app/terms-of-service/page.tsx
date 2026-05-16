@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | IPTV Subscription Canada",
-  description: "Terms of service for IPTV Subscription Canada. Read our terms before using our IPTV service.",
-  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/terms-of-service" },
+  title: "Terms of Service | MapleStreamTV",
+  description: "Terms of service for MapleStreamTV. Read our terms before using our IPTV service.",
+  alternates: { canonical: "https://maplestreamtv.ca/terms-of-service" },
 };
 
 export default function TermsOfServicePage() {
@@ -16,12 +16,12 @@ export default function TermsOfServicePage() {
         <div className="space-y-10 text-gray-300 leading-relaxed">
           <section>
             <h2 className="text-2xl font-bold text-white mb-3">1. Acceptance of Terms</h2>
-            <p>By accessing or using the IPTV Subscription Canada service ("Service"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Service.</p>
+            <p>By accessing or using the MapleStreamTV service ("Service"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Service.</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-3">2. Service Description</h2>
-            <p>IPTV Subscription Canada provides an internet-based television streaming service offering access to live channels, video on demand, and related content. The Service requires a compatible device and a broadband internet connection.</p>
+            <p>MapleStreamTV provides an internet-based television streaming service offering access to live channels, video on demand, and related content. The Service requires a compatible device and a broadband internet connection.</p>
           </section>
 
           <section>
@@ -75,7 +75,7 @@ export default function TermsOfServicePage() {
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-3">9. Limitation of Liability</h2>
-            <p>To the maximum extent permitted by applicable law, IPTV Subscription Canada shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of, or inability to use, the Service. Our total liability to you shall not exceed the amount you paid for the Service in the three months preceding the claim.</p>
+            <p>To the maximum extent permitted by applicable law, MapleStreamTV shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of, or inability to use, the Service. Our total liability to you shall not exceed the amount you paid for the Service in the three months preceding the claim.</p>
           </section>
 
           <section>

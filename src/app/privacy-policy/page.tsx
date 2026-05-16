@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | IPTV Subscription Canada",
-  description: "Privacy policy for IPTV Subscription Canada. Learn how we collect, use, and protect your personal information.",
-  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/privacy-policy" },
+  title: "Privacy Policy | MapleStreamTV",
+  description: "Privacy policy for MapleStreamTV. Learn how we collect, use, and protect your personal information.",
+  alternates: { canonical: "https://maplestreamtv.ca/privacy-policy" },
 };
 
 export default function PrivacyPolicyPage() {
@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
         <div className="space-y-10 text-gray-300 leading-relaxed">
           <section>
             <h2 className="text-2xl font-bold text-white mb-3">1. Information We Collect</h2>
-            <p className="mb-3">When you use IPTV Subscription Canada, we may collect the following types of information:</p>
+            <p className="mb-3">When you use MapleStreamTV, we may collect the following types of information:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Account information:</strong> Your name, email address, and contact details provided when you sign up or contact us.</li>
               <li><strong>Payment information:</strong> Transaction data processed through our payment providers. We do not store full credit card numbers.</li>

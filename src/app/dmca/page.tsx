@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "DMCA Policy | IPTV Subscription Canada",
+  title: "DMCA Policy | MapleStreamTV",
   description:
-    "DMCA policy for IPTV Subscription Canada. Learn how to submit a DMCA takedown notice and our process for handling copyright claims.",
-  alternates: { canonical: "https://www.iptvsubscriptioncanada.ca/dmca" },
+    "DMCA policy for MapleStreamTV. Learn how to submit a DMCA takedown notice and our process for handling copyright claims.",
+  alternates: { canonical: "https://maplestreamtv.ca/dmca" },
 };
 
 export default function DMCAPage() {
@@ -33,7 +33,7 @@ export default function DMCAPage() {
           <div>
             <h2 className="text-2xl font-bold text-white mb-3">Overview</h2>
             <p>
-              IPTV Subscription Canada respects the intellectual property rights of others and
+              MapleStreamTV respects the intellectual property rights of others and
               expects users of our service to do the same. In accordance with the Digital
               Millennium Copyright Act of 1998 (DMCA) and applicable Canadian copyright law,
               we will respond expeditiously to claims of copyright infringement.
@@ -81,7 +81,7 @@ export default function DMCAPage() {
           <div>
             <h2 className="text-2xl font-bold text-white mb-3">Repeat Infringers</h2>
             <p>
-              IPTV Subscription Canada reserves the right to terminate accounts of users who
+              MapleStreamTV reserves the right to terminate accounts of users who
               are found to be repeat infringers of intellectual property rights.
             </p>
           </div>
