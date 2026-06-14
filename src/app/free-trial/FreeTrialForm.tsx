@@ -1,12 +1,9 @@
 "use client";
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
-const SERVICE_ID  = "service_2jcensj";
-const TEMPLATE_ID = "template_s8c799i";
-const PUBLIC_KEY  = "hbzN9XtS5uTJfVZT7";
+const WORKER_URL = "https://iptv-trial-maplestreamtv.medmaar.workers.dev";
 
 const deviceTypes = [
   "Firestick",
@@ -46,44 +43,80 @@ export default function FreeTrialForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!phone) return;
     setStatus("loading");
-    console.log('EmailJS config:', { serviceId: SERVICE_ID, templateId: TEMPLATE_ID, publicKey: PUBLIC_KEY });
     try {
-      const result = await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        {
-          from_name: form.full_name || "Not provided",
-          from_email: form.email || "Not provided",
-          phone: phone,
-          device: form.device || "Not specified",
-          plan: "Free Trial (24h)",
-          message: form.message || "—",
-          site_name: "MapleStreamTV.ca",
-        },
-        PUBLIC_KEY
-      );
-      console.log("EmailJS success:", result);
+      const res = await fetch(WORKER_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name:     form.full_name,
+          email:    form.email,
+          device:   form.device || "Not specified",
+          whatsapp: phone || "",
+          notes:    form.message || "",
+          country:  "Canada",
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.error || "Worker error");
+
       setStatus("success");
       setForm({ full_name: "", email: "", device: "", message: "" });
       setPhone("");
-    } catch (error) {
-      console.error("EmailJS error:", JSON.stringify(error));
+    } catch (err) {
+      console.error("Trial error:", err);
       setStatus("error");
     }
   }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+
+      {/* Success */}
       {status === "success" && (
-        <div
-          className="rounded-2xl px-4 py-3 text-sm font-medium"
-          style={{ background: "rgba(74,222,128,0.1)", border: "1px solid rgba(74,222,128,0.3)", color: "#4ade80" }}
-        >
-          ✅ Your free trial request has been sent! Check your email in 5 minutes.
-        </div>
+        <>
+          <style>{`
+            @keyframes popIn{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+            @keyframes drawCheck{to{stroke-dashoffset:0}}
+          `}</style>
+          <div style={{
+            textAlign:"center", padding:"2.5rem 1.5rem",
+            background:"rgba(46,204,113,0.08)",
+            border:"1px solid rgba(46,204,113,0.35)",
+            borderRadius:20,
+            boxShadow:"0 0 40px rgba(46,204,113,0.12)"
+          }}>
+            <div style={{marginBottom:"1.5rem"}}>
+              <div style={{
+                width:90, height:90, borderRadius:"50%",
+                background:"rgba(46,204,113,0.15)",
+                border:"3px solid #2ecc71",
+                display:"flex", alignItems:"center", justifyContent:"center",
+                margin:"0 auto",
+                animation:"popIn 0.5s cubic-bezier(0.175,0.885,0.32,1.275) both"
+              }}>
+                <svg viewBox="0 0 52 52" style={{
+                  width:44, height:44, stroke:"#2ecc71", strokeWidth:3, fill:"none",
+                  strokeDasharray:60, strokeDashoffset:60,
+                  animation:"drawCheck 0.5s 0.35s ease forwards"
+                } as React.CSSProperties}>
+                  <polyline points="14,27 22,36 38,17"/>
+                </svg>
+              </div>
+            </div>
+            <div style={{color:"#2ecc71", fontSize:"1.8rem", fontWeight:900, marginBottom:"0.5rem"}}>
+              Your Trial is Active!
+            </div>
+            <p style={{color:"rgba(255,255,255,0.85)", fontSize:"1rem", lineHeight:1.7, margin:0}}>
+              Your login credentials have been sent to your email.<br/>
+              Check your inbox — your 24H access starts now.
+            </p>
+          </div>
+        </>
       )}
+
+      {/* Error */}
       {status === "error" && (
         <div
           className="rounded-2xl px-4 py-3 text-sm font-medium"
@@ -128,10 +161,11 @@ export default function FreeTrialForm() {
         />
       </div>
 
-      {/* Phone — react-phone-number-input with dark theme */}
+      {/* Phone */}
       <div>
         <label className="block text-sm text-gray-400 mb-1.5">
-          Phone / WhatsApp <span style={{ color: "#fd0322" }}>*</span>
+          Phone / WhatsApp{" "}
+          <span className="ml-2 text-gray-600 text-xs">(optional)</span>
         </label>
         <div className="phone-input-wrapper">
           <PhoneInput
@@ -182,15 +216,15 @@ export default function FreeTrialForm() {
 
       <button
         type="submit"
-        disabled={status === "loading" || !phone}
+        disabled={status === "loading" || status === "success"}
         className="w-full text-white py-4 rounded-2xl font-bold text-base transition-all hover:brightness-110 disabled:opacity-60"
         style={{ background: "#fd0322" }}
       >
-        {status === "loading" ? "Sending…" : "Get My Free Trial →"}
+        {status === "loading" ? "Activating trial…" : status === "success" ? "✅ Trial Sent!" : "Get My Free Trial →"}
       </button>
 
       <p className="text-center text-gray-600 text-xs">
-        Your trial credentials will be sent to your email within 5 minutes
+        Secure · Login credentials sent to your email automatically
       </p>
     </form>
   );
