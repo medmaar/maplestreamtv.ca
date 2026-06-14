@@ -132,12 +132,11 @@ export default function FreeTrialForm() {
       {/* Full Name */}
       <div>
         <label className="block text-sm text-gray-400 mb-1.5">
-          Full Name <span style={{ color: "#fd0322" }}>*</span>
+          Full Name
         </label>
         <input
           type="text"
           name="full_name"
-          required
           placeholder="Your full name"
           value={form.full_name}
           onChange={handleChange}
@@ -148,12 +147,11 @@ export default function FreeTrialForm() {
       {/* Email */}
       <div>
         <label className="block text-sm text-gray-400 mb-1.5">
-          Email Address <span style={{ color: "#fd0322" }}>*</span>
+          Email Address
         </label>
         <input
           type="email"
           name="email"
-          required
           placeholder="you@example.com"
           value={form.email}
           onChange={handleChange}
@@ -165,7 +163,6 @@ export default function FreeTrialForm() {
       <div>
         <label className="block text-sm text-gray-400 mb-1.5">
           Phone / WhatsApp{" "}
-          <span className="ml-2 text-gray-600 text-xs">(optional)</span>
         </label>
         <div className="phone-input-wrapper">
           <PhoneInput
@@ -182,13 +179,12 @@ export default function FreeTrialForm() {
       {/* Device */}
       <div>
         <label className="block text-sm text-gray-400 mb-1.5">
-          Device Type <span style={{ color: "#fd0322" }}>*</span>
+          Device Type
         </label>
         <select
           name="device"
           value={form.device}
           onChange={handleChange}
-          required
           style={{ ...inputStyle, cursor: "pointer", backgroundColor: "#111827" }}
         >
           <option value="" style={{ backgroundColor: "#111827", color: "#fff" }}>Select your device</option>
@@ -202,7 +198,6 @@ export default function FreeTrialForm() {
       <div>
         <label className="block text-sm text-gray-400 mb-1.5">
           Notes / Message{" "}
-          <span className="ml-2 text-gray-600 text-xs">(optional)</span>
         </label>
         <textarea
           name="message"
