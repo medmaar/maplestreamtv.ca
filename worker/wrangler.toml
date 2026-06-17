@@ -1,3 +1,10 @@
 name = "iptv-trial-maplestreamtv"
 main = "worker.js"
 compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "TRIALS"
+id = "22b73d28194d49d3af89ffd83148b628"
+
+[triggers]
+crons = ["0 * * * *"]
