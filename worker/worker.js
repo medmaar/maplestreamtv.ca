@@ -139,16 +139,23 @@ function reminderEmail(name, username, password, m3uUrl) {
   return emailWrap(`
     <p style="margin:0 0 16px;font-family:Arial,sans-serif;font-size:15px;color:#333333;">Hi ${firstName},</p>
     <p style="margin:0 0 14px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">
-      Your free trial <strong>expires in 4 hours</strong> ⏳
+      Your free trial <strong>expires in 4 hours</strong> ⏳ and honestly? We don't want to see you go.
     </p>
     <p style="margin:0 0 22px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">
-      You still have time to enjoy your full access to +50,000 channels, NHL, TSN, CTV, and +300,000 movies & shows in 4K.
+      You've had a taste of what real streaming feels like. Crystal-clear 4K, live sports the moment the puck drops, and a library so deep you'll run out of weekends before you run out of things to watch.
+    </p>
+    <p style="margin:0 0 20px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">
+      <strong>Don't let it end here.</strong>
     </p>
     <p style="margin:0 0 16px;font-family:Arial,sans-serif;font-size:14px;color:#555555;">Your active credentials:</p>
     ${credBox(username, password, m3uUrl)}
-    <p style="margin:0 0 16px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">Continue without interruption — choose your plan now:</p>
+    <p style="margin:0 0 16px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">
+      Keep the same login. Keep the same quality. Just make it permanent. 👇
+    </p>
     ${ctaButton("View Our Plans →", SITE_URL + "/pricing")}
-    ${contactLine("Questions? Reach us by replying to this email or on WhatsApp at")}
+    <p style="margin:0 0 20px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">
+      Questions? Reply to this email or reach us on WhatsApp at <a href="https://wa.me/${WA_NUMBER}" style="color:#fd0322;text-decoration:none;font-weight:bold;">+1 782-802-6280</a> — we're always here.
+    </p>
     <p style="margin:0;font-family:Arial,sans-serif;font-size:14px;color:#555555;">Best regards,<br><strong>The Maple Stream TV Team</strong></p>
   `);
 }
@@ -158,14 +165,21 @@ function followupEmail(name) {
   return emailWrap(`
     <p style="margin:0 0 16px;font-family:Arial,sans-serif;font-size:15px;color:#333333;">Hi ${firstName},</p>
     <p style="margin:0 0 14px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">
-      Your Maple Stream TV free trial has now <strong>ended</strong>.
+      Your free trial has ended — but here's the thing: <strong>everything you just experienced? It's still waiting for you.</strong>
+    </p>
+    <p style="margin:0 0 14px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">
+      The live sports. The late-night movies. The crystal-clear 4K that made your old streaming service look like a bad dream.
     </p>
     <p style="margin:0 0 22px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">
-      We hope you enjoyed the quality of our service — +50,000 channels, NHL, TSN, CTV and +300,000 movies & shows in 4K, uninterrupted.
+      All of it, one click away.
     </p>
-    <p style="margin:0 0 16px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">Keep streaming with Maple Stream TV — choose the plan that works for you:</p>
+    <p style="margin:0 0 16px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">
+      Pick the plan that fits your life and you're back in — same quality, zero interruptions, right now. 👇
+    </p>
     ${ctaButton("Choose My Plan →", SITE_URL + "/pricing")}
-    ${contactLine("Any questions? Contact us by replying to this email or directly on WhatsApp at")}
+    <p style="margin:0 0 20px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">
+      Any questions? Reply here or drop us a message on WhatsApp at <a href="https://wa.me/${WA_NUMBER}" style="color:#fd0322;text-decoration:none;font-weight:bold;">+1 782-802-6280</a> — we'd love to have you stay.
+    </p>
     <p style="margin:0;font-family:Arial,sans-serif;font-size:14px;color:#555555;">Best regards,<br><strong>The Maple Stream TV Team</strong></p>
   `);
 }
