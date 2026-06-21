@@ -1,0 +1,13 @@
+=== subdomain status ===
+{
+  "result": {
+    "enabled": true,
+    "previews_enabled": true
+  },
+  "success": true,
+  "errors": [],
+  "messages": []
+}
+
+=== live GET ===
+Maple Stream TV Trial Worker — OK
