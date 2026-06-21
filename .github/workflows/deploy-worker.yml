@@ -10,64 +10,30 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
-      - name: Deploy Worker via Cloudflare API
-        env:
-          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
-          KV_ID: 22b73d28194d49d3af89ffd83148b628
-          WORKER_NAME: iptv-trial-maplestreamtv
-        run: |
-          METADATA=$(cat <<'METADATA'
-          {
-            "main_module": "worker.js",
-            "compatibility_date": "2024-01-01",
-            "bindings": [
-              {
-                "type": "kv_namespace",
-                "name": "TRIALS",
-                "namespace_id": "22b73d28194d49d3af89ffd83148b628"
-              }
-            ]
-          }
-          METADATA
-          )
-
-          RESULT=$(curl -s -X PUT \
-            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/${WORKER_NAME}" \
-            -H "Authorization: Bearer ${CF_TOKEN}" \
-            -F "metadata=${METADATA};type=application/json" \
-            -F "worker.js=@worker/worker.js;type=application/javascript+module")
-
-          echo "$RESULT" | python3 -c "
-          import sys, json
-          d = json.load(sys.stdin)
-          if d.get('success'):
-              print('✅ Worker deployed:', d['result'].get('id', 'OK'))
-          else:
-              print('❌ Failed:', d.get('errors'))
-              exit(1)
-          "
-
-      - name: Set Cron Trigger
+      - name: Check subdomain + live test
         env:
           CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
           WORKER_NAME: iptv-trial-maplestreamtv
         run: |
-          RESULT=$(curl -s -X PUT \
-            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/${WORKER_NAME}/schedules" \
-            -H "Authorization: Bearer ${CF_TOKEN}" \
-            -H "Content-Type: application/json" \
-            -d '[{"cron": "0 * * * *"}]')
+          mkdir -p .debug
+          echo "=== subdomain status ===" > .debug/check.txt
+          curl -s "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/${WORKER_NAME}/subdomain" \
+            -H "Authorization: Bearer ${CF_TOKEN}" >> .debug/check.txt
+          echo "" >> .debug/check.txt
+          echo "=== live GET ===" >> .debug/check.txt
+          curl -s "https://iptv-trial-maplestreamtv.medmaar.workers.dev/" >> .debug/check.txt
+          cat .debug/check.txt
 
-          echo "$RESULT" | python3 -c "
-          import sys, json
-          d = json.load(sys.stdin)
-          if d.get('success'):
-              print('✅ Cron trigger set')
-          else:
-              print('⚠️  Cron:', d.get('errors'))
-          "
+      - name: Commit
+        run: |
+          git config user.name bot
+          git config user.email bot@example.com
+          git add .debug/check.txt
+          git commit -m "debug: check" || true
+          git push || true
