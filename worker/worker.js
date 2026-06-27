@@ -268,15 +268,7 @@ async function handleFetch(request, env) {
     try { const u = new URL(rawUrl); username = u.searchParams.get("username") || ""; password = u.searchParams.get("password") || ""; } catch {}
     const m3uUrl = `${HOST}/get.php?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&type=m3u_plus&output=ts`;
 
-    // 4. Welcome email
-    step = "email_client";
-    await sendEmail(email, "Your Maple Stream TV Free Trial is Ready — 24H Access Activated ✓", welcomeEmail(name, username, password, m3uUrl));
-
-    // 5. Admin notification
-    step = "email_admin";
-    await sendEmail(ADMIN_EMAIL, `Automation / maplestreamtv.ca / trial / ${name} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl));
-
-    // 6. Store in KV (TTL 4 days)
+    // 4. Store in KV FIRST (so trial is always recorded even if email fails)
     step = "kv_store";
     const expiry = Date.now() + 24 * 60 * 60 * 1000;
     await env.TRIALS.put(
@@ -284,14 +276,22 @@ async function handleFetch(request, env) {
       JSON.stringify({ name, email, whatsapp, site: 'maplestreamtv.ca', username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, created_at: Date.now() }),
       { expirationTtl: 30 * 24 * 60 * 60 }
     );
-    // Notify central KV reader (single-key design, no list ops)
+    // Notify central KV reader
     try {
       await fetch('https://iptv-kv-reader.medmaar.workers.dev/add', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, whatsapp, site: SITE, phone: whatsapp, created_at: Date.now() })
+        body: JSON.stringify({ name, email, whatsapp, site: 'maplestreamtv.ca', phone: whatsapp, created_at: Date.now() })
       });
     } catch(_) {}
+
+    // 5. Welcome email
+    step = "email_client";
+    await sendEmail(email, "Your Maple Stream TV Free Trial is Ready — 24H Access Activated ✓", welcomeEmail(name, username, password, m3uUrl));
+
+    // 6. Admin notification
+    step = "email_admin";
+    await sendEmail(ADMIN_EMAIL, `Automation / maplestreamtv.ca / trial / ${name} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl));
 
     return jsonRes({ success: true });
 
