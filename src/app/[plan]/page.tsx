@@ -15,7 +15,7 @@ const faq1Month: FaqItem[] = [
   { q: "Can I upgrade to a longer plan to save money?", a: "Yes! You can upgrade to our 3-month, 6-month, or 12-month plan at any time to get a much lower monthly rate. The 12-month plan works out to as little as $4.08/month per device." },
   { q: "What Canadian sports channels are included?", a: "Every plan includes TSN (all feeds), Sportsnet (all regional feeds), CBC Sports, RDS, TVA Sports, and more. Full NHL, NFL, NBA, MLB, UFC, CFL, and Premier League coverage is included." },
   { q: "Is there a free trial available?", a: "Yes, we offer a 24-hour free trial — no credit card required. Visit our Free Trial page to get started before committing." },
-  { q: "What if I have issues with my IPTV service?", a: "Our Canadian support team is available 24/7 via WhatsApp (+1 782-802-6280) and email at help@maplestreamtv.ca. Most issues are resolved within minutes." },
+  { q: "What if I have issues with my IPTV service?", a: "Our Canadian support team is available 24/7 via WhatsApp and email at help@maplestreamtv.ca. Most issues are resolved within minutes." },
 ];
 
 const faq3Months: FaqItem[] = [
@@ -26,7 +26,7 @@ const faq3Months: FaqItem[] = [
   { q: "Is there a contract or commitment?", a: "No contracts at all. Pay once for 3 months with no automatic renewals. You choose when and if you want to continue." },
   { q: "What Canadian sports channels are included?", a: "Every plan includes TSN (all feeds), Sportsnet (all regional feeds), CBC Sports, RDS, TVA Sports. Full NHL, NFL, NBA, MLB, UFC, and CFL coverage is included." },
   { q: "Is there a free trial available?", a: "Yes, we offer a 24-hour free trial with no credit card required. Visit our Free Trial page to test the service first." },
-  { q: "What if I have issues with my IPTV service?", a: "Our Canadian support team is available 24/7 via WhatsApp (+1 782-802-6280) and email at help@maplestreamtv.ca. Most issues are resolved within minutes." },
+  { q: "What if I have issues with my IPTV service?", a: "Our Canadian support team is available 24/7 via WhatsApp and email at help@maplestreamtv.ca. Most issues are resolved within minutes." },
 ];
 
 const faq6Months: FaqItem[] = [
@@ -37,7 +37,7 @@ const faq6Months: FaqItem[] = [
   { q: "Is there a contract or commitment?", a: "No contracts. You pay once for 6 months with no automatic renewals. There is no obligation to continue after your subscription ends." },
   { q: "Why is the 6-month plan the most popular?", a: "It is the sweet spot between price and commitment — you save significantly over monthly billing without locking in for a full year. Most of our Canadian customers choose this plan." },
   { q: "What Canadian sports channels are included?", a: "Every plan includes TSN (all feeds), Sportsnet (all regional feeds), CBC Sports, RDS, TVA Sports. Full NHL, NFL, NBA, MLB, UFC, CFL, and Premier League coverage with no blackouts." },
-  { q: "What if I have issues with my IPTV service?", a: "Our Canadian support team is available 24/7 via WhatsApp (+1 782-802-6280) and email at help@maplestreamtv.ca. Most issues are resolved within minutes." },
+  { q: "What if I have issues with my IPTV service?", a: "Our Canadian support team is available 24/7 via WhatsApp and email at help@maplestreamtv.ca. Most issues are resolved within minutes." },
 ];
 
 const faq12Months: FaqItem[] = [
@@ -48,7 +48,7 @@ const faq12Months: FaqItem[] = [
   { q: "Is there a contract or commitment?", a: "No contracts. You pay once for 12 months with no automatic renewals. There is no obligation to continue after your year is up." },
   { q: "Why choose the 12-month plan over shorter plans?", a: "It is the best value we offer. At $4.08/month per device, it is cheaper than a single coffee and gives you access to every channel, sport, and movie we carry for the entire year." },
   { q: "What Canadian sports channels are included?", a: "Every plan includes TSN (all feeds), Sportsnet (all regional feeds), CBC Sports, RDS, TVA Sports. Full NHL, NFL, NBA, MLB, UFC, CFL, and Premier League coverage with no blackouts." },
-  { q: "What if I have issues with my IPTV service?", a: "Our Canadian support team is available 24/7 via WhatsApp (+1 782-802-6280) and email at help@maplestreamtv.ca. Most issues are resolved within minutes." },
+  { q: "What if I have issues with my IPTV service?", a: "Our Canadian support team is available 24/7 via WhatsApp and email at help@maplestreamtv.ca. Most issues are resolved within minutes." },
 ];
 
 // ─── Static plan metadata ─────────────────────────────────────────────────────
