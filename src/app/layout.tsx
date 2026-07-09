@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "./Navbar";
 import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
+import SalesBanner from "../components/SalesBanner";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://maplestreamtv.ca"),
@@ -72,6 +73,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <div className="flex-1">{children}</div>
                 <Footer />
                 <FloatingContact />
+                <SalesBanner />
             </body>
         </html>
     );
