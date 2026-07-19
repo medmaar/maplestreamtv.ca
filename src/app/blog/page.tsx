@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "IPTV Canada Blog 2026 | Guides, Reviews & News – MapleStreamTV",
   description:
-    "Read MapleStreamTV's IPTV Canada blog. Expert guides on setup, legality, pricing comparisons, player reviews, and the best IPTV services in Canada for 2026.",
+    "Read MapleStreamTV's IPTV Canada blog. Expert guides on setup, legality, pricing comparisons, player reviews, and the best IPTV services in Canada for.",
   keywords: "IPTV Canada blog, IPTV Canada guide 2026, best IPTV Canada review",
   alternates: { canonical: "https://maplestreamtv.ca/blog" },
   openGraph: {
@@ -55,7 +55,9 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <main style={{ background: "#0a0a0a", color: "#fff", minHeight: "100vh" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "MapleStreamTV", "item": "https://maplestreamtv.ca"}, {"@type": "ListItem", "position": 2, "name": "IPTV Canada Blog 2026", "item": "https://maplestreamtv.ca/blog"}]}` }} />
+      <main style={{ background: "#0a0a0a", color: "#fff", minHeight: "100vh" }}>
       <section
         style={{
           background: "radial-gradient(ellipse 80% 55% at 50% 0%, rgba(229,57,53,0.12) 0%, transparent 65%), #0a0a0a",

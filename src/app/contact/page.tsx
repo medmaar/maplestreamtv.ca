@@ -28,7 +28,9 @@ const channels = [
 
 export default function ContactPage() {
   return (
-    <main className="bg-gray-950 text-white min-h-screen py-20 px-4">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "MapleStreamTV", "item": "https://maplestreamtv.ca"}, {"@type": "ListItem", "position": 2, "name": "Contact Us", "item": "https://maplestreamtv.ca/contact"}]}` }} />
+      <main className="bg-gray-950 text-white min-h-screen py-20 px-4">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">

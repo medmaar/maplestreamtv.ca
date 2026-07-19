@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Best IPTV for Canadian Families 2026: Complete Review & Comparison | MapleStreamTV",
   description:
-    "Find the best IPTV service for Canadian families in 2026. We compare top providers on family content, kids channels, parental controls, price and customer support.",
+    "Find the best IPTV service for Canadian families in 2026. We compare top providers on family content, kids channels, parental controls, price and customer.",
   keywords:
     "best IPTV for families Canada 2026, family IPTV Canada, kids IPTV service, affordable IPTV Canada",
   alternates: { canonical: "https://maplestreamtv.ca/blog/best-iptv-canada-2026" },

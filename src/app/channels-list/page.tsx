@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "IPTV Canada Channel List 2026 | 25,000+ Live Channels",
   description:
-    "Full IPTV Canada channel list for 2026. Browse 25,000+ live channels including TSN, Sportsnet, CBC, CTV, NHL, NFL, NBA, and thousands of international channels.",
+    "Full IPTV Canada channel list for 2026. Browse 25,000+ live channels including TSN, Sportsnet, CBC, CTV, NHL, NFL, NBA, and thousands of international.",
   keywords: "list iptv, best iptv channel, iptv channel list canada, iptv channels canada 2026, best iptv channels canada",
   alternates: { canonical: "https://maplestreamtv.ca/channels-list" },
 };
@@ -8252,7 +8252,9 @@ const categories = [  {
 
 export default function ChannelsListPage() {
   return (
-    <main className="bg-gray-950 text-white min-h-screen">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "MapleStreamTV", "item": "https://maplestreamtv.ca"}, {"@type": "ListItem", "position": 2, "name": "IPTV Canada Channel List 2026", "item": "https://maplestreamtv.ca/channels-list"}]}` }} />
+      <main className="bg-gray-950 text-white min-h-screen">
       {/* Hero */}
       <section className="bg-gradient-to-br from-gray-900 via-gray-950 to-black py-16 px-4 text-center">
         <div className="max-w-3xl mx-auto">

@@ -9,6 +9,14 @@ import FloatingContact from "../components/FloatingContact";
 import SalesBanner from "../components/SalesBanner";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://maplestreamtv.ca",
+    languages: {
+      "en-CA": "https://maplestreamtv.ca",
+      "x-default": "https://maplestreamtv.ca",
+    },
+  },
+
     metadataBase: new URL("https://maplestreamtv.ca"),
     title: {
         template: "%s | MapleStreamTV",

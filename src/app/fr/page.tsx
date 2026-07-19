@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Meilleur IPTV Canada 2026 — Service #1 au Québec | MapleStreamTV",
   description:
-    "MapleStreamTV est le meilleur service IPTV au Canada et au Québec en 2026. 25 000+ chaînes en 4K, RDS, TVA Sports, Noovo, Radio-Canada et plus. Essai gratuit 24h sans carte de crédit.",
+    "MapleStreamTV est le meilleur service IPTV au Canada et au Québec en 2026. 25 000+ chaînes en 4K, RDS, TVA Sports, Noovo, Radio-Canada et plus. Essai.",
   keywords:
     "meilleur IPTV Canada, IPTV Québec, IPTV francophone, IPTV Canada français, service IPTV Québec, IPTV RDS TVA Sports, abonnement IPTV Canada, MapleStreamTV",
   alternates: {

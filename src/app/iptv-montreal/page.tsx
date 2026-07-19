@@ -19,7 +19,10 @@ export const metadata: Metadata = {
 
 export default function IPTVMontrealPage() {
   return (
-    <main style={{ background: "#0a0a0a", color: "#fff", minHeight: "100vh" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "MapleStreamTV", "item": "https://maplestreamtv.ca"}, {"@type": "ListItem", "position": 2, "name": "Best IPTV Service in Montreal / Montréal 2026", "item": "https://maplestreamtv.ca/iptv-montreal"}]}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is MapleStreamTV IPTV available in Montreal?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, MapleStreamTV delivers IPTV service across Montreal and all of Canada. Plans start from $9/month with no contract and include 25,000+ live channels."}}, {"@type": "Question", "name": "How fast is activation after ordering?", "acceptedAnswer": {"@type": "Answer", "text": "Activation is typically completed within 15 minutes of your order. You'll receive your credentials via WhatsApp or email, 7 days a week."}}]}` }} />
+      <main style={{ background: "#0a0a0a", color: "#fff", minHeight: "100vh" }}>
       {/* Hero */}
       <section
         style={{

@@ -4,13 +4,13 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "IPTV Reseller Canada 2026 | MapleStreamTV",
   description:
-    "Become an IPTV reseller in Canada with MapleStreamTV. Wholesale pricing, white-label options, and a fast reseller panel. Start your own IPTV business today.",
+    "Become an IPTV reseller in Canada with MapleStreamTV. Wholesale pricing, white-label options, and a fast reseller panel. Start your own IPTV business.",
   keywords: "IPTV reseller Canada, IPTV reseller program Canada 2026, start IPTV business Canada",
   alternates: { canonical: "https://maplestreamtv.ca/reseller" },
   openGraph: {
       images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Best IPTV Canada 2026" }],
     title: "IPTV Reseller Canada 2026 | MapleStreamTV",
-    description: "Become an IPTV reseller in Canada with MapleStreamTV. Wholesale pricing, white-label options, and a fast reseller panel. Start your own IPTV business today.",
+    description: "Become an IPTV reseller in Canada with MapleStreamTV. Wholesale pricing, white-label options, and a fast reseller panel. Start your own IPTV business.",
     url: "https://maplestreamtv.ca/reseller",
     type: "website",
     siteName: "MapleStreamTV",
@@ -38,7 +38,9 @@ const features = [
 
 export default function ResellerPage() {
   return (
-    <main style={{ background: "#0a0a0a", color: "#fff", minHeight: "100vh" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "MapleStreamTV", "item": "https://maplestreamtv.ca"}, {"@type": "ListItem", "position": 2, "name": "IPTV Reseller Canada 2026", "item": "https://maplestreamtv.ca/reseller"}]}` }} />
+      <main style={{ background: "#0a0a0a", color: "#fff", minHeight: "100vh" }}>
       {/* Hero */}
       <section
         style={{

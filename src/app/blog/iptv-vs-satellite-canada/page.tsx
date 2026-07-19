@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: { absolute: "IPTV vs Satellite Canada 2026 — Which Is Better? | MapleStreamTV" },
   description:
-    "IPTV vs satellite TV in Canada 2026 — full comparison of cost, channels, quality, and reliability. See why Canadian families are switching from Bell Satellite to IPTV.",
+    "IPTV vs satellite TV in Canada 2026 — full comparison of cost, channels, quality, and reliability. See why Canadian families are switching from Bell.",
   keywords:
     "iptv vs satellite canada, iptv vs bell satellite canada, satellite tv vs iptv canada, best alternative satellite canada, cancel satellite canada, iptv better than satellite",
   alternates: { canonical: "https://maplestreamtv.ca/blog/iptv-vs-satellite-canada" },

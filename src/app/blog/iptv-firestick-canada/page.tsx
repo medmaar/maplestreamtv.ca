@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "How to Install IPTV on Firestick Canada 2026 — Step by Step Guide",
   description:
-    "Complete guide to installing IPTV on Amazon Fire Stick in Canada. Works on Fire Stick 4K, Lite, and all Fire TV devices. Easy step-by-step setup with MapleStreamTV.",
+    "Complete guide to installing IPTV on Amazon Fire Stick in Canada. Works on Fire Stick 4K, Lite, and all Fire TV devices. Easy step-by-step setup with.",
   keywords:
     "IPTV Firestick Canada, install IPTV Fire Stick Canada, how to set up IPTV Firestick Canada, IPTV Fire TV Canada, MapleStreamTV Firestick",
   alternates: { canonical: "https://maplestreamtv.ca/blog/iptv-firestick-canada" },

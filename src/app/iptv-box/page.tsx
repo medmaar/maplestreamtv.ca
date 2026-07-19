@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "IPTV Box Canada 2026 — Best Boxes & Free Trial | MapleStreamTV" },
   description:
-    "Looking for an IPTV box in Canada? MapleStreamTV works on all IPTV boxes — MAG, Formuler, Fire Stick, Android TV box and more. Free 24h trial from $9/month.",
+    "Looking for an IPTV box in Canada? MapleStreamTV works on all IPTV boxes — MAG, Formuler, Fire Stick, Android TV box and more. Free 24h trial from.",
   keywords:
     "iptv box, iptv box canada, best iptv box canada, iptv box near me, iptv with box, at iptv box, iptv box at, free box for iptv in canada, iptv android box canada, mag box iptv canada",
   alternates: { canonical: "https://maplestreamtv.ca/iptv-box" },

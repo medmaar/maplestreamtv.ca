@@ -5,7 +5,7 @@ import FaqAccordion from "../components/FaqAccordion";
 export const metadata: Metadata = {
   title: { absolute: "IPTV Plans Canada — Best IPTV Subscription from $9 | MapleStreamTV" },
   description:
-    "MapleStreamTV cord-cutting plans for Canadian families. 1, 3, 6 & 12-month options from $9. 25,000+ channels, kids channels, all Canadian locals. No contracts.",
+    "MapleStreamTV cord-cutting plans for Canadian families. 1, 3, 6 & 12-month options from $9. 25,000+ channels, kids channels, all Canadian locals. No.",
   keywords:
     "iptv subscription canada, iptv plans canada, best iptv subscription, iptv service canada, MapleStreamTV pricing",
   alternates: { canonical: "https://maplestreamtv.ca/pricing" },
