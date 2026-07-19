@@ -55,7 +55,11 @@ const rules = [
 
 export default function ReferralPage() {
   return (
-    <main className="bg-gray-950 text-white min-h-screen">
+    <main
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "MapleStreamTV", "item": "https://maplestreamtv.ca"}, {"@type": "ListItem", "position": 2, "name": "Referral Program — Get +1 Year Free", "item": "https://maplestreamtv.ca/referral"}]}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "WebPage", "name": "Referral Program — Get +1 Year Free", "url": "https://maplestreamtv.ca/referral", "inLanguage": "en-CA", "dateModified": "2026-07-19", "isPartOf": {"@type": "WebSite", "name": "MapleStreamTV", "url": "https://maplestreamtv.ca"}}) }} />
+    </> className="bg-gray-950 text-white min-h-screen">
       {/* Hero */}
       <section className="bg-gradient-to-br from-gray-900 via-gray-950 to-black py-20 px-4 text-center">
         <div className="max-w-3xl mx-auto">

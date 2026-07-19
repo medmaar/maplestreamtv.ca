@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best IPTV for Canadian Families 2026: Complete Review & Comparison | MapleStreamTV",
+  title: "Best IPTV for Canadian Families 2026: Complete | MapleStreamTV",
   description:
     "Find the best IPTV service for Canadian families in 2026. We compare top providers on family content, kids channels, parental controls, price and customer.",
   keywords:

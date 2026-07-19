@@ -37,7 +37,7 @@ import Link from "next/link";
 import PricingSection from "./PricingSection";
 
 export const metadata: Metadata = {
-  title: "Best IPTV Box Canada 2026 — Top Providers Near You | MapleStreamTV",
+  title: "Best IPTV Box Canada 2026 — Top Providers Near | MapleStreamTV",
   description:
     "Best IPTV box and providers in Canada 2026. MapleStreamTV is #1 rated IPTV near you — free 24h trial, no credit card. 25,000+ channels, 4K, kids channels.",
   keywords:

@@ -29,7 +29,11 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-    <main style={{ background: "#10131E", color: "#fff", minHeight: "100vh" }}>
+    <main
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "MapleStreamTV", "item": "https://maplestreamtv.ca"}, {"@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://maplestreamtv.ca/pricing"}]}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "WebPage", "name": "Pricing", "url": "https://maplestreamtv.ca/pricing", "inLanguage": "en-CA", "dateModified": "2026-07-19", "isPartOf": {"@type": "WebSite", "name": "MapleStreamTV", "url": "https://maplestreamtv.ca"}}) }} />
+    </> style={{ background: "#10131E", color: "#fff", minHeight: "100vh" }}>
       {/* Header */}
       <section
         className="py-20 px-4 text-center"
