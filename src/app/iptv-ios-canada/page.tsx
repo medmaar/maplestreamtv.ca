@@ -138,5 +138,6 @@ export default function IPTVIOSPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

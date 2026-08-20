@@ -86,5 +86,6 @@ export default function FreeTrialPage() {
 
       </div>
     </main>
+    </>
   );
 }

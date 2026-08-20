@@ -379,5 +379,6 @@ export default function IPTVEdmontonPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

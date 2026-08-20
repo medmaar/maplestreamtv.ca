@@ -8345,5 +8345,6 @@ export default function ChannelsListPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

@@ -285,5 +285,6 @@ export default function IPTVVancouverPage() {
         </a>
       </section>
     </main>
+    </>
   );
 }

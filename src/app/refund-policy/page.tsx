@@ -8,11 +8,10 @@ export const metadata: Metadata = {
 
 export default function RefundPolicyPage() {
   return (
-    <main
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "MapleStreamTV", "item": "https://maplestreamtv.ca"}, {"@type": "ListItem", "position": 2, "name": "Refund Policy", "item": "https://maplestreamtv.ca/refund-policy"}]}) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "WebPage", "name": "Refund Policy", "url": "https://maplestreamtv.ca/refund-policy", "inLanguage": "en-CA", "dateModified": "2026-07-19", "isPartOf": {"@type": "WebSite", "name": "MapleStreamTV", "url": "https://maplestreamtv.ca"}}) }} />
-    </> className="bg-gray-950 text-white min-h-screen py-20 px-4">
+    <main className="bg-gray-950 text-white min-h-screen py-20 px-4">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-extrabold mb-4 text-red-500">Refund Policy</h1>
         <p className="text-gray-400 text-sm mb-10">Last updated: March 28, 2026</p>
@@ -89,5 +88,6 @@ export default function RefundPolicyPage() {
         </div>
       </div>
     </main>
+    </>
   );
 }

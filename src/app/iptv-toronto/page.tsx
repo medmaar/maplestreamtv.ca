@@ -294,5 +294,6 @@ export default function IPTVTorontoPage() {
         </a>
       </section>
     </main>
+    </>
   );
 }

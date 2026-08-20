@@ -248,5 +248,6 @@ export default function IPTVOttawaPage() {
         </a>
       </section>
     </main>
+    </>
   );
 }
