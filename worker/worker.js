@@ -30,10 +30,23 @@ async function apiGet(params) {
   return { status: res.status, text: await res.text() };
 }
 
-async function sendEmail(to, subject, html, resendKey) {
+async function sendEmail(to, subject, html, resendKey, inReplyTo = null) {
+  const payload = { from: FROM_EMAIL, to, subject, html };
+  if (inReplyTo) {
+    payload.headers = {
+      "In-Reply-To": `<${inReplyTo}>`,
+      "References": `<${inReplyTo}>`,
+    };
+  }
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${resendKey}`, "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error(`Resend (${res.status}): ${await res.text()}`);
+  const data = await res.json();
+  return data.id || null;
+}`, "Content-Type": "application/json" },
     body: JSON.stringify({ from: FROM_EMAIL, to, subject, html }),
   });
   if (!res.ok) throw new Error(`Resend (${res.status}): ${await res.text()}`);
@@ -276,7 +289,7 @@ async function handleFetch(request, env) {
     const expiry = Date.now() + 24 * 60 * 60 * 1000;
     await env.TRIALS.put(
       `trial:${email}`,
-      JSON.stringify({ name, email, whatsapp, site: 'maplestreamtv.ca', username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, created_at: Date.now() }),
+      JSON.stringify({ name, email, whatsapp, site: 'maplestreamtv.ca', username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, welcome_email_id: welcomeEmailId || null, created_at: Date.now() }),
       { expirationTtl: 30 * 24 * 60 * 60 }
     );
     // Update __keys__ index (read op, not list op — keeps KV list quota safe)
@@ -296,7 +309,7 @@ async function handleFetch(request, env) {
 
     // 5. Welcome email
     step = "email_client";
-    await sendEmail(email, "Your Maple Stream TV Free Trial is Ready — 24H Access Activated ✓", welcomeEmail(name, username, password, m3uUrl), RESEND_KEY);
+    const welcomeEmailId = await sendEmail(email, "Your Maple Stream TV Free Trial is Ready — 24H Access Activated ✓", welcomeEmail(name, username, password, m3uUrl), RESEND_KEY);
 
     // 6. Admin notification
     step = "email_admin";
@@ -324,11 +337,11 @@ async function handleScheduled(env) {
   for (const { name: key } of keys) {
     let trial;
     try { const raw = await env.TRIALS.get(key); if (!raw) continue; trial = JSON.parse(raw); } catch { continue; }
-    const { name, email, username, password, m3uUrl, expiry, reminder_sent, followup_sent } = trial;
+    const { name, email, username, password, m3uUrl, expiry, reminder_sent, followup_sent, welcome_email_id } = trial;
 
     if (!reminder_sent && now >= expiry - FOUR_HOURS && now < expiry) {
       try {
-        await sendEmail(email, "⏳ Your Maple Stream TV Trial Expires in 4 Hours", reminderEmail(name, username, password, m3uUrl), RESEND_KEY);
+        await sendEmail(email, "Your Maple Stream TV Free Trial is Ready — 24H Access Activated ✓", reminderEmail(name, username, password, m3uUrl), RESEND_KEY, welcome_email_id);
         trial.reminder_sent = true;
         await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
         console.log(`[cron] Reminder → ${email}`);
@@ -337,7 +350,7 @@ async function handleScheduled(env) {
 
     if (!followup_sent && now >= expiry) {
       try {
-        await sendEmail(email, "Your Maple Stream TV Trial Has Ended — Keep Streaming 🎬", followupEmail(name), RESEND_KEY);
+        await sendEmail(email, "Your Maple Stream TV Free Trial is Ready — 24H Access Activated ✓", followupEmail(name), RESEND_KEY, welcome_email_id);
         trial.followup_sent = true;
         await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
         console.log(`[cron] Follow-up → ${email}`);
