@@ -7,27 +7,23 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: POST test trial to worker
+      - name: Test worker and post results to gist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           RESPONSE=$(curl -s -X POST \
             "https://iptv-trial-maplestreamtv.medmaar.workers.dev" \
             -H "Content-Type: application/json" \
             -d '{"name":"Test User","email":"test-diag@maplestreamtv.ca","device":"Firestick","whatsapp":"+11234567890","notes":"diagnostic test","country":"Canada"}')
-          echo "POST_RESPONSE=$RESPONSE"
           
           DEBUG=$(curl -s "https://iptv-trial-maplestreamtv.medmaar.workers.dev/?debug")
-          echo "DEBUG_RESPONSE=$DEBUG"
           
-          echo "POST: $RESPONSE" > worker-test-result.txt
-          echo "DEBUG: $DEBUG" >> worker-test-result.txt
-          cat worker-test-result.txt
-
-      - name: Commit results
-        run: |
-          git config user.email "ci@github"
-          git config user.name "CI"
-          git add worker-test-result.txt
-          git commit -m "chore: worker test results [skip ci]"
-          git push
+          GIST_CONTENT="POST_RESPONSE: $RESPONSE\nDEBUG_RESPONSE: $DEBUG"
+          echo "POST: $RESPONSE"
+          echo "DEBUG: $DEBUG"
+          
+          curl -s -X POST "https://api.github.com/gists" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{\"public\":false,\"description\":\"Worker test results\",\"files\":{\"results.txt\":{\"content\":\"POST: $RESPONSE\nDEBUG: $DEBUG\"}}}" \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print('GIST_ID=' + d.get('id',''))"
