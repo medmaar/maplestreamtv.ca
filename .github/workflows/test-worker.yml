@@ -14,13 +14,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Purge expired lines then test worker
+      - name: Probe + test worker
         run: |
-          echo "=== PURGE expired panel lines ==="
-          PURGE=$(curl -s "https://iptv-trial-maplestreamtv.medmaar.workers.dev/?purge")
-          echo "PURGE: $PURGE"
-          
-          sleep 2
+          echo "=== PROBE valid API params ==="
+          PROBE=$(curl -s "https://iptv-trial-maplestreamtv.medmaar.workers.dev/?probe")
+          echo "PROBE: $PROBE"
           
           echo "=== POST test trial ==="
           RESPONSE=$(curl -s -X POST \
@@ -29,10 +27,8 @@ jobs:
             -d '{"name":"Test User","email":"test-diag@maplestreamtv.ca","device":"Firestick","whatsapp":"+11234567890","notes":"diagnostic test","country":"Canada"}')
           echo "POST: $RESPONSE"
           
-          DEBUG=$(curl -s "https://iptv-trial-maplestreamtv.medmaar.workers.dev/?debug")
-          echo "DEBUG: $DEBUG"
-          
-          printf "PURGE: %s\nPOST: %s\nDEBUG: %s\n" "$PURGE" "$RESPONSE" "$DEBUG" > worker-test-result.txt
+          echo "PROBE: $PROBE" > worker-test-result.txt
+          echo "POST: $RESPONSE" >> worker-test-result.txt
 
       - name: Push results to test-results branch
         run: |
