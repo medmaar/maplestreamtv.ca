@@ -1,0 +1,21 @@
+name: Test Worker
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: POST test trial to worker
+        run: |
+          RESPONSE=$(curl -s -X POST \
+            "https://iptv-trial-maplestreamtv.medmaar.workers.dev" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"Test User","email":"test-diag@maplestreamtv.ca","device":"Firestick","whatsapp":"+11234567890","notes":"diagnostic test","country":"Canada"}')
+          echo "WORKER RESPONSE: $RESPONSE"
+          
+      - name: GET debug endpoint
+        run: |
+          DEBUG=$(curl -s "https://iptv-trial-maplestreamtv.medmaar.workers.dev/?debug")
+          echo "DEBUG RESPONSE: $DEBUG"
