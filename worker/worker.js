@@ -46,10 +46,6 @@ async function sendEmail(to, subject, html, resendKey, inReplyTo = null) {
   if (!res.ok) throw new Error(`Resend (${res.status}): ${await res.text()}`);
   const data = await res.json();
   return data.id || null;
-}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: FROM_EMAIL, to, subject, html }),
-  });
-  if (!res.ok) throw new Error(`Resend (${res.status}): ${await res.text()}`);
 }
 
 // ── email layout ──────────────────────────────────────────────────────────────
@@ -287,9 +283,10 @@ async function handleFetch(request, env) {
     // 4. Store in KV FIRST (so trial is always recorded even if email fails)
     step = "kv_store";
     const expiry = Date.now() + 24 * 60 * 60 * 1000;
+    const trialData = { name, email, whatsapp, site: 'maplestreamtv.ca', username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, welcome_email_id: null, created_at: Date.now() };
     await env.TRIALS.put(
       `trial:${email}`,
-      JSON.stringify({ name, email, whatsapp, site: 'maplestreamtv.ca', username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, welcome_email_id: welcomeEmailId || null, created_at: Date.now() }),
+      JSON.stringify(trialData),
       { expirationTtl: 30 * 24 * 60 * 60 }
     );
     // Update __keys__ index (read op, not list op — keeps KV list quota safe)
@@ -310,6 +307,11 @@ async function handleFetch(request, env) {
     // 5. Welcome email
     step = "email_client";
     const welcomeEmailId = await sendEmail(email, "Your Maple Stream TV Free Trial is Ready — 24H Access Activated ✓", welcomeEmail(name, username, password, m3uUrl), RESEND_KEY);
+    // Update KV with Resend email ID so cron can thread reminder/follow-up replies
+    if (welcomeEmailId) {
+      trialData.welcome_email_id = welcomeEmailId;
+      await env.TRIALS.put(`trial:${email}`, JSON.stringify(trialData), { expirationTtl: 30 * 24 * 60 * 60 });
+    }
 
     // 6. Admin notification
     step = "email_admin";
