@@ -233,28 +233,42 @@ async function handleFetch(request, env) {
       const trials = { keys: _ke.map(e => ({ name: 'trial:' + e })) };
       return jsonRes({ bouquet: bq.text.slice(0,400), reseller: ri.text.slice(0,200), kv_keys: trials.keys.length });
     }
-    // Probe endpoint: ?probe tries different API params to find what works
+    // Probe endpoint: ?probe tests delete API actions to find correct one
     if (u.searchParams.has("probe")) {
-      const testEmail = "probe-test@maplestreamtv.ca";
       const results = {};
-      for (const sub of ["99","0","1","30"]) {
-        try {
-          const r = await apiGet({ action: "new", type: "m3u", sub, note: `probe-${sub}` });
-          let parsed; try { parsed = JSON.parse(r.text); } catch { parsed = r.text.slice(0,100); }
-          results[`sub_${sub}`] = parsed;
-          // Try to delete if created
-          if (parsed && parsed[0] && parsed[0].status === "true") {
-            try { const u2 = new URL(parsed[0].url || ""); const user = u2.searchParams.get("username"); if (user) await deletePanelLine(user); } catch {}
-            break; // found working sub
-          }
-        } catch (e) { results[`sub_${sub}`] = e.message; }
-      }
-      // Also try without pack
+      // Get an expired trial username from KV to test deletion
+      let testUsername = null;
       try {
-        const r = await apiGet({ action: "new", type: "m3u", sub: "99", pack: "all", note: "probe-packall" });
-        let parsed; try { parsed = JSON.parse(r.text); } catch { parsed = r.text.slice(0,100); }
-        results["sub99_packall"] = parsed;
-      } catch (e) { results["sub99_packall"] = e.message; }
+        const keysRaw = await env.TRIALS.get('__keys__') || '[]';
+        const emails = JSON.parse(keysRaw);
+        const now2 = Date.now();
+        for (const em of emails) {
+          const raw = await env.TRIALS.get(`trial:${em}`);
+          if (!raw) continue;
+          const t = JSON.parse(raw);
+          if (t.username && now2 >= t.expiry) { testUsername = t.username; break; }
+        }
+      } catch (_) {}
+      results["test_username"] = testUsername;
+
+      if (testUsername) {
+        // Try different delete API actions
+        for (const action of ["delete_user","delete_line","expire_line","deactivate_user"]) {
+          try {
+            const r = await apiGet({ action, username: testUsername });
+            let parsed; try { parsed = JSON.parse(r.text); } catch { parsed = r.text.slice(0,150); }
+            results[`delete_${action}`] = parsed;
+          } catch (e) { results[`delete_${action}`] = e.message; }
+        }
+      }
+      // Check credits before/after
+      const riAfter = await apiGet({ action: "reseller_info" });
+      results["credits_after"] = riAfter.text.slice(0,200);
+      // Also check subscription packages
+      try {
+        const sp = await apiGet({ action: "subscription_package" });
+        results["subscription_packages"] = sp.text.slice(0,400);
+      } catch (e) { results["subscription_packages"] = e.message; }
       return jsonRes({ probe: results });
     }
 
