@@ -1,9 +1,11 @@
 /**
  * Maple Stream TV — Free Trial Worker
  * - Creates IPTV line via Activation Panel (USA - All, sub=99)
+ *   OR uses shared DEMO_USERNAME/DEMO_PASSWORD env vars as fallback
  * - Sends welcome email (English)
  * - Stores trial in KV
  * - Cron every hour: T-4h reminder + T=0 follow-up
+ * - GET /?list-trials  → returns all trial usernames in KV (for manual panel cleanup)
  */
 
 const API_BASE    = "https://activationpanel.ru/api/api.php";
@@ -225,82 +227,40 @@ async function handleFetch(request, env) {
 
   if (request.method === "GET") {
     const u = new URL(request.url);
+
+    // ?debug — reseller info + KV key count
     if (u.searchParams.has("debug")) {
       const bq = await apiGet({ action: "bouquet" });
       const ri = await apiGet({ action: "reseller_info" });
       const _kr = await env.TRIALS.get('__keys__') || '[]';
       const _ke = JSON.parse(_kr);
-      const trials = { keys: _ke.map(e => ({ name: 'trial:' + e })) };
-      return jsonRes({ bouquet: bq.text.slice(0,400), reseller: ri.text.slice(0,200), kv_keys: trials.keys.length });
+      return jsonRes({ bouquet: bq.text.slice(0,400), reseller: ri.text.slice(0,200), kv_keys: _ke.length });
     }
-    // Probe endpoint: ?probe tries edit_user + list to free slots
-    if (u.searchParams.has("probe")) {
-      const results = {};
-      // Get an expired trial username from KV
-      let testUsername = null;
-      try {
-        const keysRaw = await env.TRIALS.get('__keys__') || '[]';
-        const emails = JSON.parse(keysRaw);
-        const now2 = Date.now();
-        for (const em of emails) {
+
+    // ?list-trials — returns all trial usernames stored in KV so you can
+    //   identify and manually delete them in the activationpanel.ru dashboard
+    if (u.searchParams.has("list-trials")) {
+      const keysRaw = await env.TRIALS.get('__keys__') || '[]';
+      const emails = JSON.parse(keysRaw);
+      const now2 = Date.now();
+      const rows = [];
+      for (const em of emails) {
+        try {
           const raw = await env.TRIALS.get(`trial:${em}`);
           if (!raw) continue;
           const t = JSON.parse(raw);
-          if (t.username && now2 >= t.expiry) { testUsername = t.username; break; }
-        }
-      } catch (_) {}
-      results["test_username"] = testUsername;
-
-      if (testUsername) {
-        // Try edit_user with past expiry (expire = unix timestamp 1 second ago)
-        const pastTs = Math.floor(Date.now() / 1000) - 10;
-        for (const action of ["edit_user","update_user","expire_user","set_expiry"]) {
-          try {
-            const r = await apiGet({ action, username: testUsername, expiry: pastTs, exp_date: pastTs });
-            let parsed; try { parsed = JSON.parse(r.text); } catch { parsed = r.text.slice(0,150); }
-            results[`edit_${action}`] = parsed;
-          } catch (e) { results[`edit_${action}`] = e.message; }
-        }
-        // Also try edit_user with enabled=0 (disable/suspend)
-        try {
-          const r = await apiGet({ action: "edit_user", username: testUsername, enabled: "0" });
-          let parsed; try { parsed = JSON.parse(r.text); } catch { parsed = r.text.slice(0,150); }
-          results["edit_disable"] = parsed;
-        } catch (e) { results["edit_disable"] = e.message; }
+          rows.push({
+            email: em,
+            username: t.username || '',
+            expired: now2 >= t.expiry,
+            created_at: new Date(t.created_at || 0).toISOString(),
+          });
+        } catch (_) {}
       }
-      // Try listing users to understand structure
-      for (const action of ["get_users","users","lines","get_lines","all_lines"]) {
-        try {
-          const r = await apiGet({ action });
-          results[`list_${action}`] = r.text.slice(0,200);
-        } catch (e) { results[`list_${action}`] = e.message; }
-      }
-      const ri2 = await apiGet({ action: "reseller_info" });
-      results["credits"] = ri2.text.slice(0,200);
-      return jsonRes({ probe: results });
+      rows.sort((a, b) => (a.expired === b.expired ? 0 : a.expired ? -1 : 1));
+      return jsonRes({ total: rows.length, trials: rows });
     }
 
-    // Bulk-purge: ?purge=1 deletes all expired panel lines immediately to free slots
-    if (u.searchParams.has("purge")) {
-      const _kr = await env.TRIALS.get('__keys__') || '[]';
-      const emails = JSON.parse(_kr);
-      const now = Date.now();
-      let deleted = 0, skipped = 0;
-      for (const email of emails) {
-        try {
-          const raw = await env.TRIALS.get(`trial:${email}`);
-          if (!raw) continue;
-          const trial = JSON.parse(raw);
-          if (now >= trial.expiry && trial.username && !trial.line_deleted) {
-            await deletePanelLine(trial.username);
-            trial.line_deleted = true;
-            await env.TRIALS.put(`trial:${email}`, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
-            deleted++;
-          } else { skipped++; }
-        } catch (_) { skipped++; }
-      }
-      return jsonRes({ purged: deleted, skipped });
-    }
     return new Response("Maple Stream TV Trial Worker — OK", { status: 200 });
   }
 
@@ -315,52 +275,69 @@ async function handleFetch(request, env) {
 
   let step = "bouquet";
   try {
-    // 1. Get package ID
-    const bqRes = await apiGet({ action: "bouquet" });
-    let packId = "all";
-    if (bqRes.text.trim().startsWith("[") || bqRes.text.trim().startsWith("{")) {
-      const arr = JSON.parse(bqRes.text);
-      const list = Array.isArray(arr) ? arr : Object.values(arr);
-      const pkg = list.find(b => (b.name || "").trim().toLowerCase() === PACK_NAME.toLowerCase());
-      if (pkg) packId = pkg.id;
-    }
-
-    // 1b. Delete any existing panel line for this email (frees up a slot on retry)
-    step = "cleanup_existing";
-    try {
-      const existingRaw = await env.TRIALS.get(`trial:${email}`);
-      if (existingRaw) {
-        const existing = JSON.parse(existingRaw);
-        if (existing.username) await deletePanelLine(existing.username);
-      }
-    } catch (_) {}
-
-    // 2. Create demo M3U
+    // 1. Try to create a new IPTV line via the panel API.
+    //    If the panel is full (Not enough credits) AND DEMO_USERNAME/DEMO_PASSWORD
+    //    are set as Worker secrets, fall back to shared demo credentials instead.
     step = "create_demo";
-    const crRes = await apiGet({
-      action: "new", type: "m3u", sub: "99", pack: packId,
-      note: `Trial / maplestreamtv.ca / ${email} | ${whatsapp || ""}`,
-    });
-    if (!crRes.text.trim().startsWith("[") && !crRes.text.trim().startsWith("{")) {
-      throw new Error(`Panel non-JSON: ${crRes.text.slice(0, 200)}`);
-    }
-    const crData = JSON.parse(crRes.text);
-    const item = Array.isArray(crData) ? crData[0] : crData;
-    if (!item || String(item.status) !== "true") {
-      throw new Error(`Panel: ${item?.message || JSON.stringify(item)}`);
+    let username = "", password = "";
+    let usedSharedDemo = false;
+
+    // 1a. Try panel API first
+    let panelOk = false;
+    try {
+      // Get package ID
+      const bqRes = await apiGet({ action: "bouquet" });
+      let packId = "all";
+      if (bqRes.text.trim().startsWith("[") || bqRes.text.trim().startsWith("{")) {
+        const arr = JSON.parse(bqRes.text);
+        const list = Array.isArray(arr) ? arr : Object.values(arr);
+        const pkg = list.find(b => (b.name || "").trim().toLowerCase() === PACK_NAME.toLowerCase());
+        if (pkg) packId = pkg.id;
+      }
+      const crRes = await apiGet({
+        action: "new", type: "m3u", sub: "99", pack: packId,
+        note: `Trial / maplestreamtv.ca / ${email} | ${whatsapp || ""}`,
+      });
+      if (crRes.text.trim().startsWith("[") || crRes.text.trim().startsWith("{")) {
+        const crData = JSON.parse(crRes.text);
+        const item = Array.isArray(crData) ? crData[0] : crData;
+        if (item && String(item.status) === "true") {
+          const rawUrl = item.url || "";
+          try {
+            const pu = new URL(rawUrl);
+            username = pu.searchParams.get("username") || "";
+            password = pu.searchParams.get("password") || "";
+          } catch {}
+          panelOk = true;
+        } else {
+          throw new Error(`Panel: ${item?.message || JSON.stringify(item)}`);
+        }
+      } else {
+        throw new Error(`Panel non-JSON: ${crRes.text.slice(0, 200)}`);
+      }
+    } catch (panelErr) {
+      // 1b. Fallback: use shared demo credentials if configured
+      const demoUser = env.DEMO_USERNAME;
+      const demoPass = env.DEMO_PASSWORD;
+      if (demoUser && demoPass) {
+        username = demoUser;
+        password = demoPass;
+        usedSharedDemo = true;
+        console.log(`[create_demo] Panel failed (${panelErr.message}) — using shared demo credentials`);
+      } else {
+        // No fallback configured — propagate the original panel error
+        throw panelErr;
+      }
     }
 
-    // 3. Build credentials
+    // 2. Build M3U URL
     step = "extract";
-    const rawUrl = item.url || "";
-    let username = "", password = "";
-    try { const u = new URL(rawUrl); username = u.searchParams.get("username") || ""; password = u.searchParams.get("password") || ""; } catch {}
     const m3uUrl = `${HOST}/get.php?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&type=m3u_plus&output=ts`;
 
     // 4. Store in KV FIRST (so trial is always recorded even if email fails)
     step = "kv_store";
     const expiry = Date.now() + 24 * 60 * 60 * 1000;
-    const trialData = { name, email, whatsapp, site: 'maplestreamtv.ca', username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, welcome_email_id: null, created_at: Date.now() };
+    const trialData = { name, email, whatsapp, site: 'maplestreamtv.ca', username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, welcome_email_id: null, shared_demo: usedSharedDemo, created_at: Date.now() };
     await env.TRIALS.put(
       `trial:${email}`,
       JSON.stringify(trialData),
@@ -442,9 +419,7 @@ async function handleScheduled(env) {
         await sendEmail(email, "Your Maple Stream TV Free Trial is Ready — 24H Access Activated ✓", followupEmail(name), RESEND_KEY, welcome_email_id);
         trial.followup_sent = true;
         await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
-        // Delete panel line to free up the reseller slot
-        await deletePanelLine(username);
-        console.log(`[cron] Follow-up + panel delete → ${email} (${username})`);
+        console.log(`[cron] Follow-up → ${email}`);
       } catch (e) { console.error(`[cron] Follow-up failed ${email}:`, e.message); }
     }
   }
