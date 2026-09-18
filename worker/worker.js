@@ -237,7 +237,7 @@ async function handleFetch(request, env) {
       return jsonRes({ bouquet: bq.text.slice(0,400), reseller: ri.text.slice(0,200), kv_keys: _ke.length });
     }
 
-    // ?probe — scan sub values 0-98 for valid demo subscription + test reseller_info
+    // ?probe — test action=new_demo and sub=0 with various params
     if (u.searchParams.has("probe")) {
       const results = {};
       const packRes = await apiGet({ action: "bouquet" });
@@ -248,30 +248,40 @@ async function handleFetch(request, env) {
         const pkg = list.find(b => (b.name||"").trim().toLowerCase() === "usa - all");
         if (pkg) packId = pkg.id;
       } catch {}
-      results["pack_id"] = packId;
-      // Scan sub 0–30 to find valid subscription packages that aren't "not found"
-      const found = [];
-      for (let sub = 0; sub <= 30; sub++) {
+
+      // Test 1: action=new_demo with sub values
+      for (const sub of ["99","1","0","24"]) {
         try {
-          const r = await apiGet({ action:"new", type:"m3u", sub: String(sub), pack:packId, note:"probe" });
-          let parsed; try { parsed = JSON.parse(r.text); } catch { parsed = {raw: r.text.slice(0,100)}; }
-          const msg = (parsed?.message || parsed?.result || "").toLowerCase();
-          if (!msg.includes("not found")) {
-            found.push({ sub, response: parsed });
-            // if success, clean up
-            if (parsed) {
-              const item = Array.isArray(parsed) ? parsed[0] : parsed;
-              if (item?.status === "true") {
-                try { const pu = new URL(item.url||""); const user = pu.searchParams.get("username"); if (user) await apiGet({ action:"delete_user", username: user }); } catch {}
-              }
-            }
-          }
-        } catch {}
+          const r = await apiGet({ action:"new_demo", type:"m3u", sub, pack:packId, note:"probe" });
+          let p; try { p = JSON.parse(r.text); } catch { p = r.text.slice(0,150); }
+          results["new_demo_sub" + sub] = p;
+          if (p) { const item = Array.isArray(p) ? p[0] : p; if (item && item.status === "true") { try { const pu = new URL(item.url||""); const user = pu.searchParams.get("username"); if (user) await apiGet({ action:"delete_user", username: user }); } catch {} } }
+        } catch (e) { results["new_demo_sub" + sub] = e.message; }
       }
-      results["valid_subs"] = found;
-      // Also check reseller_info credits breakdown
+
+      // Test 2: sub=0 with various extra params to find what is "missing"
+      const sub0extras = [{},{expire:"1"},{expiry:"1"},{days:"1"},{hours:"24"},{duration:"24"},{count:"1"},{connections:"1"}];
+      for (const extra of sub0extras) {
+        const key = "sub0_" + (Object.keys(extra)[0] || "bare");
+        try {
+          const r = await apiGet({ action:"new", type:"m3u", sub:"0", pack:packId, note:"probe", ...extra });
+          let p; try { p = JSON.parse(r.text); } catch { p = r.text.slice(0,150); }
+          results[key] = p;
+          if (p) { const item = Array.isArray(p) ? p[0] : p; if (item && item.status === "true") { try { const pu = new URL(item.url||""); const user = pu.searchParams.get("username"); if (user) await apiGet({ action:"delete_user", username: user }); } catch {} } }
+        } catch (e) { results[key] = e.message; }
+      }
+
+      // Test 3: different type values with sub=99
+      for (const type of ["trial","demo","test","temp"]) {
+        try {
+          const r = await apiGet({ action:"new", type, sub:"99", pack:packId, note:"probe" });
+          let p; try { p = JSON.parse(r.text); } catch { p = r.text.slice(0,150); }
+          results["type_" + type] = p;
+        } catch (e) { results["type_" + type] = e.message; }
+      }
+
       const ri = await apiGet({ action:"reseller_info" });
-      results["reseller_info"] = ri.text;
+      results["reseller"] = ri.text;
       return jsonRes({ probe: results });
     }
 
