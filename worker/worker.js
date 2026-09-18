@@ -233,6 +233,31 @@ async function handleFetch(request, env) {
       const trials = { keys: _ke.map(e => ({ name: 'trial:' + e })) };
       return jsonRes({ bouquet: bq.text.slice(0,400), reseller: ri.text.slice(0,200), kv_keys: trials.keys.length });
     }
+    // Probe endpoint: ?probe tries different API params to find what works
+    if (u.searchParams.has("probe")) {
+      const testEmail = "probe-test@maplestreamtv.ca";
+      const results = {};
+      for (const sub of ["99","0","1","30"]) {
+        try {
+          const r = await apiGet({ action: "new", type: "m3u", sub, note: `probe-${sub}` });
+          let parsed; try { parsed = JSON.parse(r.text); } catch { parsed = r.text.slice(0,100); }
+          results[`sub_${sub}`] = parsed;
+          // Try to delete if created
+          if (parsed && parsed[0] && parsed[0].status === "true") {
+            try { const u2 = new URL(parsed[0].url || ""); const user = u2.searchParams.get("username"); if (user) await deletePanelLine(user); } catch {}
+            break; // found working sub
+          }
+        } catch (e) { results[`sub_${sub}`] = e.message; }
+      }
+      // Also try without pack
+      try {
+        const r = await apiGet({ action: "new", type: "m3u", sub: "99", pack: "all", note: "probe-packall" });
+        let parsed; try { parsed = JSON.parse(r.text); } catch { parsed = r.text.slice(0,100); }
+        results["sub99_packall"] = parsed;
+      } catch (e) { results["sub99_packall"] = e.message; }
+      return jsonRes({ probe: results });
+    }
+
     // Bulk-purge: ?purge=1 deletes all expired panel lines immediately to free slots
     if (u.searchParams.has("purge")) {
       const _kr = await env.TRIALS.get('__keys__') || '[]';
