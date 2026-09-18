@@ -228,11 +228,31 @@ async function handleFetch(request, env) {
     if (u.searchParams.has("debug")) {
       const bq = await apiGet({ action: "bouquet" });
       const ri = await apiGet({ action: "reseller_info" });
-      // Zero list ops: read __keys__ index instead of kv.list()
       const _kr = await env.TRIALS.get('__keys__') || '[]';
       const _ke = JSON.parse(_kr);
       const trials = { keys: _ke.map(e => ({ name: 'trial:' + e })) };
       return jsonRes({ bouquet: bq.text.slice(0,400), reseller: ri.text.slice(0,200), kv_keys: trials.keys.length });
+    }
+    // Bulk-purge: ?purge=1 deletes all expired panel lines immediately to free slots
+    if (u.searchParams.has("purge")) {
+      const _kr = await env.TRIALS.get('__keys__') || '[]';
+      const emails = JSON.parse(_kr);
+      const now = Date.now();
+      let deleted = 0, skipped = 0;
+      for (const email of emails) {
+        try {
+          const raw = await env.TRIALS.get(`trial:${email}`);
+          if (!raw) continue;
+          const trial = JSON.parse(raw);
+          if (now >= trial.expiry && trial.username && !trial.line_deleted) {
+            await deletePanelLine(trial.username);
+            trial.line_deleted = true;
+            await env.TRIALS.put(`trial:${email}`, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
+            deleted++;
+          } else { skipped++; }
+        } catch (_) { skipped++; }
+      }
+      return jsonRes({ purged: deleted, skipped });
     }
     return new Response("Maple Stream TV Trial Worker — OK", { status: 200 });
   }
@@ -257,6 +277,16 @@ async function handleFetch(request, env) {
       const pkg = list.find(b => (b.name || "").trim().toLowerCase() === PACK_NAME.toLowerCase());
       if (pkg) packId = pkg.id;
     }
+
+    // 1b. Delete any existing panel line for this email (frees up a slot on retry)
+    step = "cleanup_existing";
+    try {
+      const existingRaw = await env.TRIALS.get(`trial:${email}`);
+      if (existingRaw) {
+        const existing = JSON.parse(existingRaw);
+        if (existing.username) await deletePanelLine(existing.username);
+      }
+    } catch (_) {}
 
     // 2. Create demo M3U
     step = "create_demo";
@@ -325,6 +355,16 @@ async function handleFetch(request, env) {
   }
 }
 
+// ── helpers ── panel line deletion ────────────────────────────────────────────
+
+async function deletePanelLine(username) {
+  if (!username) return;
+  try {
+    const qs = new URLSearchParams({ action: "delete_user", username, api_key: API_KEY });
+    await fetch(`${API_BASE}?${qs}`);
+  } catch (_) {}
+}
+
 // ── cron handler ──────────────────────────────────────────────────────────────
 
 async function handleScheduled(env) {
@@ -355,7 +395,9 @@ async function handleScheduled(env) {
         await sendEmail(email, "Your Maple Stream TV Free Trial is Ready — 24H Access Activated ✓", followupEmail(name), RESEND_KEY, welcome_email_id);
         trial.followup_sent = true;
         await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
-        console.log(`[cron] Follow-up → ${email}`);
+        // Delete panel line to free up the reseller slot
+        await deletePanelLine(username);
+        console.log(`[cron] Follow-up + panel delete → ${email} (${username})`);
       } catch (e) { console.error(`[cron] Follow-up failed ${email}:`, e.message); }
     }
   }
