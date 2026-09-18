@@ -233,10 +233,10 @@ async function handleFetch(request, env) {
       const trials = { keys: _ke.map(e => ({ name: 'trial:' + e })) };
       return jsonRes({ bouquet: bq.text.slice(0,400), reseller: ri.text.slice(0,200), kv_keys: trials.keys.length });
     }
-    // Probe endpoint: ?probe tests delete API actions to find correct one
+    // Probe endpoint: ?probe tries edit_user + list to free slots
     if (u.searchParams.has("probe")) {
       const results = {};
-      // Get an expired trial username from KV to test deletion
+      // Get an expired trial username from KV
       let testUsername = null;
       try {
         const keysRaw = await env.TRIALS.get('__keys__') || '[]';
@@ -252,23 +252,31 @@ async function handleFetch(request, env) {
       results["test_username"] = testUsername;
 
       if (testUsername) {
-        // Try different delete API actions
-        for (const action of ["delete_user","delete_line","expire_line","deactivate_user"]) {
+        // Try edit_user with past expiry (expire = unix timestamp 1 second ago)
+        const pastTs = Math.floor(Date.now() / 1000) - 10;
+        for (const action of ["edit_user","update_user","expire_user","set_expiry"]) {
           try {
-            const r = await apiGet({ action, username: testUsername });
+            const r = await apiGet({ action, username: testUsername, expiry: pastTs, exp_date: pastTs });
             let parsed; try { parsed = JSON.parse(r.text); } catch { parsed = r.text.slice(0,150); }
-            results[`delete_${action}`] = parsed;
-          } catch (e) { results[`delete_${action}`] = e.message; }
+            results[`edit_${action}`] = parsed;
+          } catch (e) { results[`edit_${action}`] = e.message; }
         }
+        // Also try edit_user with enabled=0 (disable/suspend)
+        try {
+          const r = await apiGet({ action: "edit_user", username: testUsername, enabled: "0" });
+          let parsed; try { parsed = JSON.parse(r.text); } catch { parsed = r.text.slice(0,150); }
+          results["edit_disable"] = parsed;
+        } catch (e) { results["edit_disable"] = e.message; }
       }
-      // Check credits before/after
-      const riAfter = await apiGet({ action: "reseller_info" });
-      results["credits_after"] = riAfter.text.slice(0,200);
-      // Also check subscription packages
-      try {
-        const sp = await apiGet({ action: "subscription_package" });
-        results["subscription_packages"] = sp.text.slice(0,400);
-      } catch (e) { results["subscription_packages"] = e.message; }
+      // Try listing users to understand structure
+      for (const action of ["get_users","users","lines","get_lines","all_lines"]) {
+        try {
+          const r = await apiGet({ action });
+          results[`list_${action}`] = r.text.slice(0,200);
+        } catch (e) { results[`list_${action}`] = e.message; }
+      }
+      const ri2 = await apiGet({ action: "reseller_info" });
+      results["credits"] = ri2.text.slice(0,200);
       return jsonRes({ probe: results });
     }
 
