@@ -237,7 +237,7 @@ async function handleFetch(request, env) {
       return jsonRes({ bouquet: bq.text.slice(0,400), reseller: ri.text.slice(0,200), kv_keys: _ke.length });
     }
 
-    // ?probe — get raw response for new_demo and reseller_credits endpoint
+    // ?probe — test country param + username + new_demo without pack
     if (u.searchParams.has("probe")) {
       const results = {};
       const packRes = await apiGet({ action: "bouquet" });
@@ -249,34 +249,33 @@ async function handleFetch(request, env) {
         if (pkg) packId = pkg.id;
       } catch {}
 
-      // Get RAW text for new_demo calls to see full response
-      for (const sub of ["99","24","1"]) {
+      // Test: sub=99 with country param (country might be what's "missing")
+      for (const country of ["US","CA","ALL","all","1","0"]) {
         try {
-          const r = await apiGet({ action:"new_demo", type:"m3u", sub, pack:packId, note:"probe" });
-          results["new_demo_sub" + sub + "_raw"] = r.text.slice(0, 300);
-          results["new_demo_sub" + sub + "_status"] = r.status;
-        } catch (e) { results["new_demo_sub" + sub] = e.message; }
+          const r = await apiGet({ action:"new", type:"m3u", sub:"99", pack:packId, country, note:"probe" });
+          results["sub99_country_" + country] = r.text.slice(0,200);
+        } catch (e) { results["sub99_country_" + country] = e.message; }
       }
 
-      // Try reseller_credits or credits-specific endpoints
-      for (const action of ["reseller_credits","demo_credits","get_credits","credits_info","demo_info"]) {
-        try {
-          const r = await apiGet({ action });
-          results["ep_" + action] = r.text.slice(0,200);
-        } catch (e) { results["ep_" + action] = e.message; }
-      }
-
-      // Try new_demo WITHOUT type parameter (default line type)
+      // Test: action=new_demo RAW text (no type param + with country)
       try {
         const r = await apiGet({ action:"new_demo", sub:"99", pack:packId, note:"probe" });
-        results["new_demo_notype_raw"] = r.text.slice(0,300);
-      } catch (e) { results["new_demo_notype"] = e.message; }
+        results["new_demo_raw"] = r.text.slice(0,300);
+        results["new_demo_status"] = r.status;
+      } catch (e) { results["new_demo"] = e.message; }
 
-      // Try new_demo with type=m3u_plus
       try {
-        const r = await apiGet({ action:"new_demo", type:"m3u_plus", sub:"99", pack:packId, note:"probe" });
-        results["new_demo_m3u_plus_raw"] = r.text.slice(0,300);
-      } catch (e) { results["new_demo_m3u_plus"] = e.message; }
+        const r = await apiGet({ action:"new_demo", sub:"99", pack:packId, country:"US", note:"probe" });
+        results["new_demo_country_US_raw"] = r.text.slice(0,300);
+      } catch (e) { results["new_demo_country_US"] = e.message; }
+
+      // Test: sub=99 without pack but with country (maybe country+no-pack = demo path)
+      for (const country of ["US","CA","ALL"]) {
+        try {
+          const r = await apiGet({ action:"new", type:"m3u", sub:"99", country, note:"probe" });
+          results["sub99_nopack_country_" + country] = r.text.slice(0,200);
+        } catch (e) { results["sub99_nopack_country_" + country] = e.message; }
+      }
 
       const ri = await apiGet({ action:"reseller_info" });
       results["reseller"] = ri.text;
