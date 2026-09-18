@@ -14,19 +14,25 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Test worker
+      - name: Purge expired lines then test worker
         run: |
+          echo "=== PURGE expired panel lines ==="
+          PURGE=$(curl -s "https://iptv-trial-maplestreamtv.medmaar.workers.dev/?purge")
+          echo "PURGE: $PURGE"
+          
+          sleep 2
+          
+          echo "=== POST test trial ==="
           RESPONSE=$(curl -s -X POST \
             "https://iptv-trial-maplestreamtv.medmaar.workers.dev" \
             -H "Content-Type: application/json" \
             -d '{"name":"Test User","email":"test-diag@maplestreamtv.ca","device":"Firestick","whatsapp":"+11234567890","notes":"diagnostic test","country":"Canada"}')
+          echo "POST: $RESPONSE"
           
           DEBUG=$(curl -s "https://iptv-trial-maplestreamtv.medmaar.workers.dev/?debug")
-          
-          echo "POST_RESULT=${RESPONSE}" >> $GITHUB_OUTPUT
-          echo "POST: $RESPONSE"
           echo "DEBUG: $DEBUG"
-          printf "POST: %s\nDEBUG: %s\n" "$RESPONSE" "$DEBUG" > worker-test-result.txt
+          
+          printf "PURGE: %s\nPOST: %s\nDEBUG: %s\n" "$PURGE" "$RESPONSE" "$DEBUG" > worker-test-result.txt
 
       - name: Push results to test-results branch
         run: |
@@ -34,5 +40,5 @@ jobs:
           git config user.name "CI Bot"
           git checkout -B test-results
           git add worker-test-result.txt
-          git commit -m "test results"
+          git commit -m "test results" --allow-empty
           git push origin test-results --force
