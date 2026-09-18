@@ -237,52 +237,7 @@ async function handleFetch(request, env) {
       return jsonRes({ bouquet: bq.text.slice(0,400), reseller: ri.text.slice(0,200), kv_keys: _ke.length });
     }
 
-    // ?probe — test country param + username + new_demo without pack
-    if (u.searchParams.has("probe")) {
-      const results = {};
-      const packRes = await apiGet({ action: "bouquet" });
-      let packId = "all";
-      try {
-        const arr = JSON.parse(packRes.text);
-        const list = Array.isArray(arr) ? arr : Object.values(arr);
-        const pkg = list.find(b => (b.name||"").trim().toLowerCase() === "usa - all");
-        if (pkg) packId = pkg.id;
-      } catch {}
 
-      // Test: sub=99 with country param (country might be what's "missing")
-      for (const country of ["US","CA","ALL","all","1","0"]) {
-        try {
-          const r = await apiGet({ action:"new", type:"m3u", sub:"99", pack:packId, country, note:"probe" });
-          results["sub99_country_" + country] = r.text.slice(0,200);
-        } catch (e) { results["sub99_country_" + country] = e.message; }
-      }
-
-      // Test: action=new_demo RAW text (no type param + with country)
-      try {
-        const r = await apiGet({ action:"new_demo", sub:"99", pack:packId, note:"probe" });
-        results["new_demo_raw"] = r.text.slice(0,300);
-        results["new_demo_status"] = r.status;
-      } catch (e) { results["new_demo"] = e.message; }
-
-      try {
-        const r = await apiGet({ action:"new_demo", sub:"99", pack:packId, country:"US", note:"probe" });
-        results["new_demo_country_US_raw"] = r.text.slice(0,300);
-      } catch (e) { results["new_demo_country_US"] = e.message; }
-
-      // Test: sub=99 without pack but with country (maybe country+no-pack = demo path)
-      for (const country of ["US","CA","ALL"]) {
-        try {
-          const r = await apiGet({ action:"new", type:"m3u", sub:"99", country, note:"probe" });
-          results["sub99_nopack_country_" + country] = r.text.slice(0,200);
-        } catch (e) { results["sub99_nopack_country_" + country] = e.message; }
-      }
-
-      const ri = await apiGet({ action:"reseller_info" });
-      results["reseller"] = ri.text;
-      return jsonRes({ probe: results });
-    }
-
-    // replaced: ?probe — test action=new_demo and sub=0 with various params
 
     // ?list-trials — returns all trial usernames stored in KV so you can
     //   identify and manually delete them in the activationpanel.ru dashboard
