@@ -237,6 +237,64 @@ async function handleFetch(request, env) {
       return jsonRes({ bouquet: bq.text.slice(0,400), reseller: ri.text.slice(0,200), kv_keys: _ke.length });
     }
 
+    // ?probe — find the correct demo ticket API call
+    if (u.searchParams.has("probe")) {
+      const results = {};
+      // Try to list subscription packages via various actions
+      for (const action of ["packages","subscriptions","get_packages","package","sub_packages","subscription"]) {
+        try {
+          const r = await apiGet({ action });
+          results[`list_${action}`] = r.text.slice(0,300);
+        } catch (e) { results[`list_${action}`] = e.message; }
+      }
+      // Get pack ID
+      const packRes = await apiGet({ action: "bouquet" });
+      let packId = "all";
+      try {
+        const arr = JSON.parse(packRes.text);
+        const list = Array.isArray(arr) ? arr : Object.values(arr);
+        const pkg = list.find(b => (b.name||"").trim().toLowerCase() === "usa - all");
+        if (pkg) packId = pkg.id;
+      } catch {}
+      // Try sub=99 with various demo flags
+      for (const extra of [
+        { demo:"1" },
+        { is_demo:"1" },
+        { demo_ticket:"1" },
+        { type_line:"trial" },
+      ]) {
+        const key = "sub99_" + Object.keys(extra)[0];
+        try {
+          const r = await apiGet({ action:"new", type:"m3u", sub:"99", pack:packId, note:"probe", ...extra });
+          let parsed; try { parsed = JSON.parse(r.text); } catch { parsed = r.text.slice(0,200); }
+          results[key] = parsed;
+          if (parsed) {
+            const item = Array.isArray(parsed) ? parsed[0] : parsed;
+            if (item?.status === "true") {
+              try { const pu = new URL(item.url||""); const user = pu.searchParams.get("username"); if (user) await apiGet({ action:"delete_user", username: user }); } catch {}
+            }
+          }
+        } catch (e) { results[key] = e.message; }
+      }
+      // Also try sub=0, sub=100, sub=demo
+      for (const sub of ["0","100","200","demo"]) {
+        try {
+          const r = await apiGet({ action:"new", type:"m3u", sub, pack:packId, note:"probe" });
+          let parsed; try { parsed = JSON.parse(r.text); } catch { parsed = r.text.slice(0,200); }
+          results[`sub_${sub}`] = parsed;
+          if (parsed) {
+            const item = Array.isArray(parsed) ? parsed[0] : parsed;
+            if (item?.status === "true") {
+              try { const pu = new URL(item.url||""); const user = pu.searchParams.get("username"); if (user) await apiGet({ action:"delete_user", username: user }); } catch {}
+            }
+          }
+        } catch (e) { results[`sub_${sub}`] = e.message; }
+      }
+      const ri = await apiGet({ action:"reseller_info" });
+      results["reseller_info"] = ri.text.slice(0,200);
+      return jsonRes({ probe: results });
+    }
+
     // ?list-trials — returns all trial usernames stored in KV so you can
     //   identify and manually delete them in the activationpanel.ru dashboard
     if (u.searchParams.has("list-trials")) {
