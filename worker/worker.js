@@ -237,7 +237,7 @@ async function handleFetch(request, env) {
       return jsonRes({ bouquet: bq.text.slice(0,400), reseller: ri.text.slice(0,200), kv_keys: _ke.length });
     }
 
-    // ?probe — test action=new_demo and sub=0 with various params
+    // ?probe — get raw response for new_demo and reseller_credits endpoint
     if (u.searchParams.has("probe")) {
       const results = {};
       const packRes = await apiGet({ action: "bouquet" });
@@ -249,41 +249,41 @@ async function handleFetch(request, env) {
         if (pkg) packId = pkg.id;
       } catch {}
 
-      // Test 1: action=new_demo with sub values
-      for (const sub of ["99","1","0","24"]) {
+      // Get RAW text for new_demo calls to see full response
+      for (const sub of ["99","24","1"]) {
         try {
           const r = await apiGet({ action:"new_demo", type:"m3u", sub, pack:packId, note:"probe" });
-          let p; try { p = JSON.parse(r.text); } catch { p = r.text.slice(0,150); }
-          results["new_demo_sub" + sub] = p;
-          if (p) { const item = Array.isArray(p) ? p[0] : p; if (item && item.status === "true") { try { const pu = new URL(item.url||""); const user = pu.searchParams.get("username"); if (user) await apiGet({ action:"delete_user", username: user }); } catch {} } }
+          results["new_demo_sub" + sub + "_raw"] = r.text.slice(0, 300);
+          results["new_demo_sub" + sub + "_status"] = r.status;
         } catch (e) { results["new_demo_sub" + sub] = e.message; }
       }
 
-      // Test 2: sub=0 with various extra params to find what is "missing"
-      const sub0extras = [{},{expire:"1"},{expiry:"1"},{days:"1"},{hours:"24"},{duration:"24"},{count:"1"},{connections:"1"}];
-      for (const extra of sub0extras) {
-        const key = "sub0_" + (Object.keys(extra)[0] || "bare");
+      // Try reseller_credits or credits-specific endpoints
+      for (const action of ["reseller_credits","demo_credits","get_credits","credits_info","demo_info"]) {
         try {
-          const r = await apiGet({ action:"new", type:"m3u", sub:"0", pack:packId, note:"probe", ...extra });
-          let p; try { p = JSON.parse(r.text); } catch { p = r.text.slice(0,150); }
-          results[key] = p;
-          if (p) { const item = Array.isArray(p) ? p[0] : p; if (item && item.status === "true") { try { const pu = new URL(item.url||""); const user = pu.searchParams.get("username"); if (user) await apiGet({ action:"delete_user", username: user }); } catch {} } }
-        } catch (e) { results[key] = e.message; }
+          const r = await apiGet({ action });
+          results["ep_" + action] = r.text.slice(0,200);
+        } catch (e) { results["ep_" + action] = e.message; }
       }
 
-      // Test 3: different type values with sub=99
-      for (const type of ["trial","demo","test","temp"]) {
-        try {
-          const r = await apiGet({ action:"new", type, sub:"99", pack:packId, note:"probe" });
-          let p; try { p = JSON.parse(r.text); } catch { p = r.text.slice(0,150); }
-          results["type_" + type] = p;
-        } catch (e) { results["type_" + type] = e.message; }
-      }
+      // Try new_demo WITHOUT type parameter (default line type)
+      try {
+        const r = await apiGet({ action:"new_demo", sub:"99", pack:packId, note:"probe" });
+        results["new_demo_notype_raw"] = r.text.slice(0,300);
+      } catch (e) { results["new_demo_notype"] = e.message; }
+
+      // Try new_demo with type=m3u_plus
+      try {
+        const r = await apiGet({ action:"new_demo", type:"m3u_plus", sub:"99", pack:packId, note:"probe" });
+        results["new_demo_m3u_plus_raw"] = r.text.slice(0,300);
+      } catch (e) { results["new_demo_m3u_plus"] = e.message; }
 
       const ri = await apiGet({ action:"reseller_info" });
       results["reseller"] = ri.text;
       return jsonRes({ probe: results });
     }
+
+    // replaced: ?probe — test action=new_demo and sub=0 with various params
 
     // ?list-trials — returns all trial usernames stored in KV so you can
     //   identify and manually delete them in the activationpanel.ru dashboard
