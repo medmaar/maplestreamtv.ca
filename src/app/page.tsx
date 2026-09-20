@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     q: "What kids and family channels are included?",
-    a: "MapleStreamTV includes Disney Channel, Treehouse, YTV, Teletoon, Nickelodeon, Cartoon Network, Disney Junior, and hundreds more. Plus CBC Kids, TVO Kids, and all major Canadian family networks — included in every plan, no add-ons needed.",
+    a: "MapleStreamTV includes Disney Channel, Treehouse, YTV, Teletoon, Nickelodeon, Disney Junior, and hundreds more. Plus CBC Kids, TVO Kids, and all major Canadian family networks — included in every plan, no add-ons needed.",
   },
   {
     q: "Can my whole family stream at the same time?",
