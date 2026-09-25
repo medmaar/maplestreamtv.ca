@@ -127,7 +127,7 @@ export default async function PlanPage({
     offers: {
       "@type": "Offer",
       price: prices[0],
-      priceCurrency: "CAD",
+      priceCurrency: "USD",
       availability: "https://schema.org/InStock",
       url: `https://maplestreamtv.ca/${plan}`,
     },

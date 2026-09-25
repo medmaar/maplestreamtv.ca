@@ -66,7 +66,7 @@ const productSchema = {
   offers: {
     "@type": "Offer",
     price: "39.00",
-    priceCurrency: "CAD",
+    priceCurrency: "USD",
     availability: "https://schema.org/InStock",
     url: "https://maplestreamtv.ca/pricing/6-months",
     priceValidUntil: "2027-01-01",
