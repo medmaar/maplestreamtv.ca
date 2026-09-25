@@ -34,7 +34,7 @@ const aggregateRatingSchema = {
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import PricingSection from "./PricingSection";
+import PricingSection from "../PricingSection";
 
 export const metadata: Metadata = {
   title: "Best IPTV Box Canada 2026 — Top Providers Near | MapleStreamTV",
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     "Best IPTV box and providers in Canada 2026. MapleStreamTV is #1 rated IPTV near you — free 24h trial, no credit card. 25,000+ channels, 4K, kids channels.",
   keywords:
     "iptv box, iptv near me, iptv free trial, iptv providers canada, iptv server, iptv supplier, best iptv for canada, iptv provider canada, iptv service canada, la iptv, best iptv apps, MapleStreamTV",
-  alternates: { canonical: "https://maplestreamtv.ca" },
+  alternates: { canonical: "https://maplestreamtv.ca/en" },
   openGraph: {
     images: [{ url: "/og-image.webp", width: 1403, height: 761, alt: "MapleStreamTV — Cut Your Cable Bill, Keep Every Channel" }],
     title: "Best IPTV Box Canada 2026 — Top Providers Near You | MapleStreamTV",
     description:
       "Save $900+/year vs Bell or Rogers. 25,000+ channels, kids channels, all Canadian locals — 5-minute setup, no contracts. Free 24h trial.",
-    url: "https://maplestreamtv.ca",
+    url: "https://maplestreamtv.ca/en",
     type: "website",
     siteName: "MapleStreamTV",
   },

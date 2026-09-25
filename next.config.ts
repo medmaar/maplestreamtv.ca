@@ -16,6 +16,8 @@ const nextConfig: NextConfig = {
         destination: "https://maplestreamtv.ca/:path*",
         permanent: true,
       },
+      // Homepage → English landing page
+      { source: "/", destination: "/en", permanent: true },
       // Legacy pricing sub-routes → root-level plan pages
       { source: "/pricing/1-month",   destination: "/1-month",   permanent: true },
       { source: "/pricing/3-months",  destination: "/3-months",  permanent: true },

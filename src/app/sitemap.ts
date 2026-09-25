@@ -5,7 +5,7 @@ const base = "https://maplestreamtv.ca";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // Core pages
-    { url: base,                                              lastModified: new Date("2026-05-16"), changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${base}/en`,                                      lastModified: new Date("2026-05-16"), changeFrequency: "weekly",  priority: 1.0 },
     { url: `${base}/fr`,                                      lastModified: new Date("2026-05-16"), changeFrequency: "weekly",  priority: 0.9 },
     { url: `${base}/pricing`,                                 lastModified: new Date("2026-05-16"), changeFrequency: "weekly",  priority: 0.95 },
     { url: `${base}/pricing/1-month`,                         lastModified: new Date("2026-05-01"), changeFrequency: "monthly", priority: 0.85 },
