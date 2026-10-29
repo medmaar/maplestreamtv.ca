@@ -79,6 +79,13 @@ export default function PlanOrderForm({ plan }: Props) {
         }
       );
       console.log("EmailJS success:", result);
+      // Email the client their payment invoice. Never blocks or fails the order itself.
+      fetch("https://iptv-trial-maplestreamtv.medmaar.workers.dev/invoice", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: form.full_name, email: form.email, plan }),
+        keepalive: true,
+      }).catch(() => {});
       setStatus("success");
       setForm({ full_name: "", email: "", country: "Canada", device: "", message: "" });
       setPhone("");
