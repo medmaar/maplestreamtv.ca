@@ -104,7 +104,7 @@ export default function Pricing6MonthsPage() {
               </span>
               <h1 className="text-4xl md:text-5xl font-extrabold text-white">
                 6 Months Plan —{" "}
-                <span style={{ color: "#fd0322" }}>$60</span>
+                <span style={{ color: "#fd0322" }}>$39</span>
               </h1>
             </div>
 
@@ -124,7 +124,7 @@ export default function Pricing6MonthsPage() {
                 borderColor: "rgba(255,255,255,0.07)",
               }}
             >
-              <PlanOrderForm plan="6 Months Plan — $60" />
+              <PlanOrderForm plan="6 Months - 1 Device — $39" />
             </div>
 
             {/* 4. FAQ */}

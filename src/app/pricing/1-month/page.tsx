@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Get 1 month of IPTV in Canada for $9. 25,000+ live channels, 4K quality, NHL, TSN, CTV and more. No contract. Login credentials sent within 24 hours.",
   keywords:
-    "IPTV Canada 1 month, IPTV monthly plan Canada, IPTV $15 Canada, month to month IPTV Canada",
+    "IPTV Canada 1 month, IPTV monthly plan Canada, IPTV $9 Canada, month to month IPTV Canada",
   alternates: { canonical: "https://maplestreamtv.ca/1-month" },
 };
 
@@ -104,7 +104,7 @@ export default function Pricing1MonthPage() {
               </span>
               <h1 className="text-4xl md:text-5xl font-extrabold text-white">
                 1 Month Plan —{" "}
-                <span style={{ color: "#fd0322" }}>$15</span>
+                <span style={{ color: "#fd0322" }}>$9</span>
               </h1>
             </div>
 
@@ -124,7 +124,7 @@ export default function Pricing1MonthPage() {
                 borderColor: "rgba(255,255,255,0.07)",
               }}
             >
-              <PlanOrderForm plan="1 Month Plan — $15" />
+              <PlanOrderForm plan="1 Month - 1 Device — $9" />
             </div>
 
             {/* 4. FAQ */}
