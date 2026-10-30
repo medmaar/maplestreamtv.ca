@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/order", "/whatsapp-contact", "/admin", "/api/"],
+      disallow: ["/order", "/whatsapp-contact", "/ca/order", "/ca/whatsapp-contact", "/admin", "/api/"],
     },
     sitemap: "https://maplestreamtv.ca/sitemap.xml",
   };

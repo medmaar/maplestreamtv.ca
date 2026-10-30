@@ -23,10 +23,10 @@ const badges: Partial<Record<Duration, string>> = {
 };
 
 const orderSlugs: Record<Duration, string> = {
-  "1 Month":  "/1-month",
-  "3 Months": "/3-months",
-  "6 Months": "/6-months",
-  "1 Year":   "/12-months",
+  "1 Month":  "/ca/1-month",
+  "3 Months": "/ca/3-months",
+  "6 Months": "/ca/6-months",
+  "1 Year":   "/ca/12-months",
 };
 
 const features = [

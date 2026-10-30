@@ -4,13 +4,13 @@ import Link from "next/link";
 import Logo from "../components/Logo";
 
 const links = [
-  { label: "Pricing", href: "/pricing" },
-  { label: "Channels", href: "/channels-list" },
-  { label: "Devices", href: "/iptv-firestick-canada" },
-  { label: "Free Trial", href: "/free-trial" },
-  { label: "Blog", href: "/blog" },
-  { label: "Reseller", href: "/reseller" },
-  { label: "Contact", href: "/contact" },
+  { label: "Pricing", href: "/ca/pricing" },
+  { label: "Channels", href: "/ca/channels-list" },
+  { label: "Devices", href: "/ca/iptv-firestick-canada" },
+  { label: "Free Trial", href: "/ca/free-trial" },
+  { label: "Blog", href: "/ca/blog" },
+  { label: "Reseller", href: "/ca/reseller" },
+  { label: "Contact", href: "/ca/contact" },
 ];
 
 export default function Navbar() {
@@ -46,7 +46,7 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <Link
-          href="/free-trial"
+          href="/ca/free-trial"
           className="hidden md:inline-flex items-center gap-2 text-sm font-bold text-white px-5 py-2.5 rounded-xl transition-all hover:brightness-110"
           style={{ background: "#E53935" }}
         >
@@ -83,7 +83,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/free-trial"
+              href="/ca/free-trial"
               onClick={() => setOpen(false)}
               className="mt-2 text-white px-4 py-3 rounded-xl text-sm font-bold text-center"
               style={{ background: "#E53935" }}

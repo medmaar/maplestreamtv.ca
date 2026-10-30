@@ -10,10 +10,10 @@ import SalesBanner from "../components/SalesBanner";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://maplestreamtv.ca",
+    canonical: "https://maplestreamtv.ca/ca",
     languages: {
-      "en-CA": "https://maplestreamtv.ca",
-      "x-default": "https://maplestreamtv.ca",
+      "en-CA": "https://maplestreamtv.ca/ca",
+      "x-default": "https://maplestreamtv.ca/ca",
     },
   },
 
@@ -43,7 +43,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "MapleStreamTV",
-  "url": "https://maplestreamtv.ca"
+  "url": "https://maplestreamtv.ca/ca"
 };
 
 
@@ -51,12 +51,12 @@ const sitelinksSearchSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "MapleStreamTV",
-  "url": "https://maplestreamtv.ca",
+  "url": "https://maplestreamtv.ca/ca",
   "potentialAction": {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://maplestreamtv.ca/?q={search_term_string}"
+      "urlTemplate": "https://maplestreamtv.ca/ca?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }

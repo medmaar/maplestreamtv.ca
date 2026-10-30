@@ -5,9 +5,8 @@
 // Buttons link here instead of directly to wa.me/<number>; this function
 // 302-redirects the visitor straight to WhatsApp.
 //
-// Works alongside the Next.js static export (output: "export") - Pages
-// Functions are a separate serverless layer Cloudflare merges in at
-// deploy time, independent of the framework used for the static build.
+// Also reused by src/app/chat/wa/route.ts so the same endpoint works in
+// Next.js development and next-on-pages' advanced-mode worker builds.
 //
 // It also ALWAYS prepends a brand tag to the pre-filled message, no matter
 // what each button passes in ?msg=. Since every site forwards to the same

@@ -1,18 +1,16 @@
 import type { MetadataRoute } from "next";
 
-const base = "https://maplestreamtv.ca";
+const base = "https://maplestreamtv.ca/ca";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // Core pages
-    { url: `${base}/en`,                                      lastModified: new Date("2026-05-16"), changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${base}`,                                      lastModified: new Date("2026-05-16"), changeFrequency: "weekly",  priority: 1.0 },
     { url: `${base}/fr`,                                      lastModified: new Date("2026-05-16"), changeFrequency: "weekly",  priority: 0.9 },
     { url: `${base}/pricing`,                                 lastModified: new Date("2026-05-16"), changeFrequency: "weekly",  priority: 0.95 },
-    { url: `${base}/pricing/1-month`,                         lastModified: new Date("2026-05-01"), changeFrequency: "monthly", priority: 0.85 },
-    { url: `${base}/pricing/6-months`,                        lastModified: new Date("2026-05-01"), changeFrequency: "monthly", priority: 0.85 },
-    { url: `${base}/pricing/12-months`,                       lastModified: new Date("2026-05-01"), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/free-trial`,                              lastModified: new Date("2026-05-01"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${base}/1-month`,                                 lastModified: new Date("2026-05-01"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/3-months`,                                 lastModified: new Date("2026-05-01"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/6-months`,                                lastModified: new Date("2026-05-01"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/12-months`,                               lastModified: new Date("2026-05-01"), changeFrequency: "monthly", priority: 0.8 },
     // Keyword-targeted landing pages
@@ -61,5 +59,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/terms-of-service`,                        lastModified: new Date("2026-01-01"), changeFrequency: "yearly",  priority: 0.3 },
     { url: `${base}/refund-policy`,                           lastModified: new Date("2026-01-01"), changeFrequency: "yearly",  priority: 0.3 },
     { url: `${base}/disclaimer`,                              lastModified: new Date("2026-01-01"), changeFrequency: "yearly",  priority: 0.2 },
+    { url: `${base}/dmca`,                                    lastModified: new Date("2026-03-28"), changeFrequency: "yearly",  priority: 0.2 },
   ];
 }

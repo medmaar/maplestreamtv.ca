@@ -28,66 +28,69 @@ export default function Footer() {
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">Pages</p>
             <div className="flex flex-col gap-2.5">
-              <Link href="/" className="text-gray-400 hover:text-white text-sm transition-colors">Home</Link>
-              <Link href="/pricing" className="text-gray-400 hover:text-white text-sm transition-colors">Pricing</Link>
-              <Link href="/channels-list" className="text-gray-400 hover:text-white text-sm transition-colors">Channels</Link>
-              <Link href="/free-trial" className="text-gray-400 hover:text-white text-sm transition-colors">Free Trial</Link>
-              <Link href="/how-it-works" className="text-gray-400 hover:text-white text-sm transition-colors">How It Works</Link>
-              <Link href="/blog" className="text-gray-400 hover:text-white text-sm transition-colors">Blog</Link>
-              <Link href="/reseller" className="text-gray-400 hover:text-white text-sm transition-colors">Reseller</Link>
-              <Link href="/contact" className="text-gray-400 hover:text-white text-sm transition-colors">Contact</Link>
+              <Link href="/ca" className="text-gray-400 hover:text-white text-sm transition-colors">Home</Link>
+              <Link href="/ca/pricing" className="text-gray-400 hover:text-white text-sm transition-colors">Pricing</Link>
+              <Link href="/ca/channels-list" className="text-gray-400 hover:text-white text-sm transition-colors">Channels</Link>
+              <Link href="/ca/free-trial" className="text-gray-400 hover:text-white text-sm transition-colors">Free Trial</Link>
+              <Link href="/ca/how-it-works" className="text-gray-400 hover:text-white text-sm transition-colors">How It Works</Link>
+              <Link href="/ca/blog" className="text-gray-400 hover:text-white text-sm transition-colors">Blog</Link>
+              <Link href="/ca/reseller" className="text-gray-400 hover:text-white text-sm transition-colors">Reseller</Link>
+              <Link href="/ca/referral" className="text-gray-400 hover:text-white text-sm transition-colors">Referral Program</Link>
+              <Link href="/ca/contact" className="text-gray-400 hover:text-white text-sm transition-colors">Contact</Link>
+              <Link href="/ca/fr" hrefLang="fr-CA" lang="fr" className="text-gray-400 hover:text-white text-sm transition-colors">Français</Link>
             </div>
           </div>
 
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">IPTV Services</p>
             <div className="flex flex-col gap-2.5">
-              <Link href="/iptv-box" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV Box Canada</Link>
-              <Link href="/iptv-near-me" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV Near Me</Link>
-              <Link href="/iptv-providers-canada" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV Providers</Link>
-              <Link href="/iptv-for-beginners" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV for Beginners</Link>
-              <Link href="/best-iptv-apps" className="text-gray-400 hover:text-white text-sm transition-colors">Best IPTV Apps</Link>
-              <Link href="/iptv-server" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV Server</Link>
-              <Link href="/iptv-supplier" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV Supplier</Link>
+              <Link href="/ca/iptv-box" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV Box Canada</Link>
+              <Link href="/ca/iptv-near-me" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV Near Me</Link>
+              <Link href="/ca/iptv-providers-canada" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV Providers</Link>
+              <Link href="/ca/iptv-for-beginners" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV for Beginners</Link>
+              <Link href="/ca/best-iptv-apps" className="text-gray-400 hover:text-white text-sm transition-colors">Best IPTV Apps</Link>
+              <Link href="/ca/iptv-server" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV Server</Link>
+              <Link href="/ca/iptv-supplier" className="text-gray-400 hover:text-white text-sm transition-colors">IPTV Supplier</Link>
             </div>
           </div>
 
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">By Device</p>
             <div className="flex flex-col gap-2.5">
-              <Link href="/iptv-firestick-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Firestick</Link>
-              <Link href="/iptv-android-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Android TV</Link>
-              <Link href="/iptv-smart-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Smart TV</Link>
-              <Link href="/iptv-apple-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Apple TV</Link>
-              <Link href="/iptv-mag-box-canada" className="text-gray-400 hover:text-white text-sm transition-colors">MAG Box</Link>
-              <Link href="/iptv-samsung-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Samsung TV</Link>
-              <Link href="/iptv-lg-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">LG TV</Link>
-              <Link href="/iptv-roku-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Roku</Link>
-              <Link href="/iptv-android-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Android</Link>
-              <Link href="/iptv-ios-canada" className="text-gray-400 hover:text-white text-sm transition-colors">iPhone / iPad</Link>
-              <Link href="/iptv-windows-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Windows PC</Link>
+              <Link href="/ca/iptv-firestick-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Firestick</Link>
+              <Link href="/ca/iptv-android-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Android TV</Link>
+              <Link href="/ca/iptv-smart-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Smart TV</Link>
+              <Link href="/ca/iptv-apple-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Apple TV</Link>
+              <Link href="/ca/iptv-mag-box-canada" className="text-gray-400 hover:text-white text-sm transition-colors">MAG Box</Link>
+              <Link href="/ca/iptv-samsung-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Samsung TV</Link>
+              <Link href="/ca/iptv-lg-tv-canada" className="text-gray-400 hover:text-white text-sm transition-colors">LG TV</Link>
+              <Link href="/ca/iptv-roku-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Roku</Link>
+              <Link href="/ca/iptv-android-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Android</Link>
+              <Link href="/ca/iptv-ios-canada" className="text-gray-400 hover:text-white text-sm transition-colors">iPhone / iPad</Link>
+              <Link href="/ca/iptv-windows-canada" className="text-gray-400 hover:text-white text-sm transition-colors">Windows PC</Link>
             </div>
           </div>
 
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">By City</p>
             <div className="flex flex-col gap-2.5">
-              <Link href="/iptv-toronto" className="text-gray-400 hover:text-white text-sm transition-colors">Toronto</Link>
-              <Link href="/iptv-vancouver" className="text-gray-400 hover:text-white text-sm transition-colors">Vancouver</Link>
-              <Link href="/iptv-montreal" className="text-gray-400 hover:text-white text-sm transition-colors">Montreal</Link>
-              <Link href="/iptv-calgary" className="text-gray-400 hover:text-white text-sm transition-colors">Calgary</Link>
-              <Link href="/iptv-ottawa" className="text-gray-400 hover:text-white text-sm transition-colors">Ottawa</Link>
-              <Link href="/iptv-edmonton" className="text-gray-400 hover:text-white text-sm transition-colors">Edmonton</Link>
+              <Link href="/ca/iptv-toronto" className="text-gray-400 hover:text-white text-sm transition-colors">Toronto</Link>
+              <Link href="/ca/iptv-vancouver" className="text-gray-400 hover:text-white text-sm transition-colors">Vancouver</Link>
+              <Link href="/ca/iptv-montreal" className="text-gray-400 hover:text-white text-sm transition-colors">Montreal</Link>
+              <Link href="/ca/iptv-calgary" className="text-gray-400 hover:text-white text-sm transition-colors">Calgary</Link>
+              <Link href="/ca/iptv-ottawa" className="text-gray-400 hover:text-white text-sm transition-colors">Ottawa</Link>
+              <Link href="/ca/iptv-edmonton" className="text-gray-400 hover:text-white text-sm transition-colors">Edmonton</Link>
             </div>
           </div>
 
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">Legal</p>
             <div className="flex flex-col gap-2.5 mb-4">
-              <Link href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</Link>
-              <Link href="/terms-of-service" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</Link>
-              <Link href="/refund-policy" className="text-gray-400 hover:text-white text-sm transition-colors">Refund Policy</Link>
-              <Link href="/disclaimer" className="text-gray-400 hover:text-white text-sm transition-colors">Disclaimer</Link>
+              <Link href="/ca/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</Link>
+              <Link href="/ca/terms-of-service" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</Link>
+              <Link href="/ca/refund-policy" className="text-gray-400 hover:text-white text-sm transition-colors">Refund Policy</Link>
+              <Link href="/ca/disclaimer" className="text-gray-400 hover:text-white text-sm transition-colors">Disclaimer</Link>
+              <Link href="/ca/dmca" className="text-gray-400 hover:text-white text-sm transition-colors">DMCA Policy</Link>
             </div>
             <p className="text-gray-600 text-xs leading-relaxed">MapleStreamTV does not host or stream any copyrighted content.</p>
           </div>
