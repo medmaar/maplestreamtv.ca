@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
+import { celebrate } from "../../../components/Celebrate";
 
 const countries = [
   "Canada", "United States", "United Kingdom", "Australia", "France", "Germany",
@@ -87,6 +88,7 @@ export default function PlanOrderForm({ plan }: Props) {
         keepalive: true,
       }).catch(() => {});
       setStatus("success");
+      celebrate("order", form.email);
       setForm({ full_name: "", email: "", country: "Canada", device: "", message: "" });
       setPhone("");
     } catch (error) {

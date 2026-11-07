@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
 import SalesBanner from "../components/SalesBanner";
+import CelebratePreview from "../components/Celebrate";
 
 export const metadata: Metadata = {
   alternates: {
@@ -82,6 +83,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <Footer />
                 <FloatingContact />
                 <SalesBanner />
+                <CelebratePreview />
             </body>
         </html>
     );
