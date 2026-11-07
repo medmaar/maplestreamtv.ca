@@ -111,15 +111,7 @@ export default function PlanOrderForm({ plan }: Props) {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
 
-      {/* Success banner */}
-      {status === "success" && (
-        <div
-          className="rounded-2xl px-4 py-3 text-sm font-medium"
-          style={{ background: "rgba(74,222,128,0.1)", border: "1px solid rgba(74,222,128,0.3)", color: "#4ade80" }}
-        >
-          ✅ Order received! We&apos;ll contact you within 5 minutes.
-        </div>
-      )}
+      {/* Success: the full-screen celebration (components/Celebrate) replaces the old inline message. */}
 
       {/* Error banner */}
       {status === "error" && (

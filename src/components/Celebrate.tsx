@@ -14,7 +14,7 @@ const CELEBRATE: Record<Kind, { title: string; lines: string[]; btn: string }> =
       "It usually lands in under 2 minutes. Check your <b>inbox</b> AND your <b>spam</b> folder, because our emails sometimes duck into the wrong igloo to warm up.",
       "Your only job for the next 24 hours: grab the remote and some ketchup chips. 🍿",
     ],
-    btn: "Beauty, I’ll go check my email",
+    btn: "Beauty! Back to the homepage",
   },
   order: {
     title: "You did it! Order placed. 🎉",
@@ -23,7 +23,7 @@ const CELEBRATE: Record<Kind, { title: string; lines: string[]; btn: string }> =
       "Your invoice is skating over to <b data-c-email></b> as we speak. Check your <b>inbox</b> AND your <b>spam</b> folder (it may have stopped for a double-double on the way).",
       "Pay the invoice and your channels fire up faster than poutine disappears at 2 a.m. 🍟",
     ],
-    btn: "Let’s go, buddy!",
+    btn: "Let’s go! Back to the homepage",
   },
 };
 
@@ -31,7 +31,6 @@ export function celebrate(kind: Kind, email?: string) {
   const c = CELEBRATE[kind];
   if (!c || typeof document === "undefined") return;
   document.querySelector(".celebrate")?.remove();
-  const back = document.activeElement as HTMLElement | null;
   const el = document.createElement("div");
   el.className = "celebrate";
   el.setAttribute("role", "dialog");
@@ -41,29 +40,15 @@ export function celebrate(kind: Kind, email?: string) {
     `<i style="--x:${(i * 37) % 100}%;--d:${(i % 7) * 0.35}s;--t:${3.2 + (i % 5) * 0.5}s;--r:${(i * 53) % 360}deg">${i % 3 ? "" : "🍁"}</i>`).join("");
   el.innerHTML = `<div class="celebrate-bits" aria-hidden="true">${bits}</div>
 <div class="celebrate-box">
-  <button class="celebrate-x" type="button" aria-label="Close">×</button>
   <svg class="celebrate-mark" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54"/><path d="M36 62 53 79 86 44"/></svg>
   <h2 id="celebrate-title">${c.title}</h2>
   ${c.lines.map((l) => `<p>${l}</p>`).join("")}
-  <button class="celebrate-go" type="button">${c.btn}</button>
+  <a class="celebrate-go" href="/ca">${c.btn}</a>
 </div>`;
   el.querySelectorAll("[data-c-email]").forEach((b) => { b.textContent = email || "your email address"; });
-  const go = el.querySelector<HTMLButtonElement>(".celebrate-go")!;
-  const x = el.querySelector<HTMLButtonElement>(".celebrate-x")!;
-  const close = () => {
-    document.removeEventListener("keydown", onKey);
-    el.classList.add("is-out");
-    document.documentElement.classList.remove("celebrating");
-    setTimeout(() => el.remove(), 250);
-    back?.focus?.({ preventScroll: true });
-  };
-  const onKey = (e: KeyboardEvent) => {
-    if (e.key === "Escape") close();
-    if (e.key === "Tab") { e.preventDefault(); (document.activeElement === go ? x : go).focus(); }
-  };
-  document.addEventListener("keydown", onKey);
-  x.addEventListener("click", close);
-  go.addEventListener("click", close);
+  // No way to dismiss: the only exit is the button, which goes to the homepage.
+  const go = el.querySelector<HTMLAnchorElement>(".celebrate-go")!;
+  el.addEventListener("keydown", (e) => { if (e.key === "Tab") { e.preventDefault(); go.focus(); } });
   document.body.append(el);
   document.documentElement.classList.add("celebrating");
   go.focus({ preventScroll: true });
