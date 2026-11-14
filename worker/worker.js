@@ -646,7 +646,7 @@ async function handleFetch(request, env) {
       }
       const crRes = await apiGet({
         action: "new", type: "m3u", sub: "99", pack: packId,
-        notes: `Trial / maplestreamtv.ca / ${email} | ${whatsapp || ""}`,
+        note: `Trial / maplestreamtv.ca / ${email} | ${whatsapp || ""}`, notes: `Trial / maplestreamtv.ca / ${email} | ${whatsapp || ""}`,
       });
       if (crRes.text.trim().startsWith("[") || crRes.text.trim().startsWith("{")) {
         const crData = JSON.parse(crRes.text);
