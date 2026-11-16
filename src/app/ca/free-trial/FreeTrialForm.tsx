@@ -83,10 +83,7 @@ export default function FreeTrialForm() {
           className="rounded-2xl px-4 py-3 text-sm font-medium"
           style={{ background: "rgba(253,3,34,0.1)", border: "1px solid rgba(253,3,34,0.3)", color: "#ff6b6b" }}
         >
-          Something went wrong. Please try again or{" "}
-          <a href="/chat/wa" target="_blank" rel="noopener noreferrer" className="underline">
-            contact us on WhatsApp
-          </a>.
+          Our free trials are currently paused.
         </div>
       )}
 
